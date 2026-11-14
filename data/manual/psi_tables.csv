@@ -1,0 +1,7 @@
+file,kind,test_row_pattern,reason
+PSI-25/PSI-25_Experimental table_BASS-II.csv,per_test,,"One row per ISS test (Test #), with O2, CO2, CO and flow text."
+PSI-69/PSI-69_Experimental table_FLEX.csv,per_test,,"One row per FLEX test (FLEX Test #) with pressure, ambient composition, droplet sizes, burn time, test end."
+PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv,per_test,^S\d,"2 sample rows (S1, S2) plus 2 flow-visualisation rows (F1, F2) that are not burns."
+PSI-100/PSI-100_Experimental table_SAFFIRE-3.csv,per_test,^S\d,"2 sample rows (S1, S2); no O2 or pressure column."
+PSI-20/PSI-20_Experimental table_ACME BRE.csv,summary,,"One row per test DAY (flames ignited that day, O2 levels used); chamber pressure 'not identified in this summary table'."
+PSI-68/PSI-68_Experimental table_Flex2.csv,summary,,"One row per fuel, with ranges/lists of O2, pressure and flow; no per-test rows."

@@ -1,0 +1,18 @@
+name,quote,psi_id,note
+BASS,"BASS, BASS-II, the Smoke Point In Co-flow Experiment (SPICE)",,
+BASS-II,"Burning and Suppression of Solids (BASS and BASS-II)",PSI-25,
+Saffire-I,"Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III)",PSI-98,
+Saffire-II,"Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III)",PSI-99,
+Saffire-III,"Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III)",PSI-100,
+SAME,"Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R)",,
+SAME-R,"Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R)",,
+FLEX,"Flame Extinguishment Experiment (FLEX)",PSI-69,
+FLEX-2,"FLEX, FLEX-2, and the Cool Flames Investigation (CFI)",PSI-68,
+CFI,"FLEX, FLEX-2, and the Cool Flames Investigation (CFI)",,
+ACME BRE,"Burning Rate Emulator (BRE) experiment of the Advanced Combustion via Microgravity Experiments (ACME) project",PSI-20,
+ACME CFI-G,"ACME’s Cool Flames Investigation with Gases (CFI-G)",,
+ACME E-FIELD Flames,"ACME’s Electric-Field Effects on Laminar Diffusion Flames (E-FIELD Flames)",,
+SPICE,"the Smoke Point In Co-flow Experiment (SPICE)",,
+SLICE,"the Structure & Liftoff In Combustion Experiment (SLICE)",,
+DAFT,"Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2)",,"Brief names it under 'Other investigations in PSI' (dust detection); may not be filed under Combustion Science."
+DAFT-2,"Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2)",,"As DAFT."

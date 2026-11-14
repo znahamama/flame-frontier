@@ -53,3 +53,23 @@ th { color: var(--text-secondary); font-weight: 600; }
 .p2-honest figcaption { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; }
 .callout { margin: 0; font-weight: 600; color: var(--text-primary); }
 @media (max-width: 640px) { .p2-honest { grid-template-columns: minmax(0, 1fr); } .p2-honest figure { max-width: 320px; } }
+
+/* Catalog */
+.slots { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: 3px; margin: 8px 0 10px; max-width: 560px; }
+.slot { height: 16px; border-radius: 3px; border: 1px dashed var(--text-secondary); }
+.slot.have { background: var(--series-1); border: 1px solid var(--series-1); }
+.chip { display: inline-block; padding: 1px 8px; margin: 2px 0; border: 1px solid var(--grid); border-radius: 999px; font-size: 0.8rem; color: var(--text-primary); cursor: help; }
+.table-wrap { overflow-x: auto; }
+table.cat { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+table.cat th, table.cat td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+table.cat td.yes { font-weight: 600; }
+.muted { color: var(--text-secondary); }
+details.inv { border-top: 1px solid var(--grid); padding: 8px 0; }
+details.inv summary { cursor: pointer; }
+details.inv dl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; margin: 8px 0 0; }
+details.inv dt { font-weight: 600; margin-top: 8px; }
+details.inv dd { margin: 0; white-space: pre-line; }
+.src { font-weight: 400; font-size: 0.72rem; color: var(--text-secondary); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin-left: 6px; }
+ul.pubs { margin: 4px 0 0; padding-left: 18px; font-size: 0.85rem; }
+@media (max-width: 640px) { .slots { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
+table.cat td.id { white-space: nowrap; }
