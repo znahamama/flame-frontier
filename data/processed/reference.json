@@ -19,13 +19,13 @@
     "earth_sea_level": {
       "label": "Earth sea level, 14.7 psi",
       "p_kpa": 101.35,
-      "source": "NASA Space Apps 2026 challenge brief: Flame in Freefall"
+      "source": "NASA Space Apps 2026 challenge page, Flame in Freefall"
     },
     "moon_base_zone": {
       "label": "Moon base / pressurized rover: O2 >= 30% and P <= 10.2 psi (10.2 x 6.894757 = 70.33 kPa). Boundaries inclusive. The brief gives no lower pressure bound, so the zone is drawn down to 0 kPa.",
       "o2_min_pct": 30,
       "p_max_kpa": 70.33,
-      "source": "NASA Space Apps 2026 challenge brief: Flame in Freefall"
+      "source": "NASA Space Apps 2026 challenge page, Flame in Freefall"
     },
     "pp_o2_lines": [
       {
@@ -791,7 +791,7 @@
       "label": "Spacesuit: 100% O2 at 4.3 psi (4.3 x 6.894757 = 29.65 kPa)",
       "o2_pct": 100,
       "p_kpa": 29.65,
-      "source": "NASA Space Apps 2026 challenge brief: Flame in Freefall"
+      "source": "NASA Space Apps 2026 challenge page, Flame in Freefall"
     },
     "x_axis": "Total pressure (kPa)",
     "x_max": 210,

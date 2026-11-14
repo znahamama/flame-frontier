@@ -9,6 +9,15 @@
       "gives": "Test methods; flammability boundary eq. 6.1 (p.75); flow measurement (p.66).",
       "short": "BASS-II report NASA/TM-20210011385"
     },
+    "challenge_brief": {
+      "citation": "NASA Space Apps Challenge 2026, \"Flame in Freefall\" challenge page (text saved by the team)",
+      "does_not_give": [
+        "ACME CFI-G: gas-flame tests reached higher O2 (85%); not solid materials. Kept off the charts: this page is our only source and gives no per-test pressure or conditions.",
+        "No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
+      ],
+      "gives": "Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI.",
+      "short": "Space Apps challenge page"
+    },
     "saffire_ices2024": {
       "citation": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
       "does_not_give": [

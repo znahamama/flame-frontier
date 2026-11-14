@@ -16,7 +16,7 @@ BASS2_REPORT = {
     "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
     "pdf_page_offset": 8,  # PDF page = printed page + 8
 }
-CHALLENGE_BRIEF = {"doc": "NASA Space Apps 2026 challenge brief: Flame in Freefall"}
+CHALLENGE_BRIEF = {"doc": "NASA Space Apps 2026 challenge page, Flame in Freefall", "file": "docs/ref/challenge_brief.md"}
 
 PSI_TO_KPA = 6.894757
 

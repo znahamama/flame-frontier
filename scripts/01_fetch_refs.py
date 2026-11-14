@@ -14,6 +14,10 @@ sources = json.loads((ROOT / "data/manual/sources.json").read_text())
 bad = 0
 for sid, s in sources.items():
     path = ROOT / s["file"]
+    if s["sha256"] is None:
+        state = "present, pin its sha256" if path.exists() else "not saved yet"
+        print(f"PENDING    {s['file']} ({sid}): {state}")
+        continue
     if not path.exists():
         url = s.get("url", "")
         if not url.endswith(".pdf") and "/downloads/" not in url:

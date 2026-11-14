@@ -5,12 +5,11 @@ Split: the user does browser-only work (PSI downloads, DevTools capture); Claude
 
 ## Product
 A dashboard that catalogs, ranks and interprets NASA microgravity combustion investigations (PSI), and shows where the fire-safety evidence ends compared with the air Moon-base and rover crews will breathe.
-**Headline:** hundreds of space fire tests sit at Earth air. Moon-base air has a handful of points, at one flow speed, and none in partial gravity.
+**Headline (exact wording; keep "in our sources", since we do not claim to have seen everything):** "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2 and VI-3), both at one airflow (20 cm/s), none in partial gravity." In the UI this sentence is a template over `external_tests.json` (count, names and airflow come from the data).
 **RETIRED claim (false, never use):** "no solid-material test at Moon-base oxygen". Verified 2026-11-14 against the primary sources; rows live in `data/manual/external_tests.csv` and are checked by `02_clean_external.py`:
 - Saffire (ICES-2024-365, Table 1, p.3; O2 in **mol %**; all at 20 cm/s concurrent flow, Cygnus, microgravity): IV-1 SIBAL 22.0% / 100.0 kPa; V-2 cotton jersey 26.2% / 70.7 kPa; **VI-2 SIBAL 31.0% / 54.1 kPa**; **VI-3 two-sided PMMA 30.3% / 54.6 kPa**; VI-4 one-sided PMMA 28.8% / 55.2 kPa (just outside the zone). The Nomex sample (test 1) did not ignite (p.4).
 - SSCE (NTRS 20050177200 = an abstract from NASA Lewis "Research and Technology 1995"; **no PDF exists on NTRS**): filter paper, flights 1-5, at "50-percent or 35-percent" O2 and "1.0, 1.5, and 2.0 atm"; PMMA, flights 6-8, at "70-percent or 50-percent" and "1.0 and 2.0 atm". Which O2 went with which pressure on which flight is NOT given, and neither is flow or the O2 basis. Plot as range markers, never as per-flight points. Every SSCE condition is at >=1 atm, so outside the Moon-base zone.
-- Inside the Moon-base zone, from these sources: **2 solid-material burns** (Saffire VI-2, VI-3), at one flow speed (20 cm/s), in microgravity.
-- ACME CFI-G gas flames reached 85% O2 (UNVERIFIED: no source in docs/ref yet; not plotted).
+- ACME CFI-G gas flames reached 85% O2. Our only source is the Space Apps challenge page text (`docs/ref/challenge_brief.md`, cite as that). Keep it OFF the charts. Known Limits says: "gas-flame tests reached higher O2; not solid materials". Once the file is saved, pin its sha256 in `data/manual/sources.json` and confirm the 85% wording.
 
 ## Tiers
 - Tier 1 (tonight): Evidence Map panels 1+2, Catalog, Ranking (rule table), real BASS-II Clips, Known Limits. Deployed.
@@ -55,7 +54,7 @@ Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/
 ## Repo layout and commands
 - `make setup` (one-time) | `make dev` (pipeline + http://localhost:5173) | `make build` | `make check` (secret guard status)
 - `scripts/NN_*.py`: idempotent, numbered (01_fetch, 02_clean, 03_extract, 04_build), and run in order by `scripts/run_all.py`. `01_fetch_refs.py` downloads missing reference PDFs and checks the SHA-256 values pinned in `data/manual/sources.json`. `scripts/check_key.py` (not in the pipeline) makes one call to Haiku 5.5 with max_tokens=5 and prints only "key OK" or the error class and status code. They write through `_common.write_json`, which is deterministic and rewrites a file only when its content changes. Run them with `.venv/bin/python`.
-- `data/raw/<PSI-ID>/`: files exactly as received, never edited, gitignored. PSI links are presigned and expire, so always save the files.
+- `data/raw/<PSI-ID>/`: files exactly as received, never edited, gitignored. PSI-25 holds the experimental table CSV, the test matrix and fan calibration xlsx, the FAQ and procedure docx, and the metadata folder `PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/`. PSI links are presigned and expire, so always save the files.
 - `data/processed/`: the JSON the frontend reads (committed). Vite serves it at `/data/*` in dev and copies it to `dist/data` on build.
 - `data/llm_cache/`: committed.
 - `data/manual/`: hand-entered rows from outside PSI (`external_tests.csv`), plus `sources.json` (citation, checksum, and what each source gives and does NOT give; the Known Limits tab renders the latter). Every row cites document + table + page + an exact quote, and the pipeline fails if a quote or a Saffire Table 1 value doesn't match the source.
@@ -74,9 +73,19 @@ Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/
   - Max flow is about 55 cm/s with no restrictor and about 35 cm/s with 2 restrictors (p.66). The CSTR N2 dilution reached initial O2 as low as 13.6% (p.67). All tests ran at 1 atm.
   - Panel 1 uses INITIAL O2; Panel 2 uses post-burn O2 for the rod tests. Some final O2 values are sensor errors (0.6, 0.9, 1.6, 39.1, 40.4), so flag them and do not plot them. Values "none", "OR", "over" and "video" occur. The date "6/24/2018" for T9/T18 is likely a typo for 2014: flag it, do not fix it.
   - Rod radii: 0.318 cm (primary), 0.476 and 0.635 cm. Clear and black PMMA showed no flammability difference (p.67).
+- PSI per-investigation metadata = **ISA-Tab** (`i_Investigation.txt` + a placeholder `s_PSI-NN.txt`). It is tab-separated with quoted multi-line cells, so parse it with `csv.reader(delimiter="\t")`, never line by line. Content lives in the STUDY section (the INVESTIGATION section is empty):
+  - Study Identifier/Title/dates; free text in `Comment[Objective]`, `Comment[Approach]`, `Comment[Hypothesis]`, `Comment[Research Impacts]`.
+  - `Comment[Experiment Hardware]` (name + link only); `Comment[Flight Platform]`, `Comment[Managing NASA Center]`, `Comment[DOI]`, `Comment[Research Area]`, `Comment[SubResearch Area]`.
+  - `Study Design Type` keywords; publications as parallel arrays (title/authors/status/DOI/link).
+  - `Study Person *` contacts. Do not surface emails or phones.
+- BASS-II metadata quirks:
+  - Its Approach says airflow "up to 40 cm/s", but the report (p.66) says ~55 cm/s with no restrictor. Cite the report for flow.
+  - Contacts list 5 Co-Is (Ferkul, Fernandez-Pello, Miller, T'ien, "Bhattachjee" [sic]) with no Olson and no PI role. There are 2 affiliations for 5 people, so they can't be paired.
+  - 17 publications, 9 of them with DOIs.
+  - The study file `s_PSI-25.txt` holds only "Do not use this".
 - BASS-II Summary Report: NASA/TM-20210011385, Oct 2021, 144 pp. PDF page = printed page + 8. Sec. 1.6 covers conclusions (fuel-rich flames, global equivalence ratio about 1.3, most tests under 100 W).
 - BASS-II raw data has one MP4 per test (e.g. `PSI-25_Raw Data_BASS_GMT50_SAMPLE_147_TEST_B1.mp4`). The investigation totals 255 GB, so download single clips only.
-- Challenge brief: spacesuit 100% O2 at 4.3 psi; Earth 14.7 psi; Moon base and rovers at 30%+ O2 and <=10.2 psi; no partial-gravity combustion data in PSI (future: LUCI, FM2); ACME E-FIELD mimicked partial gravity with electric fields; micro- and normal-gravity results can bound intermediate gravity.
+- Challenge brief (`docs/ref/challenge_brief.md`, committed; source id `challenge_brief`): spacesuit 100% O2 at 4.3 psi; Earth 14.7 psi; Moon base and rovers at 30%+ O2 and <=10.2 psi; no partial-gravity combustion data in PSI (future: LUCI, FM2); ACME E-FIELD mimicked partial gravity with electric fields; micro- and normal-gravity results can bound intermediate gravity.
 - Microgravity flames look spherical, blue and soot-free, and do not flicker. Earth flames are teardrop-shaped, yellow from soot carried upward, and flicker.
 
 ## Judging (1-5 each)

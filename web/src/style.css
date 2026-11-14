@@ -43,3 +43,4 @@ table { border-collapse: collapse; font-size: 0.85rem; width: 100%; }
 th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
 th { color: var(--text-secondary); font-weight: 600; }
 .limits li { margin-bottom: 4px; }
+.headline { margin: 0 0 4px; font-size: 1.05rem; font-weight: 600; }

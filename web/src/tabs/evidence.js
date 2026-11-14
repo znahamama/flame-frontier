@@ -178,14 +178,24 @@ function panel2(el, ref, c) {
   return chart;
 }
 
+// Headline is a template over the data: count, test names and airflow are never typed by hand.
+function headline(inZone) {
+  const flows = [...new Set(inZone.map((t) => t.flow_cm_s))];
+  const names = inZone.map((t) => `${t.program} ${t.sample}`).join(' and ');
+  const flow = flows.length === 1 ? `one airflow (${flows[0]} cm/s)` : `${flows.length} airflows`;
+  const all = inZone.length === 2 ? 'both' : 'all';
+  return `Of the solid-material space fire tests in our sources, only ${inZone.length} burned in Moon-base air `
+    + `(${esc(names)}), ${all} at ${flow}, none in partial gravity.`;
+}
+
 export async function render(root) {
   const [ref, ext] = await Promise.all([loadJSON('reference.json'), loadJSON('external_tests.json')]);
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
     <section class="card"><h2>Where the tests are</h2>
-      <p class="note">Solid-material burns inside the Moon-base zone so far: <b>${inZone.length}</b>
-      (${inZone.map((t) => `${esc(t.program)} ${esc(t.sample)}`).join(', ')}), all at one flow speed and in microgravity. BASS-II points pending.</p>
+      <p class="headline">${headline(inZone)}</p>
+      <p class="note">BASS-II points pending.</p>
       <div class="chart tall" id="p1"></div>${table1(ref, ext)}</section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">Min. of eq. ${ref.panel2.source.equation_no}: ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s (computed).
