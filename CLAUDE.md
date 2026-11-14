@@ -51,7 +51,7 @@ A dashboard that catalogs, ranks and interprets NASA microgravity combustion inv
 - The key lives only in `.env` (gitignored; `.githooks/pre-commit` blocks env files, `sk-ant-` strings and files over 5 MB) and in Vercel env vars. Never print, log or echo it. To inspect `.env`, show variable names only.
 
 ## Hosting
-Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/ask.py`). The root `requirements.txt` holds the function's runtime deps ONLY. Pipeline deps live in `scripts/requirements.txt`. `vercel.json` excludes web/, docs/, data/raw/ and scripts/ from the function bundle.
+Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/ask.py`). Live: https://flame-frontier.vercel.app (project `flame-frontier`, first deployed 2026-11-14 ~15:40 NST). Deploy with `npx --yes vercel@65.16.0 deploy --prod --yes` from the repo root (CLI upload; not git-connected). The production URL is public; preview URLs sit behind Vercel login. The root `requirements.txt` holds the function's runtime deps ONLY. Pipeline deps live in `scripts/requirements.txt`. `vercel.json` excludes web/, docs/, data/raw/ and scripts/ from the function bundle.
 
 ## Repo layout and commands
 - `make setup` (one-time) | `make dev` (pipeline + http://localhost:5173) | `make build` | `make check` (secret guard status)
