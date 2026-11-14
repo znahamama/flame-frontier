@@ -9,7 +9,7 @@ A dashboard that catalogs, ranks and interprets NASA microgravity combustion inv
 **RETIRED claim (false, never use):** "no solid-material test at Moon-base oxygen". Verified 2026-11-14 against the primary sources; rows live in `data/manual/external_tests.csv` and are checked by `02_clean_external.py`:
 - Saffire (ICES-2024-365, Table 1, p.3; O2 in **mol %**; all at 20 cm/s concurrent flow, Cygnus, microgravity): IV-1 SIBAL 22.0% / 100.0 kPa; V-2 cotton jersey 26.2% / 70.7 kPa; **VI-2 SIBAL 31.0% / 54.1 kPa**; **VI-3 two-sided PMMA 30.3% / 54.6 kPa**; VI-4 one-sided PMMA 28.8% / 55.2 kPa (just outside the zone). The Nomex sample (test 1) did not ignite (p.4).
 - SSCE (NTRS 20050177200 = an abstract from NASA Lewis "Research and Technology 1995"; **no PDF exists on NTRS**): filter paper, flights 1-5, at "50-percent or 35-percent" O2 and "1.0, 1.5, and 2.0 atm"; PMMA, flights 6-8, at "70-percent or 50-percent" and "1.0 and 2.0 atm". Which O2 went with which pressure on which flight is NOT given, and neither is flow or the O2 basis. Plot as range markers, never as per-flight points. Every SSCE condition is at >=1 atm, so outside the Moon-base zone.
-- ACME CFI-G gas flames reached 85% O2. Our only source is the Space Apps challenge page text (`docs/ref/challenge_brief.md`, cite as that). Keep it OFF the charts. Known Limits says: "gas-flame tests reached higher O2; not solid materials". Once the file is saved, pin its sha256 in `data/manual/sources.json` and confirm the 85% wording.
+- ACME CFI-G: "an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame" (challenge page, `docs/ref/challenge_brief.md` sec. 1; sha256 pinned in `sources.json`). 85% is the burner's oxidizer stream, not a chamber atmosphere. Keep it OFF the charts. Known Limits says: "gas-flame tests reached higher O2; not solid materials".
 
 ## Tiers
 - Tier 1 (tonight): Evidence Map panels 1+2, Catalog, Ranking (rule table), real BASS-II Clips, Known Limits. Deployed.
@@ -23,12 +23,14 @@ A dashboard that catalogs, ranks and interprets NASA microgravity combustion inv
 - lines of constant pO2: O2% = 100*pO2/P. 30% at 10.2 psi = 21.1 kPa pO2, about the same as sea-level air (21.2).
 - Saffire VI-2/VI-3 sit at pO2 16.8/16.5 kPa. The x-axis runs to 210 kPa because SSCE reached 2 atm.
 - y-axis: "O2 before ignition (mol % = vol %)" (ideal gas). Conversions are shown in tooltips (1 atm = 101.325 kPa, 1 psi = 6.894757 kPa).
-- BASS-II is a grey placeholder strip at 101.33 kPa labelled "pending data". Its O2 extent is layout only, not data. Replace it with points when the PSI table arrives.
+- BASS-II: all 129 PSI-25 tests at 101.325 kPa (1 atm stated in the report, not logged per test), INITIAL O2.
 - Scatter palette: no more than 3 colored series (dataviz all-pairs rule). Beyond 3, encode the source with marker shape.
 
 **Panel 2:** BASS-II published boundary, report sec. 6.1.4.4, printed p.75, eq. (6.1):
 `X_O2 = 6 exp(-0.5a) + 0.0167a + 13.4`, with `a = (3/2)(U/r)(r/r0)^0.5`, r0 = 0.318 cm, U in cm/s, r in cm, a in 1/s.
-- Plots Olson PMMA rod tests only. The curve is solid over the tested a-range (min/max a of the plotted rod points, set by the cleaning script into `reference.json: panel2.tested_a_range`) and dashed beyond it.
+- Plots Olson PMMA rod tests only. The curve is solid over the tested a-range (min/max a over every Olson flow recorded in cm/s; `02_clean_bass2.py` -> `reference.json: panel2.tested_a_range`, currently 4.75-182.95 1/s) and dashed beyond it.
+- Point kinds: `stable_observed` (flame burning at a recorded Air cm/s; NOT the extinction flow) and `blowoff_upper_bound` (blowoff after a fan step; same-day calibration gives the steady flow for that pot, and the probe needs ~1 min, so the true flow is <= the marker). Extinction flows are recorded only as pots 0.27-0.36, below the lowest calibrated pot (0.5): never extrapolate them.
+- Compared with report Fig. 6.10 (printed p.76, log-x version of Fig. 6.9): our points fall where NASA's ISS stable and blowoff points do.
 - The y-axis is POST-BURN (final) O2, as in report Fig. 6.9 ("Final O2 concentration (XO2)").
 - Verified minimum: analytically a* = -2 ln(0.0167/3) = 10.38 1/s, giving X_O2 = 13.61%. The report text says "a = 8 to 12 s^-1 at approximately 13.5 percent O2". Show the computed 13.61% and quote the report's text separately.
 - Fig. 6.9 also includes drop-tower data. We do not have that data, so say so.
@@ -45,7 +47,7 @@ A dashboard that catalogs, ranks and interprets NASA microgravity combustion inv
 
 ## AI and budget
 - About $5 of Anthropic credit. AI runs at build time only. Every response is cached in `data/llm_cache/` (keyed by input hash) and committed, so the demo works offline.
-- Q&A: low max_tokens, plus an offline mode that serves cached answers. The key expires Nov 21, before judging. The Anthropic API is never called from the browser; only `api/` calls it, server-side.
+- Q&A: low max_tokens, plus an offline mode that serves cached answers. The key expires Nov 21, before judging (nominees Dec 3, finalists Dec 17, winners Jan 26 2027), so the site must work with no live key until at least late Jan 2027. The Anthropic API is never called from the browser; only `api/` calls it, server-side.
 - The key lives only in `.env` (gitignored; `.githooks/pre-commit` blocks env files, `sk-ant-` strings and files over 5 MB) and in Vercel env vars. Never print, log or echo it. To inspect `.env`, show variable names only.
 
 ## Hosting
@@ -65,13 +67,17 @@ Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/
 ## Verified data facts
 - PSI: psi.nasa.gov. Combustion science has 24 investigations, about 12 TB (official challenge video). Pages render with JS, so prefer the JSON endpoints found in DevTools > Network. Keep request volume low.
 - Public S3 `s3://nasa-psi` holds only DSI, OASIS and pk4. It has no combustion data.
-- BASS-II = PSI-25, CC0-1.0, DOI 10.60555/4qc4-de67. 130 ISS runs (2014, one in 2016). PIs: Bhattacharjee, Ferkul, Miller, Olson, Fernandez-Pello, T'ien.
-  - Columns: PI, Test #, Date, GMT, Sample #, Fuel Sample Material, Flow restrictor, Fan display, Air display, Radiometer gain, Total Frames Shot, Calibrated initial/final O2 % by vol, Initial/Final CO2 %, Initial/Final CO (ppm).
-  - **Air display** = airflow in cm/s, +/-0.5 cm/s. It comes from the TSI 8475 air-velocity transducer between the honeycomb and the screen. The display reads whole units only, and the probe responds in about 1 min (report sec. 6.1.3, printed p.66).
-  - **Fan display** = fan voltage / potentiometer setting. It is a control input, not a flow speed. Report p.66: "The voltage to the fan was displayed and could be set." Appendix table footnote: "Potentiometer (pot)" (PDF p.111). The fan is calibrated to flow daily, per restrictor.
+- BASS-II = PSI-25, CC0-1.0, DOI 10.60555/4qc4-de67. The PSI table has **129 rows** (B 22, F 4, M 20, O 27, P 27 [no P7, P11], T 29 [no T8]); the report says "A total of 126 tests were conducted" (printed p.3). 2014, plus Olson's last 3 in 2016. PIs: Bhattacharjee, Ferkul, Miller, Olson, Fernandez-Pello, T'ien.
+  - **`BASS-II data FAQ.docx` is NASA's column definition and outranks everything here.** Date = actual date; the video overlay shows date+1 (leap year not set on board). GMT = day of year. Test # = PI initial + number; a/b = same sample re-run the same day; samples were reused. Flow restrictor 0 = highest flow, 2 = lowest. Radiometer uncalibrated. Total frames = Nikon stills incl. post-burn. O2 calibrated by a constant daily offset from the MCA. CO2 from the CDM, CO from the CSA-CP; "OR" = over range (>1000 ppm).
+  - Geometry by PI (FAQ): Bhattacharjee thin PMMA films; Ferkul Nomex III + 1 candle; Miller thick PMMA slabs, 1- or 2-sided; Olson PMMA rods (1/4, 3/8, 1/2 in), mostly clear, ignited upstream (stagnation/concurrent); Fernandez-Pello the same rods, mostly black, ignited downstream (opposed flow); T'ien SIBAL fabric (75/25 cotton/fiberglass) + one 4 cm PMMA spherical section (2 tests).
+  - CSV (UTF-8 BOM, CRLF) and `BASS-II Test Matrix by PI Final.xlsx` (one tab per PI) hold the same values; only T1/T2/T4/T15/T25/T26 material differs in word order ("2 cm SIBAL" vs "SIBAL 2 cm"). The xlsx keeps commas in multi-value cells, so flow text is parsed from it. Neither has a notes column; the report appendix (PDF p.111-121) does.
+  - **Air display** = flow speed in the duct, cm/s (FAQ), +/-0.5, whole units, ~1 min response (report p.66). Crews also wrote pots and fan voltages into it; such cells go to review, never parsed.
+  - **Fan display** = fan voltage x10 (max 122 = 12.2 V), sometimes the control-box pot setting (max 10) (FAQ). A control input, not a flow.
+  - `Fan calibration data.xlsx`: per-day pot -> fan -> air tables by restrictor count, pots 0.5-10 only; U = 1.0066 x Air (cell A33). Used only for exact-pot blowoffs on the same day/restrictor (upper bounds); otherwise Air display already gives the flow.
   - Both columns hold sequences of crew-noted steps and outcomes ("5 3 2 ext", "no ign at any flow"). Parse them into steps and keep the raw text.
   - Max flow is about 55 cm/s with no restrictor and about 35 cm/s with 2 restrictors (p.66). The CSTR N2 dilution reached initial O2 as low as 13.6% (p.67). All tests ran at 1 atm.
-  - Panel 1 uses INITIAL O2; Panel 2 uses post-burn O2 for the rod tests. Some final O2 values are sensor errors (0.6, 0.9, 1.6, 39.1, 40.4), so flag them and do not plot them. Values "none", "OR", "over" and "video" occur. The date "6/24/2018" for T9/T18 is likely a typo for 2014: flag it, do not fix it.
+  - Panel 1 uses INITIAL O2; Panel 2 uses post-burn O2 for the rod tests. Final O2 sensor errors (B2 1.6, P22a 0.6, P22b 39.1, T28a 0.9, T28b 40.4; rule: final < 10 or > initial + 1) are marked, kept, never plotted. Values "none", "OR", "over", ">500" and "video" occur. T9/T18 "6/24/2018" (GMT 175 = 2014-06-24) and O10 7/22/2014 vs GMT 213 are flagged, not fixed.
+  - Pipeline: `scripts/02_clean_bass2.py` -> `data/processed/bass2_tests.json` + `data/review/bass2_review.csv` (needs_decision / fyi). Accept a flagged row via `data/manual/bass2_review_decisions.csv` (test, issue, decision=accept, value, note).
   - Rod radii: 0.318 cm (primary), 0.476 and 0.635 cm. Clear and black PMMA showed no flammability difference (p.67).
 - PSI per-investigation metadata = **ISA-Tab** (`i_Investigation.txt` + a placeholder `s_PSI-NN.txt`). It is tab-separated with quoted multi-line cells, so parse it with `csv.reader(delimiter="\t")`, never line by line. Content lives in the STUDY section (the INVESTIGATION section is empty):
   - Study Identifier/Title/dates; free text in `Comment[Objective]`, `Comment[Approach]`, `Comment[Hypothesis]`, `Comment[Research Impacts]`.

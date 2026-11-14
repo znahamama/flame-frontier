@@ -39,6 +39,23 @@ function saffireItem(t) {
   };
 }
 
+const OUTCOME = { extinguished: 'extinguished', blowoff: 'blowoff', no_ignition: 'no ignition', not_sustained: 'would not stay lit', unclear: 'unclear (flagged for review)', not_stated: 'not stated in the table' };
+const bassSrc = (t) => `${t.source.file}, line ${t.source.line}`
+  + (t.source_xlsx ? `; ${t.source_xlsx.file}, tab "${t.source_xlsx.tab}", row ${t.source_xlsx.row}` : '');
+
+function bass2Item(t) {
+  const fin = t.o2_final_pct == null ? 'none' : `${t.o2_final_pct}%${t.o2_final_flag ? ` (${t.o2_final_flag.replace(/_/g, ' ')})` : ''}`;
+  return {
+    value: [t.pressure_kpa, t.o2_initial_pct],
+    tip: `BASS-II ${esc(t.id)} (${esc(t.pi)}), ${esc(t.date_actual)}<br>${esc(t.geometry.label)}<br>`
+      + `Initial O2 ${t.o2_initial_pct}% by vol; final ${esc(fin)}<br>`
+      + `Pressure 1 atm = 101.325 kPa (stated in the report, not measured per test)<br>`
+      + `Outcome: ${OUTCOME[t.outcome.value]}${t.outcome.evidence.length ? ` ("${esc(t.outcome.evidence[0].quote)}")` : ''}<br>`
+      + `Air display: "${esc(t.air_display.raw)}"`,
+    src: bassSrc(t),
+  };
+}
+
 // SSCE gives O2 and pressure SETS per fuel, not per-flight pairs: one range bar per stated O2 level,
 // spanning the stated pressures. Fuels sharing an O2 level share one bar (no fake offsets).
 function ssceBars(tests) {
@@ -60,10 +77,9 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, c) {
+function panel1(el, ref, ext, bass2, c) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
-  const b2 = p.bass2_placeholder;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
   const ssce = ext.tests.filter((t) => t.program === 'SSCE');
   const bars = ssceBars(ssce);
@@ -102,8 +118,16 @@ function panel1(el, ref, ext, c) {
     }),
   });
 
+  // BASS-II: every PSI-25 test at the report's stated 1 atm. Same x for all (pressure was not measured
+  // per test), so markers are small and translucent rather than jittered to a false pressure.
   series.push({
-    name: 'Spacesuit', type: 'scatter', symbol: 'diamond', symbolSize: 13, z: 5, itemStyle: { color: c.s3 },
+    name: `BASS-II (${bass2.count} tests, PSI-25)`, type: 'scatter', z: 4, symbol: 'circle', symbolSize: 8,
+    itemStyle: { color: c.s3, opacity: 0.55, borderColor: c.surface, borderWidth: 1 },
+    data: bass2.tests.filter((t) => t.o2_initial_pct != null).map(bass2Item),
+  });
+
+  series.push({
+    name: 'Spacesuit', type: 'scatter', symbol: 'diamond', symbolSize: 13, z: 5, itemStyle: { color: c.text2 },
     data: [{ value: [p.spacesuit.p_kpa, p.spacesuit.o2_pct], tip: esc(p.spacesuit.label), src: cite(p.spacesuit.source) }],
     // Reference areas hang off this series.
     markArea: {
@@ -113,15 +137,9 @@ function panel1(el, ref, ext, c) {
            itemStyle: { color: c.zone, borderColor: c.text, borderWidth: 1.5 },
            label: { show: true, position: 'insideTopRight', color: c.text2, formatter: el.clientWidth < 600 ? 'Moon-base air' : 'Moon-base air\n≥30% O2, ≤10.2 psi (70.33 kPa)' } },
          { xAxis: zone.p_max_kpa, yAxis: 100 }],
-        [{ name: b2.label, xAxis: b2.x0, yAxis: b2.y0,
-           itemStyle: { color: c.pending, borderColor: c.text2, borderWidth: 1, borderType: 'dashed' },
-           label: { show: true, position: 'bottom', color: c.text2, formatter: 'BASS-II\npending data' } },
-         { xAxis: b2.x1, yAxis: b2.y1 }],
       ],
       tooltip: {
-        formatter: (q) => (q.name === b2.label
-          ? `<b>${esc(b2.label)}</b><br>${esc(b2.tip)}<br><small>Source: ${esc(cite(b2.source))}</small>`
-          : `<b>Moon-base zone</b><br>${esc(zone.label)}<br><small>Source: ${esc(cite(zone.source))}</small>`),
+        formatter: () => `<b>Moon-base zone</b><br>${esc(zone.label)}<br><small>Source: ${esc(cite(zone.source))}</small>`,
       },
     },
   });
@@ -130,7 +148,7 @@ function panel1(el, ref, ext, c) {
   chart.setOption({
     grid: { left: 56, right: 96, top: 48, bottom: 52 },
     tooltip: tip(c, seriesTips),
-    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', 'Spacesuit'] },
+    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, 'Spacesuit'] },
     xAxis: axis(c, p.x_axis, { min: 0, max: p.x_max, axisLabel: { color: c.text2, showMaxLabel: false } }),
     yAxis: axis(c, p.y_axis, { min: 0, max: 100, nameGap: 36 }),
     series,
@@ -155,26 +173,52 @@ function table1(ref, ext) {
     <th>Pressure (as stated → kPa)</th><th>Flow cm/s</th><th>In Moon zone</th><th>Source</th></tr></thead><tbody>${rows}</tbody></table></div></details>`;
 }
 
-function panel2(el, ref, c) {
+function panel2(el, ref, bass2, c) {
   const p = ref.panel2;
   const [lo, hi] = p.tested_a_range ?? [Infinity, -Infinity];
-  const tested = p.curve.filter(([a]) => a >= lo && a <= hi);
   const src = cite(p.source);
   const mk = (pts) => pts.map(([a, x]) => ({ value: [a, x], tip: `a = ${a} 1/s, X_O2 = ${x}%<br>${p.equation}`, src }));
+  // Split into three runs so the solid part spans exactly the tested range (endpoints shared, no gaps).
+  const at = (a) => [Math.round(a * 1000) / 1000, Math.round((6 * Math.exp(-0.5 * a) + 0.0167 * a + 13.4) * 1e4) / 1e4];
+  const below = [...p.curve.filter(([a]) => a < lo), at(lo)];
+  const tested = [at(lo), ...p.curve.filter(([a]) => a > lo && a < hi), at(hi)];
+  const above = [at(hi), ...p.curve.filter(([a]) => a > hi)];
+  const pts = (kind) => bass2.panel2_points.filter((q) => q.kind === kind).map((q) => {
+    const t = bass2.tests.find((x) => x.id === q.test);
+    return {
+      value: [q.a_per_s, q.o2_final_pct],
+      tip: `${esc(q.test)}: ${t.geometry.rod_diameter_in}" ${esc(t.geometry.color ?? '')} PMMA rod (r = ${q.r_cm} cm)<br>`
+        + `${q.kind === 'blowoff_upper_bound' ? 'Blowoff; flow at most' : 'Stable flame at'} Air ${q.air_cm_s} cm/s → U = 1.0066 × Air = ${q.u_cm_s} cm/s<br>`
+        + `a ${q.kind === 'blowoff_upper_bound' ? '≤' : '='} (3/2)(U/r)(r/0.318)^0.5 = ${q.a_per_s} 1/s<br>Post-burn O2 ${q.o2_final_pct}% by vol (initial ${t.o2_initial_pct}%)<br>`
+        + `<i>${esc(q.method)}</i>`,
+      src: bassSrc(q) + (q.source_calibration ? `; ${q.source_calibration.file} (${q.source_calibration.date}, restrictor ${q.source_calibration.restrictor})` : ''),
+    };
+  });
+  const dashed = { width: 2, type: 'dashed', color: c.s1 };
   const chart = echarts.init(el);
   chart.setOption({
-    grid: { left: 56, right: 24, top: 40, bottom: 52 },
+    grid: { left: 56, right: 24, top: 48, bottom: 52 },
     tooltip: tip(c),
-    legend: { top: 0, textStyle: { color: c.text2 } },
+    legend: { top: 0, textStyle: { color: c.text2 },
+      data: ['NASA boundary, eq. 6.1 (tested range)', 'NASA boundary (beyond recorded flows)', 'Stable flame observed (Olson rod)', 'Blowoff, flow ≤ marker (Olson rod)'] },
     xAxis: axis(c, p.x_axis, { type: 'log', min: 0.25, max: 200 }),
     yAxis: axis(c, p.y_axis, { min: 12, max: 22 }),
     series: [
-      { name: 'Published boundary (beyond tested range)', type: 'line', showSymbol: false, symbolSize: 10,
-        lineStyle: { width: 2, type: 'dashed', color: c.s1 }, itemStyle: { color: c.s1 }, data: mk(p.curve) },
-      { name: 'Published boundary (tested range)', type: 'line', showSymbol: false, symbolSize: 10,
-        lineStyle: { width: 2, color: c.s1 }, itemStyle: { color: c.s1 }, data: mk(tested) },
+      { name: 'NASA boundary (beyond recorded flows)', type: 'line', showSymbol: false, symbolSize: 10, lineStyle: dashed, itemStyle: { color: c.s1 }, data: mk(below) },
+      { name: 'NASA boundary (beyond recorded flows)', type: 'line', showSymbol: false, symbolSize: 10, lineStyle: dashed, itemStyle: { color: c.s1 }, data: mk(above) },
+      { name: 'NASA boundary, eq. 6.1 (tested range)', type: 'line', showSymbol: false, symbolSize: 10, lineStyle: { width: 2.5, color: c.s1 }, itemStyle: { color: c.s1 }, data: mk(tested) },
+      { name: 'Stable flame observed (Olson rod)', type: 'scatter', symbol: 'circle', symbolSize: 11, z: 5,
+        itemStyle: { color: c.s3, borderColor: c.surface, borderWidth: 2 }, data: pts('stable_observed') },
+      // Left-pointing: the true blowoff stretch rate lies at or left of the marker.
+      { name: 'Blowoff, flow ≤ marker (Olson rod)', type: 'scatter', symbol: 'triangle', symbolRotate: 90, symbolSize: 14, z: 5,
+        itemStyle: { color: c.s2, borderColor: c.surface, borderWidth: 2 }, data: pts('blowoff_upper_bound') },
     ],
   });
+  const q = new URLSearchParams(location.search).get('tip2');   // QA hook, same as ?tip= on Panel 1
+  if (q) {
+    const [si, di] = q.split(',').map(Number);
+    setTimeout(() => chart.dispatchAction({ type: 'showTip', seriesIndex: si, dataIndex: di }), 300);
+  }
   return chart;
 }
 
@@ -190,19 +234,20 @@ function headline(inZone) {
 }
 
 export async function render(root) {
-  const [ref, ext] = await Promise.all([loadJSON('reference.json'), loadJSON('external_tests.json')]);
+  const [ref, ext, bass2] = await Promise.all([loadJSON('reference.json'), loadJSON('external_tests.json'), loadJSON('bass2_tests.json')]);
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
     <section class="card"><h2>Where the tests are</h2>
       <p class="headline">${headline(inZone)}</p>
-      <p class="note">BASS-II points pending.</p>
+      <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
       <div class="chart tall" id="p1"></div>${table1(ref, ext)}</section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
-      <p class="note">Min. of eq. ${ref.panel2.source.equation_no}: ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s (computed).
-      ${ref.panel2.tested_a_range ? '' : 'Tested range not loaded yet, so the whole curve is dashed.'}</p>
+      <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
+      Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s. Points: ${bass2.panel2_points.length} Olson tests whose flow can be read from PSI files without extrapolation: stable flames at a recorded cm/s, and blowoffs whose flow is only bounded from above by the same-day fan calibration.
+      Quenching-branch flows (pot settings below the fan calibration) and NASA's drop-tower data are not reproducible here.</p>
       <div class="chart" id="p2"></div></section>`;
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, c), panel2(root.querySelector('#p2'), ref, c)];
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
   ro.observe(root);
   return () => { ro.disconnect(); charts.forEach((ch) => ch.dispose()); };

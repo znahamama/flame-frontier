@@ -48,10 +48,10 @@
     "citation": "NASA Space Apps Challenge 2026, \"Flame in Freefall\" challenge page (text saved by the team)",
     "short": "Space Apps challenge page",
     "file": "docs/ref/challenge_brief.md",
-    "sha256": null,
+    "sha256": "4e8345c34fd6ebbbee1ef0513151ff16318009f0d8955fb84acc4e2d38f39d08",
     "gives": "Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI.",
     "does_not_give": [
-      "ACME CFI-G: gas-flame tests reached higher O2 (85%); not solid materials. Kept off the charts: this page is our only source and gives no per-test pressure or conditions.",
+      "ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts.",
       "No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
     ]
   }

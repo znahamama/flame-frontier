@@ -7,7 +7,9 @@ from __future__ import annotations
 
 import math
 
-from _common import BASS2_REPORT, CHALLENGE_BRIEF, PSI_TO_KPA, write_json
+import json
+
+from _common import BASS2_REPORT, CHALLENGE_BRIEF, PROCESSED, PSI_TO_KPA, write_json
 
 R0_CM = 0.318  # base rod radius, report sec 6.1.4.4 p.75
 
@@ -48,29 +50,23 @@ def panel1() -> dict:
             "label": f"Moon base / pressurized rover: O2 >= 30% and P <= 10.2 psi (10.2 x 6.894757 = {p_max} kPa). "
                      "Boundaries inclusive. The brief gives no lower pressure bound, so the zone is drawn down to 0 kPa.",
             "source": brief},
-        "bass2_placeholder": {
-            "p_kpa": 101.33, "x0": 100.7, "x1": 102.0, "y0": 13, "y1": 23,
-            "label": "BASS-II (PSI-25): pending data",
-            "tip": "130 ISS runs at 1 atm (101.33 kPa). Points pending the PSI table download. "
-                   "This strip only reserves layout; its O2 extent is NOT data.",
-            "source": {**BASS2_REPORT, "section": "pressure stated on printed p.11 and p.94", "printed_page": 11}},
         "pp_o2_lines": pp_lines,
     }
 
 
-def panel2() -> dict:
+def panel2(bass2: dict) -> dict:
     a_star, x_min = boundary_min()
     curve = [[r(a, 3), r(boundary_xo2(a))] for a in [0.25 * i for i in range(1, 9)] + list(range(3, 201))]
     page = 75
     return {
         "x_axis": "Stretch rate a (1/s), a = (3/2)(U/r)(r/r0)^0.5, r0 = 0.318 cm",
-        "y_axis": "Post-burn (final) O2 (% by volume)",
+        "y_axis": "Post-burn (final) O2, % by vol",
         "equation": "X_O2 = 6 exp(-0.5 a) + 0.0167 a + 13.4",
         "r0_cm": R0_CM,
         "curve": curve,
-        # Filled by the BASS-II cleaning step from the min/max a of Olson PMMA rod points.
-        # Until then the frontend draws the whole curve dashed (untested).
-        "tested_a_range": None,
+        # From 02_clean_bass2.py: min/max stretch over every Olson flow recorded in cm/s.
+        "tested_a_range": bass2.get("panel2_tested_a_range"),
+        "tested_a_note": bass2.get("panel2_tested_a_note"),
         "minimum": {"a": r(a_star, 2), "x_o2": r(x_min, 2),
                     "note": "Computed from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2'"},
         "source": {**BASS2_REPORT, "section": "6.1.4.4", "printed_page": page,
@@ -79,4 +75,6 @@ def panel2() -> dict:
 
 
 if __name__ == "__main__":
-    write_json("reference.json", {"schema": 1, "panel1": panel1(), "panel2": panel2()})
+    bass2_path = PROCESSED / "bass2_tests.json"
+    bass2 = json.loads(bass2_path.read_text()) if bass2_path.exists() else {}
+    write_json("reference.json", {"schema": 1, "panel1": panel1(), "panel2": panel2(bass2)})

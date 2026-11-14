@@ -1,21 +1,5 @@
 {
   "panel1": {
-    "bass2_placeholder": {
-      "label": "BASS-II (PSI-25): pending data",
-      "p_kpa": 101.33,
-      "source": {
-        "doc": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021)",
-        "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
-        "pdf_page_offset": 8,
-        "printed_page": 11,
-        "section": "pressure stated on printed p.11 and p.94"
-      },
-      "tip": "130 ISS runs at 1 atm (101.33 kPa). Points pending the PSI table download. This strip only reserves layout; its O2 extent is NOT data.",
-      "x0": 100.7,
-      "x1": 102.0,
-      "y0": 13,
-      "y1": 23
-    },
     "earth_sea_level": {
       "label": "Earth sea level, 14.7 psi",
       "p_kpa": 101.35,
@@ -1640,9 +1624,13 @@
       "printed_page": 75,
       "section": "6.1.4.4"
     },
-    "tested_a_range": null,
+    "tested_a_note": "Min/max stretch rate over every Olson flow recorded in cm/s (Air display steps > 0 in cleanly parsed rows). Calibrated blowoff flows are upper bounds and excluded.",
+    "tested_a_range": [
+      4.75,
+      182.95
+    ],
     "x_axis": "Stretch rate a (1/s), a = (3/2)(U/r)(r/r0)^0.5, r0 = 0.318 cm",
-    "y_axis": "Post-burn (final) O2 (% by volume)"
+    "y_axis": "Post-burn (final) O2, % by vol"
   },
   "schema": 1
 }

@@ -3,3 +3,4 @@ anthropic==2.8.0
 pydantic==2.14.3
 pypdf==7.1.0
 python-dotenv==1.2.4
+openpyxl==3.1.5
