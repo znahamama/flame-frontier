@@ -67,6 +67,17 @@ def panel2(bass2: dict) -> dict:
         # From 02_clean_bass2.py: min/max stretch over every Olson flow recorded in cm/s.
         "tested_a_range": bass2.get("panel2_tested_a_range"),
         "tested_a_note": bass2.get("panel2_tested_a_note"),
+        # NASA's own plot of the boundary data, shown as an image only (never digitized).
+        "nasa_figure": {
+            "image": "img/bass2_fig6_10.png",
+            "iss_points_approx": 50,
+            "iss_points_note": "Our count of plotted ISS symbols (about 27 stable, 16 blowoff, 8 quench); the report states no total.",
+            "why_not_reproducible": [
+                "Most extinction (quenching-branch) flows are recorded only as fan pot settings (0.27-0.36) below the lowest calibrated pot (0.5).",
+                "Drop-tower data are not in PSI.",
+            ],
+            "source": {**BASS2_REPORT, "locator": "Figure 6.10", "printed_page": 76, "pdf_page": 84},
+        },
         "minimum": {"a": r(a_star, 2), "x_o2": r(x_min, 2),
                     "note": "Computed from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2'"},
         "source": {**BASS2_REPORT, "section": "6.1.4.4", "printed_page": page,

@@ -146,7 +146,7 @@ function panel1(el, ref, ext, bass2, c) {
 
   const chart = echarts.init(el);
   chart.setOption({
-    grid: { left: 56, right: 96, top: 48, bottom: 52 },
+    grid: { left: 56, right: 96, top: el.clientWidth < 600 ? 104 : 48, bottom: 52 },   // legend wraps to 3-4 lines on phones
     tooltip: tip(c, seriesTips),
     legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, 'Spacesuit'] },
     xAxis: axis(c, p.x_axis, { min: 0, max: p.x_max, axisLabel: { color: c.text2, showMaxLabel: false } }),
@@ -197,7 +197,7 @@ function panel2(el, ref, bass2, c) {
   const dashed = { width: 2, type: 'dashed', color: c.s1 };
   const chart = echarts.init(el);
   chart.setOption({
-    grid: { left: 56, right: 24, top: 48, bottom: 52 },
+    grid: { left: 56, right: 24, top: el.clientWidth < 600 ? 112 : 48, bottom: 52 },
     tooltip: tip(c),
     legend: { top: 0, textStyle: { color: c.text2 },
       data: ['NASA boundary, eq. 6.1 (tested range)', 'NASA boundary (beyond recorded flows)', 'Stable flame observed (Olson rod)', 'Blowoff, flow ≤ marker (Olson rod)'] },
@@ -245,7 +245,14 @@ export async function render(root) {
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
       Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s. Points: ${bass2.panel2_points.length} Olson tests whose flow can be read from PSI files without extrapolation: stable flames at a recorded cm/s, and blowoffs whose flow is only bounded from above by the same-day fan calibration.
-      Quenching-branch flows (pot settings below the fan calibration) and NASA's drop-tower data are not reproducible here.</p>
+</p>
+      <div class="p2-honest">
+        <div><p class="callout">Only ${bass2.panel2_points.length} of NASA's ~${ref.panel2.nasa_figure.iss_points_approx} ISS boundary points can be reconstructed from the public PSI files.</p>
+          <ul class="note">${ref.panel2.nasa_figure.why_not_reproducible.map((w) => `<li>${esc(w)}</li>`).join('')}
+            <li>${esc(ref.panel2.nasa_figure.iss_points_note)}</li></ul></div>
+        <figure><a href="${ref.panel2.nasa_figure.image}" target="_blank" rel="noopener"><img src="${ref.panel2.nasa_figure.image}" alt="NASA Figure 6.10: BASS-II flammability boundary with ISS and drop-tower points, log stretch-rate axis" loading="lazy" width="900" height="834"></a>
+          <figcaption>NASA's own plot, for comparison (image only; points not digitized). ${esc(cite(ref.panel2.nasa_figure.source))}</figcaption></figure>
+      </div>
       <div class="chart" id="p2"></div></section>`;
   const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
