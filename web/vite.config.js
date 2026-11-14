@@ -1,0 +1,32 @@
+import { defineConfig } from 'vite';
+import { cpSync, existsSync, createReadStream, statSync } from 'node:fs';
+import { resolve, dirname, normalize, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const PROCESSED = resolve(here, '../data/processed');
+
+// Serves data/processed/* at /data/* in dev and copies it into dist/data on build,
+// so pipeline output stays in data/processed (single location) and the site stays static.
+function processedData() {
+  return {
+    name: 'processed-data',
+    configureServer(server) {
+      server.middlewares.use('/data', (req, res, next) => {
+        const file = normalize(resolve(PROCESSED, '.' + decodeURIComponent(req.url.split('?')[0])));
+        if (!file.startsWith(PROCESSED + sep) || !existsSync(file) || !statSync(file).isFile()) return next();
+        res.setHeader('Content-Type', file.endsWith('.json') ? 'application/json' : 'text/plain');
+        createReadStream(file).pipe(res);
+      });
+    },
+    closeBundle() {
+      cpSync(PROCESSED, resolve(here, 'dist/data'), { recursive: true });
+    },
+  };
+}
+
+export default defineConfig({
+  root: here,
+  plugins: [processedData()],
+  build: { outDir: 'dist', emptyOutDir: true, chunkSizeWarningLimit: 700 }, // echarts ~180 kB gzip
+});

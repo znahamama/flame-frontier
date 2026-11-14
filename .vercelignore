@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+data/raw/
+docs/ref/*.pdf
+.venv/
+node_modules/
+*.mp4

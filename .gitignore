@@ -1,0 +1,32 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Large media / raw downloads: never in git ---
+data/raw/
+media/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.tar
+*.tar.gz
+*.h5
+*.hdf5
+
+# Reference PDFs live in docs/ref/ locally; fetched by script, not committed
+docs/ref/*.pdf
+
+# --- Tooling ---
+node_modules/
+web/dist/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.vercel
+.claude/settings.local.json

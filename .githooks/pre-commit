@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Blocks commits that stage a .env file or anything that looks like an Anthropic key.
+# Never prints the matched value: only file names.
+set -euo pipefail
+
+fail=0
+
+# 1) No env files except .env.example
+while IFS= read -r -d '' f; do
+  base="$(basename "$f")"
+  if [[ "$base" == .env || ( "$base" == .env.* && "$base" != .env.example ) ]]; then
+    echo "pre-commit: refusing to commit env file: $f" >&2
+    fail=1
+  fi
+done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+
+# 2) No Anthropic key strings in staged content (searches the index, not the working tree)
+files=()
+while IFS= read -r -d '' f; do files+=("$f"); done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+if ((${#files[@]})); then
+  hits="$(git grep --cached -l -I -E 'sk-ant-[A-Za-z0-9_-]{20,}' -- "${files[@]}" || true)"
+  if [[ -n "$hits" ]]; then
+    echo "pre-commit: Anthropic key pattern found in staged file(s) (value not shown):" >&2
+    printf '  %s\n' $hits >&2
+    fail=1
+  fi
+fi
+
+# 3) No large files (media belongs in data/raw or external hosting, never git)
+MAX_BYTES=$((5 * 1024 * 1024))
+for f in "${files[@]}"; do
+  size=$(git cat-file -s ":$f" 2>/dev/null || echo 0)
+  if (( size > MAX_BYTES )); then
+    echo "pre-commit: $f is $((size / 1024 / 1024)) MB (limit 5 MB). Large media never goes in git." >&2
+    fail=1
+  fi
+done
+
+if ((fail)); then
+  echo "pre-commit: commit blocked. Unstage with: git restore --staged <file>" >&2
+  exit 1
+fi

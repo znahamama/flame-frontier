@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "web/dist",
+  "functions": {
+    "api/**": {
+      "excludeFiles": "{web/**,node_modules/**,docs/**,data/raw/**,scripts/**,.venv/**}"
+    }
+  }
+}

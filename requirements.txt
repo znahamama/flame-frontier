@@ -1,0 +1,3 @@
+# Runtime deps for the Vercel Python function in api/ ONLY (Vercel installs this file).
+# Build-time pipeline deps live in scripts/requirements.txt.
+anthropic==2.8.0
