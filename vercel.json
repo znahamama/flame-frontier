@@ -3,7 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "web/dist",
   "functions": {
-    "api/**": {
+    "api/*.py": {
       "excludeFiles": "{web/**,node_modules/**,docs/**,data/raw/**,scripts/**,.venv/**}"
     }
   }
