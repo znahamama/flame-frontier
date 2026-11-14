@@ -123,6 +123,14 @@ def read_calibration():
                 table[key] = None
             elif pts:
                 table[key] = pts
+    # A section copied cell-for-cell into another restrictor band on the same day (2014-07-29: "no restrictor"
+    # equals "2 restrictors", max 20 cm/s vs ~55 in the report p.66) cannot be both. Trust neither.
+    for d in {k[0] for k in table}:
+        secs = [(k, v) for k, v in table.items() if k[0] == d and v and len(v) >= 3]
+        for i, (k1, v1) in enumerate(secs):
+            for k2, v2 in secs[i + 1:]:
+                if v1 == v2:
+                    table[k1] = table[k2] = None
     return table
 
 
@@ -206,6 +214,13 @@ def parse_air(test, text):
     if not raw.strip():
         out["status"] = "empty"
         return out
+    dec = accepted(test, "air_ambiguous")
+    if dec and dec.get("value", "").strip():
+        out = parse_air(test + "#reviewed", dec["value"])
+        out.update(raw=raw, reviewed_as=dec["value"], review_note=dec.get("note", ""))
+        if out["status"] == "clean":
+            out["status"] = "clean_after_review"
+        return out
     if RED_FLAGS.search(raw.lower()):
         out["status"] = "flagged"
         flag(test, "Air display", raw, "air_ambiguous", "needs_decision",
@@ -267,6 +282,9 @@ def outcome(test, fan, air):
         for name, pat in OUTCOME_WORDS:
             if (m := re.search(pat, t, re.I)):
                 found.setdefault(name, {"field": field, "quote": m.group(0)})
+    dec = accepted(test, "outcome_conflict")
+    if dec and dec.get("value", "").strip():
+        return {"value": dec["value"].strip(), "evidence": list(found.values()), "reviewed": dec.get("note", "")}
     if "blowoff" in found and "extinguished" in found:
         flag(test, "Fan/Air display", f"{fan} | {air}", "outcome_conflict", "needs_decision",
              "Text mentions both blowoff and extinction.")
@@ -368,7 +386,7 @@ def main():
         if geo.get("cls") != "rod_stagnation_upstream_ign" or not r or o2f_flag:
             continue
         rec["panel2"] = None
-        if out["value"] == "extinguished" and air["status"] == "clean":
+        if out["value"] == "extinguished" and air["status"] in ("clean", "clean_after_review"):
             nums = [s["cm_s"] for s in air["steps"] if s["cm_s"] not in (None, 0.0)]
             if nums:
                 u = U_PER_AIR * nums[-1]
@@ -413,7 +431,7 @@ def main():
     # plus calibrated blowoff flows), whatever the outcome. Readings of 0 are below the sensor's resolution.
     a_vals = [p["a_per_s"] for p in panel2 if p["kind"] != "blowoff_upper_bound"]   # bounds don't define the tested range
     for t in tests:
-        if t["geometry"].get("cls") == "rod_stagnation_upstream_ign" and t["air_display"]["status"] == "clean" and t["geometry"].get("rod_radius_cm"):
+        if t["geometry"].get("cls") == "rod_stagnation_upstream_ign" and t["air_display"]["status"] in ("clean", "clean_after_review") and t["geometry"].get("rod_radius_cm"):
             a_vals += [stretch(U_PER_AIR * s["cm_s"], t["geometry"]["rod_radius_cm"]) for s in t["air_display"]["steps"] if s["cm_s"]]
     tested = [round(min(a_vals), 2), round(max(a_vals), 2)] if a_vals else None
 
