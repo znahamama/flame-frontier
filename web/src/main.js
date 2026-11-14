@@ -1,12 +1,13 @@
 import { render as evidence } from './tabs/evidence.js';
 import { placeholder } from './tabs/placeholder.js';
+import { render as limits } from './tabs/limits.js';
 
 const TABS = [
   ['evidence', 'Evidence Map', { render: evidence }],
   ['catalog', 'Catalog', placeholder('Catalog', 'PSI combustion investigations. Coming next.')],
   ['ranking', 'Ranking', placeholder('Ranking', 'Visible rule table with per-component contributions. Coming next.')],
   ['clips', 'Clips', placeholder('Clips', 'Real BASS-II flame clips. Coming next.')],
-  ['limits', 'Known Limits', placeholder('Known Limits', 'What this data cannot tell you. Coming next.')],
+  ['limits', 'Known Limits', { render: limits }],
 ];
 
 const nav = document.querySelector('.tabs');

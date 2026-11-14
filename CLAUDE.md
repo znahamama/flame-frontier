@@ -6,10 +6,11 @@ Split: the user does browser-only work (PSI downloads, DevTools capture); Claude
 ## Product
 A dashboard that catalogs, ranks and interprets NASA microgravity combustion investigations (PSI), and shows where the fire-safety evidence ends compared with the air Moon-base and rover crews will breathe.
 **Headline:** hundreds of space fire tests sit at Earth air. Moon-base air has a handful of points, at one flow speed, and none in partial gravity.
-**RETIRED claim (false, never use):** "no solid-material test at Moon-base oxygen". Counter-evidence (user-supplied, confirm page/table against the PDFs when they arrive in docs/ref/):
-- Saffire-VI: SIBAL cloth at 31.0% O2 / 54.1 kPa; two-sided PMMA at 30.3% / 54.6 kPa (ICES-2024-365, Table 1, p.3).
-- SSCE: filter paper at 35% and 50% O2; PMMA at 50% and 70% O2; 1-2 atm (NTRS 20050177200).
-- ACME CFI-G gas flames reached 85% O2.
+**RETIRED claim (false, never use):** "no solid-material test at Moon-base oxygen". Verified 2026-11-14 against the primary sources; rows live in `data/manual/external_tests.csv` and are checked by `02_clean_external.py`:
+- Saffire (ICES-2024-365, Table 1, p.3; O2 in **mol %**; all at 20 cm/s concurrent flow, Cygnus, microgravity): IV-1 SIBAL 22.0% / 100.0 kPa; V-2 cotton jersey 26.2% / 70.7 kPa; **VI-2 SIBAL 31.0% / 54.1 kPa**; **VI-3 two-sided PMMA 30.3% / 54.6 kPa**; VI-4 one-sided PMMA 28.8% / 55.2 kPa (just outside the zone). The Nomex sample (test 1) did not ignite (p.4).
+- SSCE (NTRS 20050177200 = an abstract from NASA Lewis "Research and Technology 1995"; **no PDF exists on NTRS**): filter paper, flights 1-5, at "50-percent or 35-percent" O2 and "1.0, 1.5, and 2.0 atm"; PMMA, flights 6-8, at "70-percent or 50-percent" and "1.0 and 2.0 atm". Which O2 went with which pressure on which flight is NOT given, and neither is flow or the O2 basis. Plot as range markers, never as per-flight points. Every SSCE condition is at >=1 atm, so outside the Moon-base zone.
+- Inside the Moon-base zone, from these sources: **2 solid-material burns** (Saffire VI-2, VI-3), at one flow speed (20 cm/s), in microgravity.
+- ACME CFI-G gas flames reached 85% O2 (UNVERIFIED: no source in docs/ref yet; not plotted).
 
 ## Tiers
 - Tier 1 (tonight): Evidence Map panels 1+2, Catalog, Ranking (rule table), real BASS-II Clips, Known Limits. Deployed.
@@ -21,7 +22,9 @@ A dashboard that catalogs, ranks and interprets NASA microgravity combustion inv
 - spacesuit 100% O2 at 4.3 psi (29.6 kPa); Earth sea level 14.7 psi (101.3 kPa)
 - Moon-base zone: >=30% O2 and <=10.2 psi (70.3 kPa), from the challenge brief
 - lines of constant pO2: O2% = 100*pO2/P. 30% at 10.2 psi = 21.1 kPa pO2, about the same as sea-level air (21.2).
-- Saffire-VI points sit at pO2 of about 16.5-16.8 kPa.
+- Saffire VI-2/VI-3 sit at pO2 16.8/16.5 kPa. The x-axis runs to 210 kPa because SSCE reached 2 atm.
+- y-axis: "O2 before ignition (mol % = vol %)" (ideal gas). Conversions are shown in tooltips (1 atm = 101.325 kPa, 1 psi = 6.894757 kPa).
+- BASS-II is a grey placeholder strip at 101.33 kPa labelled "pending data". Its O2 extent is layout only, not data. Replace it with points when the PSI table arrives.
 - Scatter palette: no more than 3 colored series (dataviz all-pairs rule). Beyond 3, encode the source with marker shape.
 
 **Panel 2:** BASS-II published boundary, report sec. 6.1.4.4, printed p.75, eq. (6.1):
@@ -51,11 +54,12 @@ Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/
 
 ## Repo layout and commands
 - `make setup` (one-time) | `make dev` (pipeline + http://localhost:5173) | `make build` | `make check` (secret guard status)
-- `scripts/NN_*.py`: idempotent, numbered (01_fetch, 02_clean, 03_extract, 04_build), and run in order by `scripts/run_all.py`. They write through `_common.write_json`, which is deterministic and rewrites a file only when its content changes. Run them with `.venv/bin/python`.
+- `scripts/NN_*.py`: idempotent, numbered (01_fetch, 02_clean, 03_extract, 04_build), and run in order by `scripts/run_all.py`. `01_fetch_refs.py` downloads missing reference PDFs and checks the SHA-256 values pinned in `data/manual/sources.json`. `scripts/check_key.py` (not in the pipeline) makes one call to Haiku 5.5 with max_tokens=5 and prints only "key OK" or the error class and status code. They write through `_common.write_json`, which is deterministic and rewrites a file only when its content changes. Run them with `.venv/bin/python`.
 - `data/raw/<PSI-ID>/`: files exactly as received, never edited, gitignored. PSI links are presigned and expire, so always save the files.
 - `data/processed/`: the JSON the frontend reads (committed). Vite serves it at `/data/*` in dev and copies it to `dist/data` on build.
 - `data/llm_cache/`: committed.
-- `docs/ref/`: reference PDFs, gitignored. The BASS-II report is 49 MB; its SHA-256 is in docs/ref/README.md. Commit derived, page-cited outputs instead.
+- `data/manual/`: hand-entered rows from outside PSI (`external_tests.csv`), plus `sources.json` (citation, checksum, and what each source gives and does NOT give; the Known Limits tab renders the latter). Every row cites document + table + page + an exact quote, and the pipeline fails if a quote or a Saffire Table 1 value doesn't match the source.
+- `docs/ref/`: reference PDFs, gitignored (the SSCE NTRS record JSON is small and committed). The BASS-II report is 49 MB; its SHA-256 is in docs/ref/README.md. Commit derived, page-cited outputs instead.
 - `web/`: Vite + plain JS + Apache ECharts (tree-shaken). Tabs: Evidence Map, Catalog, Ranking, Clips, Known Limits. Colors are CSS tokens in style.css (light and dark).
 - Media: raw MP4s never go in git. Web clips are trimmed and small (<5 MB each, enforced by the hook) and go in `web/public/clips/` via an explicit gitignore exception, added when the clips are made.
 

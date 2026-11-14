@@ -32,18 +32,28 @@ def panel1() -> dict:
     brief = CHALLENGE_BRIEF["doc"]
     pp_lines = []
     for pp, label in [(21.2, "Same pO2 as Earth sea-level air"), (29.6, "Same pO2 as spacesuit")]:
-        pts = [[p, r(100 * pp / p, 2)] for p in range(10, 111, 2) if 100 * pp / p <= 100]
+        pts = [[p, r(100 * pp / p, 2)] for p in range(10, 211, 2) if 100 * pp / p <= 100]
         pp_lines.append({"pp_o2_kpa": pp, "label": f"{label} (pO2 = {pp} kPa)", "points": pts,
                          "source": "Derived: O2% = 100 * pO2 / P_total (Dalton's law)"})
+    p_max = kpa(10.2)
     return {
         "x_axis": "Total pressure (kPa)",
-        "y_axis": "Initial O2 (% by volume)",
-        "spacesuit": {"o2_pct": 100, "p_kpa": kpa(4.3), "label": "Spacesuit: 100% O2 at 4.3 psi",
-                      "source": f"{brief}"},
-        "earth_sea_level": {"p_kpa": kpa(14.7), "label": "Earth sea level, 14.7 psi", "source": f"{brief}"},
-        "moon_base_zone": {"o2_min_pct": 30, "p_max_kpa": kpa(10.2),
-                           "label": "Moon base / pressurized rover: >=30% O2, <=10.2 psi",
-                           "source": f"{brief}"},
+        "y_axis": "O2 before ignition (mol % = vol %)",
+        "x_max": 210,
+        "spacesuit": {"o2_pct": 100, "p_kpa": kpa(4.3), "label": "Spacesuit: 100% O2 at 4.3 psi (4.3 x 6.894757 = 29.65 kPa)",
+                      "source": brief},
+        "earth_sea_level": {"p_kpa": kpa(14.7), "label": "Earth sea level, 14.7 psi", "source": brief},
+        "moon_base_zone": {
+            "o2_min_pct": 30, "p_max_kpa": p_max,
+            "label": f"Moon base / pressurized rover: O2 >= 30% and P <= 10.2 psi (10.2 x 6.894757 = {p_max} kPa). "
+                     "Boundaries inclusive. The brief gives no lower pressure bound, so the zone is drawn down to 0 kPa.",
+            "source": brief},
+        "bass2_placeholder": {
+            "p_kpa": 101.33, "x0": 100.7, "x1": 102.0, "y0": 13, "y1": 23,
+            "label": "BASS-II (PSI-25): pending data",
+            "tip": "130 ISS runs at 1 atm (101.33 kPa). Points pending the PSI table download. "
+                   "This strip only reserves layout; its O2 extent is NOT data.",
+            "source": {**BASS2_REPORT, "section": "pressure stated on printed p.11 and p.94", "printed_page": 11}},
         "pp_o2_lines": pp_lines,
     }
 

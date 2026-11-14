@@ -1,0 +1,298 @@
+{
+  "schema": 1,
+  "sources": {
+    "bass2_report": {
+      "citation": "BASS-II Summary Report, NASA/TM-20210011385, Oct 2021",
+      "does_not_give": [
+        "Pressure is not measured per test. The report states 1 atm (printed p.11: \"pressure P = 1 atm\"; p.94: \"Ambient pressure was 1 atm\")."
+      ],
+      "gives": "Test methods; flammability boundary eq. 6.1 (p.75); flow measurement (p.66).",
+      "short": "BASS-II report NASA/TM-20210011385"
+    },
+    "saffire_ices2024": {
+      "citation": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+      "does_not_give": [
+        "Table 1 lists only the samples 'considered in this paper' (IV-1, V-2, VI-2, VI-3, VI-4). Other Saffire I-V samples are not in it.",
+        "Saffire VI test 1 (Nomex) did not ignite (p.4). Its conditions are not in Table 1, so it is not plotted.",
+        "One flow speed only: 20 cm/s concurrent for every listed test. For the PMMA tests the flow was reduced at 1120 s (p.4); the reduced speed is not in Table 1.",
+        "One O2 value per test (the set condition). No pre/post-burn split.",
+        "Microgravity (orbiting Cygnus) only. No partial gravity.",
+        "No extinction or flammability-limit data: every plotted test ignited and burned."
+      ],
+      "gives": "Per-test ambient pressure (kPa), O2 (mol %), air flow (cm/s), flow direction, material, for the 5 samples in Table 1 (p.3).",
+      "short": "Saffire ICES-2024-365"
+    },
+    "ssce_ntrs1995": {
+      "citation": "\"Solid Surface Combustion Experiment Completes a Series of Eight Successful Flights\", Research and Technology 1995, NASA Lewis Research Center (NTRS 20050177200)",
+      "does_not_give": [
+        "NTRS has the abstract only. There is no PDF: the downloads list is empty and the standard download path returns 404.",
+        "Which O2 % was paired with which pressure on which flight is not stated, so individual flights cannot be placed. They are shown as range markers.",
+        "Flow conditions are not stated.",
+        "The O2 basis (mol, volume or mass %) is not stated: the text says \"percent mixture of oxygen in nitrogen\".",
+        "Flight numbers: only STS-64 and STS-63 (the final two) are named.",
+        "Source is an annual R&T report summary, not a data table."
+      ],
+      "gives": "The sets of O2 % and pressures (atm) used for each fuel, across 8 Space Shuttle flights.",
+      "short": "SSCE, NTRS 20050177200"
+    }
+  },
+  "tests": [
+    {
+      "flow_cm_s": 20.0,
+      "flow_direction": "Concurrent",
+      "id": "saffire-IV-1",
+      "in_moon_zone": false,
+      "kind": "point",
+      "material": "SIBAL Cloth",
+      "mission": "Saffire IV (Cygnus)",
+      "notes": null,
+      "o2_as_stated": [
+        "22.0"
+      ],
+      "o2_basis": "mol %",
+      "o2_pct": [
+        22.0
+      ],
+      "po2_kpa": 22.0,
+      "pressure_conversion": [
+        "100.0 kPa"
+      ],
+      "pressure_kpa": [
+        100.0
+      ],
+      "program": "Saffire",
+      "sample": "IV-1",
+      "source": {
+        "doc": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+        "file": "data/manual/external_tests.csv",
+        "locator": "Table 1",
+        "printed_page": 3,
+        "quote": "Ambient Pressure (kPa) 100.0 70.7 54.1 54.6 55.2 | Oxygen Concentration (mol %) 22.0 26.2 31.0 30.3 28.8 | Air Flow Rate (cm/s) 20 20 20 20 20",
+        "short": "Saffire ICES-2024-365",
+        "url": "https://ntrs.nasa.gov/api/citations/20240002981/downloads/Saffire-ICES-2024-ICES-365-accepted%20final.pdf"
+      }
+    },
+    {
+      "flow_cm_s": 20.0,
+      "flow_direction": "Concurrent",
+      "id": "saffire-V-2",
+      "in_moon_zone": false,
+      "kind": "point",
+      "material": "Cotton Jersey",
+      "mission": "Saffire V (Cygnus)",
+      "notes": null,
+      "o2_as_stated": [
+        "26.2"
+      ],
+      "o2_basis": "mol %",
+      "o2_pct": [
+        26.2
+      ],
+      "po2_kpa": 18.52,
+      "pressure_conversion": [
+        "70.7 kPa"
+      ],
+      "pressure_kpa": [
+        70.7
+      ],
+      "program": "Saffire",
+      "sample": "V-2",
+      "source": {
+        "doc": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+        "file": "data/manual/external_tests.csv",
+        "locator": "Table 1",
+        "printed_page": 3,
+        "quote": "Ambient Pressure (kPa) 100.0 70.7 54.1 54.6 55.2 | Oxygen Concentration (mol %) 22.0 26.2 31.0 30.3 28.8 | Air Flow Rate (cm/s) 20 20 20 20 20",
+        "short": "Saffire ICES-2024-365",
+        "url": "https://ntrs.nasa.gov/api/citations/20240002981/downloads/Saffire-ICES-2024-ICES-365-accepted%20final.pdf"
+      }
+    },
+    {
+      "flow_cm_s": 20.0,
+      "flow_direction": "Concurrent",
+      "id": "saffire-VI-2",
+      "in_moon_zone": true,
+      "kind": "point",
+      "material": "SIBAL Cloth",
+      "mission": "Saffire VI (Cygnus)",
+      "notes": null,
+      "o2_as_stated": [
+        "31.0"
+      ],
+      "o2_basis": "mol %",
+      "o2_pct": [
+        31.0
+      ],
+      "po2_kpa": 16.77,
+      "pressure_conversion": [
+        "54.1 kPa"
+      ],
+      "pressure_kpa": [
+        54.1
+      ],
+      "program": "Saffire",
+      "sample": "VI-2",
+      "source": {
+        "doc": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+        "file": "data/manual/external_tests.csv",
+        "locator": "Table 1",
+        "printed_page": 3,
+        "quote": "Ambient Pressure (kPa) 100.0 70.7 54.1 54.6 55.2 | Oxygen Concentration (mol %) 22.0 26.2 31.0 30.3 28.8 | Air Flow Rate (cm/s) 20 20 20 20 20",
+        "short": "Saffire ICES-2024-365",
+        "url": "https://ntrs.nasa.gov/api/citations/20240002981/downloads/Saffire-ICES-2024-ICES-365-accepted%20final.pdf"
+      }
+    },
+    {
+      "flow_cm_s": 20.0,
+      "flow_direction": "Concurrent",
+      "id": "saffire-VI-3",
+      "in_moon_zone": true,
+      "kind": "point",
+      "material": "Two-Sided PMMA",
+      "mission": "Saffire VI (Cygnus)",
+      "notes": "Flow reduced at 1120 s during the PMMA burn (p.4); reduced speed not in Table 1",
+      "o2_as_stated": [
+        "30.3"
+      ],
+      "o2_basis": "mol %",
+      "o2_pct": [
+        30.3
+      ],
+      "po2_kpa": 16.54,
+      "pressure_conversion": [
+        "54.6 kPa"
+      ],
+      "pressure_kpa": [
+        54.6
+      ],
+      "program": "Saffire",
+      "sample": "VI-3",
+      "source": {
+        "doc": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+        "file": "data/manual/external_tests.csv",
+        "locator": "Table 1",
+        "printed_page": 3,
+        "quote": "Ambient Pressure (kPa) 100.0 70.7 54.1 54.6 55.2 | Oxygen Concentration (mol %) 22.0 26.2 31.0 30.3 28.8 | Air Flow Rate (cm/s) 20 20 20 20 20",
+        "short": "Saffire ICES-2024-365",
+        "url": "https://ntrs.nasa.gov/api/citations/20240002981/downloads/Saffire-ICES-2024-ICES-365-accepted%20final.pdf"
+      }
+    },
+    {
+      "flow_cm_s": 20.0,
+      "flow_direction": "Concurrent",
+      "id": "saffire-VI-4",
+      "in_moon_zone": false,
+      "kind": "point",
+      "material": "One-Sided PMMA",
+      "mission": "Saffire VI (Cygnus)",
+      "notes": "Flow reduced at 1120 s during the PMMA burn (p.4); reduced speed not in Table 1",
+      "o2_as_stated": [
+        "28.8"
+      ],
+      "o2_basis": "mol %",
+      "o2_pct": [
+        28.8
+      ],
+      "po2_kpa": 15.9,
+      "pressure_conversion": [
+        "55.2 kPa"
+      ],
+      "pressure_kpa": [
+        55.2
+      ],
+      "program": "Saffire",
+      "sample": "VI-4",
+      "source": {
+        "doc": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+        "file": "data/manual/external_tests.csv",
+        "locator": "Table 1",
+        "printed_page": 3,
+        "quote": "Ambient Pressure (kPa) 100.0 70.7 54.1 54.6 55.2 | Oxygen Concentration (mol %) 22.0 26.2 31.0 30.3 28.8 | Air Flow Rate (cm/s) 20 20 20 20 20",
+        "short": "Saffire ICES-2024-365",
+        "url": "https://ntrs.nasa.gov/api/citations/20240002981/downloads/Saffire-ICES-2024-ICES-365-accepted%20final.pdf"
+      }
+    },
+    {
+      "flow_cm_s": null,
+      "flow_direction": "not stated",
+      "id": "ssce-paper",
+      "in_moon_zone": false,
+      "kind": "range",
+      "material": "ashless filter paper",
+      "mission": "Space Shuttle flights 1-5 (not individually identified)",
+      "notes": "Which O2 went with which pressure on which flight is not given",
+      "o2_as_stated": [
+        "35",
+        "50"
+      ],
+      "o2_basis": "not stated",
+      "o2_pct": [
+        35.0,
+        50.0
+      ],
+      "pressure_conversion": [
+        "1.0 atm x 101.325 = 101.33 kPa",
+        "1.5 atm x 101.325 = 151.99 kPa",
+        "2.0 atm x 101.325 = 202.65 kPa"
+      ],
+      "pressure_kpa": [
+        101.33,
+        151.99,
+        202.65
+      ],
+      "program": "SSCE",
+      "sample": null,
+      "source": {
+        "doc": "\"Solid Surface Combustion Experiment Completes a Series of Eight Successful Flights\", Research and Technology 1995, NASA Lewis Research Center (NTRS 20050177200)",
+        "file": "data/manual/external_tests.csv",
+        "locator": "NTRS abstract",
+        "printed_page": null,
+        "quote": "filled with a 50-percent or 35-percent mixture of oxygen in nitrogen at pressures of 1.0, 1.5, and 2.0 atm",
+        "short": "SSCE, NTRS 20050177200",
+        "url": "https://ntrs.nasa.gov/citations/20050177200"
+      }
+    },
+    {
+      "flow_cm_s": null,
+      "flow_direction": "not stated",
+      "id": "ssce-pmma",
+      "in_moon_zone": false,
+      "kind": "range",
+      "material": "polymethyl methacrylate (plexiglass)",
+      "mission": "Space Shuttle flights 6-8 (incl. STS-64 and STS-63)",
+      "notes": "Which O2 went with which pressure on which flight is not given",
+      "o2_as_stated": [
+        "50",
+        "70"
+      ],
+      "o2_basis": "not stated",
+      "o2_pct": [
+        50.0,
+        70.0
+      ],
+      "pressure_conversion": [
+        "1.0 atm x 101.325 = 101.33 kPa",
+        "2.0 atm x 101.325 = 202.65 kPa"
+      ],
+      "pressure_kpa": [
+        101.33,
+        202.65
+      ],
+      "program": "SSCE",
+      "sample": null,
+      "source": {
+        "doc": "\"Solid Surface Combustion Experiment Completes a Series of Eight Successful Flights\", Research and Technology 1995, NASA Lewis Research Center (NTRS 20050177200)",
+        "file": "data/manual/external_tests.csv",
+        "locator": "NTRS abstract",
+        "printed_page": null,
+        "quote": "tested in a 70-percent or 50-percent mixture of oxygen and nitrogen at pressures of 1.0 and 2.0 atm",
+        "short": "SSCE, NTRS 20050177200",
+        "url": "https://ntrs.nasa.gov/citations/20050177200"
+      }
+    }
+  ],
+  "unit_notes": [
+    "1 atm = 101.325 kPa; 1 psi = 6.894757 kPa.",
+    "O2 mol % equals vol % for ideal-gas mixtures, so Saffire (mol %) and BASS-II (% by vol) share one axis. SSCE does not state its basis."
+  ]
+}

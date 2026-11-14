@@ -1,0 +1,47 @@
+{
+  "saffire_ices2024": {
+    "citation": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
+    "short": "Saffire ICES-2024-365",
+    "ntrs_id": "20240002981",
+    "url": "https://ntrs.nasa.gov/api/citations/20240002981/downloads/Saffire-ICES-2024-ICES-365-accepted%20final.pdf",
+    "file": "docs/ref/Saffire-VI_ICES-2024-365.pdf",
+    "sha256": "7f875da1d6abeeeeac64aeba67d3f160074cf98430e714fe7606b34b37e0aa59",
+    "gives": "Per-test ambient pressure (kPa), O2 (mol %), air flow (cm/s), flow direction, material, for the 5 samples in Table 1 (p.3).",
+    "does_not_give": [
+      "Table 1 lists only the samples 'considered in this paper' (IV-1, V-2, VI-2, VI-3, VI-4). Other Saffire I-V samples are not in it.",
+      "Saffire VI test 1 (Nomex) did not ignite (p.4). Its conditions are not in Table 1, so it is not plotted.",
+      "One flow speed only: 20 cm/s concurrent for every listed test. For the PMMA tests the flow was reduced at 1120 s (p.4); the reduced speed is not in Table 1.",
+      "One O2 value per test (the set condition). No pre/post-burn split.",
+      "Microgravity (orbiting Cygnus) only. No partial gravity.",
+      "No extinction or flammability-limit data: every plotted test ignited and burned."
+    ]
+  },
+  "ssce_ntrs1995": {
+    "citation": "\"Solid Surface Combustion Experiment Completes a Series of Eight Successful Flights\", Research and Technology 1995, NASA Lewis Research Center (NTRS 20050177200)",
+    "short": "SSCE, NTRS 20050177200",
+    "ntrs_id": "20050177200",
+    "url": "https://ntrs.nasa.gov/citations/20050177200",
+    "file": "docs/ref/SSCE_NTRS_20050177200.json",
+    "sha256": "9b066a9d876d565e54be1e7c8dd809940bb423d0c13d20f72b23e9715e6d3689",
+    "gives": "The sets of O2 % and pressures (atm) used for each fuel, across 8 Space Shuttle flights.",
+    "does_not_give": [
+      "NTRS has the abstract only. There is no PDF: the downloads list is empty and the standard download path returns 404.",
+      "Which O2 % was paired with which pressure on which flight is not stated, so individual flights cannot be placed. They are shown as range markers.",
+      "Flow conditions are not stated.",
+      "The O2 basis (mol, volume or mass %) is not stated: the text says \"percent mixture of oxygen in nitrogen\".",
+      "Flight numbers: only STS-64 and STS-63 (the final two) are named.",
+      "Source is an annual R&T report summary, not a data table."
+    ]
+  },
+  "bass2_report": {
+    "citation": "BASS-II Summary Report, NASA/TM-20210011385, Oct 2021",
+    "short": "BASS-II report NASA/TM-20210011385",
+    "ntrs_id": "20210011385",
+    "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+    "sha256": "5ffa911fd9b6356f204646003fb9342e341810dcdfdf5cb15756e7f01ec5f770",
+    "gives": "Test methods; flammability boundary eq. 6.1 (p.75); flow measurement (p.66).",
+    "does_not_give": [
+      "Pressure is not measured per test. The report states 1 atm (printed p.11: \"pressure P = 1 atm\"; p.94: \"Ambient pressure was 1 atm\")."
+    ]
+  }
+}
