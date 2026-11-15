@@ -1,4 +1,5 @@
 import { loadJSON, cite } from '../data.js';
+import { loadGlossary, g } from '../plain.js';
 
 // Flame Sandbox. Two halves with a hard line between them:
 // 1. The picture: a Three.js TEACHING MODEL (web/src/flame/flame3d.js). It computes nothing the page states.
@@ -16,7 +17,10 @@ const GRAVITY = [
   ['moon', 'Moon', 'partial g'],
   ['mars', 'Mars', 'partial g'],
 ];
-const STATE_LABEL = { tested: 'Tested', thin: 'Thin', none: 'None', unknown: 'Unknown: no data', fit: 'Fit applies' };
+const STATE_LABEL = { tested: 'Tested', thin: 'Thin', none: 'None', unknown: 'Unknown: no data', fit: 'Fit applies', scope: 'Outside our sources' };
+// Earth gravity is a scope limit, not missing evidence: every solid test on this site flew in space, and NASA's
+// normal-gravity screening tests are not among our sources. A count there would read as "0 tests", so none is shown.
+const SCOPE_EARTH = 'Outside our sources: every solid test here flew in space. Earth (1 g) flammability tests exist but aren\'t in this site.';
 
 function parseArg(arg, S) {
   const preset = S.presets.find((p) => p.id === arg);
@@ -32,7 +36,7 @@ const argOf = (st) => `g=${st.g}&o2=${f2(st.o2)}&p=${f2(st.p)}&u=${f2(st.u)}`;
 // ---------- Evidence (pure functions over sandbox.json) ----------
 const inWin = (o2, p, h) => h.o2_pct[0] <= o2 && o2 <= h.o2_pct[1] && h.p_kpa[0] <= p && p <= h.p_kpa[1];
 
-function assess(S, st) {
+function assess(S, st, G) {
   const R = S.rules;
   const near = S.tests.filter((t) => Math.abs(t.o2 - st.o2) <= R.near_o2_pts && Math.abs(t.p_kpa - st.p) <= R.near_p_kpa);
   const dist = (t) => Math.hypot((t.o2 - st.o2) / R.near_o2_pts, (t.p_kpa - st.p) / R.near_p_kpa);
@@ -63,12 +67,13 @@ function assess(S, st) {
   const q = S.quotes;
   badges.push({
     key: 'Gravity', sub: GRAVITY.find(([id]) => id === st.g).slice(1).join(', '),
-    state: st.g === 'micro' ? (near.length ? (near.length <= R.thin_max ? 'thin' : 'tested') : 'none') : st.g === 'earth' ? 'none' : 'unknown',
+    state: st.g === 'micro' ? (near.length ? (near.length <= R.thin_max ? 'thin' : 'tested') : 'none') : st.g === 'earth' ? 'scope' : 'unknown',
     html: st.g === 'micro' ? `Every solid test in our sources flew in microgravity, so all ${plural(near.length, 'nearby test')} ${near.length === 1 ? 'counts' : 'count'}.`
-      : st.g === 'earth' ? 'None in our sources: every solid test on this site flew in microgravity. Normal-gravity tests are outside this site\'s sources, not proof that none exist.'
+      : st.g === 'earth' ? `${SCOPE_EARTH.replace("Earth (1 g) flammability tests", g('earthtests', 'Earth (1 g) flammability tests'))} This is a limit of the site, not a finding.`
       : `Challenge page: "${esc(q.partial.text)}". ${esc(q.future.text)}`
         + (st.g === 'mars' ? ` The challenge names "${esc(q.mars.text)}" but gives no Martian target atmosphere.` : ''),
-    src: st.g === 'micro' || st.g === 'earth' ? 'Habitat Gaps gravity rule (gaps.json): every point on both panels is from microgravity' : `${q.partial.source}, sec. ${q.partial.section}`,
+    src: st.g === 'micro' ? 'Habitat Gaps gravity rule (gaps.json): every point on both panels is from microgravity'
+      : st.g === 'earth' ? `Habitat Gaps gravity rule (gaps.json): every point on both panels is from microgravity. ${G.terms.earthtests.src}` : `${q.partial.source}, sec. ${q.partial.section}`,
   });
   // 3. Airflow
   const flows = [...new Set(near.flatMap((t) => t.flows))].sort((a, b) => a - b);
@@ -85,9 +90,10 @@ function assess(S, st) {
   const pIn = st.p >= B.p_window_kpa[0] && st.p <= B.p_window_kpa[1];
   const uIn = st.u >= B.u_range_cm_s[0] && st.u <= B.u_range_cm_s[1];
   let bb;
-  if (st.g !== 'micro') bb = { state: 'unknown', html: `The only boundary in our sources (BASS-II eq. 6.1, PMMA rods) was measured in microgravity. At ${esc(GRAVITY.find(([id]) => id === st.g)[1])} gravity there is none.` };
-  else if (!pIn) bb = { state: 'unknown', html: `Measured at 1 atm only (we accept ${f1(B.p_window_kpa[0])}–${f1(B.p_window_kpa[1])} kPa, the ISS cabin range BASS-II flew in). Your ${f1(st.p)} kPa is outside it: no boundary.` };
-  else if (!uIn) bb = { state: 'unknown', html: `Your flow is beyond the flows BASS-II recorded (${B.u_range_cm_s.join('–')} cm/s for a ${B.r0_cm} cm rod radius, a = ${B.tested_a_range.join('–')} 1/s). We do not extend the fit.` };
+  if (st.g === 'earth') bb = { state: 'scope', html: 'Outside our sources: the only boundary on this site (BASS-II eq. 6.1, PMMA rods) was measured in microgravity. Earth-gravity boundaries come from ground tests this site does not include. Boundary unknown here.' };
+  else if (st.g !== 'micro') bb = { state: 'unknown', html: `The only boundary in our sources (BASS-II eq. 6.1, PMMA rods) was measured in microgravity. At ${esc(GRAVITY.find(([id]) => id === st.g)[1])} gravity there is none: boundary unknown here.` };
+  else if (!pIn) bb = { state: 'unknown', html: `Measured at 1 atm only (we accept ${f1(B.p_window_kpa[0])}–${f1(B.p_window_kpa[1])} kPa, the ISS cabin range BASS-II flew in). Your ${f1(st.p)} kPa is outside it: boundary unknown here.` };
+  else if (!uIn) bb = { state: 'unknown', html: `${st.u <= 0 ? 'No airflow: BASS-II never measured a boundary in still air. ' : ''}Your flow is outside the flows BASS-II recorded (${B.u_range_cm_s.join('–')} cm/s for a ${B.r0_cm} cm rod radius, a = ${B.tested_a_range.join('–')} 1/s). We do not extend the fit: boundary unknown here.` };
   else {
     const a = 1.5 * st.u / B.r0_cm;
     const x = 6 * Math.exp(-0.5 * a) + 0.0167 * a + 13.4;
@@ -127,7 +133,16 @@ function clipCard(S, st, best) {
   </div>`;
 }
 
-function caption(S, st) {
+function caption(S, st, A, G) {
+  const b = A.boundary;
+  const o2 = `<span class="sbx-o2note">Oxygen sets the flame's size, brightness and flicker here (qualitative): the challenge page says more oxygen means ${g('o2fire', '"making materials much more flammable"')}.</span>`;
+  const bnd = b.verdict === 'below'
+    ? `<b class="sbx-out">Below NASA's measured boundary (BASS-II eq. 6.1, p.75): the flame goes out.</b> <a href="#evidence/panel2">See Panel 2 →</a>`
+    : b.verdict === 'above' ? `Above NASA's measured boundary (BASS-II eq. 6.1, p.75) at this airflow: the flame keeps burning. <a href="#evidence/panel2">Panel 2 →</a>`
+    : '<span class="muted">Boundary unknown here: the picture never draws the flame going out.</span>';
+  return `${captionBase(S, st)} ${st.g === 'earth' || st.g === 'micro' ? o2 : ''}<br>${bnd}`;
+}
+function captionBase(S, st) {
   const v = S.video;
   const q = S.quotes;
   const vid = `<a href="${esc(v.url)}" target="_blank" rel="noopener">official challenge video, ${esc(v.from)}–${esc(v.to)}</a>`;
@@ -143,7 +158,7 @@ const SVG_FALLBACK = `<svg viewBox="0 0 320 220" role="img" aria-label="Static d
   <text x="80" y="30" fill="#ccc" font-size="12" text-anchor="middle">Earth</text><text x="240" y="84" fill="#ccc" font-size="12" text-anchor="middle">Microgravity</text></svg>`;
 
 export async function render(root, arg) {
-  const S = await loadJSON('sandbox.json');
+  const [S, G] = await Promise.all([loadJSON('sandbox.json'), loadGlossary()]);
   const st = parseArg(arg, S);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const psi = S.units.psi_to_kpa;
@@ -164,9 +179,9 @@ export async function render(root, arg) {
         <details class="table-view"><summary>What the picture does and does not show</summary><ul class="note">
           <li>Gravity sets shape, colour and flicker, following NASA's description: ${esc(S.video.summary)} <span class="src">${esc(S.video.summary_note)}</span></li>
           <li>Airflow pushes the flame sideways. This illustrates the challenge page's point ("${esc(S.quotes.flow.text)}"); the angle and length are not computed.</li>
-          <li>O2 changes brightness only. Pressure changes nothing in the picture.</li>
+          <li>O2 sets the flame's size, brightness and flicker (qualitative: small and dim near 15%, large and bright from 30% up), after the challenge page's "making materials much more flammable". In microgravity the flame does not flicker at any O2. Pressure changes nothing in the picture: its effect on the flame isn't measured in our sources.</li>
           <li>Moon and Mars: no data, so no flame is drawn, only the two outlines the challenge page says could bound it.</li>
-          <li>The picture never decides whether something burns. Only the evidence panel does, and only where data exist.</li>
+          <li>The picture never decides whether something burns. It draws the flame going out only when the evidence panel's NASA boundary check (BASS-II eq. 6.1: microgravity, BASS-II's 1 atm window, a recorded airflow) puts your O2 below the line. Everywhere else no extinction is drawn: boundary unknown.</li>
         </ul></details>
       </div>
       <div class="sbx-side">
@@ -176,7 +191,8 @@ export async function render(root, arg) {
         <label class="sbx-ctl"><span>Oxygen <output id="o-o2"></output></span>
           <input type="range" id="in-o2" min="10" max="100" step="0.1"></label>
         <label class="sbx-ctl"><span>Total pressure <output id="o-p"></output></span>
-          <input type="range" id="in-p" min="5" max="${S.x_max_kpa}" step="0.01"></label>
+          <input type="range" id="in-p" min="5" max="${S.x_max_kpa}" step="0.01" aria-describedby="p-note">
+          <small class="sbx-pnote" id="p-note">Pressure's effect on the flame isn't measured in our sources; it changes the evidence count only.</small></label>
         <label class="sbx-ctl"><span>Airflow <output id="o-u"></output></span>
           <input type="range" id="in-u" min="0" max="60" step="0.5"></label>
         <p class="note sbx-po2" id="o-po2"></p>
@@ -213,16 +229,20 @@ export async function render(root, arg) {
     root.querySelectorAll('.sbx-grav button').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.g === st.g)));
     const on = S.presets.find((p) => p.gravity === st.g && Math.abs(p.o2 - st.o2) < 0.05 && Math.abs(p.p_kpa - st.p) < 0.01 && Math.abs(p.flow - st.u) < 0.01);
     root.querySelectorAll('.sbx-presets button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.preset === on?.id)));
-    $('#sbx-caption').innerHTML = caption(S, st);
+    
     $('.sbx-legend').hidden = !(st.g === 'moon' || st.g === 'mars');
-    canvas.setAttribute('aria-label', describe());
-    flame?.set({ gravity: st.g, o2: st.o2, flow: st.u });
-
-    const A = assess(S, st);
+    const A = assess(S, st, G);
+    // The flame goes out in the picture only where NASA's boundary applies (microgravity, BASS-II's 1 atm window,
+    // a recorded flow) and the panel computes O2 below it. Everywhere else no extinction is drawn.
+    const out = A.boundary.verdict === 'below' && st.u > 0;
+    $('#sbx-caption').innerHTML = caption(S, st, A, G);
+    canvas.setAttribute('aria-label', `${describe()}${out ? ' The flame goes out: these conditions are below NASA\'s measured boundary.' : ''}`);
+    flame?.set({ gravity: st.g, o2: st.o2, flow: st.u, out });
     const pill = (b) => (b.verdict ? (b.verdict === 'above' ? 'Above boundary' : 'Below boundary') : STATE_LABEL[b.state]);
-    $('#sbx-sum').innerHTML = `<div class="sbx-total"><span class="sbx-num">${A.all.length}</span>
+    $('#sbx-sum').innerHTML = `${st.g === 'earth' ? `<div class="sbx-total sbx-scope"><span class="sbx-scopetag">Earth, 1 g</span>
+        <span>${SCOPE_EARTH.replace("Earth (1 g) flammability tests", g('earthtests', 'Earth (1 g) flammability tests'))}</span></div>` : `<div class="sbx-total"><span class="sbx-num">${A.all.length}</span>
         <span>${A.all.length ? `solid-material ${A.all.length === 1 ? 'test' : 'tests'} in our sources ${A.all.length === 1 ? 'matches' : 'match'} all of these conditions: ${A.all.slice(0, 6).map((t) => esc(t.id)).join(', ')}${A.all.length > 6 ? ` and ${A.all.length - 6} more` : ''}.`
-          : 'solid-material tests in our sources match all of these conditions (atmosphere, gravity and airflow together).'}</span></div>
+          : 'solid-material tests in our sources match all of these conditions (atmosphere, gravity and airflow together).'}</span></div>`}
       <ul class="sbx-mini">${A.badges.map((b) => `<li class="st-${b.state}"><span>${esc(b.key)}</span> <span class="sbx-pill">${pill(b)}</span></li>`).join('')}</ul>
       <p class="note"><a href="#sbx-ev" class="sbx-jump">Why: evidence details${A.clip?.match ? ' and the matching flight video' : ''} ↓</a></p>`;
     $('#sbx-ev').innerHTML = `<h2>Evidence for these conditions</h2>

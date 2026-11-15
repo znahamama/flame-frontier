@@ -368,7 +368,7 @@ export async function render(root, arg) {
         <p class="note">${cfigLine(cfig)}</p></details>
       ${table1(ref, ext)}
       <p class="note dl"><b>Download the data</b> (CSV, every row with its source; for your own models): ${dl.join(' · ')}</p></section>
-    <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
+    <section class="card" id="panel2-card" tabindex="-1" ${arg === 'panel2' ? 'data-goto' : ''}><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75): above the line PMMA rods burn, below they go out. Solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s (every Olson flow recorded in cm/s), dashed beyond. Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s.</p>
       <details class="table-view"><summary>How the ${bass2.panel2_points.length} points were chosen</summary>
         <p class="note">Olson tests whose flow can be read from PSI files without extrapolation: the last flow recorded in cm/s at which the flame was still burning before the crew turned it down to extinction, and blowoffs whose flow is only bounded from above by the same-day fan calibration.</p></details>

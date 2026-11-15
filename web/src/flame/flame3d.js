@@ -12,7 +12,7 @@ import {
 } from 'three';
 
 const BOX_MIN = new Vector3(-1.25, -0.68, -0.85);
-const BOX_MAX = new Vector3(1.25, 1.05, 0.85);
+const BOX_MAX = new Vector3(1.25, 1.45, 0.85);
 const WICK_TOP = -0.5;
 const CANDLE_TOP = -0.62;
 
@@ -26,7 +26,7 @@ const vert = /* glsl */`
 
 const frag = /* glsl */`
   precision highp float;
-  uniform float uTime, uBuoy, uSoot, uFlick, uFlow, uBright, uGhost, uSteps;
+  uniform float uTime, uBuoy, uSoot, uFlick, uFlow, uBright, uGhost, uSteps, uSize;
   uniform vec3 uBoxMin, uBoxMax;
   varying vec3 vWorld;
   const vec3 WICK = vec3(0.0, ${WICK_TOP.toFixed(3)}, 0.0);
@@ -52,6 +52,7 @@ const frag = /* glsl */`
     float m = clamp(length(ax), 0.0, 1.25);
     vec3 dir = m > 1e-3 ? vec3(normalize(ax), 0.0) : vec3(0.0, 1.0, 0.0);
     float R = 0.24 * mix(1.3, 1.0, clamp(m, 0.0, 1.0));      // no buoyancy: a wider, diffusion-fed shell
+    R *= mix(uSize, 1.0, outline);                           // O2 sets the size of the drawn flame (qualitative); outlines keep theirs
     float L = R * (1.0 + 2.4 * m);                           // half-length along the flame axis
     vec3 q = p - WICK;
     if (flick > 0.0) {                                       // rising wobble, stronger toward the tip
@@ -138,7 +139,7 @@ export function visualFor(gravity) {
 /**
  * @param {HTMLCanvasElement} canvas
  * @param {{reduced: boolean, onFrame?: () => void}} opts
- * @returns {{set: (t: {gravity: string, o2: number, flow: number}) => void, setPaused: (b: boolean) => void, dispose: () => void}}
+ * @returns {{set: (t: {gravity: string, o2: number, flow: number, out?: boolean}) => void, setPaused: (b: boolean) => void, dispose: () => void}}
  */
 export function createFlame(canvas, opts) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'default' });
@@ -164,7 +165,7 @@ export function createFlame(canvas, opts) {
 
   const uniforms = {
     uTime: { value: 0 }, uBuoy: { value: 1 }, uSoot: { value: 1 }, uFlick: { value: 1 }, uFlow: { value: 0 },
-    uBright: { value: 1 }, uGhost: { value: 0 }, uSteps: { value: 44 },
+    uBright: { value: 1 }, uGhost: { value: 0 }, uSteps: { value: 44 }, uSize: { value: 1 },
     uBoxMin: { value: BOX_MIN }, uBoxMax: { value: BOX_MAX },
   };
   const mat = new ShaderMaterial({
@@ -178,7 +179,7 @@ export function createFlame(canvas, opts) {
   scene.add(vol);
 
   // Current and target visual parameters; the loop eases current -> target (the morph).
-  const cur = { buoy: 1, soot: 1, flick: 1, ghost: 0, flow: 0, bright: 1, lightI: 2.4, light: new Color(1, 0.62, 0.25) };
+  const cur = { buoy: 1, soot: 1, flick: 1, ghost: 0, flow: 0, bright: 1, size: 1, alive: 1, lightI: 2.4, light: new Color(1, 0.62, 0.25) };
   let tgt = { ...cur, light: cur.light.clone() };
 
   const resize = () => {
@@ -202,7 +203,10 @@ export function createFlame(canvas, opts) {
 
   function step(dt) {
     const k = opts.reduced ? 1 : 1 - Math.exp(-dt / 0.45);
-    for (const key of ['buoy', 'soot', 'flick', 'ghost', 'flow', 'bright', 'lightI']) cur[key] += (tgt[key] - cur[key]) * k;
+    for (const key of ['buoy', 'soot', 'flick', 'ghost', 'flow', 'bright', 'size', 'lightI']) cur[key] += (tgt[key] - cur[key]) * k;
+    // Going out is slower than coming back (a visible shrink and fade); relighting is quick.
+    const ka = opts.reduced ? 1 : 1 - Math.exp(-dt / (tgt.alive < cur.alive ? 0.9 : 0.35));
+    cur.alive += (tgt.alive - cur.alive) * ka;
     cur.light.lerp(tgt.light, k);
   }
 
@@ -210,9 +214,10 @@ export function createFlame(canvas, opts) {
     step(dt);
     uniforms.uTime.value = time;
     uniforms.uBuoy.value = cur.buoy; uniforms.uSoot.value = cur.soot; uniforms.uFlick.value = cur.flick;
-    uniforms.uGhost.value = cur.ghost; uniforms.uFlow.value = cur.flow; uniforms.uBright.value = cur.bright;
+    uniforms.uGhost.value = cur.ghost; uniforms.uFlow.value = cur.flow; uniforms.uBright.value = cur.bright * cur.alive;
+    uniforms.uSize.value = cur.size * (0.25 + 0.75 * cur.alive);
     const flicker = cur.flick * (Math.sin(time * 11.3) * 0.05 + Math.sin(time * 7.1) * 0.06);
-    light.intensity = cur.lightI * cur.bright * (1 + flicker);
+    light.intensity = cur.lightI * cur.bright * cur.alive * (1 + flicker);
     light.color.copy(cur.light);
     light.position.x = cur.flow * 0.35;
     renderer.render(scene, camera);
@@ -254,13 +259,19 @@ export function createFlame(canvas, opts) {
   const settle = () => { if (opts.reduced) time = 1.7; step(10); draw(0); };
 
   return {
-    set({ gravity, o2, flow }) {
+    // out: true only when the page's evidence panel says the conditions are below NASA's measured boundary
+    // (BASS-II eq. 6.1, computed in tabs/sandbox.js). The model itself decides nothing.
+    set({ gravity, o2, flow, out = false }) {
       const v = VISUAL[visualFor(gravity)];
+      // O2 sets size, brightness and (where the flame flickers at all) flicker energy. Qualitative: small and dim near
+      // 15% O2, large and bright from 30% up, after the challenge page ("making materials much more flammable").
+      const f = Math.min(Math.max((o2 - 15) / 15, 0), 1);
       tgt = {
-        buoy: v.buoy, soot: v.soot, flick: v.flick, ghost: v.ghost,
+        buoy: v.buoy, soot: v.soot, flick: v.flick * (0.45 + 1.1 * f), ghost: v.ghost,
         flow: Math.min(Math.max(flow, 0) / 60, 1) * (v.buoy ? 0.75 : 1.05),
-        // O2 changes brightness only (stated on the tab); it computes nothing.
-        bright: 0.55 + 0.75 * Math.min(Math.max((o2 - 10) / 50, 0), 1),
+        bright: 0.4 + 0.95 * f,
+        size: 0.62 + 0.55 * f,
+        alive: out ? 0 : 1,
         lightI: v.lightI, light: v.light.clone(),
       };
       if (opts.reduced || paused || !running) settle();

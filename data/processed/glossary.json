@@ -58,6 +58,14 @@
       "src": "unit definition (no source needed)",
       "term": "cm/s"
     },
+    "earthtests": {
+      "def": "NASA screens spacecraft materials with flammability tests in normal (Earth) gravity. Those ground tests are not among this site's sources, which hold only tests flown in space.",
+      "id": "earthtests",
+      "kind": "fact",
+      "plain": "Earth-gravity flammability tests",
+      "src": "PSI-98 Comment[Objective]: \"compared to those obtained in NASA’s normal gravity material flammability screening test\" (PSI-98 Spacecraft Fire Safety Experiment-I: PSI metadata Comment[Objective])",
+      "term": "Earth (1 g) flammability tests"
+    },
     "extinction": {
       "def": "Extinction: the flame goes out. Blowoff (too much airflow) and quenching (too little) are two ways it happens.",
       "id": "extinction",

@@ -9,6 +9,10 @@
     }
   },
   "terms": [
+    {"id": "earthtests", "term": "Earth (1 g) flammability tests", "plain": "Earth-gravity flammability tests",
+     "def": "NASA screens spacecraft materials with flammability tests in normal (Earth) gravity. Those ground tests are not among this site's sources, which hold only tests flown in space.",
+     "kind": "fact",
+     "quotes": [{"chunk": "meta:PSI-98:objective", "quote": "compared to those obtained in NASA’s normal gravity material flammability screening test", "label": "PSI-98 Comment[Objective]"}]},
     {"id": "o2fire", "term": "oxygen and flammability", "plain": "more oxygen makes materials burn more easily",
      "def": "Moon-base air is planned at 30% oxygen or more, over 40% more than Earth's air, which makes materials much more flammable. NASA prevents fires partly by choosing materials, which depends on knowing their flammability limits.",
      "kind": "fact",

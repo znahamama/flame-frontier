@@ -841,3 +841,11 @@ details.habcard > summary .habsum { display: block; margin-top: 4px; font-size: 
 .t2n { overflow-wrap: normal; hyphens: auto; }
 @media (max-width: 760px) { .stagecard .t2n { font-size: 10px; hyphens: auto; overflow-wrap: break-word; } }
 .hero-src { display: block; font-size: 0.62em; font-weight: 600; opacity: 0.85; margin-top: 2px; }
+/* Flame Sandbox: scope state (Earth gravity), extinction caption, pressure note */
+.sbx-total.sbx-scope { align-items: flex-start; flex-direction: column; gap: 4px; border-style: dashed; }
+.sbx-scopetag { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); }
+.sbx-mini li.st-scope .sbx-pill, .sbx-badges li.st-scope .sbx-pill { background: transparent; border: 1px dashed var(--text-secondary); color: var(--text-secondary); }
+.sbx-badges li.st-scope { border-left-style: dashed; }
+.sbx-out { color: var(--accent); }
+.sbx-o2note { display: block; margin-top: 4px; }
+.sbx-pnote { display: block; margin-top: 4px; font-size: 12px; line-height: 1.35; color: var(--text-secondary); font-weight: 400; }
