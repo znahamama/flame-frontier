@@ -3,7 +3,7 @@
 Every chunk has a stable id, a human-readable source and the exact text the model may quote:
 - meta:<PSI>:<field>     PSI ISA-Tab free text (Objective, Approach, Hypothesis, Research Impacts), file + line
 - report:bass2:p<N>[.k]  BASS-II report pages we cite (printed page N; PDF page = N + 8)
-- paper:<id>:p<N>[.k]    cited papers (Saffire VI ICES-2024-365, NTRS 20160001047, NTRS 20150010425), PDF page N
+- paper:<id>:p<N>[.k]    cited public-use papers (NTRS 20160001047, NTRS 20150010425), PDF page N
 - ntrs:ssce              the SSCE NTRS abstract record
 - brief:s1.<k>           the challenge page text (docs/ref/challenge_brief.md sec. 1, verbatim)
 - limits:<...>           our Known Limits facts, rendered from pipeline JSON (sources' gives / does-not-give,
@@ -25,8 +25,9 @@ MAX = 1100  # characters per chunk (split at sentence ends)
 UNREADABLE: list[str] = []
 
 BASS2_PAGES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 66, 67, 74, 75, 76, 94]   # printed pages: summary + cited pages
-PAPERS = {  # id -> (sources.json key, pdf file, pdf pages 1-based)
-    "saffire6": ("saffire_ices2024", REF / "Saffire-VI_ICES-2024-365.pdf", [1, 2, 3, 4, 5, 6]),
+# The Saffire VI paper (NTRS 20240002981) is marked "may include copyright material": its page text is NOT chunked.
+# Its facts enter as data:saffire:table1 (verified Table 1 values) and the short quotes in sources.json.
+PAPERS = {  # id -> (sources.json key, pdf file, pdf pages 1-based); public-use NTRS documents only
     "ntrs20160001047": ("ntrs_20160001047", REF / "NTRS_20160001047_O2_partial_pressure_flammability.pdf", [1, 2, 3]),
     "ntrs20150010425": ("ntrs_20150010425", REF / "NTRS_20150010425_ISS_O2_gas_supply.pdf", [1]),
 }
