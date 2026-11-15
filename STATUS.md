@@ -55,31 +55,41 @@ Live: https://flame-frontier.vercel.app (production = latest finished phase). Da
 - Words where each link lands (`node scripts/shots/words.mjs`; desktop / phone): `#evidence` 143 -> 61 / 83 -> 36 (story top); `#evidence/view` 114 / 54; Evidence Map view total 304 -> 234 visible; `#clips` view 456 -> 526 (step strips added; raw notes kept); Evidence story 310 words across 10 steps (<= 25 per step).
 - Screenshots: `docs/ui/shots/phase2/`; audit folds `docs/ui/audit/after-phase2/`.
 
+### Phase 3: Explore. Done, live 2026-11-15 12:03 NST (commit 26ff1a5)
+- Explore story (9 steps, `#explore/s=<id>`): the 24 investigations as tiles; the 11 with per-test tables; the 13 linked to a fire-safety role by a quote; Moon-base ranking as stacked rule components; PSI-159 first (gas flames) vs the best solid study PSI-25 (#4); tested ranges vs Moon-base air (PSI-69 reached 34% O2 and 70.2 kPa, but no test had both); habitat coverage strip; 172 FLEX CO2/helium tests, 0 in Moon-base air, closest 25% at 71.5 kPa (test 92). Every number is computed from data/processed; every step has source chips.
+- Catalog: tiles (stripe = data level, P/D/S badges = quoted fire-safety role) with a Tiles/Table toggle; the full table and all 24 records are kept. New: `#catalog/<PSI-ID>` opens that record.
+- Ranking: the score bar is now stacked rule components (6-colour legend, hover = points and why); rows slide to their new place when the habitat changes (off under reduced motion). Numeric cells, fuel filter and rule table unchanged.
+- Compare: range bars (tested O2 and pressure per pick vs shaded Moon-base air; "not in table" stated) above the table; stacked on phones.
+- Habitat Gaps: coverage strip (habitat x 5 gap rules, ✓/✕ + word, each ✕ links to the map). Moon base and pressurized rover share one card (same air, same gaps); `#gap-rover` still resolves and every rover Show-on-map link is kept.
+- Prevent · Detect · Suppress: the repeated Moon-base gap list is now 4 gap chips (each opens the map); new FLEX suppressant map (O2 x pressure, CO2 vs helium, Moon-base box); investigation lists collapsed, names shown in the summary. Phone page height 11,155 px (was ~12,700).
+- Verified live: links.mjs ALL PASS at 1440 and 375 (40 links incl. 9 new Explore checks); story.mjs 88 Explore shots (1440/375 x light/dark x motion on/off), no overflow, no console errors; keyboard Next through 9 steps then focus on the Catalog; demo stills all render; Lighthouse live `#explore` 100/100/100/100 desktop and mobile (local: Ranking/Gaps/Controls 100 desktop, 99 mobile perf, a11y 100 after a link-contrast fix).
+- Words where each link lands (words.mjs; desktop / phone): `#explore` 322 / 69 (story top; was the Catalog view, 284 / 161); `#catalog` 383 / 79; `#ranking` 393 / 164 (was 383 / 190); `#compare` 258 / 91 (was 332 / 135); `#gaps` 270 / 145 (was 317 / 151); `#controls` 261 / 109 (was 304 / 135). Explore story 302 words across 9 steps (<= 25 per step). Views gained words only where new visuals carry labels (legend, range bars, coverage strip).
+- Screenshots: `docs/ui/shots/phase3/`; audit folds `docs/ui/audit/after-phase3/`.
+
 ### Feature checklist (old link -> new link; "OK" = links.mjs PASS after the phase)
-| Feature | New location | Old link -> new link | P1 | P2 |
-|---|---|---|---|---|
-| Start (headline, 4 tiles, entries) | Story section: story, then Overview view | `#start` -> `#start` (story), `#start/view` (tiles, entries, downloads) | OK | OK |
-| Evidence Map Panel 1 + 2, toggles, tooltips, data table, NASA Fig. 6.10 thumbnail | Evidence > Evidence Map (below the Evidence story) | `#evidence` -> story top (map just below), `#evidence/view` for the map directly | OK | OK |
-| Gap highlight / ringed point | Evidence > Evidence Map | `#evidence/gap=...`, `#evidence/at=...` unchanged | OK | OK |
-| Flame Sandbox (all controls, presets, evidence panel, nearest clip, URL state) | Evidence > Flame Sandbox (own view); also linked from Story step 10 and Overview | `#sandbox`, `#sandbox/<preset>`, `#sandbox/g=..&o2=..&p=..&u=..` unchanged | OK | OK |
-| Clips (3, captions, sources, step strip) | Evidence > Clips | `#clips` unchanged | OK | OK |
-| Catalog (24, full table) | Explore > Catalog | `#catalog` unchanged; `#explore` opens it | OK | OK |
-| Ranking (all habitats, fuel filter, rule table) | Explore > Ranking | `#ranking` unchanged | OK | OK |
-| Compare (any 2-3 of 24) | Explore > Compare | `#compare`, `#compare/<ids>` unchanged | OK | OK |
-| Habitat Gaps + Show on map | Explore > Habitat Gaps | `#gaps` unchanged | OK | OK |
-| Prevent · Detect · Suppress | Explore > Prevent · Detect · Suppress | `#controls` unchanged | OK | OK |
-| Ask (live, precomputed, passages, checks) | Ask | `#ask`, `#ask/<question>` unchanged | OK | OK |
-| Known Limits | About > Known Limits; header + footer link | `#limits` unchanged; `#about` opens it | OK | OK |
-| References | About > References | `#references` unchanged | OK | OK |
-| On Earth | About > On Earth | `#earth` unchanged | OK | OK |
-| Data downloads (tests.csv, boundary points, SSCE ranges, data dictionary) | Overview, Evidence Map, References, footer | files under `/data/export/` unchanged | OK | OK |
+| Feature | New location | Old link -> new link | P1 | P2 | P3 |
+|---|---|---|---|---|---|
+| Start (headline, 4 tiles, entries) | Story section: story, then Overview view | `#start` -> `#start` (story), `#start/view` (tiles, entries, downloads) | OK | OK | OK |
+| Evidence Map Panel 1 + 2, toggles, tooltips, data table, NASA Fig. 6.10 thumbnail | Evidence > Evidence Map (below the Evidence story) | `#evidence` -> story top (map just below), `#evidence/view` for the map directly | OK | OK | OK |
+| Gap highlight / ringed point | Evidence > Evidence Map | `#evidence/gap=...`, `#evidence/at=...` unchanged | OK | OK | OK |
+| Flame Sandbox (all controls, presets, evidence panel, nearest clip, URL state) | Evidence > Flame Sandbox (own view); also linked from Story step 10 and Overview | `#sandbox`, `#sandbox/<preset>`, `#sandbox/g=..&o2=..&p=..&u=..` unchanged | OK | OK | OK |
+| Clips (3, captions, sources, step strip) | Evidence > Clips | `#clips` unchanged | OK | OK | OK |
+| Catalog (24, tiles + full table) | Explore > Catalog (below the Explore story) | `#catalog` unchanged; `#explore` = Explore story; new `#catalog/<PSI-ID>` | OK | OK | OK |
+| Ranking (all habitats, fuel filter, rule table) | Explore > Ranking | `#ranking` unchanged | OK | OK | OK |
+| Compare (any 2-3 of 24) | Explore > Compare | `#compare`, `#compare/<ids>` unchanged | OK | OK | OK |
+| Habitat Gaps + Show on map (coverage strip; Moon base & rover one card) | Explore > Habitat Gaps | `#gaps`, `#gap-moon_base`, `#gap-rover` unchanged | OK | OK | OK |
+| Prevent · Detect · Suppress | Explore > Prevent · Detect · Suppress | `#controls` unchanged | OK | OK | OK |
+| Ask (live, precomputed, passages, checks) | Ask | `#ask`, `#ask/<question>` unchanged | OK | OK | OK |
+| Known Limits | About > Known Limits; header + footer link | `#limits` unchanged; `#about` opens it | OK | OK | OK |
+| References | About > References | `#references` unchanged | OK | OK | OK |
+| On Earth | About > On Earth | `#earth` unchanged | OK | OK | OK |
+| Data downloads (tests.csv, boundary points, SSCE ranges, data dictionary) | Overview, Evidence Map, References, footer | files under `/data/export/` unchanged | OK | OK | OK |
 No feature merged, moved to a less prominent place, or removed.
 
-### Re-estimate (wall clock, from 11:41 NST)
-- Phase 1 took ~0:40 after the build was written; Phase 2 ~0:35.
-- Phase 3 Explore (story; catalog tiles + table toggle, ranking stacked rule bars, compare range bars, gaps coverage strips with Moon/rover merged, controls restructure + suppressant map + jump index): ~2.5 h -> ~14:15.
-- Phase 4 Ask + About (Known Limits grouped/collapsed with jump index, References grouped, On Earth cards, Ask explainer): ~1.5 h -> ~15:45.
-- Total ~4 h, which is inside demo-ready (16:00) with little margin. Production stays on the last finished phase.
+### Re-estimate (wall clock, from 12:05 NST)
+- Phase 1 ~0:40, Phase 2 ~0:35, Phase 3 ~0:25 after the build (all three faster than estimated).
+- Phase 4 Ask + About (Ask story + shorter explainer; About story; Known Limits grouped/collapsed with a jump index; References grouped; On Earth cards): ~1.5 h -> ~13:35.
+- Leaves ~2.5 h of margin before demo-ready (16:00). Production stays on the last finished phase.
 
 ## Task 3 proposal (kept for the record)
 - 11. Evidence export. Proposal: the challenge's objective 2 is "Extract data that supports predictive modeling", and so far the site only shows the data; a researcher cannot take it away. Build `scripts/05_build_export.py` -> `data/processed/export/`: `tests.csv` (every test placed on Panel 1, one row each: program, PSI ID + DOI, fuel state, material/fuel, O2 + which reading, pressure + basis, recorded flows, outcome, Moon-base flag, source file + line or paper/table/page), `ssce_ranges.csv` (kept separate: pairing not given), `bass2_boundary_points.csv` (Panel 2 points with a, U, r, post-burn O2, kind) and a generated data dictionary `README.md` with caveats. Download links on the Evidence Map and References tab. Why this one: it scores on Relevance (NASA data as a reusable core output), Impact (reach beyond the site), Validity (every row keeps its provenance); it adds no new claims and no AI.
