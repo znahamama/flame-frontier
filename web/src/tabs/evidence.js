@@ -42,7 +42,7 @@ function saffireItem(t) {
 
 const FLEX_NAME = 'FLEX droplets (liquid, PSI-69)';
 const CFIG_NAME = 'Gas flames (ACME CFI-G, PSI-159)';
-const LAYERS = [[FLEX_NAME, 'FLEX droplets (liquid)'], [CFIG_NAME, 'CFI-G gas flames']];
+const LAYERS = [['flex', 'FLEX droplets (liquid, PSI-69)'], ['cfig', 'CFI-G gas flames (PSI-159)']];
 const OUTCOME = { extinguished: 'extinguished', blowoff: 'blowoff', no_ignition: 'no ignition', not_sustained: 'would not stay lit', unclear: 'unclear (flagged for review)', not_stated: 'not stated in the table' };
 const bassSrc = (t) => `${t.source.file}, line ${t.source.line}`
   + (t.source_xlsx ? `; ${t.source_xlsx.file}, tab "${t.source_xlsx.tab}", row ${t.source_xlsx.row}` : '');
@@ -81,7 +81,7 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
+function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
@@ -115,11 +115,7 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
   series.push({
     name: 'Saffire (per-test point)', type: 'scatter', z: 5, symbol: 'circle', symbolSize: 11,
     itemStyle: { color: c.s1, borderColor: c.surface, borderWidth: 2 },
-    data: saffire.map((t) => {
-      const it = saffireItem(t);
-      if (t.sample === 'VI-2') it.label = { show: true, position: 'right', color: c.text, fontSize: 11, formatter: 'Saffire VI-2, VI-3' };
-      return it;
-    }),
+    data: saffire.map(saffireItem),
   });
 
   // BASS-II: every PSI-25 test at the report's stated 1 atm. Same x for all (pressure was not measured
@@ -131,24 +127,23 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
   });
 
   // FLEX liquid droplets: a 4th source, so it is encoded by SHAPE in a neutral colour (max 3 hues per chart).
-  series.push({
-    name: FLEX_NAME, type: 'scatter', z: 3, symbol: 'triangle', symbolSize: 8,
-    itemStyle: { color: 'transparent', borderColor: c.text2, borderWidth: 1.2 },
-    data: flex.tests.map((t) => ({
+  const layerData = {};
+  layerData.flex = flex.tests.map((t) => ({
       value: [t.pressure_kpa, t.o2_pct],
       tip: `FLEX test ${esc(t.id)} (${esc(t.flex_identifier)}), ${esc(t.date)}<br>${esc(t.fuel)} droplet (liquid, not a solid material)<br>`
         + `${t.pressure_mmhg} mmHg = ${t.pressure_kpa} kPa; initial O2 ${t.o2_pct}% (mole fraction ${t.o2_pct / 100})`
         + `${t.he_frac ? `; He ${t.he_frac}` : ''}<br>Test end: ${esc(t.test_end)}`,
       src: `${t.source.file}, line ${t.source.line}`,
-    })),
+    }));
+  series.push({
+    id: 'flex', name: FLEX_NAME, type: 'scatter', z: 3, symbol: 'triangle', symbolSize: 8,
+    itemStyle: { color: 'transparent', borderColor: c.text2, borderWidth: 1.2 },
+    data: layers.flex ? layerData.flex : [],
   });
 
   // CFI-G normal flames: chamber O2 before each test (see o2_sweep.json for why it is ambient). Gas, not solid:
   // a 5th source, encoded by SHAPE (hollow square) in the same neutral colour as FLEX.
-  series.push({
-    name: CFIG_NAME, type: 'scatter', z: 3, symbol: 'rect', symbolSize: 6,
-    itemStyle: { color: 'transparent', borderColor: c.text2, borderWidth: 0.9, opacity: 0.8 },
-    data: cfig.tests.map((t) => ({
+  layerData.cfig = cfig.tests.map((t) => ({
       value: [t.pressure_kpa, t.o2_pct],
       tip: `CFI-G normal flame ${esc(t.id)}, day ${esc(t.day)}: ${esc(t.fuel)} from a spherical burner (gas flame, not a solid material)<br>`
         + `Chamber O2 before test ${t.o2_pct}% (mole fraction ${esc(t.o2_raw)} in the file); after ${t.o2_after_pct ?? 'n/a'}%<br>`
@@ -156,11 +151,40 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
         + `Hot ignition: ${esc(t.hot_ignition || 'not stated')}${t.comment ? `<br><i>"${esc(t.comment)}"</i>` : ''}`
         + `<br>${t.in_moon_zone ? '<b>Inside the Moon-base zone</b>' : 'Outside the Moon-base zone'}`,
       src: `${t.source.file}, line ${t.source.line} (columns "XO2 before test", "approx p (bar)")`,
-    })),
+    }));
+  series.push({
+    id: 'cfig', name: CFIG_NAME, type: 'scatter', z: 3, symbol: 'rect', symbolSize: 6,
+    itemStyle: { color: 'transparent', borderColor: c.text2, borderWidth: 0.9, opacity: 0.8 },
+    data: layers.cfig ? layerData.cfig : [],
   });
+
+  // Callout: names the solid tests inside the zone (template over external_tests.json). Desktop: inside the
+  // box; phones: the box is ~40 px wide, so the callout sits in the empty upper right with a leader line.
+  const zIn = saffire.filter((t) => t.in_moon_zone && t.kind === 'point');
+  if (zIn.length) {
+    const narrow = el.clientWidth < 600;
+    const flows = [...new Set(zIn.map((t) => t.flow_cm_s))];
+    const tgt = [zIn.reduce((a, t) => a + t.pressure_kpa[0], 0) / zIn.length, zIn.reduce((a, t) => a + t.o2_pct[0], 0) / zIn.length];
+    const names = `${zIn[0].program} ${zIn.map((t) => t.sample).join(' and ')}`;
+    const text = narrow
+      ? `Shaded box = Moon-base air.\nSolids inside: ${names}\n(${flows.join(', ')} cm/s)`
+      : `${names}:\nthe only solid tests\nin Moon-base air\n(${zIn.length === 2 ? 'both' : 'all'} at ${flows.join(', ')} cm/s)`;
+    // Phones: anchor straight above the points so the leader line is vertical; the text box hangs to the right.
+    const at = narrow ? [tgt[0], 80] : [zone.p_max_kpa * 0.55, (zone.o2_min_pct + 100) / 2 - 4];
+    series.push({
+      name: 'callout', type: 'line', silent: true, z: 7, legendHoverLink: false,
+      lineStyle: { width: 1, color: c.text }, symbol: 'circle', symbolSize: 1, itemStyle: { color: c.text },
+      data: [
+        { value: at, label: { show: true, position: 'inside', color: c.text, fontSize: 11, lineHeight: 15, fontWeight: 600, align: narrow ? 'left' : 'center', offset: narrow ? [-24, 0] : [0, 0],
+          backgroundColor: c.surface, borderColor: c.text2, borderWidth: 1, borderRadius: 4, padding: [5, 7], formatter: text } },
+        { value: tgt },
+      ],
+    });
+  }
 
   series.push({
     name: 'Spacesuit', type: 'scatter', symbol: 'diamond', symbolSize: 13, z: 5, itemStyle: { color: c.text2 },
+    label: { show: true, position: 'bottom', distance: 4, color: c.text2, fontSize: 11, formatter: 'Spacesuit' },
     data: [{ value: [p.spacesuit.p_kpa, p.spacesuit.o2_pct], tip: esc(p.spacesuit.label), src: cite(p.spacesuit.source) }],
     // Reference areas hang off this series.
     markArea: {
@@ -168,7 +192,9 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
       data: [
         [{ name: 'Moon-base air', xAxis: 0, yAxis: zone.o2_min_pct,
            itemStyle: { color: c.zone, borderColor: c.text, borderWidth: 1.5 },
-           label: { show: true, position: 'insideTopRight', color: c.text2, formatter: el.clientWidth < 600 ? 'Moon-base air' : 'Moon-base air\n≥30% O2, ≤10.2 psi (70.33 kPa)' } },
+           label: { show: el.clientWidth >= 600, position: 'insideBottomLeft', distance: 6, align: 'left', color: c.text2, lineHeight: 15,
+             // bottom-left: clear of the spacesuit marker, the pO2 curves and the Saffire points
+             formatter: `Moon-base air\n≥${zone.o2_min_pct}% O2\n≤10.2 psi (${zone.p_max_kpa} kPa)` } },
          { xAxis: zone.p_max_kpa, yAxis: 100 }],
       ],
       tooltip: {
@@ -189,9 +215,9 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
 
   const chart = echarts.init(el);
   chart.setOption({
-    grid: { left: 56, right: 96, top: el.clientWidth < 600 ? 124 : 72, bottom: 52 },   // legend wraps to 2 lines on desktop, 4-5 on phones
+    grid: { left: 48, right: el.clientWidth < 600 ? 72 : 96, top: el.clientWidth < 600 ? 84 : 40, bottom: 52 },   // 3-entry legend: 1 line on desktop, 3 on phones
     tooltip: tip(c, seriesTips),
-    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, FLEX_NAME, CFIG_NAME, 'Spacesuit'] },
+    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`] },
     xAxis: axis(c, p.x_axis, { min: 0, max: p.x_max, axisLabel: { color: c.text2, showMaxLabel: false } }),
     yAxis: axis(c, p.y_axis, { min: 0, max: 100, nameGap: 36 }),
     series,
@@ -202,6 +228,7 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
     const [si, di] = q.split(',').map(Number);
     setTimeout(() => chart.dispatchAction({ type: 'showTip', seriesIndex: si, dataIndex: di }), 300);
   }
+  chart.layerData = layerData;
   return chart;
 }
 
@@ -231,7 +258,7 @@ function panel2(el, ref, bass2, c) {
     return {
       value: [q.a_per_s, q.o2_final_pct],
       tip: `${esc(q.test)}: ${t.geometry.rod_diameter_in}" ${esc(t.geometry.color ?? '')} PMMA rod (r = ${q.r_cm} cm)<br>`
-        + `${q.kind === 'blowoff_upper_bound' ? 'Blowoff; flow at most' : 'Stable flame at'} Air ${q.air_cm_s} cm/s → U = 1.0066 × Air = ${q.u_cm_s} cm/s<br>`
+        + `${q.kind === 'blowoff_upper_bound' ? 'Blowoff; flow at most' : 'Last stable flow before extinction:'} Air ${q.air_cm_s} cm/s → U = 1.0066 × Air = ${q.u_cm_s} cm/s<br>`
         + `a ${q.kind === 'blowoff_upper_bound' ? '≤' : '='} (3/2)(U/r)(r/0.318)^0.5 = ${q.a_per_s} 1/s<br>Post-burn O2 ${q.o2_final_pct}% by vol (initial ${t.o2_initial_pct}%)<br>`
         + `<i>${esc(q.method)}</i>`,
       src: bassSrc(q) + (q.source_calibration ? `; ${q.source_calibration.file} (${q.source_calibration.date}, restrictor ${q.source_calibration.restrictor})` : ''),
@@ -243,14 +270,14 @@ function panel2(el, ref, bass2, c) {
     grid: { left: 56, right: 24, top: el.clientWidth < 600 ? 112 : 48, bottom: 52 },
     tooltip: tip(c),
     legend: { top: 0, textStyle: { color: c.text2 },
-      data: ['NASA boundary, eq. 6.1 (tested range)', 'NASA boundary (beyond recorded flows)', 'Stable flame observed (Olson rod)', 'Blowoff, flow ≤ marker (Olson rod)'] },
+      data: ['NASA boundary, eq. 6.1 (tested range)', 'NASA boundary (beyond recorded flows)', 'Last stable flow before extinction (Olson rod)', 'Blowoff, flow ≤ marker (Olson rod)'] },
     xAxis: axis(c, p.x_axis, { type: 'log', min: 0.25, max: 200 }),
     yAxis: axis(c, p.y_axis, { min: 12, max: 22 }),
     series: [
       { name: 'NASA boundary (beyond recorded flows)', type: 'line', showSymbol: false, symbolSize: 10, lineStyle: dashed, itemStyle: { color: c.s1 }, data: mk(below) },
       { name: 'NASA boundary (beyond recorded flows)', type: 'line', showSymbol: false, symbolSize: 10, lineStyle: dashed, itemStyle: { color: c.s1 }, data: mk(above) },
       { name: 'NASA boundary, eq. 6.1 (tested range)', type: 'line', showSymbol: false, symbolSize: 10, lineStyle: { width: 2.5, color: c.s1 }, itemStyle: { color: c.s1 }, data: mk(tested) },
-      { name: 'Stable flame observed (Olson rod)', type: 'scatter', symbol: 'circle', symbolSize: 11, z: 5,
+      { name: 'Last stable flow before extinction (Olson rod)', type: 'scatter', symbol: 'circle', symbolSize: 11, z: 5,
         itemStyle: { color: c.s3, borderColor: c.surface, borderWidth: 2 }, data: pts('stable_observed') },
       // Left-pointing: the true blowoff stretch rate lies at or left of the marker.
       { name: 'Blowoff, flow ≤ marker (Olson rod)', type: 'scatter', symbol: 'triangle', symbolRotate: 90, symbolSize: 14, z: 5,
@@ -281,12 +308,18 @@ function cfigLine(cfig) {
     + `the "up to 85%" in the brief is the inverse flames' burner stream and is not plotted.`;
 }
 
-// Layer toggles for the non-solid sources: kept in sync with the chart legend both ways.
-function layerToggles(chart, box) {
-  box.innerHTML = `<span class="muted">Non-solid layers:</span> ${LAYERS.map(([name, label]) =>
-    `<label><input type="checkbox" data-name="${esc(name)}" checked> ${esc(label)}</label>`).join(' ')}`;
-  box.querySelectorAll('input').forEach((i) => { i.onchange = () => chart.dispatchAction({ type: i.checked ? 'legendSelect' : 'legendUnSelect', name: i.dataset.name }); });
-  chart.on('legendselectchanged', (e) => box.querySelectorAll('input').forEach((i) => { i.checked = e.selected[i.dataset.name] !== false; }));
+// Layer toggles for the non-solid sources (off by default: the headline is about solids). Each label carries
+// the layer's marker shape, so it doubles as that layer's legend entry.
+const ICON = {
+  flex: '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5 11 10.5H1Z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>',
+  cfig: '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2.5" y="2.5" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>',
+};
+function layerToggles(chart, box, counts, layers) {
+  box.innerHTML = `<span class="muted">Add non-solid tests:</span> ${LAYERS.map(([id, label]) =>
+    `<label><input type="checkbox" data-id="${id}"${layers[id] ? ' checked' : ''}> ${ICON[id]} ${esc(label)} <span class="muted">(+${counts[id]} tests)</span></label>`).join(' ')}`;
+  box.querySelectorAll('input').forEach((i) => {
+    i.onchange = () => { layers[i.dataset.id] = i.checked; chart.setOption({ series: [{ id: i.dataset.id, data: i.checked ? chart.layerData[i.dataset.id] : [] }] }); };
+  });
 }
 
 // "#evidence/gap=moon_base.flow" -> {habitat, gap, region, label}
@@ -305,17 +338,20 @@ export async function render(root, arg) {
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
-    <section class="card"><h2>Where the tests are</h2>
+    <section class="card"><h2 class="vh">Where the tests are</h2>
       <p class="headline">${headline(inZone)}</p>
-      <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
-      <p class="note">${flexLine(flex)}</p>
-      <p class="note">${cfigLine(cfig)}</p>
       ${hl ? `<p class="gapbanner" id="gapbanner"><b>Gap (${esc(hl.h.habitat.name)}):</b> ${esc(hl.gap.text)} ${hl.region.panel === 2 ? 'See Panel 2 below: it is the only boundary, at 1 atm.' : 'Highlighted with a dashed box.'} <a href="#gaps">Back to the gap report</a></p>` : ''}
       <div class="layers" id="p1-layers"></div>
-      <div class="chart tall" id="p1"></div>${table1(ref, ext)}</section>
+      <div class="chart tall" id="p1" role="img" aria-label="Scatter of O2 against total pressure for every placed test, with the Moon-base zone shaded"></div>
+      <details class="table-view"><summary>About these layers</summary>
+        <p class="note">Solid materials are shown by default; the headline is about them. Tick a box above to add the non-solid tests.</p>
+        <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
+        <p class="note">${flexLine(flex)}</p>
+        <p class="note">${cfigLine(cfig)}</p></details>
+      ${table1(ref, ext)}</section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
-      Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s. Points: ${bass2.panel2_points.length} Olson tests whose flow can be read from PSI files without extrapolation: stable flames at a recorded cm/s, and blowoffs whose flow is only bounded from above by the same-day fan calibration.
+      Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s. Points: ${bass2.panel2_points.length} Olson tests whose flow can be read from PSI files without extrapolation: the last flow recorded in cm/s at which the flame was still burning before the crew turned it down to extinction, and blowoffs whose flow is only bounded from above by the same-day fan calibration.
 </p>
       <div class="p2-honest">
         <div><p class="callout">Only ${bass2.panel2_points.length} of NASA's ~${ref.panel2.nasa_figure.iss_points_approx} ISS boundary points can be reconstructed from the public PSI files.</p>
@@ -325,9 +361,10 @@ export async function render(root, arg) {
           <figcaption>NASA's own plot, for comparison (image only; points not digitized). ${esc(cite(ref.panel2.nasa_figure.source))}</figcaption></figure>
       </div>
       <div class="chart" id="p2"></div></section>`;
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  const layers = { flex: false, cfig: false };
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl, layers), panel2(root.querySelector('#p2'), ref, bass2, c)];
   if (hl) requestAnimationFrame(() => root.querySelector(hl.region.panel === 2 ? '#p2' : '#gapbanner')?.scrollIntoView({ block: 'start' }));
-  layerToggles(charts[0], root.querySelector('#p1-layers'));
+  layerToggles(charts[0], root.querySelector('#p1-layers'), { flex: flex.count, cfig: cfig.count }, layers);
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
   ro.observe(root);
   return () => { ro.disconnect(); charts.forEach((ch) => ch.dispose()); };

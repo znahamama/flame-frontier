@@ -218,6 +218,7 @@
             }
           ],
           "joint_tests": 27,
+          "material_class": "solid",
           "notes": [
             "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
           ],
@@ -557,6 +558,7 @@
             }
           ],
           "joint_tests": 42,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -808,6 +810,7 @@
             }
           ],
           "joint_tests": 28,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -1035,6 +1038,7 @@
             }
           ],
           "joint_tests": 23,
+          "material_class": "gas",
           "notes": [
             "Pressure is 'approx'."
           ],
@@ -1132,6 +1136,7 @@
             }
           ],
           "joint_tests": 1,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [
             {
@@ -1214,6 +1219,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "No pressure column."
           ],
@@ -1290,6 +1296,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [
             "Summary rows: lists of O2 and pressure; which pairs were run is not given."
           ],
@@ -1374,6 +1381,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1440,6 +1448,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas_emulating_solid",
           "notes": [
             "Per-day lists; pressures 'not identified in this summary table'. Values over 100 ('3400%', '2100%') are skipped."
           ],
@@ -1516,6 +1525,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1582,6 +1592,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [
             "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
           ],
@@ -1668,6 +1679,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1734,6 +1746,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1800,6 +1813,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1866,6 +1880,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1932,6 +1947,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -1998,6 +2014,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2064,6 +2081,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2130,6 +2148,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "dust",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2196,6 +2215,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2262,6 +2282,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2328,6 +2349,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2394,6 +2416,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2460,6 +2483,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -2685,6 +2709,7 @@
             }
           ],
           "joint_tests": 20,
+          "material_class": "gas",
           "notes": [
             "Pressure is 'approx'."
           ],
@@ -2769,6 +2794,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -2851,6 +2877,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [
             "Summary rows: lists of O2 and pressure; which pairs were run is not given."
           ],
@@ -2935,6 +2962,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
           ],
@@ -3027,6 +3055,7 @@
           ],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [
             {
@@ -3109,6 +3138,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3175,6 +3205,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas_emulating_solid",
           "notes": [
             "Per-day lists; pressures 'not identified in this summary table'. Values over 100 ('3400%', '2100%') are skipped."
           ],
@@ -3251,6 +3282,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3317,6 +3349,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "No pressure column."
           ],
@@ -3393,6 +3426,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3459,6 +3493,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3525,6 +3560,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3591,6 +3627,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -3673,6 +3710,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3739,6 +3777,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [
             "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
           ],
@@ -3825,6 +3864,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3891,6 +3931,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -3957,6 +3998,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4023,6 +4065,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4089,6 +4132,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4155,6 +4199,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4221,6 +4266,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "dust",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4287,6 +4333,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4353,6 +4400,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -4578,6 +4626,7 @@
             }
           ],
           "joint_tests": 20,
+          "material_class": "gas",
           "notes": [
             "Pressure is 'approx'."
           ],
@@ -4662,6 +4711,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -4744,6 +4794,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [
             "Summary rows: lists of O2 and pressure; which pairs were run is not given."
           ],
@@ -4828,6 +4879,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
           ],
@@ -4920,6 +4972,7 @@
           ],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [
             {
@@ -5002,6 +5055,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5068,6 +5122,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas_emulating_solid",
           "notes": [
             "Per-day lists; pressures 'not identified in this summary table'. Values over 100 ('3400%', '2100%') are skipped."
           ],
@@ -5144,6 +5199,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5210,6 +5266,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "No pressure column."
           ],
@@ -5286,6 +5343,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5352,6 +5410,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5418,6 +5477,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5484,6 +5544,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -5566,6 +5627,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5632,6 +5694,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [
             "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
           ],
@@ -5718,6 +5781,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5784,6 +5848,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5850,6 +5915,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5916,6 +5982,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -5982,6 +6049,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6048,6 +6116,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6114,6 +6183,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "dust",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6180,6 +6250,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6246,6 +6317,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6338,6 +6410,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
           ],
@@ -6424,6 +6497,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6490,6 +6564,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6556,6 +6631,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [
             "No pressure column."
           ],
@@ -6632,6 +6708,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6698,6 +6775,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6764,6 +6842,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6830,6 +6909,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [
             "Summary rows: lists of O2 and pressure; which pairs were run is not given."
           ],
@@ -6914,6 +6994,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -6980,6 +7061,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas_emulating_solid",
           "notes": [
             "Per-day lists; pressures 'not identified in this summary table'. Values over 100 ('3400%', '2100%') are skipped."
           ],
@@ -7056,6 +7138,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7122,6 +7205,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7194,6 +7278,7 @@
           ],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [
             {
@@ -7282,6 +7367,7 @@
           ],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [
             "Pressure is 'approx'."
           ],
@@ -7366,6 +7452,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -7448,6 +7535,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [
             {
@@ -7530,6 +7618,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7596,6 +7685,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7662,6 +7752,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7728,6 +7819,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [
             "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
           ],
@@ -7814,6 +7906,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "solid_smoke",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7880,6 +7973,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "dust",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -7946,6 +8040,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "liquid",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,
@@ -8012,6 +8107,7 @@
           "excluded_cols": [],
           "joint_rows": [],
           "joint_tests": 0,
+          "material_class": "gas",
           "notes": [],
           "o2_cols": [],
           "o2_range_pct": null,

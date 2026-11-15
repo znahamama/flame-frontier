@@ -1,0 +1,80 @@
+{
+  "answer": "The BASS-II report places the minimum on the flammability boundary at approximately 13.5 percent O2, at a of 8 to 12 s–1 [report:bass2:p75.2]. The report also states the minimum O2 concentration of 13.5 percent O2 at a of 8 to 12 s–1 [report:bass2:p76.1]. Flame Frontier computes a post-burn minimum of 13.61% from equation 6.1, which differs from the report text's 13.5 percent; this value is Flame Frontier's derivation, not a NASA figure [limits:gaps:iss].",
+  "attempts": 1,
+  "checks": {
+    "cited": [
+      "report:bass2:p75.2",
+      "report:bass2:p76.1",
+      "limits:gaps:iss"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "id": "report:bass2:p75.2",
+      "line": null,
+      "page": 75,
+      "score": 15.466,
+      "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 75",
+      "text": "( )2O 6exp 0.5 0.0167 13.4X aa= −+ + (6.1) The minimum in this boundary occurs at a = 8 to 12 s–1 at approximately 13.5 percent O2, in good agreement with the predicted a at the minima in the flammability boundary (Refs. 6, 7, 20, and 21). The drop tower blowoff data, given by the purple dashed line, agrees very well with the flight data. The fact that the blowoff boundary is linear with flow makes it possible to extrapolate blowoff data down to zero a and use that O2 value as an accurate but conservative estimate of the minimum O2 concentration for material flammability in space. This may provide a consistent methodology to derate materials based on normal-gravity flammability tests accounting for buoyant flow to ensure the material will not burn in space. Figure 6.9.—Flammability boundary obtained in Burning and Suppression of Solids—II (BASS–II) tests with linear axis. Complementary drop tower test results are also shown. International Space Station (ISS). Stretch rate (a). Final O2 concentration (XO2). Forced- flow velocity (U). Rod radius (r)."
+    },
+    {
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "id": "report:bass2:p76.2",
+      "line": null,
+      "page": 76,
+      "score": 11.884,
+      "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 76",
+      "text": "23)), indicating the material remains flammable under the weak ventilation only obtainable in microgravity. This “Goldilocks” zone of flow is unfortunately typical of spacecraft ventilation flows near surfaces. Earthbound flammability tests need a reliable method to account for this extension of flammability in microgravity environments. Extrapolation of the normal-gravity blowoff boundary to zero stretch may be a viable method to estimate this enhanced flammability if a buoyant stretch can be included. Figure 6.10.—Flammability boundary shown with logarithmic x-axis, which expands quenching region and exhibits classic U-shaped flammability map. International Space Station (ISS). Stretch rate (a). Final O2 concentration (XO2). Forced-flow velocity (U). Rod radius (r)."
+    },
+    {
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "id": "report:bass2:p76.1",
+      "line": null,
+      "page": 76,
+      "score": 11.621,
+      "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 76",
+      "text": "NASA/TM-20210011385 76 The quenching branch is fitted using an exponential decay (red dashed curve). In this region, heat losses dominate to cool the flame to extinction through the strong dependence of reaction rate in the Arrhenius term, as was modeled by References 6, 7, 20, and 21, and will be evaluated in Section 6.1.4.3. This boundary is very steep for small a when plotted on a linear x-axis as shown in Figure 6.9. Figure 6.10 replots the same data as Figure 6.9 but with a logarithmic x-axis. Note that the classic U- shaped flammability boundary is evident when a logarithmic x-axis is used. This expands the quenching branch while making the linear blowoff branch appear curved. It also emphasizes the uncertainty in the flow at the very low velocities (<1 cm/s) along the quenching branch. The minimum O2 concentration of 13.5 percent O2 at a of 8 to 12 s–1 is significantly lower than the observed upward flame spread limit of 15.4 percent O2 (in normal gravity with an additional 4-cm/s forced flow (Ref."
+    },
+    {
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "id": "report:bass2:p67.1",
+      "line": null,
+      "page": 67,
+      "score": 10.635,
+      "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 67",
+      "text": "NASA/TM-20210011385 67 To obtain the desired O2 concentration for the test, the initial ISS air filling the MSG working volume was diluted using N2 as described in Reference 14. A continuously stirred tank reactor (CSTR) model was used to time the N2 flow to obtain the desired initial O2 concentrations down to as low as 13.6 percent O2. O2 sensor readings, calibrated with the onboard mass spectrometer, provided initial and final O2 concentrations for each test. The readings were used to verify the CSTR model and measure the O2 consumption within the test. Onboard CO and CO2 sensors were also used to provide initial and final product gas concentrations for each test, to evaluate the average burning efficiency for each test. Clear cast PMMA rods, shown in the top left corner of Figure 6.1, were mounted inside the flow duct for each test. The stagnation tips of the rods were initially hemispherical. Three radii r of clear cast PMMA cylindrical rods were tested (primarily 0.318 cm; but also 0.476 and 0.635 cm)."
+    },
+    {
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "id": "report:bass2:p75.1",
+      "line": null,
+      "page": 75,
+      "score": 9.602,
+      "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 75",
+      "text": "NASA/TM-20210011385 75 tests), along with the postburn O2 sensor reading were used to generate a flammability boundary, shown in Figure 6.9. Error bars reflect the uncertainties in O2 and flow and are mostly smaller than the symbols. The x-axis of Figure 6.9 uses a forced a, which is defined as a = (3/2)(U/r)(r/ro)½ where U is the free stream velocity. The square root modifying factor is used to correct for the different rod sizes. The gas phase ℓ scale (Ref. 7) is defined as ℓ = (α/a)1/2, which is proportional to r1/2 for a given velocity. All a are normalized to the base rod radius (ro = 0.318 cm) using the ratio of these ℓ s. The thick gray flammability boundary in Figure 6.9 represents the border between stable flames and extinguished flames. Along this boundary, the flame is sensitive to stochastic perturbations that can lead to extinguishment (Ref. 22). The O2 concentration (XO2) versus a boundary is defined by the combined empirical equations shown by the red (quenching branch, exponential expression) and black (blowoff branch, linear expression) dashed lines."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:iss",
+      "line": null,
+      "page": null,
+      "score": 10.307,
+      "source": "Flame Frontier habitat gap report: ISS cabin",
+      "text": "ISS cabin target: 21–24.1% O2 at 96.5–102.7 kPa, micro gravity. 28 solid-material tests in this window. 28 solid-material tests had O2 and pressure in 21–24.1% O2 at 96.5–102.7 kPa: Saffire IV-1, BASS-II B1, BASS-II B2, BASS-II B3, BASS-II B4, BASS-II B5, BASS-II B6, BASS-II B7 and 20 more. Recorded airflows in 21–24.1% O2 at 96.5–102.7 kPa: 0–20 cm/s (16 distinct values). A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, 101.3 kPa), post-burn O2 minimum 13.61% (computed by Flame Frontier from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2'). Microgravity, as in every flight investigation on the map. Non-solid tests in 21–24.1% O2 at 96.5–102.7 kPa: 23 CFI-G gas flames, 42 FLEX liquid droplets. They do not close a solid-material gap."
+    }
+  ],
+  "flagged": false,
+  "key": "57694a943a3c9ac1cab26fd6",
+  "model": "claude-haiku-5-5",
+  "question": "What is the minimum oxygen concentration on the BASS-II flammability boundary for PMMA rods?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 3210,
+      "output_tokens": 195
+    }
+  ]
+}

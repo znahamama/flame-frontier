@@ -1,0 +1,84 @@
+{
+  "answer": "SIBAL Cloth was burned in Moon-base air at 31.0 mol % oxygen and 54.1 kPa ambient pressure [data:saffire:table1]. Two-Sided PMMA was burned in Moon-base air at 30.3 mol % oxygen and 54.6 kPa ambient pressure [data:saffire:table1]. The challenge page defines Moon-base air as at least 30% oxygen at 10.2 psi or less [brief:s1.29]. Flame Frontier reads these two as the only solid materials burned in that window in its sources [limits:headline].",
+  "attempts": 2,
+  "checks": {
+    "cited": [
+      "data:saffire:table1",
+      "brief:s1.29",
+      "limits:headline"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.29",
+      "line": null,
+      "page": null,
+      "score": 23.048,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less. Compared to Earth’s atmosphere, that’s more than a 40% increase in the oxygen concentration making materials much more flammable."
+    },
+    {
+      "file": "data/processed/external_tests.json",
+      "id": "data:saffire:table1",
+      "line": null,
+      "page": 3,
+      "score": 11.617,
+      "source": "Saffire ICES-2024-365, Table 1, p.3 (rows restated one per test; values checked against the PDF)",
+      "text": "Saffire IV-1 (Saffire IV (Cygnus)): SIBAL Cloth, ambient pressure 100.0 kPa, oxygen 22.0 mol %, air flow 20 cm/s concurrent. Saffire V-2 (Saffire V (Cygnus)): Cotton Jersey, ambient pressure 70.7 kPa, oxygen 26.2 mol %, air flow 20 cm/s concurrent. Saffire VI-2 (Saffire VI (Cygnus)): SIBAL Cloth, ambient pressure 54.1 kPa, oxygen 31.0 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-3 (Saffire VI (Cygnus)): Two-Sided PMMA, ambient pressure 54.6 kPa, oxygen 30.3 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-4 (Saffire VI (Cygnus)): One-Sided PMMA, ambient pressure 55.2 kPa, oxygen 28.8 mol %, air flow 20 cm/s concurrent."
+    },
+    {
+      "file": "data/processed/external_tests.json",
+      "id": "limits:headline",
+      "line": null,
+      "page": null,
+      "score": 17.739,
+      "source": "Flame Frontier headline (template over external_tests.json)",
+      "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2, SIBAL Cloth, 31.0 mol % at 54.1 kPa, 20.0 cm/s; Saffire VI-3, Two-Sided PMMA, 30.3 mol % at 54.6 kPa, 20.0 cm/s), none in partial gravity. Moon-base air means at least 30% O2 at 10.2 psi (70.33 kPa) or less, from the challenge page."
+    },
+    {
+      "file": "data/manual/sources.json",
+      "id": "limits:source:challenge_brief",
+      "line": null,
+      "page": null,
+      "score": 14.796,
+      "source": "Flame Frontier Known Limits: Space Apps challenge page",
+      "text": "Space Apps challenge page gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. It does not give: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:rover",
+      "line": null,
+      "page": null,
+      "score": 10.66,
+      "source": "Flame Frontier habitat gap report: Pressurized rover",
+      "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:moon_base",
+      "line": null,
+      "page": null,
+      "score": 10.633,
+      "source": "Flame Frontier habitat gap report: Moon base",
+      "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+    }
+  ],
+  "flagged": false,
+  "key": "94848618705d0268268de56c",
+  "model": "claude-haiku-5-5",
+  "question": "Which solid materials have been burned in Moon-base air, at 30% oxygen or more and 10.2 psi or less?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 2782,
+      "output_tokens": 247
+    },
+    {
+      "input_tokens": 2837,
+      "output_tokens": 196
+    }
+  ]
+}

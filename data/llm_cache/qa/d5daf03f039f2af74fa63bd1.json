@@ -1,0 +1,80 @@
+{
+  "answer": "In the inverse flame tests, the chamber was filled with nitrogen and a flammable gas such as propane, while the 85% oxygen flowed from the spherical burner [brief:s1.30]. Space Apps challenge text says the up-to-85% oxygen is the burner's oxidizer stream, not a chamber atmosphere [limits:source:challenge_brief]. Flame Frontier reads the XO2 column as the burner's oxidizer stream, fixed per test, and never plotted as ambient [limits:o2:PSI-159:Inverse_Flames].",
+  "attempts": 1,
+  "checks": {
+    "cited": [
+      "brief:s1.30",
+      "limits:source:challenge_brief",
+      "limits:o2:PSI-159:Inverse_Flames"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.30",
+      "line": null,
+      "page": null,
+      "score": 19.384,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "Microgravity tests with the highest oxygen concentrations were conducted as part of the ACME’s Cool Flames Investigation with Gases (CFI-G). In those tests, the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame."
+    },
+    {
+      "file": "data/processed/cfig_tests.json",
+      "id": "limits:cfig",
+      "line": null,
+      "page": null,
+      "score": 14.697,
+      "source": "Flame Frontier Known Limits: ACME CFI-G",
+      "text": "ACME CFI-G normal flames: 20 of 179 tests ran with chamber O2 33.24–39.26% at 50.67 kPa (Moon-base air); they are gas flames, not solids. That sentence describes the INVERSE flames. In normal flames the roles swap: fuel flows from the burner into an O2/N2 chamber. Inverse flames: 154 tests, burner oxidizer stream up to 85.0% O2, which is not an atmosphere."
+    },
+    {
+      "file": "data/manual/sources.json",
+      "id": "limits:source:challenge_brief",
+      "line": null,
+      "page": null,
+      "score": 14.508,
+      "source": "Flame Frontier Known Limits: Space Apps challenge page",
+      "text": "Space Apps challenge page gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. It does not give: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
+    },
+    {
+      "file": "data/manual/o2_atmosphere_sweep.csv",
+      "id": "limits:o2:PSI-23:ACME_s-Flame",
+      "line": null,
+      "page": null,
+      "score": 11.874,
+      "source": "Flame Frontier Known Limits: whose oxygen?",
+      "text": "PSI-23 ACME s-Flame, column \"Atmosphere*\": verdict ambient. Evidence: \"*Atmosphere is ~1 atm but pressure increases and O2% drops with vitiation.\". Chamber atmosphere, approximate ('~21% O2', '~30% O2')."
+    },
+    {
+      "file": "data/manual/o2_atmosphere_sweep.csv",
+      "id": "limits:o2:PSI-20:ACME_BRE",
+      "line": null,
+      "page": null,
+      "score": 11.112,
+      "source": "Flame Frontier Known Limits: whose oxygen?",
+      "text": "PSI-20 ACME BRE, column \"Oxygen Conc (percent)\": verdict ambient. Evidence: \"Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures.\". Chamber atmosphere; the burner flows fuel ('Fuel Bottle' 100% or 50% C2H4). The objective names '8.2 psia, 34 % oxygen' (inside the Moon-base window), but the table's pressures are 'not identified', so no BRE test can be placed in the window."
+    },
+    {
+      "file": "data/manual/o2_atmosphere_sweep.csv",
+      "id": "limits:o2:PSI-159:Inverse_Flames",
+      "line": null,
+      "page": null,
+      "score": 8.424,
+      "source": "Flame Frontier Known Limits: whose oxygen?",
+      "text": "PSI-159 Inverse Flames, column \"XO2\": verdict oxidizer stream. Evidence: \"the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\". The chamber holds fuel ('Xf before test' / 'Xf after test'); XO2 is the burner's oxidizer stream, fixed per test. Never plotted as ambient."
+    }
+  ],
+  "flagged": false,
+  "key": "d5daf03f039f2af74fa63bd1",
+  "model": "claude-haiku-5-5",
+  "question": "Why is the 85% oxygen in ACME CFI-G not the chamber atmosphere?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 1962,
+      "output_tokens": 189
+    }
+  ]
+}

@@ -72,6 +72,21 @@ def keep_old(prefix):
     return old or None
 
 
+BRIEF = "Space Apps 2026 challenge page"
+
+
+def gap_from(h):
+    """Primary documents behind one habitat's gap report, in order of first use."""
+    out = [BRIEF]
+    for x in h["gaps"] + h["covered"]:
+        for e in x.get("evidence", []):
+            d = (", ".join(str(v) for v in (e.get("doc"), e.get("locator"), e.get("printed_page") and f"p.{e['printed_page']}") if v)
+                 if e.get("doc") else f"{e['file'].split('/')[2]} experimental table (PSI)")
+            if d not in out and e.get("doc") != BRIEF:
+                out.append(d)
+    return out
+
+
 def main():
     sources = json.loads((ROOT / "data/manual/sources.json").read_text())
     chunks, missing = [], []
@@ -114,21 +129,27 @@ def main():
 
     # Our Known Limits facts, rendered from pipeline JSON (the same facts the Known Limits tab shows).
     for sid, s in sources.items():
-        txt = f"{s['short']} gives: {s.get('gives', '')} It does not give: " + " ".join(s.get("does_not_give", []))
-        chunks.append({"id": f"limits:source:{sid}", "text": ws(txt), "source": f"Flame Frontier Known Limits: {s['short']}", "file": "data/manual/sources.json"})
+        txt = f"Flame Frontier's notes on {s['short']}. What it gives: {s.get('gives', '')} What it does not give, in Flame Frontier's reading: " + " ".join(s.get("does_not_give", []))
+        chunks.append({"id": f"limits:source:{sid}", "text": ws(txt), "source": f"Flame Frontier Known Limits: {s['short']}", "file": "data/manual/sources.json",
+                       "derived_from": [s["short"]]})
     sweep = load("o2_sweep.json")
     for r in sweep["rows"]:
         chunks.append({"id": f"limits:o2:{r['psi_id']}:{r['table'].replace(' ', '_')}",
                        "text": ws(f"{r['psi_id']} {r['table']}, column \"{r['column']}\": verdict {r['verdict'].replace('_', ' ')}. Evidence: \"{r['evidence_quote']}\". {r['reading']}"),
-                       "source": "Flame Frontier Known Limits: whose oxygen?", "file": sweep["source"]})
+                       "source": "Flame Frontier Known Limits: whose oxygen?", "file": sweep["source"],
+                       "derived_from": [f"{r['psi_id']} {r['table']} (PSI), column \"{r['column']}\"", f"{r['psi_id']} {r['evidence_where']}" if r["evidence_where"] != "brief" else BRIEF]})
     gaps = load("gaps.json")
     for h in gaps["habitats"]:
         lines = [f"{h['habitat']['name']} target: {h['window']}, {h['habitat']['gravity']} gravity. {h['tested']['solids_inside']} solid-material tests in this window."]
         lines += [g["text"] + (" " + g["detail"] if g.get("detail") else "") for g in h["gaps"]] + [c["text"] for c in h["covered"]] + h["context"]
-        chunks.append({"id": f"limits:gaps:{h['habitat']['id']}", "text": ws(" ".join(lines)), "source": f"Flame Frontier habitat gap report: {h['habitat']['name']}", "file": "data/processed/gaps.json"})
+        chunks.append({"id": f"limits:gaps:{h['habitat']['id']}", "text": ws(" ".join(lines)), "source": f"Flame Frontier habitat gap report: {h['habitat']['name']}", "file": "data/processed/gaps.json",
+                       "derived_from": gap_from(h)})
     ext = load("external_tests.json")
+    saf = next(t for t in ext["tests"] if t["kind"] == "point")["source"]
+    saf_from = f"{saf['short']}, {saf['locator']}, p.{saf['printed_page']}"
     zone = [t for t in ext["tests"] if t["in_moon_zone"] and t["kind"] == "point"]
     chunks.append({"id": "limits:headline", "file": "data/processed/external_tests.json", "source": "Flame Frontier headline (template over external_tests.json)",
+                   "derived_from": [saf_from, BRIEF],
                    "text": f"Of the solid-material space fire tests in our sources, only {len(zone)} burned in Moon-base air ("
                            + "; ".join(f"Saffire {t['sample']}, {t['material']}, {t['o2_as_stated'][0]} {t['o2_basis']} at {t['pressure_conversion'][0]}, {t['flow_cm_s']} cm/s" for t in zone)
                            + "), none in partial gravity. Moon-base air means at least 30% O2 at 10.2 psi (70.33 kPa) or less, from the challenge page."})
@@ -139,7 +160,8 @@ def main():
             parts.append(f"{a['source']['title']} (NASA Spinoff): \"{a['source']['description']}\"")
         parts += [x for x in (a["origin"], a.get("link_quote"), a["note"]) if x]
         parts += [f"Related: {x['psi_id']} {x['title']}: \"{x['quote']}\"." for x in a["related"]]
-        chunks.append({"id": f"limits:earth:{a['id']}", "file": "data/processed/earth_apps.json", "source": f"Flame Frontier On Earth: {a['title']}", "text": ws(" ".join(parts))})
+        chunks.append({"id": f"limits:earth:{a['id']}", "file": "data/processed/earth_apps.json", "source": f"Flame Frontier On Earth: {a['title']}", "text": ws(" ".join(parts)),
+                       "derived_from": [BRIEF] + ([f"NASA Spinoff: {a['source']['title']}"] if a["source"]["description"] else []) + [f"{x['psi_id']} PSI metadata" for x in a["related"]]})
 
     # PDF tables flatten into one long row-major line; restate verified table rows one sentence per test.
     pts = [t for t in ext["tests"] if t["kind"] == "point"]
@@ -151,6 +173,7 @@ def main():
     cfig = load("cfig_tests.json")
     cz = cfig["moon_zone"]
     chunks.append({"id": "limits:cfig", "file": "data/processed/cfig_tests.json", "source": "Flame Frontier Known Limits: ACME CFI-G",
+                   "derived_from": ["PSI-159 CFI-G experimental table (PSI)", BRIEF],
                    "text": ws(f"ACME CFI-G normal flames: {cz['count']} of {cfig['count']} tests ran with chamber O2 {cz['o2_range_pct'][0]}–{cz['o2_range_pct'][1]}% at {', '.join(map(str, cz['pressure_kpa']))} kPa (Moon-base air); they are gas flames, not solids. "
                               f"{cfig['evidence']['brief_reading']} Inverse flames: {cfig['evidence']['inverse']['tests']} tests, burner oxidizer stream up to {cfig['evidence']['inverse']['xo2_max_pct']}% O2, which is not an atmosphere.")})
 
@@ -165,8 +188,15 @@ def main():
                 raise SystemExit(f"FAIL disagreement {r['id']}: quote not in {cid}: {q!r}")
         chunks.append({"id": f"limits:disagree:{r['id']}", "file": "data/manual/source_disagreements.csv",
                        "source": f"Flame Frontier Known Limits: sources disagree ({r['topic']})",
+                       "derived_from": [by_id[r[f"{x}_chunk"]]["source"] for x in "ab" if r[f"{x}_chunk"]] + ([] if r["b_chunk"] else ["PSI-25 experimental table (PSI)"]),
                        "text": f"Sources disagree on {r['topic']}. {r['reading'].format(bass2_rows=nrows)}"})
 
+    # Tier: primary = NASA/challenge text (or a NASA table restated row by row); derived = this site's own summaries.
+    # Derived passages rank below primary ones in retrieval and always name what they were derived from.
+    for c in chunks:
+        c["tier"] = "derived" if c["id"].startswith("limits:") else "primary"
+        if c["tier"] == "derived" and not c.get("derived_from"):
+            raise SystemExit(f"FAIL derived chunk without derived_from: {c['id']}")
     ids = [c["id"] for c in chunks]
     dup = {i for i in ids if ids.count(i) > 1}
     if dup:
@@ -174,7 +204,7 @@ def main():
     import sys
     sys.path.insert(0, str(ROOT / "api"))
     import ask  # the browser's offline search uses the same stopwords, synonyms and top-k as the server
-    retrieval = {"stopwords": sorted(ask._STOP), "synonyms": ask.SYNONYMS, "top_k": ask.TOP_K, "k1": 1.5, "b": 0.75, "synonym_weight": 0.5}
+    retrieval = {"stopwords": sorted(ask._STOP), "synonyms": ask.SYNONYMS, "top_k": ask.TOP_K, "k1": 1.5, "b": 0.75, "synonym_weight": 0.5, "derived_weight": ask.DERIVED_WEIGHT}
     write_json("qa_chunks.json", {"schema": 1, "count": len(chunks), "retrieval": retrieval, "chunks": chunks, "kept_from_previous_build": missing, "unreadable_pages": UNREADABLE})
     print(f"chunks     {len(chunks)} chunks; unreadable {UNREADABLE}" + (f" (kept old text for missing {missing})" if missing else ""))
 

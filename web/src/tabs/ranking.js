@@ -5,6 +5,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const n = (x) => (Number.isInteger(x) ? String(x) : x.toFixed(2).replace(/0$/, ''));
 const MAT = { solid: 'solid materials', liquid: 'liquid droplets', gas: 'gas flames', gas_emulating_solid: 'gas flames emulating solids', solid_smoke: 'solids heated for smoke', dust: 'dust' };
 let current = null;
+let fuel = 'all';   // 'all' | 'solid'
 const ORDER = ['o2', 'pressure', 'flow', 'gravity', 'material', 'data'];
 
 function srcLabel(id, d) {
@@ -31,10 +32,25 @@ function headline(H) {
   return `${esc(h.name)}: ${j.length} of the ${total} PSI combustion investigations ran a test with both O2 and pressure inside this window: ${list}. ${solid.length ? `${solid.length} used solid materials.` : 'None used solid materials.'}`;
 }
 
+// Template note when the top row (in the current view) is not a solid-material study: says which components put it first.
+function topNote(rows, d) {
+  const top = rows[0];
+  if (!top || top.material_class === 'solid') return '';
+  const pt = (k) => top.parts.find((p) => p.key === k);
+  const strong = top.parts.filter((p) => p.key !== 'material' && p.factor === 1).map((p) => `${p.label} (${n(p.points)} of ${p.weight})`);
+  const m = pt('material');
+  const solid = rows.find((r) => r.material_class === 'solid');
+  return `<p class="callout">${esc(top.psi_id)} ranks first under these rules although it burned ${esc(MAT[top.material_class] ?? top.material_class)}, not solid materials: `
+    + `${strong.length ? `it scores full marks on ${strong.join(', ')}, ` : ''}and material class is worth only ${m.weight} of ${d.max_score} points (it gets ${n(m.points)}). `
+    + `${solid ? `The best-ranked solid-material study is ${esc(solid.psi_id)} (#${solid.rank}). ` : ''}Choose "Solids only" to list solid-material studies.</p>`;
+}
+
 function table(H, d) {
   const keys = ORDER.filter((k) => d.rules[k]);
   const max = d.max_score;
-  const rows = H.rows.map((r) => {
+  const shown = fuel === 'solid' ? H.rows.filter((r) => r.material_class === 'solid') : H.rows;
+  if (!shown.length) return '<p class="note">No investigation in this view. Choose "All" under Fuel to see every investigation.</p>';
+  const rows = shown.map((r) => {
     const parts = keys.map((k) => r.parts.find((p) => p.key === k));
     const cells = parts.map((p) => `<td class="num${p.points === 0 ? ' zero' : ''}" title="${esc(`${p.label}: ${p.why}`)}">${n(p.points)}</td>`).join('');
     const why = parts.map((p) => `<li><b>${esc(p.label)}</b> ${n(p.points)} of ${p.weight} (× ${p.factor}): ${esc(p.why)}</li>`).join('');
@@ -50,7 +66,7 @@ function table(H, d) {
       <tr class="why" hidden><td></td><td colspan="${keys.length + 3}"><p class="t-full">${esc(r.title)}</p><ul>${why}</ul>${cols.length ? `<p class="src">${cols.map(esc).join('<br>')}</p>` : ''}${joint}
         ${r.notes.length ? `<p class="src">${r.notes.map(esc).join(' ')}</p>` : ''}</td></tr>`;
   }).join('');
-  return `<div class="table-wrap"><table class="rank">
+  return `${topNote(shown, d)}<p class="note">${shown.length} of ${H.rows.length} investigations shown${fuel === 'solid' ? ' (solid materials only; # is the rank among all)' : ''}.</p><div class="table-wrap"><table class="rank">
     <thead><tr><th>#</th><th>Investigation</th><th>Score / ${max}</th>${keys.map((k) => `<th class="num" title="${esc(d.rules[k].rule)}">${esc(d.rules[k].label)}<br><small>max ${d.rules[k].weight}</small></th>`).join('')}<th class="num" title="Tests whose O2 and pressure were both inside the habitat's windows (per-test tables only).">Tests in both windows</th></tr></thead>
     <tbody>${rows}</tbody></table></div>`;
 }
@@ -64,7 +80,8 @@ function rules(d) {
 function draw(root, d, id) {
   current = id;
   const H = d.habitats.find((h) => h.habitat.id === id) ?? d.habitats[0];
-  root.querySelectorAll('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.h === H.habitat.id)));
+  root.querySelectorAll('.seg.hab button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.h === H.habitat.id)));
+  root.querySelectorAll('.seg.fuel button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === fuel)));
   root.querySelector('#hab-body').innerHTML = `
     <p class="headline">${headline(H)}</p>
     ${habitatCard(H.habitat, d)}
@@ -83,11 +100,13 @@ export async function render(root) {
   root.innerHTML = `
     <section class="card"><h2>Ranking: which NASA tests match each habitat's air?</h2>
       <p class="note">Each PSI combustion investigation is scored against a habitat's O2, pressure and gravity with the fixed rules below. No AI is involved. ${esc(d.note)}</p>
-      <div class="seg" role="group" aria-label="Habitat">${d.habitats.map((h) => `<button data-h="${esc(h.habitat.id)}">${esc(h.habitat.name)}</button>`).join('')}</div>
+      <div class="filters"><div class="seg hab" role="group" aria-label="Habitat">${d.habitats.map((h) => `<button data-h="${esc(h.habitat.id)}">${esc(h.habitat.name)}</button>`).join('')}</div>
+        <div class="seg fuel" role="group" aria-label="Fuel"><span class="muted">Fuel:</span> <button data-f="all">All</button><button data-f="solid">Solids only</button></div></div>
       <div id="hab-body"></div>
     </section>
-    <section class="card"><h2>Rule table</h2>${rules(d)}
+    <section class="card"><h2>Rule table</h2><div class="table-wrap">${rules(d)}</div>
       <p class="note">Score = sum over components of weight × factor. Unknown values score 0, which is not evidence of safety. Ties are broken by the number of tests in both windows, then by PSI ID.</p></section>`;
-  root.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => draw(root, d, b.dataset.h)));
+  root.querySelectorAll('.seg.hab button').forEach((b) => b.addEventListener('click', () => draw(root, d, b.dataset.h)));
+  root.querySelectorAll('.seg.fuel button').forEach((b) => b.addEventListener('click', () => { fuel = b.dataset.f; draw(root, d, current); }));
   draw(root, d, want);
 }

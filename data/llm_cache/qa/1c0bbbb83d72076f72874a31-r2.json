@@ -1,0 +1,85 @@
+{
+  "answer": "No. The Space Apps 2026 challenge page states that there is currently no partial-gravity combustion data available in PSI [brief:s1.31]. It adds that such data may be added later, for example from the LUCI and FM2 experiments [brief:s1.31]. Flame Frontier reads the gap analysis as showing that every point on both panels comes from microgravity, with no combustion test at partial gravity [limits:gaps:spacesuit].",
+  "attempts": 2,
+  "checks": {
+    "cited": [
+      "brief:s1.31",
+      "limits:gaps:spacesuit"
+    ],
+    "ok": false,
+    "problems": [
+      "number 2026 is not in the cited passages"
+    ]
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.31",
+      "line": null,
+      "page": null,
+      "score": 8.533,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "Although NASA is heavily focused on the return of astronauts to the Moon’s surface and the establishment of a Moon Base in preparation for the future human exploration of Mars, there is currently no partial-gravity combustion data available in PSI. We expect such data will be added in the future, for example from the Lunar-g Combustion Investigation (LUCI) and the Flammability of Materials on the Moon (FM2) experiment."
+    },
+    {
+      "file": "data/raw/PSI-68/PSI-68_metadata_PSI-132_FLEX-2/i_Investigation.txt",
+      "id": "meta:PSI-68:hypothesis.2",
+      "line": 60,
+      "page": null,
+      "score": 3.351,
+      "source": "PSI-68 Flame Extinguishment Experiment - 2: PSI metadata Comment[Hypothesis]",
+      "text": "The primary goal of the flight experiments is to provide benchmark experimental data on bi-component droplet combustion over a wide range of initial conditions that could be used to validate numerical simulations and to develop new theoretical models."
+    },
+    {
+      "file": "data/manual/sources.json",
+      "id": "limits:source:challenge_brief",
+      "line": null,
+      "page": null,
+      "score": 4.458,
+      "source": "Flame Frontier Known Limits: Space Apps challenge page",
+      "text": "Flame Frontier's notes on Space Apps challenge page. What it gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. What it does not give, in Flame Frontier's reading: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:spacesuit",
+      "line": null,
+      "page": null,
+      "score": 4.069,
+      "source": "Flame Frontier habitat gap report: Spacesuit",
+      "text": "Spacesuit target: 100% O2 at 29.6 kPa, partial gravity. 0 solid-material tests in this window. No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together. Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given). No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:rover",
+      "line": null,
+      "page": null,
+      "score": 3.885,
+      "source": "Flame Frontier habitat gap report: Pressurized rover",
+      "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:moon_base",
+      "line": null,
+      "page": null,
+      "score": 3.871,
+      "source": "Flame Frontier habitat gap report: Moon base",
+      "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+    }
+  ],
+  "flagged": true,
+  "key": "1c0bbbb83d72076f72874a31",
+  "model": "claude-haiku-5-5",
+  "question": "Is there any partial-gravity combustion data in PSI?",
+  "round": 2,
+  "usage": [
+    {
+      "input_tokens": 2761,
+      "output_tokens": 150
+    },
+    {
+      "input_tokens": 2797,
+      "output_tokens": 146
+    }
+  ]
+}

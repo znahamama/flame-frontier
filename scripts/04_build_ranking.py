@@ -239,6 +239,7 @@ def score(h, c, cond, feat):
     parts = [{"key": k, "label": RULES[k]["label"], "weight": RULES[k]["weight"], "factor": v, "points": round(v * RULES[k]["weight"], 2), "why": why}
              for k, (v, why) in comp.items()]
     return {"psi_id": c["psi_id"], "title": c["fields"]["title"]["value"], "type": (c.get("index_type") or {}).get("value"),
+            "material_class": f["material_class"],
             "score": round(sum(p["points"] for p in parts), 2), "parts": parts,
             "joint_tests": len(joint), "joint_rows": [{"file": p[2], "line": p[3], "o2_pct": p[0], "p_kpa": p[1]} for p in joint[:50]],
             "paired_data": bool(cond.get("pairs")),

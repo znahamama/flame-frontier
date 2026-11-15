@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flame Frontier</title>
+  <title>Flame Frontier: where NASA's space-fire evidence ends</title>
+  <meta name="description" content="%HEADLINE% Maps NASA microgravity fire tests by oxygen and pressure against the air Moon-base crews will breathe. NASA PSI data, Space Apps 2026." />
+  <meta name="theme-color" content="#f4f3f0" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Flame Frontier" />
+  <meta property="og:title" content="Flame Frontier: where NASA's space-fire evidence ends" />
+  <meta property="og:description" content="%HEADLINE% NASA PSI data, Space Apps 2026." />
+  <meta property="og:url" content="https://flame-frontier.vercel.app/" />
+  <meta property="og:image" content="https://flame-frontier.vercel.app/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Flame Frontier: chart of NASA fire tests by oxygen and pressure, with the Moon-base zone highlighted" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
+  <a class="skip" href="#main" onclick="event.preventDefault();document.getElementById('main').focus()">Skip to content</a>
   <header class="top">
     <h1>Flame Frontier</h1>
     <p class="tagline">Where NASA's space-fire evidence ends, next to the air Moon-base crews will breathe.</p>
-    <nav class="tabs" role="tablist"></nav>
+    <div class="tabwrap"><nav class="tabs" role="tablist" aria-label="Sections"></nav></div>
   </header>
-  <main id="panel" role="tabpanel"></main>
+  <main id="main" tabindex="-1"><div id="panel" role="tabpanel"></div></main>
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>

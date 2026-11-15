@@ -50,7 +50,7 @@ export async function render(root) {
     <h3>Evidence Map, Panel 2 (BASS-II flammability boundary)</h3>
     ${list([
       `Only ${bass2.panel2_points.length} PSI-25 tests can be placed on NASA's boundary; NASA's Figure 6.10 shows about ${fig.iss_points_approx} ISS points (${esc(fig.iss_points_note)}). Why: ${fig.why_not_reproducible.map(esc).join(' ')}`,
-      '"Stable flame" markers are a flow at which the flame was still burning, not the extinction flow. Blowoff markers come from same-day fan calibration at the exact pot setting; the air probe needs about 1 minute to respond, so the true blowoff flow is at or below the marker.',
+      '"Last stable flow before extinction" markers are the last flow recorded in cm/s at which the flame was still burning; the crew then turned the flow down (pot settings below the fan calibration) until it went out, so the extinction flow itself is not plotted. Blowoff markers come from same-day fan calibration at the exact pot setting; the air probe needs about 1 minute to respond, so the true blowoff flow is at or below the marker.',
       `The curve is solid only over the stretch rates the PSI table actually recorded (${ref.panel2.tested_a_range.map((x) => x.toFixed(2)).join('–')} 1/s) and dashed outside it.`,
       `Post-burn O2 readings flagged as sensor errors are kept in the data but never plotted: ${rv.o2_final_flagged.map(esc).join(', ')}.`,
       `Review: ${rv.accepted.length} flagged rows accepted, ${rv.excluded.length} excluded from all charts (${rv.excluded.map(esc).join(', ')}), ${rv.open} open (${esc(rv.file)}).`,

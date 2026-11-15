@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import { cpSync, existsSync, createReadStream, statSync } from 'node:fs';
 import { resolve, dirname, normalize, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'node:fs';
+import { headline, inMoonZone } from './src/headline.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PROCESSED = resolve(here, '../data/processed');
@@ -25,8 +27,19 @@ function processedData() {
   };
 }
 
+// The meta/OG description uses the same headline template as the page (no number typed into index.html).
+function metaHeadline() {
+  return {
+    name: 'meta-headline',
+    transformIndexHtml(html) {
+      const ext = JSON.parse(readFileSync(resolve(PROCESSED, 'external_tests.json'), 'utf8'));
+      return html.replaceAll('%HEADLINE%', headline(inMoonZone(ext)));
+    },
+  };
+}
+
 export default defineConfig({
   root: here,
-  plugins: [processedData()],
+  plugins: [processedData(), metaHeadline()],
   build: { outDir: 'dist', emptyOutDir: true, chunkSizeWarningLimit: 700 }, // echarts ~180 kB gzip
 });

@@ -1,0 +1,85 @@
+{
+  "answer": "Saffire-I was conducted at an air flow velocity of 20 cm/s [meta:PSI-98:approach.1]. Saffire-III used a flow velocity of 30 cm/s [meta:PSI-100:approach]. BASS-II airflow speeds reached up to 40 cm/s according to the PSI metadata [meta:PSI-25:approach]. Sources disagree on BASS-II maximum airflow: the PSI metadata says up to 40 cm/s [meta:PSI-25:approach], while the BASS-II report gives about 55 cm/s with no restrictor and about 35 cm/s with two [limits:disagree:bass2_max_flow]. Flame Frontier uses the report for flow [limits:disagree:bass2_max_flow].",
+  "attempts": 2,
+  "checks": {
+    "cited": [
+      "meta:PSI-98:approach.1",
+      "meta:PSI-100:approach",
+      "meta:PSI-25:approach",
+      "limits:disagree:bass2_max_flow"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "data/raw/PSI-100/PSI-100_metadata_PSI-168_SAFFIRE-III/i_Investigation.txt",
+      "id": "meta:PSI-100:approach",
+      "line": 40,
+      "page": null,
+      "score": 6.829,
+      "source": "PSI-100 Spacecraft Fire Experiment-III: PSI metadata Comment[Approach]",
+      "text": "The Saffire-III experiments were performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. As a follow on to the Saffire 1 investigation, the Saffire III investigation also used SIBAL as the sample material. However, the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed. Once the sample was ignited flame images were captured using two cameras. In addition, thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity. All data was compressed, and subsequently downlinked. Details related to samples and experimental parameters are provided in the Experimental Details file in the Science document folder."
+    },
+    {
+      "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+      "id": "meta:PSI-25:approach",
+      "line": 40,
+      "page": null,
+      "score": 6.731,
+      "source": "PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Approach]",
+      "text": "To summarize, BASS-II's approach, microgravity combustion tests were performed aboard the International Space Station. Active crew support for real-time “lab partner” operations. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. Fuel samples were mounted inside a small wind tunnel which could impose airflow speeds up to 40 cm/s. Main variables are airflow speed and oxygen concentration (oxygen varied below 21% by adding nitrogen). Flame appearance, flame growth, and spread rates were determined in both the opposed and concurrent flow."
+    },
+    {
+      "file": "data/raw/PSI-98/PSI-98_metadata_PSI-166_SAFFIRE-I/i_Investigation.txt",
+      "id": "meta:PSI-98:approach.1",
+      "line": 40,
+      "page": null,
+      "score": 6.505,
+      "source": "PSI-98 Spacecraft Fire Safety Experiment-I: PSI metadata Comment[Approach]",
+      "text": "The Saffire-1 experiments was performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. The sample material for Saffire-I is a composite fabric called Sibal consisting of cotton on a fiberglass substrate (75% cotton, 25% fiberglass by weight). It has been used in many space experiments because it burns like cotton but maintains structural integrity after the cotton is consumed. The sample was approximately 0.94 meters long and 0.4 meters wide, simulating a large piece of flammable fabric. The Saffire-1 flight unit had a sample card installed in the middle of a large flow duct. Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module. Saffire-I was conducted at an air flow velocity of 20 cm/s. Once the sample was ignited flame images were captured using two cameras."
+    },
+    {
+      "file": "data/raw/PSI-26/PSI-26_metadata_PSI-102_BASS/i_Investigation.txt",
+      "id": "meta:PSI-26:approach.1",
+      "line": 40,
+      "page": null,
+      "score": 6.123,
+      "source": "PSI-26 Burning and Suppression of Solids: PSI metadata Comment[Approach]",
+      "text": "The experiment was conducted aboard the International Space Station (ISS) inside the Microgravity Glove Box (MSG). Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem. A Kanthal wire (29-gage)igniter was used to initiate combustion at one end of the fabric. Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s. The airflow was directed along the fuel surface in either the opposed or concurrent direction. This investigation explored two primary air flow configurations; concurrent-flow and opposed-flow. With concurrent-flow air flows in the same direction as the flame spread and in opposed-flow air flows in the opposite direction of flame spread. Flames were observed in the top and edge profiles and data was collected on flame size, shape, color, spread rate, and potential flame quenching. The samples were placed in a small flow duct (76 mm x 76 mm cross section) that allowed for airflow across the fabric."
+    },
+    {
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "id": "report:bass2:p3.2",
+      "line": null,
+      "page": 3,
+      "score": 5.877,
+      "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 3",
+      "text": "NASA tests and controls materials from a flammability perspective using an upward burning test in normal gravity, which is considered to be the worst-case geometry for flammability of the material on Earth. However, it may not be conservative for flammability in space. One objective of the BASS–II tests is to identify what is the worst case for material flammability in spacecraft environments, and how does that compare to the terrestrial upward burning used to screen the materials for safe use aboard spacecraft. Detailed combustion models can be validated by data obtained in the simpler flow environment in microgravity. Once validated, they can be used to build more complex combustion models needed to capture the important details of flames burning in normal gravity. These models have wide applicability to the general understanding of many terrestrial combustion problems. The main variables tested were the effects of ambient O2 concentration, ventilation flow velocity, and fuel type, thickness, and geometry."
+    },
+    {
+      "file": "data/manual/source_disagreements.csv",
+      "id": "limits:disagree:bass2_max_flow",
+      "line": null,
+      "page": null,
+      "score": 6.379,
+      "source": "Flame Frontier Known Limits: sources disagree (BASS-II maximum airflow)",
+      "text": "Sources disagree on BASS-II maximum airflow. The PSI metadata says up to 40 cm/s; the BASS-II report says about 55 cm/s with no restrictor and about 35 cm/s with two. Flame Frontier uses the report for flow."
+    }
+  ],
+  "flagged": false,
+  "key": "f9104f7317ab7b325d82fa0c",
+  "model": "claude-haiku-5-5",
+  "question": "How does the airflow in BASS-II compare with Saffire-I and Saffire-III?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 2528,
+      "output_tokens": 225
+    },
+    {
+      "input_tokens": 2601,
+      "output_tokens": 257
+    }
+  ]
+}

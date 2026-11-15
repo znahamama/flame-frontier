@@ -1,0 +1,83 @@
+{
+  "answer": "Saffire VI-2 (SIBAL Cloth) used 31.0 mol % oxygen at 54.1 kPa ambient pressure [data:saffire:table1]. Saffire VI-3 (Two-Sided PMMA) used 30.3 mol % oxygen at 54.6 kPa [data:saffire:table1]. Saffire VI-4 (One-Sided PMMA) used 28.8 mol % oxygen at 55.2 kPa [data:saffire:table1]. Flame Frontier reads these as the conditions for the Saffire VI tests listed in Table 1, and its notes say Saffire VI test 1 (Nomex) did not ignite, so its conditions are not in Table 1 [limits:source:saffire_ices2024].",
+  "attempts": 2,
+  "checks": {
+    "cited": [
+      "data:saffire:table1",
+      "limits:source:saffire_ices2024"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "data/processed/external_tests.json",
+      "id": "data:saffire:table1",
+      "line": null,
+      "page": 3,
+      "score": 22.16,
+      "source": "Saffire ICES-2024-365, Table 1, p.3 (rows restated one per test; values checked against the PDF)",
+      "text": "Saffire IV-1 (Saffire IV (Cygnus)): SIBAL Cloth, ambient pressure 100.0 kPa, oxygen 22.0 mol %, air flow 20 cm/s concurrent. Saffire V-2 (Saffire V (Cygnus)): Cotton Jersey, ambient pressure 70.7 kPa, oxygen 26.2 mol %, air flow 20 cm/s concurrent. Saffire VI-2 (Saffire VI (Cygnus)): SIBAL Cloth, ambient pressure 54.1 kPa, oxygen 31.0 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-3 (Saffire VI (Cygnus)): Two-Sided PMMA, ambient pressure 54.6 kPa, oxygen 30.3 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-4 (Saffire VI (Cygnus)): One-Sided PMMA, ambient pressure 55.2 kPa, oxygen 28.8 mol %, air flow 20 cm/s concurrent."
+    },
+    {
+      "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
+      "id": "paper:ntrs20160001047:p3.2",
+      "line": null,
+      "page": 3,
+      "score": 13.959,
+      "source": "NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 3",
+      "text": "The STS and the currently in-design CEV have resided at the 30% O2 at 70.3 kPa (10.2 psia) point of the normoxic curve. The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point of the curve. Nonetheless, it has obtained much of its data at 24.1% O2, 101.4 kPa (14.7 psia) conditions due to sinusoidal fluctuations of oxygen with a mean of 21% O2 seen on the ISS. Future long duration habitation modules might select to operate at lower pressure normoxic conditions to minimize time loss and health risk associated with frequent depressurizations when frequently exiting habitats. In addition, low pressure environments also provide structural design benefits for long-duration habitats. Use of Extravehicular Activity (EVA) suits is another scenario in which a reduced pressure environment is desired. Off-nominal"
+    },
+    {
+      "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
+      "id": "paper:ntrs20160001047:p2.1",
+      "line": null,
+      "page": 2,
+      "score": 10.654,
+      "source": "NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 2",
+      "text": "2 JOURNAL OF ASTM INTERNATIONAL Background To safely and successfully operate in enriched oxygen conditions, understanding material flammability is critical for NASA, commercial space flight companies, and industry alike. Previous space programs have acquired significant data in the Space Transportation System (STS) environment of 30% O2 at 70.3 kPa (10.2 psia). This same environment is also currently being evaluated for the Crew Exploration Vehicle (CEV). A significant amount of additional flammability data exists at the International Space Station (ISS) worst-case cabin conditions of 24.1% O2 at 191.4 kPa (14.7 psia). In a desire to leverage existing data, the question arises: Do materials perform similarly with respect to flammability as long as the partial pressure of oxygen remains equivalent? This question is not only relevant to NASA and space programs. In the oxygen related industry, the ability to apply existing flammability data to various manufacturing and operating conditions would be beneficial."
+    },
+    {
+      "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
+      "id": "paper:ntrs20160001047:p2.2",
+      "line": null,
+      "page": 2,
+      "score": 8.566,
+      "source": "NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 2",
+      "text": "It is important that the question be thoroughly answered, as the ability to apply existing data to alternate conditions could save significant resources both financially and with respect to time and schedule. The purpose of this paper is to compile relevant data to examine the dependence of flammability on partial pressure of oxygen and oxygen concentration. Normoxic Conditions and Partial Pressure Normoxic conditions maintain an equivalent partial pressure of oxygen in the atmosphere as would be found in that of air at sea level. This level of oxygen is important for human function, and therefore space vehicles are designed to provide normoxic or close to normoxic conditions. The concept of partial pressure depends on the ideal gas law (Eq. (1)): PV = nRT (1) Where P = pressure; V = volume; n = moles of a molecule; R = ideal gas constant; and T= Temperature. Assuming the ideal gas law, the partial pressure of oxygen pO2 is defined as the pressure that would be exerted by nO2 moles of O2 alone in the same total volume V at the same temperature T (Eq. (2))."
+    },
+    {
+      "file": "data/manual/sources.json",
+      "id": "limits:source:saffire_ices2024",
+      "line": null,
+      "page": null,
+      "score": 9.826,
+      "source": "Flame Frontier Known Limits: Saffire ICES-2024-365",
+      "text": "Flame Frontier's notes on Saffire ICES-2024-365. What it gives: Per-test ambient pressure (kPa), O2 (mol %), air flow (cm/s), flow direction, material, for the 5 samples in Table 1 (p.3). What it does not give, in Flame Frontier's reading: Table 1 lists only the samples 'considered in this paper' (IV-1, V-2, VI-2, VI-3, VI-4). Other Saffire I-V samples are not in it. Saffire VI test 1 (Nomex) did not ignite (p.4). Its conditions are not in Table 1, so it is not plotted. One flow speed only: 20 cm/s concurrent for every listed test. For the PMMA tests the flow was reduced at 1120 s (p.4); the reduced speed is not in Table 1. One O2 value per test (the set condition). No pre/post-burn split. Microgravity (orbiting Cygnus) only. No partial gravity. No extinction or flammability-limit data: every plotted test ignited and burned."
+    },
+    {
+      "file": "data/processed/gaps.json",
+      "id": "limits:gaps:spacesuit",
+      "line": null,
+      "page": null,
+      "score": 8.633,
+      "source": "Flame Frontier habitat gap report: Spacesuit",
+      "text": "Spacesuit target: 100% O2 at 29.6 kPa, partial gravity. 0 solid-material tests in this window. No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together. Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given). No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+    }
+  ],
+  "flagged": false,
+  "key": "b0eecd2c305b588a4593970b",
+  "model": "claude-haiku-5-5",
+  "question": "What oxygen concentration and pressure did the Saffire VI tests use?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 3090,
+      "output_tokens": 228
+    },
+    {
+      "input_tokens": 3167,
+      "output_tokens": 256
+    }
+  ]
+}

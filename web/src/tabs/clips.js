@@ -16,7 +16,7 @@ function clip(c) {
       <dt>O2 (PSI table)</dt><dd>initial ${t.o2_initial_pct}%, post-burn ${t.o2_final_pct}% by vol</dd>
       <dt>Outcome (PSI table)</dt><dd>${esc(OUT[t.outcome] ?? t.outcome)}</dd>
       <dt>Crew notes</dt><dd>Fan: "${esc(t.fan_raw)}" · Air: "${esc(t.air_raw)}"</dd>
-      ${p ? `<dt>On Panel 2</dt><dd>${p.kind === 'blowoff_upper_bound' ? 'Blowoff, a ≤' : 'Stable flame, a ='} ${p.a_per_s} 1/s at ${p.o2_final_pct}% O2 · <a href="#evidence">Evidence Map</a></dd>` : ''}
+      ${p ? `<dt>On Panel 2</dt><dd>${p.kind === 'blowoff_upper_bound' ? `Blowoff at a flow of at most Air ${p.air_cm_s} cm/s: a ≤` : `Last stable flow before extinction, Air ${p.air_cm_s} cm/s (the extinction flow itself is below the fan calibration): a =`} ${p.a_per_s} 1/s at ${p.o2_final_pct}% post-burn O2 · <a href="#evidence">Evidence Map</a></dd>` : ''}
     </dl>
     <p class="src">Video: ${esc(c.source_name)} (PSI-25), ${c.start_s}–${c.start_s + c.duration_s} s, re-encoded. Row: ${esc(t.source.file)}, line ${t.source.line}.</p>
   </article>`;

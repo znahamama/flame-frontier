@@ -12,15 +12,18 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 4. Habitat Gaps tab: ISS / Moon base / rover / spacesuit, target vs tested, template-only gap sentences, each with "Show on map" (dashed box on Panel 1, or Panel 2).
 
-- 5. Cited Q&A ("Ask" tab): 262 cited passages, BM25, claude-haiku-5-5 answers checked by code (citations + numbers), 8 precomputed demo answers committed (all pass checks), offline mode `?offline` and automatic fallback. Live AI answers switch on when the key is in Vercel env vars. API spend so far ~$0.02.
+- 5. Cited Q&A ("Ask" tab): 246 cited passages, BM25, claude-haiku-5-5 answers checked by code (citations + numbers), 8 precomputed demo answers committed (all pass checks), offline mode `?offline` and automatic fallback. Live AI answers switch on when the key is in Vercel env vars. API spend so far ~$0.02.
 
 - 6. On Earth tab: water mist, smoke-vs-dust detector, firefighter air tanks and clothing; each with the challenge page's words, its NASA Spinoff link, and related PSI investigations quoted from their metadata (or "no PSI link" where there is none). Live AI answers switched on (key in Vercel, Production).
 
 - History cleaned before first push (2026-11-15): Saffire VI paper text removed from every commit (NTRS marks it "may include copyright material"); author/committer/tagger email -> GitHub noreply; v1/v2 re-tagged on rewritten commits; gitleaks + manual scan PASS.
 - 7. Start screen (default tab): the headline (same template as the Evidence Map), 4 stat tiles computed from data (24 investigations, 586 tests placed, 2 solids in Moon-base air, 0 partial-gravity tests), numbered entries 1 Evidence, 2 Investigations, 3 Ask.
 
+- Judge's-eye review fixes (2026-11-15): Evidence Map chart-first with layer notes collapsed; solids-only by default (FLEX +273 / CFI-G +179 toggles); Saffire VI-2/VI-3 callout; label overlaps fixed at 1440/375. Ranking Fuel filter + "why it ranks first" note. Clips/Panel 2: "Last stable flow before extinction". Ask: primary passages ranked above derived ones, "derived from" shown, attribution checked by code, 8/8 answers regenerated and passing. Phone tab bar: scroll with fade edges + chevron, active tab kept in view.
+- 8. Polish pass: light/dark at 1440 and 375 (44 screenshots, no overflow, no console errors); focus rings, skip link, arrow-key tabs; per-tab page titles, meta description and Open Graph card (og.png) from the headline template; PNG favicons; loading and error states; tabs lazy-loaded (Start ships ~5 kB JS); robots.txt. Lighthouse desktop: Start 100/99/100/91, Evidence Map 99/100/100/92.
+
 ## In progress
-- 8. Polish pass
+- 9. Tier 3 flame sandbox
 
 ## Needs me (the user)
 - Push to GitHub (public): `git push -u origin main` then `git push origin v1 v2`. The 28 rewritten commits are unsigned (signatures cannot survive a rewrite); commits after the rewrite are signed.

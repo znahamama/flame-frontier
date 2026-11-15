@@ -29,10 +29,12 @@ function buildIndex(data) {
         const f = tf.get(t);
         if (f) s += w * (idf.get(t) ?? 0) * f * (R.k1 + 1) / (f + R.k1 * (1 - R.b + R.b * docs[i].length / avg));
       }
+      if (data.chunks[i].tier === 'derived') s *= R.derived_weight;
       if (s > 0) scored.push([s, i]);
     });
     scored.sort((a, b) => b[0] - a[0] || a[1] - b[1]);
-    return scored.slice(0, R.top_k).map(([s, i]) => ({ ...data.chunks[i], score: Math.round(s * 1000) / 1000 }));
+    const top = scored.slice(0, R.top_k).map(([s, i]) => ({ ...data.chunks[i], score: Math.round(s * 1000) / 1000 }));
+    return [...top.filter((c) => c.tier !== 'derived'), ...top.filter((c) => c.tier === 'derived')];   // primary first, as in api/ask.py
   };
   return { search, norm };
 }
@@ -54,7 +56,7 @@ function resultHTML(r, meta) {
   const badge = { cached: 'Precomputed answer', live: 'Live answer', offline: 'Offline: passages only, no AI answer' }[r.mode];
   const chk = r.checks ? (r.flagged
     ? `<p class="warnbox"><b>This answer failed an automatic check</b> and may be wrong: ${esc(r.checks.problems.join('; '))}. Read the passages below.</p>`
-    : `<p class="checks">✓ every sentence cites a retrieved passage · ✓ every number appears in a cited passage</p>`) : '';
+    : `<p class="checks">✓ every sentence cites a retrieved passage · ✓ every number appears in a cited passage · ✓ Flame Frontier's own readings are credited to Flame Frontier, NASA text to NASA</p>`) : '';
   return `<section class="card answer" aria-live="polite">
     <p class="qline"><span class="badge ${esc(r.mode)}">${esc(badge)}</span> <b>${esc(r.question)}</b></p>
     ${live ? `<div class="answertext">${answerHTML(r.answer, chunks)}</div>
@@ -62,7 +64,8 @@ function resultHTML(r, meta) {
       : `<p class="note">${esc(r.reason ?? '')}${r.answer === NOT_IN_DATA ? ` ${NOT_IN_DATA}` : ''} These are the passages that best match your question (keyword search, no AI).</p>`}
     <h3>Passages${live ? ' (numbered as cited)' : ''}</h3>
     ${chunks.length ? `<ol class="passages">${chunks.map((c, i) => `<li id="ref-${i + 1}" class="${cited.has(c.id) ? 'cited' : ''}">
-      <p class="psrc"><b>${esc(c.source)}</b>${where(c) ? ` · ${esc(where(c))}` : ''} <span class="muted">· ${esc(c.file ?? '')} · <code>${esc(c.id)}</code></span></p>
+      <p class="psrc"><span class="tier ${c.tier === 'derived' ? 'derived' : 'primary'}">${c.tier === 'derived' ? 'Derived' : 'Primary'}</span> <b>${esc(c.source)}</b>${where(c) ? ` · ${esc(where(c))}` : ''} <span class="muted">· ${esc(c.file ?? '')} · <code>${esc(c.id)}</code></span></p>
+      ${c.tier === 'derived' && c.derived_from ? `<p class="dfrom">derived from: ${c.derived_from.map(esc).join('; ')}</p>` : ''}
       <p class="ptext">${esc(c.text.length > 700 ? `${c.text.slice(0, 700)}…` : c.text)}</p></li>`).join('')}</ol>`
       : '<p class="muted">No passage matches these words.</p>'}
   </section>`;
@@ -76,7 +79,7 @@ export async function render(root, arg) {
   const counts = Object.fromEntries(kinds.map((k) => [k, chunks.chunks.filter((c) => c.id.startsWith(`${k}:`)).length]));
   root.innerHTML = `<section class="card"><h2>Ask the evidence</h2>
     <p class="note">Answers come only from ${chunks.count} cited passages: PSI metadata text (${counts.meta ?? 0}), BASS-II report and paper pages (${(counts.report ?? 0) + (counts.paper ?? 0) + (counts.ntrs ?? 0)}),
-      the challenge page (${counts.brief ?? 0}) and this site's Known Limits facts (${(counts.limits ?? 0) + (counts.data ?? 0)}). A keyword search (BM25) picks the ${chunks.retrieval.top_k} best passages;
+      the challenge page (${counts.brief ?? 0}), the Saffire table restated row by row (${counts.data ?? 0}), and this site's own derived summaries (${counts.limits ?? 0}), which rank below the primary text and name what they were derived from. A keyword search (BM25) picks the ${chunks.retrieval.top_k} best passages;
       an AI model (${esc(cache.model)}) writes a short answer that must cite a passage in every sentence and copy every number from one. If the passages don't answer it, the reply is "${NOT_IN_DATA}"
       ${OFFLINE ? '<br><b>Offline mode</b> (<code>?offline</code>): no AI calls; precomputed answers and matching passages only.' : ''}</p>
     <form class="askform"><label for="q" class="vh">Question</label>

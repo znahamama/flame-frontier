@@ -1,88 +1,117 @@
 {
   "answers": [
     {
-      "answer": "Two solid materials have been burned in Moon-base air at 30% oxygen or more and 10.2 psi or less: SIBAL Cloth and Two-Sided PMMA. [limits:headline] Both were burned in Saffire VI-2 and VI-3 respectively, at 20 cm/s airflow. [limits:gaps:moon_base] Saffire VI-2 used SIBAL Cloth at 31.0 mol % oxygen and 54.1 kPa. [data:saffire:table1] Saffire VI-3 used Two-Sided PMMA at 30.3 mol % oxygen and 54.6 kPa. [data:saffire:table1]",
-      "attempts": 1,
+      "answer": "Two solid materials have been burned in Moon-base air at 30% oxygen or more and 10.2 psi or less: SIBAL Cloth and Two-Sided PMMA [data:saffire:table1]. Saffire VI-2 burned SIBAL Cloth at 31.0 mol % oxygen and 54.1 kPa ambient pressure, and Saffire VI-3 burned Two-Sided PMMA at 30.3 mol % oxygen and 54.6 kPa ambient pressure, both at 20 cm/s air flow [data:saffire:table1]. Flame Frontier reads this as the only solid-material burns in this window in its data, with both tests from microgravity [limits:headline] [limits:gaps:moon_base].",
+      "attempts": 2,
       "checks": {
         "cited": [
+          "data:saffire:table1",
           "limits:headline",
-          "limits:gaps:moon_base",
-          "data:saffire:table1"
+          "limits:gaps:moon_base"
         ],
         "ok": true,
         "problems": []
       },
       "chunks": [
         {
-          "file": "data/processed/external_tests.json",
-          "id": "limits:headline",
-          "line": null,
-          "page": null,
-          "score": 26.173,
-          "source": "Flame Frontier headline (template over external_tests.json)",
-          "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2, SIBAL Cloth, 31.0 mol % at 54.1 kPa, 20.0 cm/s; Saffire VI-3, Two-Sided PMMA, 30.3 mol % at 54.6 kPa, 20.0 cm/s), none in partial gravity. Moon-base air means at least 30% O2 at 10.2 psi (70.33 kPa) or less, from the challenge page."
-        },
-        {
+          "derived_from": null,
           "file": "docs/ref/challenge_brief.md",
           "id": "brief:s1.29",
           "line": null,
           "page": null,
-          "score": 23.557,
+          "score": 23.062,
           "source": "Space Apps 2026 challenge page (verbatim)",
-          "text": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less. Compared to Earth’s atmosphere, that’s more than a 40% increase in the oxygen concentration making materials much more flammable."
+          "text": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less. Compared to Earth’s atmosphere, that’s more than a 40% increase in the oxygen concentration making materials much more flammable.",
+          "tier": "primary"
         },
         {
-          "file": "data/manual/sources.json",
-          "id": "limits:source:challenge_brief",
-          "line": null,
-          "page": null,
-          "score": 21.864,
-          "source": "Flame Frontier Known Limits: Space Apps challenge page",
-          "text": "Space Apps challenge page gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. It does not give: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:rover",
-          "line": null,
-          "page": null,
-          "score": 15.613,
-          "source": "Flame Frontier habitat gap report: Pressurized rover",
-          "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:moon_base",
-          "line": null,
-          "page": null,
-          "score": 15.574,
-          "source": "Flame Frontier habitat gap report: Moon base",
-          "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
+          "derived_from": null,
           "file": "data/processed/external_tests.json",
           "id": "data:saffire:table1",
           "line": null,
           "page": 3,
-          "score": 11.64,
+          "score": 11.625,
           "source": "Saffire ICES-2024-365, Table 1, p.3 (rows restated one per test; values checked against the PDF)",
-          "text": "Saffire IV-1 (Saffire IV (Cygnus)): SIBAL Cloth, ambient pressure 100.0 kPa, oxygen 22.0 mol %, air flow 20 cm/s concurrent. Saffire V-2 (Saffire V (Cygnus)): Cotton Jersey, ambient pressure 70.7 kPa, oxygen 26.2 mol %, air flow 20 cm/s concurrent. Saffire VI-2 (Saffire VI (Cygnus)): SIBAL Cloth, ambient pressure 54.1 kPa, oxygen 31.0 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-3 (Saffire VI (Cygnus)): Two-Sided PMMA, ambient pressure 54.6 kPa, oxygen 30.3 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-4 (Saffire VI (Cygnus)): One-Sided PMMA, ambient pressure 55.2 kPa, oxygen 28.8 mol %, air flow 20 cm/s concurrent."
+          "text": "Saffire IV-1 (Saffire IV (Cygnus)): SIBAL Cloth, ambient pressure 100.0 kPa, oxygen 22.0 mol %, air flow 20 cm/s concurrent. Saffire V-2 (Saffire V (Cygnus)): Cotton Jersey, ambient pressure 70.7 kPa, oxygen 26.2 mol %, air flow 20 cm/s concurrent. Saffire VI-2 (Saffire VI (Cygnus)): SIBAL Cloth, ambient pressure 54.1 kPa, oxygen 31.0 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-3 (Saffire VI (Cygnus)): Two-Sided PMMA, ambient pressure 54.6 kPa, oxygen 30.3 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-4 (Saffire VI (Cygnus)): One-Sided PMMA, ambient pressure 55.2 kPa, oxygen 28.8 mol %, air flow 20 cm/s concurrent.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": [
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "Space Apps 2026 challenge page"
+          ],
+          "file": "data/processed/external_tests.json",
+          "id": "limits:headline",
+          "line": null,
+          "page": null,
+          "score": 17.753,
+          "source": "Flame Frontier headline (template over external_tests.json)",
+          "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2, SIBAL Cloth, 31.0 mol % at 54.1 kPa, 20.0 cm/s; Saffire VI-3, Two-Sided PMMA, 30.3 mol % at 54.6 kPa, 20.0 cm/s), none in partial gravity. Moon-base air means at least 30% O2 at 10.2 psi (70.33 kPa) or less, from the challenge page.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps challenge page"
+          ],
+          "file": "data/manual/sources.json",
+          "id": "limits:source:challenge_brief",
+          "line": null,
+          "page": null,
+          "score": 14.217,
+          "source": "Flame Frontier Known Limits: Space Apps challenge page",
+          "text": "Flame Frontier's notes on Space Apps challenge page. What it gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. What it does not give, in Flame Frontier's reading: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
+          "file": "data/processed/gaps.json",
+          "id": "limits:gaps:rover",
+          "line": null,
+          "page": null,
+          "score": 10.669,
+          "source": "Flame Frontier habitat gap report: Pressurized rover",
+          "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
+          "file": "data/processed/gaps.json",
+          "id": "limits:gaps:moon_base",
+          "line": null,
+          "page": null,
+          "score": 10.642,
+          "source": "Flame Frontier habitat gap report: Moon base",
+          "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "a7a3fdb7bb76f80770bc5877",
+      "key": "9e5f2c60c5eef74db66b8a43",
       "model": "claude-haiku-5-5",
       "question": "Which solid materials have been burned in Moon-base air, at 30% oxygen or more and 10.2 psi or less?",
       "round": 1,
       "usage": [
         {
-          "input_tokens": 2356,
-          "output_tokens": 223
+          "input_tokens": 2821,
+          "output_tokens": 228
+        },
+        {
+          "input_tokens": 2892,
+          "output_tokens": 249
         }
       ]
     },
     {
-      "answer": "Saffire VI-2 (SIBAL Cloth) used 31.0 mol % oxygen at 54.1 kPa ambient pressure [data:saffire:table1]. Saffire VI-3 (Two-Sided PMMA) used 30.3 mol % oxygen at 54.6 kPa ambient pressure [data:saffire:table1]. Saffire VI-4 (One-Sided PMMA) used 28.8 mol % oxygen at 55.2 kPa ambient pressure [data:saffire:table1]. Saffire VI test 1 (Nomex) did not ignite and its conditions are not given in Table 1 [limits:source:saffire_ices2024].",
-      "attempts": 1,
+      "answer": "Saffire VI-2 (SIBAL Cloth) used 31.0 mol % oxygen at 54.1 kPa ambient pressure [data:saffire:table1]. Saffire VI-3 (Two-Sided PMMA) used 30.3 mol % oxygen at 54.6 kPa [data:saffire:table1]. Saffire VI-4 (One-Sided PMMA) used 28.8 mol % oxygen at 55.2 kPa [data:saffire:table1]. Flame Frontier reads the Saffire VI test 1 (Nomex) result as not igniting, and its conditions are not in Table 1 [limits:source:saffire_ices2024].",
+      "attempts": 2,
       "checks": {
         "cited": [
           "data:saffire:table1",
@@ -93,392 +122,490 @@
       },
       "chunks": [
         {
+          "derived_from": null,
           "file": "data/processed/external_tests.json",
           "id": "data:saffire:table1",
           "line": null,
           "page": 3,
-          "score": 22.148,
+          "score": 22.16,
           "source": "Saffire ICES-2024-365, Table 1, p.3 (rows restated one per test; values checked against the PDF)",
-          "text": "Saffire IV-1 (Saffire IV (Cygnus)): SIBAL Cloth, ambient pressure 100.0 kPa, oxygen 22.0 mol %, air flow 20 cm/s concurrent. Saffire V-2 (Saffire V (Cygnus)): Cotton Jersey, ambient pressure 70.7 kPa, oxygen 26.2 mol %, air flow 20 cm/s concurrent. Saffire VI-2 (Saffire VI (Cygnus)): SIBAL Cloth, ambient pressure 54.1 kPa, oxygen 31.0 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-3 (Saffire VI (Cygnus)): Two-Sided PMMA, ambient pressure 54.6 kPa, oxygen 30.3 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-4 (Saffire VI (Cygnus)): One-Sided PMMA, ambient pressure 55.2 kPa, oxygen 28.8 mol %, air flow 20 cm/s concurrent."
+          "text": "Saffire IV-1 (Saffire IV (Cygnus)): SIBAL Cloth, ambient pressure 100.0 kPa, oxygen 22.0 mol %, air flow 20 cm/s concurrent. Saffire V-2 (Saffire V (Cygnus)): Cotton Jersey, ambient pressure 70.7 kPa, oxygen 26.2 mol %, air flow 20 cm/s concurrent. Saffire VI-2 (Saffire VI (Cygnus)): SIBAL Cloth, ambient pressure 54.1 kPa, oxygen 31.0 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-3 (Saffire VI (Cygnus)): Two-Sided PMMA, ambient pressure 54.6 kPa, oxygen 30.3 mol %, air flow 20 cm/s concurrent, in Moon-base air. Saffire VI-4 (Saffire VI (Cygnus)): One-Sided PMMA, ambient pressure 55.2 kPa, oxygen 28.8 mol %, air flow 20 cm/s concurrent.",
+          "tier": "primary"
         },
         {
-          "file": "data/manual/sources.json",
-          "id": "limits:source:saffire_ices2024",
-          "line": null,
-          "page": null,
-          "score": 14.413,
-          "source": "Flame Frontier Known Limits: Saffire ICES-2024-365",
-          "text": "Saffire ICES-2024-365 gives: Per-test ambient pressure (kPa), O2 (mol %), air flow (cm/s), flow direction, material, for the 5 samples in Table 1 (p.3). It does not give: Table 1 lists only the samples 'considered in this paper' (IV-1, V-2, VI-2, VI-3, VI-4). Other Saffire I-V samples are not in it. Saffire VI test 1 (Nomex) did not ignite (p.4). Its conditions are not in Table 1, so it is not plotted. One flow speed only: 20 cm/s concurrent for every listed test. For the PMMA tests the flow was reduced at 1120 s (p.4); the reduced speed is not in Table 1. One O2 value per test (the set condition). No pre/post-burn split. Microgravity (orbiting Cygnus) only. No partial gravity. No extinction or flammability-limit data: every plotted test ignited and burned."
-        },
-        {
+          "derived_from": null,
           "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
           "id": "paper:ntrs20160001047:p3.2",
           "line": null,
           "page": 3,
-          "score": 13.947,
+          "score": 13.959,
           "source": "NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 3",
-          "text": "The STS and the currently in-design CEV have resided at the 30% O2 at 70.3 kPa (10.2 psia) point of the normoxic curve. The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point of the curve. Nonetheless, it has obtained much of its data at 24.1% O2, 101.4 kPa (14.7 psia) conditions due to sinusoidal fluctuations of oxygen with a mean of 21% O2 seen on the ISS. Future long duration habitation modules might select to operate at lower pressure normoxic conditions to minimize time loss and health risk associated with frequent depressurizations when frequently exiting habitats. In addition, low pressure environments also provide structural design benefits for long-duration habitats. Use of Extravehicular Activity (EVA) suits is another scenario in which a reduced pressure environment is desired. Off-nominal"
+          "text": "The STS and the currently in-design CEV have resided at the 30% O2 at 70.3 kPa (10.2 psia) point of the normoxic curve. The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point of the curve. Nonetheless, it has obtained much of its data at 24.1% O2, 101.4 kPa (14.7 psia) conditions due to sinusoidal fluctuations of oxygen with a mean of 21% O2 seen on the ISS. Future long duration habitation modules might select to operate at lower pressure normoxic conditions to minimize time loss and health risk associated with frequent depressurizations when frequently exiting habitats. In addition, low pressure environments also provide structural design benefits for long-duration habitats. Use of Extravehicular Activity (EVA) suits is another scenario in which a reduced pressure environment is desired. Off-nominal",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
+          "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
+          "id": "paper:ntrs20160001047:p2.1",
+          "line": null,
+          "page": 2,
+          "score": 10.654,
+          "source": "NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 2",
+          "text": "2 JOURNAL OF ASTM INTERNATIONAL Background To safely and successfully operate in enriched oxygen conditions, understanding material flammability is critical for NASA, commercial space flight companies, and industry alike. Previous space programs have acquired significant data in the Space Transportation System (STS) environment of 30% O2 at 70.3 kPa (10.2 psia). This same environment is also currently being evaluated for the Crew Exploration Vehicle (CEV). A significant amount of additional flammability data exists at the International Space Station (ISS) worst-case cabin conditions of 24.1% O2 at 191.4 kPa (14.7 psia). In a desire to leverage existing data, the question arises: Do materials perform similarly with respect to flammability as long as the partial pressure of oxygen remains equivalent? This question is not only relevant to NASA and space programs. In the oxygen related industry, the ability to apply existing flammability data to various manufacturing and operating conditions would be beneficial.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": null,
+          "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
+          "id": "paper:ntrs20160001047:p2.2",
+          "line": null,
+          "page": 2,
+          "score": 8.566,
+          "source": "NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 2",
+          "text": "It is important that the question be thoroughly answered, as the ability to apply existing data to alternate conditions could save significant resources both financially and with respect to time and schedule. The purpose of this paper is to compile relevant data to examine the dependence of flammability on partial pressure of oxygen and oxygen concentration. Normoxic Conditions and Partial Pressure Normoxic conditions maintain an equivalent partial pressure of oxygen in the atmosphere as would be found in that of air at sea level. This level of oxygen is important for human function, and therefore space vehicles are designed to provide normoxic or close to normoxic conditions. The concept of partial pressure depends on the ideal gas law (Eq. (1)): PV = nRT (1) Where P = pressure; V = volume; n = moles of a molecule; R = ideal gas constant; and T= Temperature. Assuming the ideal gas law, the partial pressure of oxygen pO2 is defined as the pressure that would be exerted by nO2 moles of O2 alone in the same total volume V at the same temperature T (Eq. (2)).",
+          "tier": "primary"
+        },
+        {
+          "derived_from": [
+            "Saffire ICES-2024-365"
+          ],
+          "file": "data/manual/sources.json",
+          "id": "limits:source:saffire_ices2024",
+          "line": null,
+          "page": null,
+          "score": 9.826,
+          "source": "Flame Frontier Known Limits: Saffire ICES-2024-365",
+          "text": "Flame Frontier's notes on Saffire ICES-2024-365. What it gives: Per-test ambient pressure (kPa), O2 (mol %), air flow (cm/s), flow direction, material, for the 5 samples in Table 1 (p.3). What it does not give, in Flame Frontier's reading: Table 1 lists only the samples 'considered in this paper' (IV-1, V-2, VI-2, VI-3, VI-4). Other Saffire I-V samples are not in it. Saffire VI test 1 (Nomex) did not ignite (p.4). Its conditions are not in Table 1, so it is not plotted. One flow speed only: 20 cm/s concurrent for every listed test. For the PMMA tests the flow was reduced at 1120 s (p.4); the reduced speed is not in Table 1. One O2 value per test (the set condition). No pre/post-burn split. Microgravity (orbiting Cygnus) only. No partial gravity. No extinction or flammability-limit data: every plotted test ignited and burned.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
           "file": "data/processed/gaps.json",
           "id": "limits:gaps:spacesuit",
           "line": null,
           "page": null,
-          "score": 12.323,
+          "score": 8.633,
           "source": "Flame Frontier habitat gap report: Spacesuit",
-          "text": "Spacesuit target: 100% O2 at 29.6 kPa, partial gravity. 0 solid-material tests in this window. No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together. Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given). No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:rover",
-          "line": null,
-          "page": null,
-          "score": 11.204,
-          "source": "Flame Frontier habitat gap report: Pressurized rover",
-          "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:moon_base",
-          "line": null,
-          "page": null,
-          "score": 11.175,
-          "source": "Flame Frontier habitat gap report: Moon base",
-          "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+          "text": "Spacesuit target: 100% O2 at 29.6 kPa, partial gravity. 0 solid-material tests in this window. No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together. Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given). No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "95e22e58183e4974f2e67e3d",
+      "key": "98a188fb2dfae00f00c59ef6",
       "model": "claude-haiku-5-5",
       "question": "What oxygen concentration and pressure did the Saffire VI tests use?",
       "round": 1,
       "usage": [
         {
-          "input_tokens": 2885,
-          "output_tokens": 230
+          "input_tokens": 3102,
+          "output_tokens": 253
+        },
+        {
+          "input_tokens": 3179,
+          "output_tokens": 229
         }
       ]
     },
     {
-      "answer": "BASS-II airflow is listed as up to 40 cm/s in the PSI metadata [meta:PSI-25:approach], but the BASS-II report gives about 55 cm/s with no restrictor and about 35 cm/s with two, and Flame Frontier uses the report for flow [limits:disagree:bass2_max_flow]. Saffire-I was conducted at 20 cm/s [meta:PSI-98:approach.1]. Saffire-III was conducted at 30 cm/s [meta:PSI-100:approach].",
-      "attempts": 1,
+      "answer": "Saffire-I was conducted at an air flow velocity of 20 cm/s [meta:PSI-98:approach.1]. Saffire-III used a flow velocity of 30 cm/s [meta:PSI-100:approach]. BASS-II airflow speeds reached up to 40 cm/s according to the PSI metadata [meta:PSI-25:approach]. Sources disagree on BASS-II maximum airflow: the PSI metadata says up to 40 cm/s [meta:PSI-25:approach], while the BASS-II report gives about 55 cm/s with no restrictor and about 35 cm/s with two [limits:disagree:bass2_max_flow]. Flame Frontier uses the report for flow [limits:disagree:bass2_max_flow].",
+      "attempts": 2,
       "checks": {
         "cited": [
-          "meta:PSI-25:approach",
-          "limits:disagree:bass2_max_flow",
           "meta:PSI-98:approach.1",
-          "meta:PSI-100:approach"
+          "meta:PSI-100:approach",
+          "meta:PSI-25:approach",
+          "limits:disagree:bass2_max_flow"
         ],
         "ok": true,
         "problems": []
       },
       "chunks": [
         {
-          "file": "data/manual/source_disagreements.csv",
-          "id": "limits:disagree:bass2_max_flow",
-          "line": null,
-          "page": null,
-          "score": 9.401,
-          "source": "Flame Frontier Known Limits: sources disagree (BASS-II maximum airflow)",
-          "text": "Sources disagree on BASS-II maximum airflow. The PSI metadata says up to 40 cm/s; the BASS-II report says about 55 cm/s with no restrictor and about 35 cm/s with two. Flame Frontier uses the report for flow."
-        },
-        {
-          "file": "data/manual/o2_atmosphere_sweep.csv",
-          "id": "limits:o2:PSI-98:Saffire-I",
-          "line": null,
-          "page": null,
-          "score": 7.157,
-          "source": "Flame Frontier Known Limits: whose oxygen?",
-          "text": "PSI-98 Saffire-I, column \"Percent O2\": verdict ambient. Evidence: \"Air is drawn through the flow duct by fans located at the top of the duct\". Cygnus cabin air drawn through the duct. No pressure column."
-        },
-        {
+          "derived_from": null,
           "file": "data/raw/PSI-100/PSI-100_metadata_PSI-168_SAFFIRE-III/i_Investigation.txt",
           "id": "meta:PSI-100:approach",
           "line": 40,
           "page": null,
-          "score": 7.004,
+          "score": 6.829,
           "source": "PSI-100 Spacecraft Fire Experiment-III: PSI metadata Comment[Approach]",
-          "text": "The Saffire-III experiments were performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. As a follow on to the Saffire 1 investigation, the Saffire III investigation also used SIBAL as the sample material. However, the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed. Once the sample was ignited flame images were captured using two cameras. In addition, thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity. All data was compressed, and subsequently downlinked. Details related to samples and experimental parameters are provided in the Experimental Details file in the Science document folder."
+          "text": "The Saffire-III experiments were performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. As a follow on to the Saffire 1 investigation, the Saffire III investigation also used SIBAL as the sample material. However, the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed. Once the sample was ignited flame images were captured using two cameras. In addition, thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity. All data was compressed, and subsequently downlinked. Details related to samples and experimental parameters are provided in the Experimental Details file in the Science document folder.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
           "id": "meta:PSI-25:approach",
           "line": 40,
           "page": null,
-          "score": 6.965,
+          "score": 6.731,
           "source": "PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Approach]",
-          "text": "To summarize, BASS-II's approach, microgravity combustion tests were performed aboard the International Space Station. Active crew support for real-time “lab partner” operations. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. Fuel samples were mounted inside a small wind tunnel which could impose airflow speeds up to 40 cm/s. Main variables are airflow speed and oxygen concentration (oxygen varied below 21% by adding nitrogen). Flame appearance, flame growth, and spread rates were determined in both the opposed and concurrent flow."
+          "text": "To summarize, BASS-II's approach, microgravity combustion tests were performed aboard the International Space Station. Active crew support for real-time “lab partner” operations. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. Fuel samples were mounted inside a small wind tunnel which could impose airflow speeds up to 40 cm/s. Main variables are airflow speed and oxygen concentration (oxygen varied below 21% by adding nitrogen). Flame appearance, flame growth, and spread rates were determined in both the opposed and concurrent flow.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-98/PSI-98_metadata_PSI-166_SAFFIRE-I/i_Investigation.txt",
           "id": "meta:PSI-98:approach.1",
           "line": 40,
           "page": null,
-          "score": 6.675,
+          "score": 6.505,
           "source": "PSI-98 Spacecraft Fire Safety Experiment-I: PSI metadata Comment[Approach]",
-          "text": "The Saffire-1 experiments was performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. The sample material for Saffire-I is a composite fabric called Sibal consisting of cotton on a fiberglass substrate (75% cotton, 25% fiberglass by weight). It has been used in many space experiments because it burns like cotton but maintains structural integrity after the cotton is consumed. The sample was approximately 0.94 meters long and 0.4 meters wide, simulating a large piece of flammable fabric. The Saffire-1 flight unit had a sample card installed in the middle of a large flow duct. Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module. Saffire-I was conducted at an air flow velocity of 20 cm/s. Once the sample was ignited flame images were captured using two cameras."
+          "text": "The Saffire-1 experiments was performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. The sample material for Saffire-I is a composite fabric called Sibal consisting of cotton on a fiberglass substrate (75% cotton, 25% fiberglass by weight). It has been used in many space experiments because it burns like cotton but maintains structural integrity after the cotton is consumed. The sample was approximately 0.94 meters long and 0.4 meters wide, simulating a large piece of flammable fabric. The Saffire-1 flight unit had a sample card installed in the middle of a large flow duct. Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module. Saffire-I was conducted at an air flow velocity of 20 cm/s. Once the sample was ignited flame images were captured using two cameras.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-26/PSI-26_metadata_PSI-102_BASS/i_Investigation.txt",
           "id": "meta:PSI-26:approach.1",
           "line": 40,
           "page": null,
-          "score": 6.27,
+          "score": 6.123,
           "source": "PSI-26 Burning and Suppression of Solids: PSI metadata Comment[Approach]",
-          "text": "The experiment was conducted aboard the International Space Station (ISS) inside the Microgravity Glove Box (MSG). Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem. A Kanthal wire (29-gage)igniter was used to initiate combustion at one end of the fabric. Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s. The airflow was directed along the fuel surface in either the opposed or concurrent direction. This investigation explored two primary air flow configurations; concurrent-flow and opposed-flow. With concurrent-flow air flows in the same direction as the flame spread and in opposed-flow air flows in the opposite direction of flame spread. Flames were observed in the top and edge profiles and data was collected on flame size, shape, color, spread rate, and potential flame quenching. The samples were placed in a small flow duct (76 mm x 76 mm cross section) that allowed for airflow across the fabric."
+          "text": "The experiment was conducted aboard the International Space Station (ISS) inside the Microgravity Glove Box (MSG). Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem. A Kanthal wire (29-gage)igniter was used to initiate combustion at one end of the fabric. Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s. The airflow was directed along the fuel surface in either the opposed or concurrent direction. This investigation explored two primary air flow configurations; concurrent-flow and opposed-flow. With concurrent-flow air flows in the same direction as the flame spread and in opposed-flow air flows in the opposite direction of flame spread. Flames were observed in the top and edge profiles and data was collected on flame size, shape, color, spread rate, and potential flame quenching. The samples were placed in a small flow duct (76 mm x 76 mm cross section) that allowed for airflow across the fabric.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": null,
+          "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+          "id": "report:bass2:p3.2",
+          "line": null,
+          "page": 3,
+          "score": 5.877,
+          "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 3",
+          "text": "NASA tests and controls materials from a flammability perspective using an upward burning test in normal gravity, which is considered to be the worst-case geometry for flammability of the material on Earth. However, it may not be conservative for flammability in space. One objective of the BASS–II tests is to identify what is the worst case for material flammability in spacecraft environments, and how does that compare to the terrestrial upward burning used to screen the materials for safe use aboard spacecraft. Detailed combustion models can be validated by data obtained in the simpler flow environment in microgravity. Once validated, they can be used to build more complex combustion models needed to capture the important details of flames burning in normal gravity. These models have wide applicability to the general understanding of many terrestrial combustion problems. The main variables tested were the effects of ambient O2 concentration, ventilation flow velocity, and fuel type, thickness, and geometry.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": [
+            "PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Approach]",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 66"
+          ],
+          "file": "data/manual/source_disagreements.csv",
+          "id": "limits:disagree:bass2_max_flow",
+          "line": null,
+          "page": null,
+          "score": 6.379,
+          "source": "Flame Frontier Known Limits: sources disagree (BASS-II maximum airflow)",
+          "text": "Sources disagree on BASS-II maximum airflow. The PSI metadata says up to 40 cm/s; the BASS-II report says about 55 cm/s with no restrictor and about 35 cm/s with two. Flame Frontier uses the report for flow.",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "5ae200f8af1db0fb7078f630",
+      "key": "f9104f7317ab7b325d82fa0c",
       "model": "claude-haiku-5-5",
       "question": "How does the airflow in BASS-II compare with Saffire-I and Saffire-III?",
+      "round": 1,
       "usage": [
         {
-          "input_tokens": 1984,
-          "output_tokens": 178
+          "input_tokens": 2528,
+          "output_tokens": 225
+        },
+        {
+          "input_tokens": 2601,
+          "output_tokens": 257
         }
       ]
     },
     {
-      "answer": "FLEX studied suppression by diluting the chamber atmosphere with carbon dioxide and helium, both of which suppress fire [brief:s1.6]. Its hypothesis is that microgravity alters the flammability limits and suppression efficacy of fire suppressant agents compared with normal gravity [meta:PSI-69:hypothesis]. The mission measured the effectiveness of gaseous suppressants such as CO2, He, and SF6 [limits:earth:water_mist].",
+      "answer": "The Flame Extinguishment Experiment (FLEX) studied suppression through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire [brief:s1.6]. FLEX also measured the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6 [meta:PSI-69:objective].",
       "attempts": 1,
       "checks": {
         "cited": [
           "brief:s1.6",
-          "meta:PSI-69:hypothesis",
-          "limits:earth:water_mist"
+          "meta:PSI-69:objective"
         ],
         "ok": true,
         "problems": []
       },
       "chunks": [
         {
+          "derived_from": null,
           "file": "docs/ref/challenge_brief.md",
           "id": "brief:s1.6",
           "line": null,
           "page": null,
-          "score": 13.308,
+          "score": 13.315,
           "source": "Space Apps 2026 challenge page (verbatim)",
-          "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
+          "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
           "id": "meta:PSI-69:hypothesis",
           "line": 61,
           "page": null,
-          "score": 11.863,
+          "score": 11.873,
           "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Hypothesis]",
-          "text": "The primary hypothesis of the FLEX mission is that microgravity conditions fundamentally alter the combustion and extinction characteristics of liquid fuel droplets due to changes in species and energy transport dynamics, radiative heat loss, and chemical kinetics. Specifically, the hypothesis posits that the lack of buoyant convection in microgravity will lead to significant differences in the flammability limits and suppression efficacy of various fire suppressant agents compared to normal gravity conditions. This hypothesis underpins the design of the FLEX experiments, which aim to map flammability boundaries, quantify suppressant efficacy, and develop predictive models to improve fire safety in space environments."
+          "text": "The primary hypothesis of the FLEX mission is that microgravity conditions fundamentally alter the combustion and extinction characteristics of liquid fuel droplets due to changes in species and energy transport dynamics, radiative heat loss, and chemical kinetics. Specifically, the hypothesis posits that the lack of buoyant convection in microgravity will lead to significant differences in the flammability limits and suppression efficacy of various fire suppressant agents compared to normal gravity conditions. This hypothesis underpins the design of the FLEX experiments, which aim to map flammability boundaries, quantify suppressant efficacy, and develop predictive models to improve fire safety in space environments.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
           "id": "meta:PSI-69:impacts.1",
           "line": 78,
           "page": null,
-          "score": 10.81,
+          "score": 10.82,
           "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Research Impacts]",
-          "text": "The research impacts and Earth benefits of the FLEX mission are significant and multifaceted. By enhancing our understanding of microgravity combustion, the mission directly contributes to improved fire safety protocols for future space missions, ensuring the safety of crew members in environments where traditional fire suppression methods may be ineffective. On Earth, the insights gained from these experiments have the potential to advance fire safety in confined and reduced-gravity environments, such as submarines or high-altitude aircraft. The mission's findings on the effectiveness of various fire suppressants, including CO2, He, and SF6, in microgravity can lead to the development of more efficient and less harmful fire suppression systems, reducing the risk of toxic byproducts during fire events. Additionally, the study of ''cool flames'' and low-temperature combustion processes observed in microgravity can inform the design of advanced combustion engines, leading to improved fuel efficiency and reduced emissions in automotive and industrial applications."
+          "text": "The research impacts and Earth benefits of the FLEX mission are significant and multifaceted. By enhancing our understanding of microgravity combustion, the mission directly contributes to improved fire safety protocols for future space missions, ensuring the safety of crew members in environments where traditional fire suppression methods may be ineffective. On Earth, the insights gained from these experiments have the potential to advance fire safety in confined and reduced-gravity environments, such as submarines or high-altitude aircraft. The mission's findings on the effectiveness of various fire suppressants, including CO2, He, and SF6, in microgravity can lead to the development of more efficient and less harmful fire suppression systems, reducing the risk of toxic byproducts during fire events. Additionally, the study of ''cool flames'' and low-temperature combustion processes observed in microgravity can inform the design of advanced combustion engines, leading to improved fuel efficiency and reduced emissions in automotive and industrial applications.",
+          "tier": "primary"
         },
         {
-          "file": "data/processed/earth_apps.json",
-          "id": "limits:earth:water_mist",
-          "line": null,
-          "page": null,
-          "score": 9.128,
-          "source": "Flame Frontier On Earth: Fine-water-mist fire extinguishers",
-          "text": "Earth application named on the challenge page: Fine-water-mist fire extinguishers. Challenge page: \"Fine-water-mist extinguishers developed for use on the ISS have practical applications here on Earth\". 0 of 24 PSI combustion investigations mention water mist in their metadata. The investigations listed studied suppression in other ways (gases, models). Related: PSI-69 Flame Extinguishment Experiment: \"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\". Related: PSI-69 Flame Extinguishment Experiment: \"can lead to the development of more efficient and less harmful fire suppression systems\". Related: PSI-26 Burning and Suppression of Solids: \"Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.\". Related: PSI-25 Burning and Suppression of Solids - II: \"BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.\"."
-        },
-        {
+          "derived_from": null,
           "file": "data/raw/PSI-60/PSI-60_metadata_NEWID-5_Computational and Ex/i_Investigation.txt",
           "id": "meta:PSI-60:impacts",
           "line": 65,
           "page": null,
-          "score": 7.367,
+          "score": 7.374,
           "source": "PSI-60 Computational and Experimental Analysis of SPICE Data Sets: PSI metadata Comment[Research Impacts]",
-          "text": "This study sought to enhance understanding of soot formation, flame structure, and radiative transport under microgravity and normal gravity, improving predictive models for combustion in both spacecraft and terrestrial systems. For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions. On Earth, the insights help reduce pollutant emissions, optimize combustion efficiency, and inform the design of cleaner energy and industrial systems."
+          "text": "This study sought to enhance understanding of soot formation, flame structure, and radiative transport under microgravity and normal gravity, improving predictive models for combustion in both spacecraft and terrestrial systems. For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions. On Earth, the insights help reduce pollutant emissions, optimize combustion efficiency, and inform the design of cleaner energy and industrial systems.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
           "id": "meta:PSI-25:objective",
           "line": 60,
           "page": null,
-          "score": 7.303,
+          "score": 7.31,
           "source": "PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Objective]",
-          "text": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth. Objectives Include: 1) Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity. 2) Begin to bridge the gap between the normal gravity NASA-STD-6001 Test #1 method, ground-based microgravity tests, and actual material flammability in microgravity. 3) Provide SoFIE PIs with preliminary data to refine Science Requirements. 4) Practical, realistic (thicker) fuels in typical geometries will be examined, including slabs, cylinders, and spherical sections. The primary variables include: • Forced flow velocity (speed and direction) • Ambient oxygen concentration (via working volume nitrogen vitiation) • Sample geometry (rods, spherical section, slabs, films, and fabric sheets"
+          "text": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth. Objectives Include: 1) Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity. 2) Begin to bridge the gap between the normal gravity NASA-STD-6001 Test #1 method, ground-based microgravity tests, and actual material flammability in microgravity. 3) Provide SoFIE PIs with preliminary data to refine Science Requirements. 4) Practical, realistic (thicker) fuels in typical geometries will be examined, including slabs, cylinders, and spherical sections. The primary variables include: • Forced flow velocity (speed and direction) • Ambient oxygen concentration (via working volume nitrogen vitiation) • Sample geometry (rods, spherical section, slabs, films, and fabric sheets",
+          "tier": "primary"
+        },
+        {
+          "derived_from": null,
+          "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
+          "id": "meta:PSI-69:objective",
+          "line": 71,
+          "page": null,
+          "score": 6.872,
+          "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Objective]",
+          "text": "The FLEX (Flame Extinguishment Experiment) investigation aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6, and develop reliable predictive models for combustion limits under reduced gravity conditions. The mission seeks to validate and improve simplified models by incorporating detailed chemical reactions, heat transfer, and material movement, using both space-based data and extensive ground-based tests. Key flight experiment goals include obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles, while systematically analyzing the effects of different ambient conditions and suppressant concentrations. These investigations are essential for advancing the fundamental understanding of combustion processes in microgravity and enhancing fire safety protocols for future space missions.",
+          "tier": "primary"
         }
       ],
       "flagged": false,
-      "key": "8feb03308f99f5f63ace1e3c",
+      "key": "52341fcde4157701b684b809",
       "model": "claude-haiku-5-5",
       "question": "How did FLEX study fire suppression in microgravity?",
       "round": 1,
       "usage": [
         {
-          "input_tokens": 2108,
-          "output_tokens": 162
+          "input_tokens": 2316,
+          "output_tokens": 122
         }
       ]
     },
     {
-      "answer": "SAME-R utilized the SAME hardware used on-orbit, with modifications including a new test material, Pyrell®, replacing DBP samples, broadened test conditions, and a new M-pass instrument replacing one of the two Commercial Diagnostic Enclosures [meta:PSI-101:approach]. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points [meta:PSI-101:approach]. Fire detection in microgravity was tested through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R) [brief:s1.6].",
+      "answer": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R) [brief:s1.6]. SAME-R utilized the SAME hardware used on-orbit [meta:PSI-101:approach]. SAME-R introduced a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, to replace DBP samples [meta:PSI-101:approach]. Test conditions were broadened, including higher heating temperatures and no-flow during sample heating time [meta:PSI-101:approach]. A new instrument, M-pass, replaced one of the two Commercial Diagnostic Enclosures that included a DustTrak and an ionization detector used in SAME [meta:PSI-101:approach]. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points [meta:PSI-101:approach].",
       "attempts": 1,
       "checks": {
         "cited": [
-          "meta:PSI-101:approach",
-          "brief:s1.6"
+          "brief:s1.6",
+          "meta:PSI-101:approach"
         ],
         "ok": true,
         "problems": []
       },
       "chunks": [
         {
+          "derived_from": null,
           "file": "docs/ref/challenge_brief.md",
           "id": "brief:s1.20",
           "line": null,
           "page": null,
-          "score": 20.825,
+          "score": 20.56,
           "source": "Space Apps 2026 challenge page (verbatim)",
-          "text": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies."
+          "text": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies.",
+          "tier": "primary"
         },
         {
-          "file": "data/processed/earth_apps.json",
-          "id": "limits:earth:fire_detector",
-          "line": null,
-          "page": null,
-          "score": 18.469,
-          "source": "Flame Frontier On Earth: Smoke detector that tells smoke from dust",
-          "text": "Earth application named on the challenge page: Smoke detector that tells smoke from dust. Challenge page: \"NASA technology has similarly led to improvements in terrestrial smoke detection\". Fire Detector (NASA Spinoff): \"1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).\" The challenge page's resource note dates this to the 1970s. The investigations below share its topic; we do not claim they led to it. One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies. Related: PSI-102 Smoke and Aerosol Measurement Experiment: \"affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke\". Related: PSI-101 Smoke Aerosol Measurement Experiment-Reflight: \"can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories\". Related: PSI-47 Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2: \"Arizona Red Dust (ARD) was chosen as an aerosol standard\". Related: PSI-115 Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity: \"This would directly lead to better smoke detection devices\"."
-        },
-        {
+          "derived_from": null,
           "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
           "id": "meta:PSI-101:impacts",
           "line": 67,
           "page": null,
-          "score": 16.37,
+          "score": 16.19,
           "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Research Impacts]",
-          "text": "Along with the results from the original SAME investigation, the results from SAME-R can lead to technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated. The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
+          "text": "Along with the results from the original SAME investigation, the results from SAME-R can lead to technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated. The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "docs/ref/challenge_brief.md",
           "id": "brief:s1.6",
           "line": null,
           "page": null,
-          "score": 15.803,
+          "score": 15.523,
           "source": "Space Apps 2026 challenge page (verbatim)",
-          "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
+          "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
           "id": "meta:PSI-101:approach",
           "line": 40,
           "page": null,
-          "score": 15.795,
+          "score": 15.512,
           "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Approach]",
-          "text": "SAME-R utilized the SAME hardware used on-orbit. Based on the experience gained from SAME, SAME-R included the following modifications: 1) a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples, 2) test conditions were broadened including higher heating temperatures and no-flow during sample heating time, and 3) a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points. After SAME-R flight tests, three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R."
+          "text": "SAME-R utilized the SAME hardware used on-orbit. Based on the experience gained from SAME, SAME-R included the following modifications: 1) a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples, 2) test conditions were broadened including higher heating temperatures and no-flow during sample heating time, and 3) a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points. After SAME-R flight tests, three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "data/raw/PSI-102/PSI-102_metadata_PSI-170_SAME/i_Investigation.txt",
           "id": "meta:PSI-102:impacts",
           "line": 66,
           "page": null,
-          "score": 13.435,
+          "score": 13.383,
           "source": "PSI-102 Smoke and Aerosol Measurement Experiment: PSI metadata Comment[Research Impacts]",
-          "text": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
+          "text": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "NASA Spinoff: Fire Detector",
+            "PSI-102 PSI metadata",
+            "PSI-101 PSI metadata",
+            "PSI-47 PSI metadata",
+            "PSI-115 PSI metadata"
+          ],
+          "file": "data/processed/earth_apps.json",
+          "id": "limits:earth:fire_detector",
+          "line": null,
+          "page": null,
+          "score": 12.84,
+          "source": "Flame Frontier On Earth: Smoke detector that tells smoke from dust",
+          "text": "Earth application named on the challenge page: Smoke detector that tells smoke from dust. Challenge page: \"NASA technology has similarly led to improvements in terrestrial smoke detection\". Fire Detector (NASA Spinoff): \"1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).\" The challenge page's resource note dates this to the 1970s. The investigations below share its topic; we do not claim they led to it. One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies. Related: PSI-102 Smoke and Aerosol Measurement Experiment: \"affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke\". Related: PSI-101 Smoke Aerosol Measurement Experiment-Reflight: \"can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories\". Related: PSI-47 Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2: \"Arizona Red Dust (ARD) was chosen as an aerosol standard\". Related: PSI-115 Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity: \"This would directly lead to better smoke detection devices\".",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "e24751c80d29213d66fdd143",
+      "key": "4974281da3075b4915640d88",
       "model": "claude-haiku-5-5",
       "question": "How did SAME and SAME-R test smoke detection in microgravity?",
       "round": 1,
       "usage": [
         {
-          "input_tokens": 2198,
-          "output_tokens": 210
+          "input_tokens": 2531,
+          "output_tokens": 315
         }
       ]
     },
     {
-      "answer": "No. The Space Apps challenge page states that there is currently no partial-gravity combustion data available in PSI, with future additions expected from LUCI and FM2 [brief:s1.31]. The habitat gap reports likewise say no combustion test at partial gravity exists, as every point on both panels is from microgravity [limits:gaps:spacesuit] [limits:gaps:rover].",
+      "answer": "No, there is currently no partial-gravity combustion data available in PSI, according to the Space Apps challenge page [brief:s1.31]. The challenge page expects such data may be added later, for example from LUCI and FM2 [brief:s1.31]. Flame Frontier notes that every point in its charts is from microgravity [limits:gaps:spacesuit].",
       "attempts": 1,
       "checks": {
         "cited": [
           "brief:s1.31",
-          "limits:gaps:spacesuit",
-          "limits:gaps:rover"
+          "limits:gaps:spacesuit"
         ],
         "ok": true,
         "problems": []
       },
       "chunks": [
         {
+          "derived_from": null,
           "file": "docs/ref/challenge_brief.md",
           "id": "brief:s1.31",
           "line": null,
           "page": null,
-          "score": 8.991,
+          "score": 8.533,
           "source": "Space Apps 2026 challenge page (verbatim)",
-          "text": "Although NASA is heavily focused on the return of astronauts to the Moon’s surface and the establishment of a Moon Base in preparation for the future human exploration of Mars, there is currently no partial-gravity combustion data available in PSI. We expect such data will be added in the future, for example from the Lunar-g Combustion Investigation (LUCI) and the Flammability of Materials on the Moon (FM2) experiment."
+          "text": "Although NASA is heavily focused on the return of astronauts to the Moon’s surface and the establishment of a Moon Base in preparation for the future human exploration of Mars, there is currently no partial-gravity combustion data available in PSI. We expect such data will be added in the future, for example from the Lunar-g Combustion Investigation (LUCI) and the Flammability of Materials on the Moon (FM2) experiment.",
+          "tier": "primary"
         },
         {
-          "file": "data/manual/sources.json",
-          "id": "limits:source:challenge_brief",
-          "line": null,
-          "page": null,
-          "score": 7.043,
-          "source": "Flame Frontier Known Limits: Space Apps challenge page",
-          "text": "Space Apps challenge page gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. It does not give: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:spacesuit",
-          "line": null,
-          "page": null,
-          "score": 6.174,
-          "source": "Flame Frontier habitat gap report: Spacesuit",
-          "text": "Spacesuit target: 100% O2 at 29.6 kPa, partial gravity. 0 solid-material tests in this window. No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together. Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given). No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:rover",
-          "line": null,
-          "page": null,
-          "score": 5.899,
-          "source": "Flame Frontier habitat gap report: Pressurized rover",
-          "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:moon_base",
-          "line": null,
-          "page": null,
-          "score": 5.877,
-          "source": "Flame Frontier habitat gap report: Moon base",
-          "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
+          "derived_from": null,
           "file": "data/raw/PSI-68/PSI-68_metadata_PSI-132_FLEX-2/i_Investigation.txt",
           "id": "meta:PSI-68:hypothesis.2",
           "line": 60,
           "page": null,
-          "score": 3.653,
+          "score": 3.351,
           "source": "PSI-68 Flame Extinguishment Experiment - 2: PSI metadata Comment[Hypothesis]",
-          "text": "The primary goal of the flight experiments is to provide benchmark experimental data on bi-component droplet combustion over a wide range of initial conditions that could be used to validate numerical simulations and to develop new theoretical models."
+          "text": "The primary goal of the flight experiments is to provide benchmark experimental data on bi-component droplet combustion over a wide range of initial conditions that could be used to validate numerical simulations and to develop new theoretical models.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": [
+            "Space Apps challenge page"
+          ],
+          "file": "data/manual/sources.json",
+          "id": "limits:source:challenge_brief",
+          "line": null,
+          "page": null,
+          "score": 4.458,
+          "source": "Flame Frontier Known Limits: Space Apps challenge page",
+          "text": "Flame Frontier's notes on Space Apps challenge page. What it gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. What it does not give, in Flame Frontier's reading: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
+          "file": "data/processed/gaps.json",
+          "id": "limits:gaps:spacesuit",
+          "line": null,
+          "page": null,
+          "score": 4.069,
+          "source": "Flame Frontier habitat gap report: Spacesuit",
+          "text": "Spacesuit target: 100% O2 at 29.6 kPa, partial gravity. 0 solid-material tests in this window. No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together. Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given). No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
+          "file": "data/processed/gaps.json",
+          "id": "limits:gaps:rover",
+          "line": null,
+          "page": null,
+          "score": 3.885,
+          "source": "Flame Frontier habitat gap report: Pressurized rover",
+          "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
+          "file": "data/processed/gaps.json",
+          "id": "limits:gaps:moon_base",
+          "line": null,
+          "page": null,
+          "score": 3.871,
+          "source": "Flame Frontier habitat gap report: Moon base",
+          "text": "Moon base target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "369532ac7409d23e0b4a1645",
+      "key": "4a20df7ddb94f3162bd4d166",
       "model": "claude-haiku-5-5",
       "question": "Is there any partial-gravity combustion data in PSI?",
+      "round": 1,
       "usage": [
         {
-          "input_tokens": 2272,
-          "output_tokens": 127
+          "input_tokens": 2773,
+          "output_tokens": 119
         }
       ]
     },
     {
-      "answer": "The BASS-II flammability boundary for PMMA rods has a minimum at a = 8 to 12 s–1 at approximately 13.5 percent O2 [report:bass2:p75.2]. The minimum is again described as 13.5 percent O2 at a of 8 to 12 s–1 [report:bass2:p76.1]. The gap report states a post-burn O2 minimum of 13.61% computed by Flame Frontier from eq. 6.1, which differs slightly from the report's 13.5 percent [limits:gaps:iss].",
+      "answer": "The BASS-II report places the minimum on the flammability boundary at approximately 13.5 percent O2, at a of 8 to 12 s–1 [report:bass2:p75.2]. The report also states the minimum O2 concentration of 13.5 percent O2 at a of 8 to 12 s–1 [report:bass2:p76.1]. Flame Frontier computes a post-burn minimum of 13.61% from equation 6.1, which differs from the report text's 13.5 percent; this value is Flame Frontier's derivation, not a NASA figure [limits:gaps:iss].",
       "attempts": 1,
       "checks": {
         "cited": [
@@ -491,73 +618,91 @@
       },
       "chunks": [
         {
+          "derived_from": null,
           "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
           "id": "report:bass2:p75.2",
           "line": null,
           "page": 75,
-          "score": 15.869,
+          "score": 15.466,
           "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 75",
-          "text": "( )2O 6exp 0.5 0.0167 13.4X aa= −+ + (6.1) The minimum in this boundary occurs at a = 8 to 12 s–1 at approximately 13.5 percent O2, in good agreement with the predicted a at the minima in the flammability boundary (Refs. 6, 7, 20, and 21). The drop tower blowoff data, given by the purple dashed line, agrees very well with the flight data. The fact that the blowoff boundary is linear with flow makes it possible to extrapolate blowoff data down to zero a and use that O2 value as an accurate but conservative estimate of the minimum O2 concentration for material flammability in space. This may provide a consistent methodology to derate materials based on normal-gravity flammability tests accounting for buoyant flow to ensure the material will not burn in space. Figure 6.9.—Flammability boundary obtained in Burning and Suppression of Solids—II (BASS–II) tests with linear axis. Complementary drop tower test results are also shown. International Space Station (ISS). Stretch rate (a). Final O2 concentration (XO2). Forced- flow velocity (U). Rod radius (r)."
+          "text": "( )2O 6exp 0.5 0.0167 13.4X aa= −+ + (6.1) The minimum in this boundary occurs at a = 8 to 12 s–1 at approximately 13.5 percent O2, in good agreement with the predicted a at the minima in the flammability boundary (Refs. 6, 7, 20, and 21). The drop tower blowoff data, given by the purple dashed line, agrees very well with the flight data. The fact that the blowoff boundary is linear with flow makes it possible to extrapolate blowoff data down to zero a and use that O2 value as an accurate but conservative estimate of the minimum O2 concentration for material flammability in space. This may provide a consistent methodology to derate materials based on normal-gravity flammability tests accounting for buoyant flow to ensure the material will not burn in space. Figure 6.9.—Flammability boundary obtained in Burning and Suppression of Solids—II (BASS–II) tests with linear axis. Complementary drop tower test results are also shown. International Space Station (ISS). Stretch rate (a). Final O2 concentration (XO2). Forced- flow velocity (U). Rod radius (r).",
+          "tier": "primary"
         },
         {
-          "file": "data/processed/gaps.json",
-          "id": "limits:gaps:iss",
-          "line": null,
-          "page": null,
-          "score": 14.998,
-          "source": "Flame Frontier habitat gap report: ISS cabin",
-          "text": "ISS cabin target: 21–24.1% O2 at 96.5–102.7 kPa, micro gravity. 28 solid-material tests in this window. 28 solid-material tests had O2 and pressure in 21–24.1% O2 at 96.5–102.7 kPa: Saffire IV-1, BASS-II B1, BASS-II B2, BASS-II B3, BASS-II B4, BASS-II B5, BASS-II B6, BASS-II B7 and 20 more. Recorded airflows in 21–24.1% O2 at 96.5–102.7 kPa: 0–20 cm/s (16 distinct values). A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, 101.3 kPa), post-burn O2 minimum 13.61% (computed by Flame Frontier from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2'). Microgravity, as in every flight investigation on the map. Non-solid tests in 21–24.1% O2 at 96.5–102.7 kPa: 23 CFI-G gas flames, 42 FLEX liquid droplets. They do not close a solid-material gap."
-        },
-        {
+          "derived_from": null,
           "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
           "id": "report:bass2:p76.2",
           "line": null,
           "page": 76,
-          "score": 12.162,
+          "score": 11.884,
           "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 76",
-          "text": "23)), indicating the material remains flammable under the weak ventilation only obtainable in microgravity. This “Goldilocks” zone of flow is unfortunately typical of spacecraft ventilation flows near surfaces. Earthbound flammability tests need a reliable method to account for this extension of flammability in microgravity environments. Extrapolation of the normal-gravity blowoff boundary to zero stretch may be a viable method to estimate this enhanced flammability if a buoyant stretch can be included. Figure 6.10.—Flammability boundary shown with logarithmic x-axis, which expands quenching region and exhibits classic U-shaped flammability map. International Space Station (ISS). Stretch rate (a). Final O2 concentration (XO2). Forced-flow velocity (U). Rod radius (r)."
+          "text": "23)), indicating the material remains flammable under the weak ventilation only obtainable in microgravity. This “Goldilocks” zone of flow is unfortunately typical of spacecraft ventilation flows near surfaces. Earthbound flammability tests need a reliable method to account for this extension of flammability in microgravity environments. Extrapolation of the normal-gravity blowoff boundary to zero stretch may be a viable method to estimate this enhanced flammability if a buoyant stretch can be included. Figure 6.10.—Flammability boundary shown with logarithmic x-axis, which expands quenching region and exhibits classic U-shaped flammability map. International Space Station (ISS). Stretch rate (a). Final O2 concentration (XO2). Forced-flow velocity (U). Rod radius (r).",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
           "id": "report:bass2:p76.1",
           "line": null,
           "page": 76,
-          "score": 11.995,
+          "score": 11.621,
           "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 76",
-          "text": "NASA/TM-20210011385 76 The quenching branch is fitted using an exponential decay (red dashed curve). In this region, heat losses dominate to cool the flame to extinction through the strong dependence of reaction rate in the Arrhenius term, as was modeled by References 6, 7, 20, and 21, and will be evaluated in Section 6.1.4.3. This boundary is very steep for small a when plotted on a linear x-axis as shown in Figure 6.9. Figure 6.10 replots the same data as Figure 6.9 but with a logarithmic x-axis. Note that the classic U- shaped flammability boundary is evident when a logarithmic x-axis is used. This expands the quenching branch while making the linear blowoff branch appear curved. It also emphasizes the uncertainty in the flow at the very low velocities (<1 cm/s) along the quenching branch. The minimum O2 concentration of 13.5 percent O2 at a of 8 to 12 s–1 is significantly lower than the observed upward flame spread limit of 15.4 percent O2 (in normal gravity with an additional 4-cm/s forced flow (Ref."
+          "text": "NASA/TM-20210011385 76 The quenching branch is fitted using an exponential decay (red dashed curve). In this region, heat losses dominate to cool the flame to extinction through the strong dependence of reaction rate in the Arrhenius term, as was modeled by References 6, 7, 20, and 21, and will be evaluated in Section 6.1.4.3. This boundary is very steep for small a when plotted on a linear x-axis as shown in Figure 6.9. Figure 6.10 replots the same data as Figure 6.9 but with a logarithmic x-axis. Note that the classic U- shaped flammability boundary is evident when a logarithmic x-axis is used. This expands the quenching branch while making the linear blowoff branch appear curved. It also emphasizes the uncertainty in the flow at the very low velocities (<1 cm/s) along the quenching branch. The minimum O2 concentration of 13.5 percent O2 at a of 8 to 12 s–1 is significantly lower than the observed upward flame spread limit of 15.4 percent O2 (in normal gravity with an additional 4-cm/s forced flow (Ref.",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
           "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
           "id": "report:bass2:p67.1",
           "line": null,
           "page": 67,
-          "score": 10.502,
+          "score": 10.635,
           "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 67",
-          "text": "NASA/TM-20210011385 67 To obtain the desired O2 concentration for the test, the initial ISS air filling the MSG working volume was diluted using N2 as described in Reference 14. A continuously stirred tank reactor (CSTR) model was used to time the N2 flow to obtain the desired initial O2 concentrations down to as low as 13.6 percent O2. O2 sensor readings, calibrated with the onboard mass spectrometer, provided initial and final O2 concentrations for each test. The readings were used to verify the CSTR model and measure the O2 consumption within the test. Onboard CO and CO2 sensors were also used to provide initial and final product gas concentrations for each test, to evaluate the average burning efficiency for each test. Clear cast PMMA rods, shown in the top left corner of Figure 6.1, were mounted inside the flow duct for each test. The stagnation tips of the rods were initially hemispherical. Three radii r of clear cast PMMA cylindrical rods were tested (primarily 0.318 cm; but also 0.476 and 0.635 cm)."
+          "text": "NASA/TM-20210011385 67 To obtain the desired O2 concentration for the test, the initial ISS air filling the MSG working volume was diluted using N2 as described in Reference 14. A continuously stirred tank reactor (CSTR) model was used to time the N2 flow to obtain the desired initial O2 concentrations down to as low as 13.6 percent O2. O2 sensor readings, calibrated with the onboard mass spectrometer, provided initial and final O2 concentrations for each test. The readings were used to verify the CSTR model and measure the O2 consumption within the test. Onboard CO and CO2 sensors were also used to provide initial and final product gas concentrations for each test, to evaluate the average burning efficiency for each test. Clear cast PMMA rods, shown in the top left corner of Figure 6.1, were mounted inside the flow duct for each test. The stagnation tips of the rods were initially hemispherical. Three radii r of clear cast PMMA cylindrical rods were tested (primarily 0.318 cm; but also 0.476 and 0.635 cm).",
+          "tier": "primary"
         },
         {
+          "derived_from": null,
+          "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+          "id": "report:bass2:p75.1",
+          "line": null,
+          "page": 75,
+          "score": 9.602,
+          "source": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 75",
+          "text": "NASA/TM-20210011385 75 tests), along with the postburn O2 sensor reading were used to generate a flammability boundary, shown in Figure 6.9. Error bars reflect the uncertainties in O2 and flow and are mostly smaller than the symbols. The x-axis of Figure 6.9 uses a forced a, which is defined as a = (3/2)(U/r)(r/ro)½ where U is the free stream velocity. The square root modifying factor is used to correct for the different rod sizes. The gas phase ℓ scale (Ref. 7) is defined as ℓ = (α/a)1/2, which is proportional to r1/2 for a given velocity. All a are normalized to the base rod radius (ro = 0.318 cm) using the ratio of these ℓ s. The thick gray flammability boundary in Figure 6.9 represents the border between stable flames and extinguished flames. Along this boundary, the flame is sensitive to stochastic perturbations that can lead to extinguishment (Ref. 22). The O2 concentration (XO2) versus a boundary is defined by the combined empirical equations shown by the red (quenching branch, exponential expression) and black (blowoff branch, linear expression) dashed lines.",
+          "tier": "primary"
+        },
+        {
+          "derived_from": [
+            "Space Apps 2026 challenge page",
+            "Saffire ICES-2024-365, Table 1, p.3",
+            "PSI-25 experimental table (PSI)",
+            "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p.75"
+          ],
           "file": "data/processed/gaps.json",
-          "id": "limits:gaps:rover",
+          "id": "limits:gaps:iss",
           "line": null,
           "page": null,
-          "score": 10.493,
-          "source": "Flame Frontier habitat gap report: Pressurized rover",
-          "text": "Pressurized rover target: ≥30% O2 at ≤70.3 kPa, partial gravity. 2 solid-material tests in this window. Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow. Flow is not an axis on Panel 1: every point in the highlighted box shares that flow. Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA. No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa. No combustion test at partial gravity: every point on both panels is from microgravity. Challenge page: \"there is currently no partial-gravity combustion data available in PSI\". 2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3. Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+          "score": 10.307,
+          "source": "Flame Frontier habitat gap report: ISS cabin",
+          "text": "ISS cabin target: 21–24.1% O2 at 96.5–102.7 kPa, micro gravity. 28 solid-material tests in this window. 28 solid-material tests had O2 and pressure in 21–24.1% O2 at 96.5–102.7 kPa: Saffire IV-1, BASS-II B1, BASS-II B2, BASS-II B3, BASS-II B4, BASS-II B5, BASS-II B6, BASS-II B7 and 20 more. Recorded airflows in 21–24.1% O2 at 96.5–102.7 kPa: 0–20 cm/s (16 distinct values). A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, 101.3 kPa), post-burn O2 minimum 13.61% (computed by Flame Frontier from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2'). Microgravity, as in every flight investigation on the map. Non-solid tests in 21–24.1% O2 at 96.5–102.7 kPa: 23 CFI-G gas flames, 42 FLEX liquid droplets. They do not close a solid-material gap.",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "3fb9c2193511a5bb9f0a5493",
+      "key": "57694a943a3c9ac1cab26fd6",
       "model": "claude-haiku-5-5",
       "question": "What is the minimum oxygen concentration on the BASS-II flammability boundary for PMMA rods?",
+      "round": 1,
       "usage": [
         {
-          "input_tokens": 2889,
-          "output_tokens": 181
+          "input_tokens": 3210,
+          "output_tokens": 195
         }
       ]
     },
     {
-      "answer": "In the ACME CFI-G tests, the 85% oxygen was the oxidizer stream flowing from the spherical burner, not the chamber atmosphere [brief:s1.30]. The combustion chamber was filled with a mixture of nitrogen and a flammable gas such as propane [brief:s1.30]. The chamber holds the fuel, while XO2 is the burner's oxidizer stream, fixed per test and never plotted as ambient [limits:o2:PSI-159:Inverse_Flames]. The Space Apps page describes this as an inside-out flame and notes it is not a chamber atmosphere or solid material [limits:source:challenge_brief].",
+      "answer": "The 85% oxygen in ACME CFI-G is the burner's oxidizer stream, not the chamber atmosphere, because the combustion chamber was filled with nitrogen and a flammable gas while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner [brief:s1.30]. Flame Frontier reads the PSI-159 Inverse Flames XO2 column the same way, as the oxidizer stream fixed per test rather than an ambient condition [limits:o2:PSI-159:Inverse_Flames]. Flame Frontier's own reading of the challenge page also treats this 85% figure as the burner's oxidizer stream, not a chamber atmosphere [limits:source:challenge_brief].",
       "attempts": 2,
       "checks": {
         "cited": [
@@ -570,72 +715,99 @@
       },
       "chunks": [
         {
-          "file": "data/processed/cfig_tests.json",
-          "id": "limits:cfig",
-          "line": null,
-          "page": null,
-          "score": 21.501,
-          "source": "Flame Frontier Known Limits: ACME CFI-G",
-          "text": "ACME CFI-G normal flames: 20 of 179 tests ran with chamber O2 33.24–39.26% at 50.67 kPa (Moon-base air); they are gas flames, not solids. That sentence describes the INVERSE flames. In normal flames the roles swap: fuel flows from the burner into an O2/N2 chamber. Inverse flames: 154 tests, burner oxidizer stream up to 85.0% O2, which is not an atmosphere."
-        },
-        {
-          "file": "data/manual/sources.json",
-          "id": "limits:source:challenge_brief",
-          "line": null,
-          "page": null,
-          "score": 21.194,
-          "source": "Flame Frontier Known Limits: Space Apps challenge page",
-          "text": "Space Apps challenge page gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. It does not give: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
-        },
-        {
+          "derived_from": null,
           "file": "docs/ref/challenge_brief.md",
           "id": "brief:s1.30",
           "line": null,
           "page": null,
-          "score": 19.758,
+          "score": 19.398,
           "source": "Space Apps 2026 challenge page (verbatim)",
-          "text": "Microgravity tests with the highest oxygen concentrations were conducted as part of the ACME’s Cool Flames Investigation with Gases (CFI-G). In those tests, the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame."
+          "text": "Microgravity tests with the highest oxygen concentrations were conducted as part of the ACME’s Cool Flames Investigation with Gases (CFI-G). In those tests, the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame.",
+          "tier": "primary"
         },
         {
+          "derived_from": [
+            "PSI-159 CFI-G experimental table (PSI)",
+            "Space Apps 2026 challenge page"
+          ],
+          "file": "data/processed/cfig_tests.json",
+          "id": "limits:cfig",
+          "line": null,
+          "page": null,
+          "score": 14.706,
+          "source": "Flame Frontier Known Limits: ACME CFI-G",
+          "text": "ACME CFI-G normal flames: 20 of 179 tests ran with chamber O2 33.24–39.26% at 50.67 kPa (Moon-base air); they are gas flames, not solids. That sentence describes the INVERSE flames. In normal flames the roles swap: fuel flows from the burner into an O2/N2 chamber. Inverse flames: 154 tests, burner oxidizer stream up to 85.0% O2, which is not an atmosphere.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "Space Apps challenge page"
+          ],
+          "file": "data/manual/sources.json",
+          "id": "limits:source:challenge_brief",
+          "line": null,
+          "page": null,
+          "score": 13.96,
+          "source": "Flame Frontier Known Limits: Space Apps challenge page",
+          "text": "Flame Frontier's notes on Space Apps challenge page. What it gives: Mission context: spacesuit 100% O2 at 4.3 psi; Moon base / rovers at 30%+ O2 and 10.2 psi or less; no partial-gravity combustion data in PSI. What it does not give, in Flame Frontier's reading: ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts. No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa.",
+          "tier": "derived"
+        },
+        {
+          "derived_from": [
+            "PSI-23 ACME s-Flame (PSI), column \"Atmosphere*\"",
+            "PSI-23 table"
+          ],
           "file": "data/manual/o2_atmosphere_sweep.csv",
           "id": "limits:o2:PSI-23:ACME_s-Flame",
           "line": null,
           "page": null,
-          "score": 17.323,
+          "score": 11.879,
           "source": "Flame Frontier Known Limits: whose oxygen?",
-          "text": "PSI-23 ACME s-Flame, column \"Atmosphere*\": verdict ambient. Evidence: \"*Atmosphere is ~1 atm but pressure increases and O2% drops with vitiation.\". Chamber atmosphere, approximate ('~21% O2', '~30% O2')."
+          "text": "PSI-23 ACME s-Flame, column \"Atmosphere*\": verdict ambient. Evidence: \"*Atmosphere is ~1 atm but pressure increases and O2% drops with vitiation.\". Chamber atmosphere, approximate ('~21% O2', '~30% O2').",
+          "tier": "derived"
         },
         {
+          "derived_from": [
+            "PSI-20 ACME BRE (PSI), column \"Oxygen Conc (percent)\"",
+            "PSI-20 metadata"
+          ],
           "file": "data/manual/o2_atmosphere_sweep.csv",
           "id": "limits:o2:PSI-20:ACME_BRE",
           "line": null,
           "page": null,
-          "score": 16.105,
+          "score": 11.12,
           "source": "Flame Frontier Known Limits: whose oxygen?",
-          "text": "PSI-20 ACME BRE, column \"Oxygen Conc (percent)\": verdict ambient. Evidence: \"Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures.\". Chamber atmosphere; the burner flows fuel ('Fuel Bottle' 100% or 50% C2H4). The objective names '8.2 psia, 34 % oxygen' (inside the Moon-base window), but the table's pressures are 'not identified', so no BRE test can be placed in the window."
+          "text": "PSI-20 ACME BRE, column \"Oxygen Conc (percent)\": verdict ambient. Evidence: \"Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures.\". Chamber atmosphere; the burner flows fuel ('Fuel Bottle' 100% or 50% C2H4). The objective names '8.2 psia, 34 % oxygen' (inside the Moon-base window), but the table's pressures are 'not identified', so no BRE test can be placed in the window.",
+          "tier": "derived"
         },
         {
+          "derived_from": [
+            "PSI-159 Inverse Flames (PSI), column \"XO2\"",
+            "Space Apps 2026 challenge page"
+          ],
           "file": "data/manual/o2_atmosphere_sweep.csv",
           "id": "limits:o2:PSI-159:Inverse_Flames",
           "line": null,
           "page": null,
-          "score": 12.23,
+          "score": 8.43,
           "source": "Flame Frontier Known Limits: whose oxygen?",
-          "text": "PSI-159 Inverse Flames, column \"XO2\": verdict oxidizer stream. Evidence: \"the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\". The chamber holds fuel ('Xf before test' / 'Xf after test'); XO2 is the burner's oxidizer stream, fixed per test. Never plotted as ambient."
+          "text": "PSI-159 Inverse Flames, column \"XO2\": verdict oxidizer stream. Evidence: \"the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\". The chamber holds fuel ('Xf before test' / 'Xf after test'); XO2 is the burner's oxidizer stream, fixed per test. Never plotted as ambient.",
+          "tier": "derived"
         }
       ],
       "flagged": false,
-      "key": "a1fac765401f1cdee0ed3455",
+      "key": "5875a4955d6c1c7a5963f30b",
       "model": "claude-haiku-5-5",
       "question": "Why is the 85% oxygen in ACME CFI-G not the chamber atmosphere?",
+      "round": 1,
       "usage": [
         {
-          "input_tokens": 1563,
-          "output_tokens": 209
+          "input_tokens": 2001,
+          "output_tokens": 198
         },
         {
-          "input_tokens": 1626,
-          "output_tokens": 221
+          "input_tokens": 2072,
+          "output_tokens": 252
         }
       ]
     }

@@ -5,6 +5,7 @@ NOT part of the numbered pipeline (it can call the API). Run by hand: .venv/bin/
 - Cache key = sha256 of model + system prompt + question + retrieved chunk ids and texts. A cached answer is reused;
   the API is called only for a missing key, and only if ANTHROPIC_API_KEY is set (loaded from .env in-process,
   as scripts/check_key.py does). The key is never printed.
+- Cached answers are re-tidied and re-checked with the current ask.check() on every run.
 - An answer that fails the checks after its retry gets one fresh round (ROUNDS = 2); if that fails too it is kept but flagged (shown with a warning on the site).
 """
 from __future__ import annotations
@@ -46,6 +47,11 @@ def main():
             f = CACHE / (f"{k}.json" if rnd == 0 else f"{k}-r{rnd + 1}.json")
             if f.exists():
                 rec = json.loads(f.read_text())
+                # Re-run the CURRENT checks on a cached answer (rules may have been tightened since it was made).
+                rec["answer"] = ask.tidy(rec["answer"])
+                rec["checks"] = ask.check(rec["answer"], chunks)
+                rec["flagged"] = not rec["checks"]["ok"]
+                rec["chunks"] = ask.public_chunks(chunks)   # same ids/texts (they are in the key); refresh tier/provenance fields
             elif not os.environ.get("ANTHROPIC_API_KEY"):
                 break
             else:
