@@ -1,0 +1,150 @@
+{
+  "question": "Is this O2 the atmosphere around the flame, or the oxidizer flowing out of a burner?",
+  "rows": [
+    {
+      "column": "XO2 before test",
+      "evidence_file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv",
+      "evidence_quote": "XO2 before test,XO2  after test",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv",
+      "psi_id": "PSI-159",
+      "reading": "Logged before AND after each test, and each test's 'after' equals the next test's 'before' (chamber O2 being consumed run by run; counted by 02_clean_cfig.py). The burner flows fuel ('Xf' column).",
+      "table": "Normal Flames",
+      "verdict": "ambient"
+    },
+    {
+      "column": "XO2",
+      "evidence_file": "docs/ref/challenge_brief.md",
+      "evidence_quote": "the combustion chamber was filled with a mixture of nitrogen and a flammable gas (e.g., propane), while an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame",
+      "evidence_where": "brief",
+      "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Inverse Flames.csv",
+      "psi_id": "PSI-159",
+      "reading": "The chamber holds fuel ('Xf before test' / 'Xf after test'); XO2 is the burner's oxidizer stream, fixed per test. Never plotted as ambient.",
+      "table": "Inverse Flames",
+      "verdict": "oxidizer_stream"
+    },
+    {
+      "column": "XO2 (init)",
+      "evidence_file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv",
+      "evidence_quote": "XO2 (init),XO2 (final)",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv",
+      "psi_id": "PSI-10",
+      "reading": "Initial and final chamber O2 per test, chained run to run; the burner flows fuel ('Xfuel').",
+      "table": "Normal Flame",
+      "verdict": "ambient"
+    },
+    {
+      "column": "XO2",
+      "evidence_file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Inverse Flame.csv",
+      "evidence_quote": "XO2,mO2 (mg/s),mN2 (mg/s),mtot (mg/s),XC2H4 initial,XC2H4 final",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Inverse Flame.csv",
+      "psi_id": "PSI-10",
+      "reading": "XO2 sits beside the burner's O2 mass flow (mO2); the chamber holds ethylene (XC2H4 initial/final). Never plotted as ambient.",
+      "table": "Inverse Flame",
+      "verdict": "oxidizer_stream"
+    },
+    {
+      "column": "Calibrated initial O2 % by vol",
+      "evidence_file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+      "evidence_quote": "Ambient oxygen concentration (via working volume nitrogen vitiation)",
+      "evidence_where": "metadata",
+      "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+      "psi_id": "PSI-25",
+      "reading": "Glovebox working-volume atmosphere, lowered by adding N2.",
+      "table": "BASS-II",
+      "verdict": "ambient"
+    },
+    {
+      "column": "O initial ambient composition; mole fraction",
+      "evidence_file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+      "evidence_quote": "O initial ambient composition; mole fraction",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+      "psi_id": "PSI-69",
+      "reading": "The header says ambient.",
+      "table": "FLEX",
+      "verdict": "ambient"
+    },
+    {
+      "column": "Oxygen Mole Fraction",
+      "evidence_file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv",
+      "evidence_quote": "Ambient Gas Mixture ,Oxygen Mole Fraction,Ambient Pressure (atm)",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv",
+      "psi_id": "PSI-68",
+      "reading": "Sits between the ambient gas mixture and ambient pressure columns. Summary rows: which O2 went with which pressure is not given.",
+      "table": "FLEX-2",
+      "verdict": "ambient"
+    },
+    {
+      "column": "Oxygen",
+      "evidence_file": "data/raw/PSI-39/PSI-39_metadata_PSI-118_CFI/i_Investigation.txt",
+      "evidence_quote": "delivers the desired gas mixture to the combustion chamber",
+      "evidence_where": "metadata",
+      "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv",
+      "psi_id": "PSI-39",
+      "reading": "Chamber gas: Oxygen, Nitrogen and Helium fractions per test; droplets carry the fuel.",
+      "table": "CFI",
+      "verdict": "ambient"
+    },
+    {
+      "column": "Oxygen Conc (percent)",
+      "evidence_file": "data/raw/PSI-20/PSI-20_metadata_PSI-96_ACME BRE/i_Investigation.txt",
+      "evidence_quote": "Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures.",
+      "evidence_where": "metadata",
+      "file": "data/raw/PSI-20/PSI-20_Experimental table_ACME BRE.csv",
+      "psi_id": "PSI-20",
+      "reading": "Chamber atmosphere; the burner flows fuel ('Fuel Bottle' 100% or 50% C2H4). The objective names '8.2 psia, 34 % oxygen' (inside the Moon-base window), but the table's pressures are 'not identified', so no BRE test can be placed in the window.",
+      "table": "ACME BRE",
+      "verdict": "ambient"
+    },
+    {
+      "column": "Atmosphere*",
+      "evidence_file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv",
+      "evidence_quote": "*Atmosphere is ~1 atm but pressure increases and O2% drops with vitiation.",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv",
+      "psi_id": "PSI-23",
+      "reading": "Chamber atmosphere, approximate ('~21% O2', '~30% O2').",
+      "table": "ACME s-Flame",
+      "verdict": "ambient"
+    },
+    {
+      "column": "Percent O2",
+      "evidence_file": "data/raw/PSI-98/PSI-98_metadata_PSI-166_SAFFIRE-I/i_Investigation.txt",
+      "evidence_quote": "Air is drawn through the flow duct by fans located at the top of the duct",
+      "evidence_where": "metadata",
+      "file": "data/raw/PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv",
+      "psi_id": "PSI-98",
+      "reading": "Cygnus cabin air drawn through the duct. No pressure column.",
+      "table": "Saffire-I",
+      "verdict": "ambient"
+    },
+    {
+      "column": "Fuel conc. Range",
+      "evidence_file": "data/raw/PSI-21/PSI-21_Experimental table_CLD Flame.csv",
+      "evidence_quote": "Fuel conc. - (as diluted with nitrogen on a volume basis)",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-21/PSI-21_Experimental table_CLD Flame.csv",
+      "psi_id": "PSI-21",
+      "reading": "Fuel concentration, not oxygen. No O2 column.",
+      "table": "ACME CLD Flame",
+      "verdict": "not_o2"
+    },
+    {
+      "column": "Fuel Conc",
+      "evidence_file": "data/raw/PSI-22/PSI-22_Experimental table_ACME E-FIELD Flames.csv",
+      "evidence_quote": "Fuel Conc. (diluted with nitrogen on a volume basis)",
+      "evidence_where": "table",
+      "file": "data/raw/PSI-22/PSI-22_Experimental table_ACME E-FIELD Flames.csv",
+      "psi_id": "PSI-22",
+      "reading": "Fuel concentration, not oxygen. No O2 column.",
+      "table": "ACME E-FIELD Flames",
+      "verdict": "not_o2"
+    }
+  ],
+  "schema": 1,
+  "source": "data/manual/o2_atmosphere_sweep.csv"
+}

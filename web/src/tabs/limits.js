@@ -3,10 +3,19 @@ import { loadJSON } from '../data.js';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const list = (items) => `<ul class="limits">${items.filter(Boolean).map((x) => `<li>${x}</li>`).join('')}</ul>`;
 
+const rng = (r, u) => (r ? `${r[0]}${r[0] === r[1] ? '' : `–${r[1]}`}${u}` : 'not recorded');
+// Per-test tables with ambient O2 that Panel 1 does not draw (ranges from ranking.json, not typed here).
+function notPlotted(moon) {
+  const rows = moon.rows.filter((r) => ['PSI-10', 'PSI-39'].includes(r.psi_id));
+  return `Not drawn on Panel 1 although their O2 is ambient: ${rows.map((r) => `${esc(r.psi_id)} ${esc(r.title)} (${rng(r.o2_range_pct, '% O2')}, ${rng(r.p_range_kpa, ' kPa')}; ${r.joint_tests} tests in the Moon-base window)`).join('; ')}. Both are scored in the Ranking tab.`;
+}
+
 // Known Limits: what the site and each source cannot tell you. Numbers come from the pipeline JSON, not typed here.
 export async function render(root) {
-  const [ext, flex, bass2, ref, cat, rank] = await Promise.all(
-    ['external_tests.json', 'flex_tests.json', 'bass2_tests.json', 'reference.json', 'catalog.json', 'ranking.json'].map(loadJSON));
+  const [ext, flex, bass2, ref, cat, rank, cfig, sweep] = await Promise.all(
+    ['external_tests.json', 'flex_tests.json', 'bass2_tests.json', 'reference.json', 'catalog.json', 'ranking.json', 'cfig_tests.json', 'o2_sweep.json'].map(loadJSON));
+  const cz = cfig.moon_zone;
+  const VERDICT = { ambient: 'Atmosphere around the flame', oxidizer_stream: 'Burner oxidizer stream (NOT the atmosphere)', not_o2: 'Not oxygen (fuel concentration)' };
   const zone = ext.tests.filter((t) => t.in_moon_zone);
   const rv = bass2.review_summary;
   const fig = ref.panel2.nasa_figure;
@@ -31,8 +40,10 @@ export async function render(root) {
       `BASS-II: all ${bass2.count} PSI-25 rows are plotted at 1 atm (${bass2.constants.pressure_kpa} kPa) because the report states 1 atm; pressure is not logged per test. O2 is the calibrated INITIAL value.`,
       `FLEX (PSI-69) is liquid droplets, not solid materials, so it is drawn as its own layer and never counted in the headline. ${flex.count} tests plotted; ${flex.moon_zone.count} inside the Moon-base zone; ${flex.moon_zone.near_misses.length} near misses at ≥30% O2 just above 70.3 kPa (closest ${Math.min(...flex.moon_zone.near_misses.map((t) => t.pressure_kpa))} kPa). Skipped: ${skipped || 'none'}.`,
       'SSCE: NASA gives O2 and pressure lists for flights 1-8 without saying which went together, so they are drawn as range markers, not per-flight points. All are at ≥1 atm.',
-      'ACME CFI-G\'s "up to 85% oxygen" is the oxidizer flowing out of the burner (an inside-out flame), not the chamber air, so it is kept off the charts. The same applies to every inverse-flame XO2 column (PSI-10, PSI-159).',
-      moon?.joint_investigations.length ? `CFI-G normal (gas) flames did run with chamber O2 and pressure both in the Moon-base window (${moon.joint_investigations.map((j) => `${esc(j.psi_id)}: ${j.n} tests`).join(', ')}). They are gas flames, so they appear in the Ranking tab, not on Panel 1 (solid materials and FLEX only).` : '',
+      `ACME CFI-G's "up to 85% oxygen" (challenge page) is the oxidizer flowing out of the burner in INVERSE flames (${cfig.evidence.inverse.tests} rows, max XO2 ${cfig.evidence.inverse.xo2_max_pct}%), while the chamber held fuel and N2. It is not an atmosphere, so it is kept off the charts. The same applies to PSI-10's inverse-flame XO2.`,
+      `ACME CFI-G NORMAL flames are different: fuel flows out of the burner into an O2/N2 chamber, and "XO2 before test" is that chamber atmosphere. Evidence: it is logged before and after every test, and on ${cfig.evidence.chain.chained} of ${cfig.evidence.chain.pairs} same-day consecutive pairs one test's "after" equals the next test's "before" (the chamber O2 being used up run by run). ${cz.count} of ${cfig.count} normal-flame tests sit inside the Moon-base zone (${cz.o2_range_pct.join('–')}% O2 at ${cz.pressure_kpa.join(', ')} kPa, test days ${cz.days.join(', ')}; ${cz.hot_ignition.Yes ?? 0} with hot ignition, ${cz.hot_ignition.No ?? 0} without). They are drawn on Panel 1 as a hollow-square layer, are gas flames (not solids), and never enter the headline.`,
+      moon?.joint_investigations.length ? `Ranking agrees: same-test O2+pressure overlap with the Moon-base window comes only from ${moon.joint_investigations.map((j) => `${esc(j.psi_id)} (${j.n} tests, ${esc(j.material)})`).join(', ')}.` : '',
+      notPlotted(moon),
       'O2 is plotted as mol % (= vol % for an ideal gas). Saffire VI\'s O2 is given in mol %.',
     ])}
 
@@ -68,6 +79,15 @@ export async function render(root) {
       'Three of 129 BASS-II tests, trimmed and re-encoded (macOS avconvert) to stay small. Nothing is measured from the video by software; the facts beside each clip come from the PSI table.',
       'The on-screen date is one day ahead of the test date (BASS-II FAQ: leap year was not set on board).',
     ])}
+  </section>
+
+  <section class="card"><h2>Whose oxygen? Every O2 column in our PSI tables</h2>
+    <p class="note">${esc(sweep.question)} An O2 value only belongs on the Evidence Map if it is the atmosphere around the flame. Each quote below is checked against its file by the pipeline (${esc(sweep.source)}).</p>
+    <div class="scroll"><table><thead><tr><th>PSI</th><th>Table, column</th><th>Verdict</th><th>Evidence (exact quote)</th><th>Reading</th></tr></thead><tbody>
+    ${sweep.rows.map((r) => `<tr><td>${esc(r.psi_id)}</td><td>${esc(r.table)}: "${esc(r.column)}"</td><td>${esc(VERDICT[r.verdict] ?? r.verdict)}</td>
+      <td>"${esc(r.evidence_quote)}"<br><span class="src">${esc(r.evidence_file)}</span></td><td>${esc(r.reading)}</td></tr>`).join('')}
+    </tbody></table></div>
+    <p class="note">Investigations with no O2 column in our download are not listed. Saffire IV-VI and SSCE values come from the cited papers (see Sources below).</p>
   </section>
 
   <section class="card"><h2>Sources: what each gives and does not give</h2>

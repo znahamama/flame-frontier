@@ -227,6 +227,10 @@
               "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv"
             }
           ],
+          "o2_range_pct": [
+            13.6,
+            22.2
+          ],
           "p_cols": [
             {
               "column": null,
@@ -234,6 +238,10 @@
               "fixed": "1 atm",
               "why": "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": true,
           "parts": [
@@ -556,11 +564,19 @@
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
           ],
+          "o2_range_pct": [
+            12.0,
+            34.0
+          ],
           "p_cols": [
             {
               "column": "Ambient pressure; mmHg",
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
+          ],
+          "p_range_kpa": [
+            70.2,
+            309.3
           ],
           "paired_data": true,
           "parts": [
@@ -799,11 +815,19 @@
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            21.0
+          ],
           "p_cols": [
             {
               "column": "Pressure",
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            506.6
           ],
           "paired_data": true,
           "parts": [
@@ -1020,11 +1044,19 @@
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
           ],
+          "o2_range_pct": [
+            18.0,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "approx p (bar)",
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": true,
           "parts": [
@@ -1107,11 +1139,19 @@
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            19.8,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "pmean (atm)",
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
+          ],
+          "p_range_kpa": [
+            100.5,
+            132.8
           ],
           "paired_data": true,
           "parts": [
@@ -1183,7 +1223,12 @@
               "file": "data/raw/PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv"
             }
           ],
+          "o2_range_pct": [
+            21.5,
+            21.7
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1254,11 +1299,19 @@
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": "Ambient Pressure (atm)",
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": false,
           "parts": [
@@ -1323,7 +1376,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1394,7 +1449,12 @@
               "file": "data/raw/PSI-20/PSI-20_Experimental table_ACME BRE.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            40.0
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1458,7 +1518,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1529,6 +1591,10 @@
               "file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": null,
@@ -1536,6 +1602,10 @@
               "fixed": "1 atm",
               "why": "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": false,
           "parts": [
@@ -1600,7 +1670,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1664,7 +1736,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1728,7 +1802,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1792,7 +1868,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1856,7 +1934,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1920,7 +2000,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -1984,7 +2066,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2048,7 +2132,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2112,7 +2198,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2176,7 +2264,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2240,7 +2330,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2304,7 +2396,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2368,7 +2462,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -2598,11 +2694,19 @@
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
           ],
+          "o2_range_pct": [
+            18.0,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "approx p (bar)",
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": true,
           "parts": [
@@ -2672,11 +2776,19 @@
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
           ],
+          "o2_range_pct": [
+            12.0,
+            34.0
+          ],
           "p_cols": [
             {
               "column": "Ambient pressure; mmHg",
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
+          ],
+          "p_range_kpa": [
+            70.2,
+            309.3
           ],
           "paired_data": true,
           "parts": [
@@ -2748,11 +2860,19 @@
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": "Ambient Pressure (atm)",
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": false,
           "parts": [
@@ -2824,6 +2944,10 @@
               "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv"
             }
           ],
+          "o2_range_pct": [
+            13.6,
+            22.2
+          ],
           "p_cols": [
             {
               "column": null,
@@ -2831,6 +2955,10 @@
               "fixed": "1 atm",
               "why": "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": true,
           "parts": [
@@ -2906,11 +3034,19 @@
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            19.8,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "pmean (atm)",
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
+          ],
+          "p_range_kpa": [
+            100.5,
+            132.8
           ],
           "paired_data": true,
           "parts": [
@@ -2975,7 +3111,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3046,7 +3184,12 @@
               "file": "data/raw/PSI-20/PSI-20_Experimental table_ACME BRE.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            40.0
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3110,7 +3253,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3181,7 +3326,12 @@
               "file": "data/raw/PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv"
             }
           ],
+          "o2_range_pct": [
+            21.5,
+            21.7
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3245,7 +3395,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3309,7 +3461,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3373,7 +3527,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3442,11 +3598,19 @@
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            21.0
+          ],
           "p_cols": [
             {
               "column": "Pressure",
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            506.6
           ],
           "paired_data": true,
           "parts": [
@@ -3511,7 +3675,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3582,6 +3748,10 @@
               "file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": null,
@@ -3589,6 +3759,10 @@
               "fixed": "1 atm",
               "why": "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": false,
           "parts": [
@@ -3653,7 +3827,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3717,7 +3893,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3781,7 +3959,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3845,7 +4025,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3909,7 +4091,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -3973,7 +4157,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4037,7 +4223,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4101,7 +4289,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4165,7 +4355,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4395,11 +4587,19 @@
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
           ],
+          "o2_range_pct": [
+            18.0,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "approx p (bar)",
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": true,
           "parts": [
@@ -4469,11 +4669,19 @@
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
           ],
+          "o2_range_pct": [
+            12.0,
+            34.0
+          ],
           "p_cols": [
             {
               "column": "Ambient pressure; mmHg",
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
+          ],
+          "p_range_kpa": [
+            70.2,
+            309.3
           ],
           "paired_data": true,
           "parts": [
@@ -4545,11 +4753,19 @@
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": "Ambient Pressure (atm)",
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": false,
           "parts": [
@@ -4621,6 +4837,10 @@
               "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv"
             }
           ],
+          "o2_range_pct": [
+            13.6,
+            22.2
+          ],
           "p_cols": [
             {
               "column": null,
@@ -4628,6 +4848,10 @@
               "fixed": "1 atm",
               "why": "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": true,
           "parts": [
@@ -4703,11 +4927,19 @@
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            19.8,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "pmean (atm)",
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
+          ],
+          "p_range_kpa": [
+            100.5,
+            132.8
           ],
           "paired_data": true,
           "parts": [
@@ -4772,7 +5004,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4843,7 +5077,12 @@
               "file": "data/raw/PSI-20/PSI-20_Experimental table_ACME BRE.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            40.0
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4907,7 +5146,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -4978,7 +5219,12 @@
               "file": "data/raw/PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv"
             }
           ],
+          "o2_range_pct": [
+            21.5,
+            21.7
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5042,7 +5288,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5106,7 +5354,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5170,7 +5420,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5239,11 +5491,19 @@
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            21.0
+          ],
           "p_cols": [
             {
               "column": "Pressure",
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            506.6
           ],
           "paired_data": true,
           "parts": [
@@ -5308,7 +5568,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5379,6 +5641,10 @@
               "file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": null,
@@ -5386,6 +5652,10 @@
               "fixed": "1 atm",
               "why": "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": false,
           "parts": [
@@ -5450,7 +5720,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5514,7 +5786,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5578,7 +5852,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5642,7 +5918,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5706,7 +5984,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5770,7 +6050,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5834,7 +6116,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5898,7 +6182,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -5962,7 +6248,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6059,6 +6347,10 @@
               "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv"
             }
           ],
+          "o2_range_pct": [
+            13.6,
+            22.2
+          ],
           "p_cols": [
             {
               "column": null,
@@ -6066,6 +6358,10 @@
               "fixed": "1 atm",
               "why": "Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": true,
           "parts": [
@@ -6130,7 +6426,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6194,7 +6492,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6265,7 +6565,12 @@
               "file": "data/raw/PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv"
             }
           ],
+          "o2_range_pct": [
+            21.5,
+            21.7
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6329,7 +6634,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6393,7 +6700,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6457,7 +6766,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6528,11 +6839,19 @@
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": "Ambient Pressure (atm)",
               "file": "data/raw/PSI-68/PSI-68_Experimental table_Flex2.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": false,
           "parts": [
@@ -6597,7 +6916,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6668,7 +6989,12 @@
               "file": "data/raw/PSI-20/PSI-20_Experimental table_ACME BRE.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            40.0
+          ],
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6732,7 +7058,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6796,7 +7124,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -6871,11 +7201,19 @@
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            19.8,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "pmean (atm)",
               "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
             }
+          ],
+          "p_range_kpa": [
+            100.5,
+            132.8
           ],
           "paired_data": true,
           "parts": [
@@ -6953,11 +7291,19 @@
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
           ],
+          "o2_range_pct": [
+            18.0,
+            40.0
+          ],
           "p_cols": [
             {
               "column": "approx p (bar)",
               "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            304.0
           ],
           "paired_data": true,
           "parts": [
@@ -7027,11 +7373,19 @@
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
           ],
+          "o2_range_pct": [
+            17.0,
+            21.0
+          ],
           "p_cols": [
             {
               "column": "Pressure",
               "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv"
             }
+          ],
+          "p_range_kpa": [
+            50.7,
+            506.6
           ],
           "paired_data": true,
           "parts": [
@@ -7101,11 +7455,19 @@
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
           ],
+          "o2_range_pct": [
+            12.0,
+            34.0
+          ],
           "p_cols": [
             {
               "column": "Ambient pressure; mmHg",
               "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv"
             }
+          ],
+          "p_range_kpa": [
+            70.2,
+            309.3
           ],
           "paired_data": true,
           "parts": [
@@ -7170,7 +7532,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -7234,7 +7598,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -7298,7 +7664,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -7369,6 +7737,10 @@
               "file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv"
             }
           ],
+          "o2_range_pct": [
+            21.0,
+            30.0
+          ],
           "p_cols": [
             {
               "column": null,
@@ -7376,6 +7748,10 @@
               "fixed": "1 atm",
               "why": "Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
             }
+          ],
+          "p_range_kpa": [
+            101.3,
+            101.3
           ],
           "paired_data": false,
           "parts": [
@@ -7440,7 +7816,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -7504,7 +7882,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -7568,7 +7948,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {
@@ -7632,7 +8014,9 @@
           "joint_tests": 0,
           "notes": [],
           "o2_cols": [],
+          "o2_range_pct": null,
           "p_cols": [],
+          "p_range_kpa": null,
           "paired_data": false,
           "parts": [
             {

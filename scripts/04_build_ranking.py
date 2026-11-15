@@ -242,6 +242,8 @@ def score(h, c, cond, feat):
             "score": round(sum(p["points"] for p in parts), 2), "parts": parts,
             "joint_tests": len(joint), "joint_rows": [{"file": p[2], "line": p[3], "o2_pct": p[0], "p_kpa": p[1]} for p in joint[:50]],
             "paired_data": bool(cond.get("pairs")),
+            "o2_range_pct": [round(min(o2s + o2sum), 1), round(max(o2s + o2sum), 1)] if (o2s or o2sum) else None,
+            "p_range_kpa": [round(min(ps), 1), round(max(ps), 1)] if ps else None,
             "o2_cols": cond.get("o2_cols", []), "p_cols": cond.get("p_cols", []), "excluded_cols": cond.get("excluded", []), "notes": cond.get("notes", [])}
 
 

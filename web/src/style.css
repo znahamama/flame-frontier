@@ -108,3 +108,7 @@ table.rank tr.why ul { margin: 4px 0; padding-left: 18px; }
 .linkish { font: inherit; font-weight: 600; background: none; border: 0; padding: 0; color: var(--series-1); cursor: pointer; text-decoration: underline; white-space: nowrap; }
 table.rank .t-full { display: none; margin: 0 0 4px; font-weight: 600; }
 @media (max-width: 640px) { table.rank .t { display: none; } table.rank .t-full { display: block; } table.rank td.bar { min-width: 90px; } }
+
+/* Panel 1 layer toggles */
+.layers { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.85rem; margin: 4px 0; }
+.layers label { cursor: pointer; white-space: nowrap; }

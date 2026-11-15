@@ -40,6 +40,8 @@ function saffireItem(t) {
 }
 
 const FLEX_NAME = 'FLEX droplets (liquid, PSI-69)';
+const CFIG_NAME = 'Gas flames (ACME CFI-G, PSI-159)';
+const LAYERS = [[FLEX_NAME, 'FLEX droplets (liquid)'], [CFIG_NAME, 'CFI-G gas flames']];
 const OUTCOME = { extinguished: 'extinguished', blowoff: 'blowoff', no_ignition: 'no ignition', not_sustained: 'would not stay lit', unclear: 'unclear (flagged for review)', not_stated: 'not stated in the table' };
 const bassSrc = (t) => `${t.source.file}, line ${t.source.line}`
   + (t.source_xlsx ? `; ${t.source_xlsx.file}, tab "${t.source_xlsx.tab}", row ${t.source_xlsx.row}` : '');
@@ -78,7 +80,7 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, bass2, flex, c) {
+function panel1(el, ref, ext, bass2, flex, cfig, c) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
@@ -140,6 +142,22 @@ function panel1(el, ref, ext, bass2, flex, c) {
     })),
   });
 
+  // CFI-G normal flames: chamber O2 before each test (see o2_sweep.json for why it is ambient). Gas, not solid:
+  // a 5th source, encoded by SHAPE (hollow square) in the same neutral colour as FLEX.
+  series.push({
+    name: CFIG_NAME, type: 'scatter', z: 3, symbol: 'rect', symbolSize: 6,
+    itemStyle: { color: 'transparent', borderColor: c.text2, borderWidth: 0.9, opacity: 0.8 },
+    data: cfig.tests.map((t) => ({
+      value: [t.pressure_kpa, t.o2_pct],
+      tip: `CFI-G normal flame ${esc(t.id)}, day ${esc(t.day)}: ${esc(t.fuel)} from a spherical burner (gas flame, not a solid material)<br>`
+        + `Chamber O2 before test ${t.o2_pct}% (mole fraction ${esc(t.o2_raw)} in the file); after ${t.o2_after_pct ?? 'n/a'}%<br>`
+        + `Pressure approx ${t.p_bar} bar = ${t.pressure_kpa} kPa; pO2 ${t.po2_kpa} kPa<br>`
+        + `Hot ignition: ${esc(t.hot_ignition || 'not stated')}${t.comment ? `<br><i>"${esc(t.comment)}"</i>` : ''}`
+        + `<br>${t.in_moon_zone ? '<b>Inside the Moon-base zone</b>' : 'Outside the Moon-base zone'}`,
+      src: `${t.source.file}, line ${t.source.line} (columns "XO2 before test", "approx p (bar)")`,
+    })),
+  });
+
   series.push({
     name: 'Spacesuit', type: 'scatter', symbol: 'diamond', symbolSize: 13, z: 5, itemStyle: { color: c.text2 },
     data: [{ value: [p.spacesuit.p_kpa, p.spacesuit.o2_pct], tip: esc(p.spacesuit.label), src: cite(p.spacesuit.source) }],
@@ -160,9 +178,9 @@ function panel1(el, ref, ext, bass2, flex, c) {
 
   const chart = echarts.init(el);
   chart.setOption({
-    grid: { left: 56, right: 96, top: el.clientWidth < 600 ? 104 : 48, bottom: 52 },   // legend wraps to 3-4 lines on phones
+    grid: { left: 56, right: 96, top: el.clientWidth < 600 ? 124 : 72, bottom: 52 },   // legend wraps to 2 lines on desktop, 4-5 on phones
     tooltip: tip(c, seriesTips),
-    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, FLEX_NAME, 'Spacesuit'] },
+    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, FLEX_NAME, CFIG_NAME, 'Spacesuit'] },
     xAxis: axis(c, p.x_axis, { min: 0, max: p.x_max, axisLabel: { color: c.text2, showMaxLabel: false } }),
     yAxis: axis(c, p.y_axis, { min: 0, max: 100, nameGap: 36 }),
     series,
@@ -245,6 +263,21 @@ function flexLine(flex) {
     + (flex.skipped.length ? ` ${flex.skipped.length} row not plotted (pressure recorded as 0 mmHg).` : '');
 }
 
+function cfigLine(cfig) {
+  const z = cfig.moon_zone;
+  return `ACME CFI-G (gas flames, not solids): ${z.count} of ${cfig.count} normal-flame tests ran in Moon-base air `
+    + `(${z.o2_range_pct.join('–')}% O2 at ${z.pressure_kpa.join(', ')} kPa; ${z.fuels.join(', ')}). Their O2 is the chamber atmosphere; `
+    + `the "up to 85%" in the brief is the inverse flames' burner stream and is not plotted.`;
+}
+
+// Layer toggles for the non-solid sources: kept in sync with the chart legend both ways.
+function layerToggles(chart, box) {
+  box.innerHTML = `<span class="muted">Non-solid layers:</span> ${LAYERS.map(([name, label]) =>
+    `<label><input type="checkbox" data-name="${esc(name)}" checked> ${esc(label)}</label>`).join(' ')}`;
+  box.querySelectorAll('input').forEach((i) => { i.onchange = () => chart.dispatchAction({ type: i.checked ? 'legendSelect' : 'legendUnSelect', name: i.dataset.name }); });
+  chart.on('legendselectchanged', (e) => box.querySelectorAll('input').forEach((i) => { i.checked = e.selected[i.dataset.name] !== false; }));
+}
+
 // Headline is a template over the data: count, test names and airflow are never typed by hand.
 function headline(inZone) {
   const flows = [...new Set(inZone.map((t) => t.flow_cm_s))];
@@ -257,7 +290,7 @@ function headline(inZone) {
 }
 
 export async function render(root) {
-  const [ref, ext, bass2, flex] = await Promise.all([loadJSON('reference.json'), loadJSON('external_tests.json'), loadJSON('bass2_tests.json'), loadJSON('flex_tests.json')]);
+  const [ref, ext, bass2, flex, cfig] = await Promise.all(['reference.json', 'external_tests.json', 'bass2_tests.json', 'flex_tests.json', 'cfig_tests.json'].map(loadJSON));
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
@@ -265,6 +298,8 @@ export async function render(root) {
       <p class="headline">${headline(inZone)}</p>
       <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
       <p class="note">${flexLine(flex)}</p>
+      <p class="note">${cfigLine(cfig)}</p>
+      <div class="layers" id="p1-layers"></div>
       <div class="chart tall" id="p1"></div>${table1(ref, ext)}</section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
@@ -278,7 +313,8 @@ export async function render(root) {
           <figcaption>NASA's own plot, for comparison (image only; points not digitized). ${esc(cite(ref.panel2.nasa_figure.source))}</figcaption></figure>
       </div>
       <div class="chart" id="p2"></div></section>`;
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  layerToggles(charts[0], root.querySelector('#p1-layers'));
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
   ro.observe(root);
   return () => { ro.disconnect(); charts.forEach((ch) => ch.dispose()); };
