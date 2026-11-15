@@ -128,6 +128,58 @@
       "u_cm_s": 23.152
     },
     {
+      "a_per_s": 71.278,
+      "air_cm_s": 15.0,
+      "evidence": "5, .36,.32 blowoff pt 4.0",
+      "kind": "blowoff_upper_bound",
+      "method": "Blowoff after the fan was stepped up to pot 4.0. Same-day fan calibration gives steady Air 15.0 cm/s at that pot (restrictor 2); the probe takes ~1 min to settle (report p.66), so the flow at blowoff was at most this: an upper bound",
+      "o2_final_pct": 14.8,
+      "pot": 4.0,
+      "r_cm": 0.3175,
+      "source": {
+        "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+        "line": 59
+      },
+      "source_calibration": {
+        "date": "2014-06-26",
+        "file": "data/raw/PSI-25/Fan calibration data.xlsx",
+        "restrictor": 2
+      },
+      "source_xlsx": {
+        "file": "data/raw/PSI-25/BASS-II Test Matrix by PI Final.xlsx",
+        "row": 13,
+        "tab": "Olson"
+      },
+      "test": "O9",
+      "u_cm_s": 15.099
+    },
+    {
+      "a_per_s": 95.037,
+      "air_cm_s": 20.0,
+      "evidence": "ign 5, 0.36, 0.32, 0.31, 0.305, blowoff 6.0",
+      "kind": "blowoff_upper_bound",
+      "method": "Blowoff after the fan was stepped up to pot 6.0. Same-day fan calibration gives steady Air 20.0 cm/s at that pot (restrictor 2); the probe takes ~1 min to settle (report p.66), so the flow at blowoff was at most this: an upper bound",
+      "o2_final_pct": 14.8,
+      "pot": 6.0,
+      "r_cm": 0.3175,
+      "source": {
+        "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+        "line": 61
+      },
+      "source_calibration": {
+        "date": "2014-07-08",
+        "file": "data/raw/PSI-25/Fan calibration data.xlsx",
+        "restrictor": 2
+      },
+      "source_xlsx": {
+        "file": "data/raw/PSI-25/BASS-II Test Matrix by PI Final.xlsx",
+        "row": 15,
+        "tab": "Olson"
+      },
+      "test": "O11",
+      "u_cm_s": 20.132
+    },
+    {
       "a_per_s": 23.759,
       "air_cm_s": 5.0,
       "evidence": "5 down to ext",
@@ -1099,8 +1151,14 @@
       "air_display": {
         "events": [],
         "raw": "3,0.5 pot, 0.4 pot",
-        "status": "flagged",
-        "steps": []
+        "review_note": "3 is cm/s; '0.5 pot, 0.4 pot' are pot settings with no flow reading. Thin film: no chart uses Air.",
+        "reviewed_as": "3",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 3.0
+          }
+        ]
       },
       "co2_final_pct": 0.51,
       "co2_initial_pct": 0.47,
@@ -1151,8 +1209,17 @@
       "air_display": {
         "events": [],
         "raw": "5, 3,  pot 0.4",
-        "status": "flagged",
-        "steps": []
+        "review_note": "5 and 3 cm/s; 'pot 0.4' is a pot setting, not a flow.",
+        "reviewed_as": "5, 3",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": 3.0
+          }
+        ]
       },
       "co2_final_pct": 0.34,
       "co2_initial_pct": 0.2,
@@ -1329,8 +1396,17 @@
       "air_display": {
         "events": [],
         "raw": "5, 3, , pot 0.5",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Same pattern as B17; the empty entry and 'pot 0.5' carry no flow.",
+        "reviewed_as": "5, 3",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": 3.0
+          }
+        ]
       },
       "co2_final_pct": 0.47,
       "co2_initial_pct": 0.42,
@@ -2877,8 +2953,23 @@
       "air_display": {
         "events": [],
         "raw": "10, 15 (brief), 10, 8",
-        "status": "flagged",
-        "steps": []
+        "review_note": "'(brief)' describes how long 15 cm/s was held, not a value.",
+        "reviewed_as": "10, 15, 10, 8",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 10.0
+          },
+          {
+            "cm_s": 15.0
+          },
+          {
+            "cm_s": 10.0
+          },
+          {
+            "cm_s": 8.0
+          }
+        ]
       },
       "co2_final_pct": 1.31,
       "co2_initial_pct": 0.32,
@@ -3407,8 +3498,26 @@
       "air_display": {
         "events": [],
         "raw": "5,10,5, 2, 0 (49, 62, 49, 44, 42)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Flows outside brackets, fan x10 inside; 5 values each, matching the Fan column's 5 pots.",
+        "reviewed_as": "5, 10, 5, 2, 0",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": 10.0
+          },
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          }
+        ]
       },
       "co2_final_pct": 1.05,
       "co2_initial_pct": 0.25,
@@ -3463,8 +3572,14 @@
       "air_display": {
         "events": [],
         "raw": "49, 5 cm/s",
-        "status": "flagged",
-        "steps": []
+        "review_note": "'49' is fan x10 (Olson's ignition setting, cf. O10); '5 cm/s' states its unit.",
+        "reviewed_as": "5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          }
+        ]
       },
       "co2_final_pct": 1.14,
       "co2_initial_pct": 1.05,
@@ -4895,8 +5010,20 @@
       "air_display": {
         "events": [],
         "raw": "5, 2.5, 2 (pot .9, .5, .35.,.33)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Flows outside brackets; '(pot ...)' labels its own values as pots.",
+        "reviewed_as": "5, 2.5, 2",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": 2.5
+          },
+          {
+            "cm_s": 2.0
+          }
+        ]
       },
       "co2_final_pct": 0.66,
       "co2_initial_pct": 0.44,
@@ -4949,8 +5076,17 @@
       "air_display": {
         "events": [],
         "raw": "5, 2.5 (1.15, .5, .35, .33. .32, .315, .31, .3)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Bracketed values are pots (1.15 ... 0.3).",
+        "reviewed_as": "5, 2.5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": 2.5
+          }
+        ]
       },
       "co2_final_pct": 0.51,
       "co2_initial_pct": 0.27,
@@ -5003,8 +5139,18 @@
       "air_display": {
         "events": [],
         "raw": "5, very low (0.85, 0.32, 0.31, 0.305, 0.30, 0.295)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Bracketed values are pots.",
+        "reviewed_as": "5, very low",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": null,
+            "qualifier": "very low"
+          }
+        ]
       },
       "co2_final_pct": null,
       "co2_initial_pct": 0.51,
@@ -5057,8 +5203,14 @@
       "air_display": {
         "events": [],
         "raw": "5, pots 0.4, 0.36, 0.32, 0.308, .3, off",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Then 'pots ...' and 'off': no further flows.",
+        "reviewed_as": "5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          }
+        ]
       },
       "co2_final_pct": 1.8,
       "co2_initial_pct": 0.62,
@@ -5184,8 +5336,14 @@
       "air_display": {
         "events": [],
         "raw": "5, pots 0.4, 0.36, 0.32, 0.31, off",
-        "status": "flagged",
-        "steps": []
+        "review_note": "As P4.",
+        "reviewed_as": "5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          }
+        ]
       },
       "co2_final_pct": 0.62,
       "co2_initial_pct": 0.3,
@@ -5374,8 +5532,14 @@
       "air_display": {
         "events": [],
         "raw": "5, pots 0.4, 0.36, 0.32, 0.31, 0.30 extinguished",
-        "status": "flagged",
-        "steps": []
+        "review_note": "5 cm/s, then pot settings only; outcome 'extinguished' is already taken from the text.",
+        "reviewed_as": "5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          }
+        ]
       },
       "co2_final_pct": 0.72,
       "co2_initial_pct": 0.29,
@@ -5651,8 +5815,18 @@
       "air_display": {
         "events": [],
         "raw": "5, low (.85, .4, .32)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Bracketed values are pots.",
+        "reviewed_as": "5, low",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          },
+          {
+            "cm_s": null,
+            "qualifier": "low"
+          }
+        ]
       },
       "co2_final_pct": 0.62,
       "co2_initial_pct": 0.34,
@@ -5708,8 +5882,14 @@
       "air_display": {
         "events": [],
         "raw": "5, (0.36)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "'(0.36)' is a pot.",
+        "reviewed_as": "5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          }
+        ]
       },
       "co2_final_pct": 1.11,
       "co2_initial_pct": 0.62,
@@ -5909,8 +6089,23 @@
       "air_display": {
         "events": [],
         "raw": "2,0,2,0,etc",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Flow cycled 2 and 0 cm/s; 'etc' kept in the raw text, repeats not invented.",
+        "reviewed_as": "2, 0, 2, 0",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          },
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          }
+        ]
       },
       "co2_final_pct": 1.2,
       "co2_initial_pct": 0.34,
@@ -6036,8 +6231,23 @@
       "air_display": {
         "events": [],
         "raw": "2,0,2,0,etc",
-        "status": "flagged",
-        "steps": []
+        "review_note": "As P18.",
+        "reviewed_as": "2, 0, 2, 0",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          },
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          }
+        ]
       },
       "co2_final_pct": 1.05,
       "co2_initial_pct": 0.34,
@@ -6355,8 +6565,23 @@
       "air_display": {
         "events": [],
         "raw": "2,0,2,0,etc",
-        "status": "flagged",
-        "steps": []
+        "review_note": "As P18.",
+        "reviewed_as": "2, 0, 2, 0",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          },
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          }
+        ]
       },
       "co2_final_pct": 2.08,
       "co2_initial_pct": 1.05,
@@ -6410,8 +6635,23 @@
       "air_display": {
         "events": [],
         "raw": "2,0,2,0,etc",
-        "status": "flagged",
-        "steps": []
+        "review_note": "As P18.",
+        "reviewed_as": "2, 0, 2, 0",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          },
+          {
+            "cm_s": 2.0
+          },
+          {
+            "cm_s": 0.0
+          }
+        ]
       },
       "co2_final_pct": 2.24,
       "co2_initial_pct": 1.2,
@@ -7664,8 +7904,17 @@
       "air_display": {
         "events": [],
         "raw": "11, max(47)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "'max(47)' = fan at max reading 47 cm/s, within the duct's ~55 cm/s maximum.",
+        "reviewed_as": "11, 47",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 11.0
+          },
+          {
+            "cm_s": 47.0
+          }
+        ]
       },
       "co2_final_pct": 0.32,
       "co2_initial_pct": 0.31,
@@ -8188,8 +8437,14 @@
       "air_display": {
         "events": [],
         "raw": "5, 2(?)",
-        "status": "flagged",
-        "steps": []
+        "review_note": "Keep 5; drop the '2(?)' the crew themselves marked uncertain.",
+        "reviewed_as": "5",
+        "status": "clean_after_review",
+        "steps": [
+          {
+            "cm_s": 5.0
+          }
+        ]
       },
       "co2_final_pct": 0.44,
       "co2_initial_pct": 0.41,

@@ -435,12 +435,17 @@ def main():
             a_vals += [stretch(U_PER_AIR * s["cm_s"], t["geometry"]["rod_radius_cm"]) for s in t["air_display"]["steps"] if s["cm_s"]]
     tested = [round(min(a_vals), 2), round(max(a_vals), 2)] if a_vals else None
 
+    for r in review:
+        d = DEC.get((r["test"], r["issue"]))
+        r["decision"] = d["decision"] if d else ""
+        if d and r["severity"] == "needs_decision":
+            r["severity"] = "decided"
     REVIEW.parent.mkdir(parents=True, exist_ok=True)
     review.sort(key=lambda r: (r["severity"] != "needs_decision", r["test"], r["issue"]))
     with open(REVIEW, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["severity", "test", "issue", "field", "raw", "detail", "csv_file"])
+        w = csv.DictWriter(f, fieldnames=["severity", "decision", "test", "issue", "field", "raw", "detail", "csv_file"])
         w.writeheader(); w.writerows(review)
-    print(f"review     {rel(REVIEW)}: {sum(r['severity']=='needs_decision' for r in review)} needs_decision, "
+    print(f"review     {rel(REVIEW)}: {sum(r['severity']=='needs_decision' for r in review)} needs_decision, {sum(r['severity']=='decided' for r in review)} decided, "
           f"{sum(r['severity']=='fyi' for r in review)} fyi")
 
     write_json("bass2_tests.json", {
