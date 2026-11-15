@@ -453,6 +453,11 @@ def main():
         "panel2_tested_a_range": tested,
         "panel2_tested_a_note": "Min/max stretch rate over every Olson flow recorded in cm/s (Air display steps > 0 in cleanly parsed rows). Calibrated blowoff flows are upper bounds and excluded.",
         "csv_xlsx_disagreements": disagreements,
+        "review_summary": {"file": rel(DECISIONS),
+                           "accepted": sorted({k[0] for k, v in DEC.items() if v["decision"] == "accept"}),
+                           "excluded": sorted({k[0] for k, v in DEC.items() if v["decision"] == "exclude"}),
+                           "open": sum(r["severity"] == "needs_decision" for r in review),
+                           "o2_final_flagged": sorted(t["id"] for t in tests if t.get("o2_final_flag"))},
         "constants": {"r0_cm": R0_CM, "u_per_air": U_PER_AIR, "u_per_air_source": f"{rel(CAL_FILE)} cell A33-A34",
                       "pressure_kpa": P_KPA},
         "notes": [

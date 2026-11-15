@@ -225,6 +225,51 @@
     4.75,
     182.95
   ],
+  "review_summary": {
+    "accepted": [
+      "B16",
+      "B17",
+      "B20",
+      "M18",
+      "O11",
+      "O5a",
+      "O5b",
+      "O9",
+      "P10",
+      "P14",
+      "P15",
+      "P18",
+      "P2",
+      "P20",
+      "P23",
+      "P24",
+      "P3a",
+      "P3b",
+      "P4",
+      "P6",
+      "T21",
+      "T29"
+    ],
+    "excluded": [
+      "M8",
+      "O13a",
+      "O13b",
+      "O22",
+      "O6",
+      "P8"
+    ],
+    "file": "data/manual/bass2_review_decisions.csv",
+    "o2_final_flagged": [
+      "B14",
+      "B2",
+      "F3",
+      "P22a",
+      "P22b",
+      "T28a",
+      "T28b"
+    ],
+    "open": 0
+  },
   "schema": 1,
   "tests": [
     {
