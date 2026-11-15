@@ -14,7 +14,7 @@ for (const spec of specs) {
   const page = await browser.newPage({ viewport: { width, height: width < 600 ? 844 : 1080 }, deviceScaleFactor: width < 600 ? 2 : 1, colorScheme: scheme });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  page.on('response', (r) => r.status() >= 400 && errors.push(`${r.status()} ${r.url()}`));
   await page.goto(`${base}/${query ? `?${query}` : ''}#${hash}`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(900);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);

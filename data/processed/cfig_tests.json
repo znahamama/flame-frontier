@@ -10,11 +10,11 @@
     "columns": "\"XO2 before test\" and \"XO2  after test\" are logged per test; the burner carries fuel (\"Xf\").",
     "inverse": {
       "chamber_fuel_chain": {
-        "chained": 993,
-        "pairs": 1002
+        "chained": 133,
+        "pairs": 142
       },
       "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Inverse Flames.csv",
-      "tests": 1015,
+      "tests": 154,
       "xo2_max_pct": 85.0
     }
   },

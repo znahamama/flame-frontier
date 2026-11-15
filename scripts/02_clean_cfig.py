@@ -40,7 +40,7 @@ def num(s):
 
 def read(path):
     rows = list(csv.reader(path.read_bytes().decode("utf-8-sig").splitlines()))
-    return rows[0], rows[1:]
+    return rows[0], [r for r in rows[1:] if any(x.strip() for x in r)]   # the Inverse file pads with ~860 empty rows
 
 
 def chain(rows, col_before, col_after, col_day):
