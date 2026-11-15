@@ -12,12 +12,28 @@
       "locator": "sec. 3, [5:52]",
       "quote": "you will see 24 investigations with 12 terabytes of"
     },
+    "index_rows_not_combustion": [
+      {
+        "psi_id": "PSI-181",
+        "research_area": "Materials Science",
+        "title": "Structure and Properties of Pb-Sn and Pb-free Sn-Ag-Cu Solders Produced in Terrestrial vs. Microgravity Environments under Extremes of Elevated and Cryo Temperatures"
+      },
+      {
+        "psi_id": "PSI-108",
+        "research_area": "Fluid Physics",
+        "title": "Surface Tension Driven Convection Experiment-1(STDCE-1)"
+      }
+    ],
+    "index_source": {
+      "doc": "PSI Combustion Science listing (psi.nasa.gov), transcribed 2026-11-14",
+      "file": "data/manual/psi_combustion_index.csv"
+    },
     "named_in_brief": [
       {
         "name": "BASS",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-26",
         "quote": "BASS, BASS-II, the Smoke Point In Co-flow Experiment (SPICE)"
       },
       {
@@ -51,15 +67,15 @@
       {
         "name": "SAME",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-102",
         "quote": "Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R)"
       },
       {
         "name": "SAME-R",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-101",
         "quote": "Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R)"
       },
       {
@@ -79,8 +95,8 @@
       {
         "name": "CFI",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-39",
         "quote": "FLEX, FLEX-2, and the Cool Flames Investigation (CFI)"
       },
       {
@@ -93,66 +109,323 @@
       {
         "name": "ACME CFI-G",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-159",
         "quote": "ACME’s Cool Flames Investigation with Gases (CFI-G)"
       },
       {
         "name": "ACME E-FIELD Flames",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-22",
         "quote": "ACME’s Electric-Field Effects on Laminar Diffusion Flames (E-FIELD Flames)"
       },
       {
         "name": "SPICE",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-107",
         "quote": "the Smoke Point In Co-flow Experiment (SPICE)"
       },
       {
         "name": "SLICE",
         "note": null,
-        "on_disk": false,
-        "psi_id": null,
+        "on_disk": true,
+        "psi_id": "PSI-106",
         "quote": "the Structure & Liftoff In Combustion Experiment (SLICE)"
       },
       {
         "name": "DAFT",
-        "note": "Brief names it under 'Other investigations in PSI' (dust detection); may not be filed under Combustion Science.",
-        "on_disk": false,
-        "psi_id": null,
+        "note": "One PSI record covers DAFT and DAFT-2 (PSI-47, filed under Combustion Science).",
+        "on_disk": true,
+        "psi_id": "PSI-47",
         "quote": "Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2)"
       },
       {
         "name": "DAFT-2",
-        "note": "As DAFT.",
-        "on_disk": false,
-        "psi_id": null,
+        "note": "One PSI record covers DAFT and DAFT-2 (PSI-47, filed under Combustion Science).",
+        "on_disk": true,
+        "psi_id": "PSI-47",
         "quote": "Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2)"
       }
     ],
-    "note": "The brief names investigations but gives no PSI IDs, and some names (e.g. SAME and SAME-R) may share one PSI record. The full list of 24 is not in our sources yet.",
+    "note": "Slots follow the PSI Combustion Science index; its count matches the 24 in the challenge video.",
     "on_disk": 24,
     "on_disk_not_named_in_brief": [
       "PSI-10",
-      "PSI-101",
-      "PSI-102",
-      "PSI-106",
-      "PSI-107",
       "PSI-115",
       "PSI-117",
       "PSI-142",
-      "PSI-159",
       "PSI-21",
-      "PSI-22",
       "PSI-23",
-      "PSI-26",
-      "PSI-39",
-      "PSI-47",
       "PSI-60",
       "PSI-62"
+    ],
+    "slots": [
+      {
+        "on_disk": true,
+        "psi_id": "PSI-117",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 2
+        },
+        "test_level": "no",
+        "title": "Effect of External Thermo-Convective Perturbation on Cool Flame Dynamics: A Multidimensional Multi-Physics CFD Analysis",
+        "type": "Ground Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-159",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 3
+        },
+        "test_level": "yes",
+        "title": "Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases(ACME CFI-G)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-10",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 4
+        },
+        "test_level": "yes",
+        "title": "Advanced Combustion via Microgravity Experiments / Flame Design(ACME/Flame Design)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-62",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 5
+        },
+        "test_level": "no",
+        "title": "Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography",
+        "type": "Ground Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-60",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 6
+        },
+        "test_level": "no",
+        "title": "Computational and Experimental Analysis of SPICE Data Sets",
+        "type": "Ground Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-142",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 8
+        },
+        "test_level": "summary only",
+        "title": "Quantitative Studies of Cool Flame Transitions at Radiation / Stretch Extinction Using Counterflow Flames",
+        "type": "Ground Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-101",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 10
+        },
+        "test_level": "yes",
+        "title": "Smoke Aerosol Measurement Experiment-Reflight(SAME-R)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-115",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 11
+        },
+        "test_level": "no",
+        "title": "Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity",
+        "type": "Ground Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-98",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 12
+        },
+        "test_level": "yes",
+        "title": "Spacecraft Fire Safety Experiment-I(SAFFIRE-I)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-39",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 13
+        },
+        "test_level": "yes",
+        "title": "Cool Flames Investigation(CFI)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-102",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 14
+        },
+        "test_level": "yes",
+        "title": "Smoke and Aerosol Measurement Experiment(SAME)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-106",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 15
+        },
+        "test_level": "summary only",
+        "title": "Structure and Liftoff In Combustion Experiment(SLICE)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-99",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 16
+        },
+        "test_level": "no",
+        "title": "Spacecraft Fire Experiment-II(SAFFIRE-II)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-107",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 17
+        },
+        "test_level": "yes",
+        "title": "Smoke Point In Co-flow Experiment(SPICE)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-100",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 18
+        },
+        "test_level": "yes",
+        "title": "Spacecraft Fire Experiment-III(SAFFIRE-III)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-21",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 19
+        },
+        "test_level": "summary only",
+        "title": "Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame(ACME CLD Flame)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-25",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 20
+        },
+        "test_level": "yes",
+        "title": "Burning and Suppression of Solids - II(BASS-II)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-20",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 21
+        },
+        "test_level": "summary only",
+        "title": "Advanced Combustion via Microgravity Experiments - Burning Rate Emulator(ACME BRE)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-68",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 22
+        },
+        "test_level": "summary only",
+        "title": "Flame Extinguishment Experiment - 2(FLEX-2)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-22",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 23
+        },
+        "test_level": "summary only",
+        "title": "Advanced Combustion via Microgravity Experiments Electric-Field Effects on Laminar Diffusion Flames(ACME E-FIELD Flames)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-23",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 24
+        },
+        "test_level": "summary only",
+        "title": "Advanced Combustion via Microgravity Experiments-Structure and Response of Spherical Diffusion Flames(ACME s-Flame)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-69",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 25
+        },
+        "test_level": "yes",
+        "title": "Flame Extinguishment Experiment(FLEX)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-26",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 26
+        },
+        "test_level": "yes",
+        "title": "Burning and Suppression of Solids(BASS)",
+        "type": "Microgravity Investigation"
+      },
+      {
+        "on_disk": true,
+        "psi_id": "PSI-47",
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "line": 27
+        },
+        "test_level": "summary only",
+        "title": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2(DAFT / DAFT-2)",
+        "type": "Microgravity Investigation"
+      }
     ]
   },
   "investigations": [
@@ -266,6 +539,14 @@
           },
           "value": "Advanced Combustion via Microgravity Experiments / Flame Design"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 4
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -539,6 +820,7 @@
         },
         "value": "PSI-10"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -560,8 +842,8 @@
           "data_rows": 120,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Inverse Flame.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per test (Test ID) with XO2 of the oxidizer stream, flow rates and chamber pressure; inverse flames (oxidizer from the burner).",
           "test_row_pattern": null,
           "test_rows": 120
         },
@@ -586,13 +868,14 @@
           "data_rows": 207,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per test with ambient XO2 (init/final) and chamber pressure (atm); some rows 'RAMPED'.",
           "test_row_pattern": null,
           "test_rows": 207
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 327
     },
     {
       "fields": {
@@ -704,6 +987,14 @@
           },
           "value": "Advanced Combustion via Microgravity Experiments - Burning Rate Emulator"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 21
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -875,6 +1166,7 @@
         },
         "value": "PSI-20"
       },
+      "summary_rows": 18,
       "tables": [
         {
           "columns": [
@@ -896,7 +1188,8 @@
           "test_rows": 18
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -1008,6 +1301,14 @@
           },
           "value": "Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 19
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -1182,6 +1483,7 @@
         },
         "value": "PSI-21"
       },
+      "summary_rows": 32,
       "tables": [
         {
           "columns": [
@@ -1197,13 +1499,14 @@
           "data_rows": 32,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-21/PSI-21_Experimental table_CLD Flame.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "summary",
+          "kind_reason": "One row per test day: fuel bottle, concentration range, flames ignited.",
           "test_row_pattern": null,
           "test_rows": 32
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -1315,6 +1618,14 @@
           },
           "value": "Advanced Combustion via Microgravity Experiments Electric-Field Effects on Laminar Diffusion Flames"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 23
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -1535,6 +1846,7 @@
         },
         "value": "PSI-22"
       },
+      "summary_rows": 32,
       "tables": [
         {
           "columns": [
@@ -1552,13 +1864,14 @@
           "data_rows": 32,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-22/PSI-22_Experimental table_ACME E-FIELD Flames.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "summary",
+          "kind_reason": "One row per test day: mesh polarity, fuel, flames ignited.",
           "test_row_pattern": null,
           "test_rows": 32
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -1670,6 +1983,14 @@
           },
           "value": "Advanced Combustion via Microgravity Experiments-Structure and Response of Spherical Diffusion Flames"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 24
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -2002,6 +2323,7 @@
         },
         "value": "PSI-23"
       },
+      "summary_rows": 18,
       "tables": [
         {
           "columns": [
@@ -2018,13 +2340,14 @@
           "data_rows": 18,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-23/PSI-23_Experimental table_ACME s-Flame.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "summary",
+          "kind_reason": "One row per test day: atmosphere (~21% O2), fuel bottle, flames ignited.",
           "test_row_pattern": null,
           "test_rows": 18
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -2136,6 +2459,14 @@
           },
           "value": "Burning and Suppression of Solids - II"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 20
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -2312,6 +2643,7 @@
         },
         "value": "PSI-25"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -2342,7 +2674,8 @@
           "test_rows": 129
         }
       ],
-      "test_level": "yes"
+      "test_level": "yes",
+      "test_rows": 129
     },
     {
       "fields": {
@@ -2454,6 +2787,14 @@
           },
           "value": "Burning and Suppression of Solids"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 26
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -2585,6 +2926,7 @@
         },
         "value": "PSI-26"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -2598,13 +2940,14 @@
           "data_rows": 122,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-26/PSI-26_Experimental table_BASS.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per test (Test #, sample, material). No O2, pressure or flow columns.",
           "test_row_pattern": null,
           "test_rows": 122
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 122
     },
     {
       "fields": {
@@ -2716,6 +3059,14 @@
           },
           "value": "Cool Flames Investigation"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 13
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -2836,6 +3187,7 @@
         },
         "value": "PSI-39"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -2853,13 +3205,14 @@
           "data_rows": 87,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-39/PSI-39_Experimental table_CFI.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per droplet test: pressure, O2/N2/He fractions, fuel.",
           "test_row_pattern": null,
           "test_rows": 87
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 87
     },
     {
       "fields": {
@@ -2972,6 +3325,14 @@
           "value": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 27
+        },
+        "value": "Microgravity Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-47/PSI-47_metadata_PSI-126_DAFT_DAFT-2/i_Investigation.txt",
@@ -3049,6 +3410,7 @@
         },
         "value": "PSI-47"
       },
+      "summary_rows": 2,
       "tables": [
         {
           "columns": [
@@ -3061,13 +3423,14 @@
           "data_rows": 2,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-47/PSI-47_Experimental table_DAFT.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "summary",
+          "kind_reason": "2 sessions (dust sampling, no combustion).",
           "test_row_pattern": null,
           "test_rows": 2
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -3180,6 +3543,14 @@
           "value": "Computational and Experimental Analysis of SPICE Data Sets"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 6
+        },
+        "value": "Ground Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-60/PSI-60_metadata_NEWID-5_Computational and Ex/i_Investigation.txt",
@@ -3250,8 +3621,10 @@
         },
         "value": "PSI-60"
       },
+      "summary_rows": 0,
       "tables": [],
-      "test_level": "no"
+      "test_level": "no",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -3364,6 +3737,14 @@
           "value": "Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 5
+        },
+        "value": "Ground Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-62/PSI-62_metadata_NEWID-7_Concurrent Flame Spr/i_Investigation.txt",
@@ -3446,8 +3827,10 @@
         },
         "value": "PSI-62"
       },
+      "summary_rows": 0,
       "tables": [],
-      "test_level": "no"
+      "test_level": "no",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -3559,6 +3942,14 @@
           },
           "value": "Flame Extinguishment Experiment - 2"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 22
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -3938,6 +4329,7 @@
         },
         "value": "PSI-68"
       },
+      "summary_rows": 8,
       "tables": [
         {
           "columns": [
@@ -3958,7 +4350,8 @@
           "test_rows": 8
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -4070,6 +4463,14 @@
           },
           "value": "Flame Extinguishment Experiment"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 25
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -4458,6 +4859,7 @@
         },
         "value": "PSI-69"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -4486,7 +4888,8 @@
           "test_rows": 274
         }
       ],
-      "test_level": "yes"
+      "test_level": "yes",
+      "test_rows": 274
     },
     {
       "fields": {
@@ -4599,6 +5002,14 @@
           "value": "Spacecraft Fire Safety Experiment-I"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 12
+        },
+        "value": "Microgravity Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-98/PSI-98_metadata_PSI-166_SAFFIRE-I/i_Investigation.txt",
@@ -4695,6 +5106,7 @@
         },
         "value": "PSI-98"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -4721,7 +5133,8 @@
           "test_rows": 2
         }
       ],
-      "test_level": "yes"
+      "test_level": "yes",
+      "test_rows": 2
     },
     {
       "fields": {
@@ -4834,6 +5247,14 @@
           "value": "Spacecraft Fire Experiment-II"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 16
+        },
+        "value": "Microgravity Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-99/PSI-99_metadata_PSI-167_SAFFIRE-II/i_Investigation.txt",
@@ -4939,8 +5360,10 @@
         },
         "value": "PSI-99"
       },
+      "summary_rows": 0,
       "tables": [],
-      "test_level": "no"
+      "test_level": "no",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -5053,6 +5476,14 @@
           "value": "Spacecraft Fire Experiment-III"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 18
+        },
+        "value": "Microgravity Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-100/PSI-100_metadata_PSI-168_SAFFIRE-III/i_Investigation.txt",
@@ -5129,6 +5560,7 @@
         },
         "value": "PSI-100"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -5151,7 +5583,8 @@
           "test_rows": 2
         }
       ],
-      "test_level": "yes"
+      "test_level": "yes",
+      "test_rows": 2
     },
     {
       "fields": {
@@ -5263,6 +5696,14 @@
           },
           "value": "Smoke Aerosol Measurement Experiment-Reflight"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 10
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -5383,6 +5824,7 @@
         },
         "value": "PSI-101"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -5400,13 +5842,14 @@
           "data_rows": 109,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-101/PSI-101_Experimental table_SAME-R.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per smoke test (SAME Test #): sample type, inlet velocity, aging times. No O2 or pressure.",
           "test_row_pattern": null,
           "test_rows": 109
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 109
     },
     {
       "fields": {
@@ -5518,6 +5961,14 @@
           },
           "value": "Smoke and Aerosol Measurement Experiment"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 14
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -5687,6 +6138,7 @@
         },
         "value": "PSI-102"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -5699,13 +6151,14 @@
           "data_rows": 8,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-102/PSI-102_Experimental table_SAME.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per sample: material, air flow, weight-loss rate, aging. No O2 or pressure.",
           "test_row_pattern": null,
           "test_rows": 8
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 8
     },
     {
       "fields": {
@@ -5818,6 +6271,14 @@
           "value": "Structure and Liftoff In Combustion Experiment"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 15
+        },
+        "value": "Microgravity Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-106/PSI-106_metadata_PSI-174_SLICE/i_Investigation.txt",
@@ -5915,6 +6376,7 @@
         },
         "value": "PSI-106"
       },
+      "summary_rows": 12,
       "tables": [
         {
           "columns": [
@@ -5924,13 +6386,14 @@
           "data_rows": 12,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-106/PSI-106_Experimental table_Slice.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "summary",
+          "kind_reason": "Test dates and fuel types only (12 rows).",
           "test_row_pattern": null,
           "test_rows": 12
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -6042,6 +6505,14 @@
           },
           "value": "Smoke Point In Co-flow Experiment"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 17
+        },
+        "value": "Microgravity Investigation"
       },
       "keywords": {
         "source": {
@@ -6156,6 +6627,7 @@
         },
         "value": "PSI-107"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -6172,13 +6644,14 @@
           "data_rows": 469,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-107/PSI-107_Experimental table_Spice.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per flame condition: fuel, nozzle, fuel rate, air rate (cm/s). No O2 or pressure. Some rows repeat.",
           "test_row_pattern": null,
           "test_rows": 469
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 469
     },
     {
       "fields": {
@@ -6291,6 +6764,14 @@
           "value": "Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 11
+        },
+        "value": "Ground Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-115/PSI-115_metadata_PSI-185_Utilization of the S/i_Investigation.txt",
@@ -6354,8 +6835,10 @@
         },
         "value": "PSI-115"
       },
+      "summary_rows": 0,
       "tables": [],
-      "test_level": "no"
+      "test_level": "no",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -6467,6 +6950,14 @@
           },
           "value": "Effect of External Thermo-Convective Perturbation on Cool Flame Dynamics: A Multidimensional Multi-Physics CFD Analysis"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 2
+        },
+        "value": "Ground Investigation"
       },
       "keywords": {
         "source": {
@@ -6587,8 +7078,10 @@
         },
         "value": "PSI-117"
       },
+      "summary_rows": 0,
       "tables": [],
-      "test_level": "no"
+      "test_level": "no",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -6700,6 +7193,14 @@
           },
           "value": "Quantitative Studies of Cool Flame Transitions at Radiation / Stretch Extinction Using Counterflow Flames"
         }
+      },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 8
+        },
+        "value": "Ground Investigation"
       },
       "keywords": {
         "source": {
@@ -6848,6 +7349,7 @@
         },
         "value": "PSI-142"
       },
+      "summary_rows": 8,
       "tables": [
         {
           "columns": [
@@ -6859,13 +7361,14 @@
           "data_rows": 8,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-142/PSI-142_Experimental table_Data Summary Table.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "summary",
+          "kind_reason": "Ground investigation: 8 data sets, each pointing to a figure in a publication.",
           "test_row_pattern": null,
           "test_rows": 8
         }
       ],
-      "test_level": "summary only"
+      "test_level": "summary only",
+      "test_rows": 0
     },
     {
       "fields": {
@@ -6978,6 +7481,14 @@
           "value": "Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases"
         }
       },
+      "index_type": {
+        "source": {
+          "file": "data/manual/psi_combustion_index.csv",
+          "key": "type",
+          "line": 3
+        },
+        "value": "Microgravity Investigation"
+      },
       "keywords": {
         "source": {
           "file": "data/raw/PSI-159/PSI-159_metadata_PSI-159-ISA/i_Investigation.txt",
@@ -7063,6 +7574,7 @@
         },
         "value": "PSI-159"
       },
+      "summary_rows": 0,
       "tables": [
         {
           "columns": [
@@ -7090,8 +7602,8 @@
           "data_rows": 154,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Inverse Flames.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per test: XO2 of the oxidizer stream from the burner, approx pressure (bar), outcome. Inverse flames: XO2 is NOT the chamber atmosphere.",
           "test_row_pattern": null,
           "test_rows": 154
         },
@@ -7119,13 +7631,14 @@
           "data_rows": 179,
           "encoding": "utf-8-sig",
           "file": "data/raw/PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv",
-          "kind": "unreviewed",
-          "kind_reason": "Not yet classified in data/manual/psi_tables.csv.",
+          "kind": "per_test",
+          "kind_reason": "One row per test: ambient XO2 before/after, approx pressure (bar), cool-flame flag, outcome.",
           "test_row_pattern": null,
           "test_rows": 179
         }
       ],
-      "test_level": "summary only"
+      "test_level": "yes",
+      "test_rows": 333
     }
   ],
   "schema": 1

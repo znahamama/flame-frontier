@@ -123,8 +123,38 @@ def main():
         card["tables"] = table_info(folder, kinds)
         per_test = [t for t in card["tables"] if t["kind"] == "per_test"]
         card["test_level"] = ("yes" if per_test else "summary only" if card["tables"] else "no")
+        card["test_rows"] = sum(t["test_rows"] for t in per_test)
+        card["summary_rows"] = sum(t["data_rows"] for t in card["tables"] if t["kind"] == "summary")
         card["metadata_dir"] = rel(path.parent)
         cards.append(card)
+
+    # PSI Combustion Science index (transcribed from psi.nasa.gov by the user): the 24 slots of the gap strip.
+    idx_file = ROOT / "data/manual/psi_combustion_index.csv"
+    index = list(csv.DictReader(open(idx_file, newline="", encoding="utf-8-sig")))
+    comb = [r for r in index if r["research_area"] == "Combustion Science"]
+    other = [r for r in index if r["research_area"] != "Combustion Science"]
+    by_id = {c["psi_id"]: c for c in cards}
+    slots = []
+    for line, r in enumerate(index, start=2):
+        if r["research_area"] != "Combustion Science":
+            continue
+        c = by_id.get(r["psi_id"])
+        title_match = None
+        if c:
+            c["index_type"] = {"value": r["type"], "source": {"file": rel(idx_file), "line": line, "key": "type"}}
+            mt = re.sub(r"\W+", " ", (c["fields"]["title"]["value"] or "").lower()).strip()
+            it = re.sub(r"\W+", " ", r["title"].lower()).strip()
+            title_match = it.startswith(mt) or mt in it
+            if not title_match:
+                problems.append(f"{r['psi_id']}: index title {r['title']!r} vs metadata {c['fields']['title']['value']!r}")
+        slots.append({"psi_id": r["psi_id"], "title": r["title"], "type": r["type"], "on_disk": bool(c),
+                      "test_level": c["test_level"] if c else None, "source": {"file": rel(idx_file), "line": line}})
+    not_in_index = sorted(set(by_id) - {r["psi_id"] for r in comb})
+    for c in cards:
+        if c["psi_id"] in not_in_index:
+            problems.append(f"{c['psi_id']} is on disk but not in the Combustion Science index")
+        if c["fields"]["area"]["value"] != "Combustion Science":
+            problems.append(f"{c['psi_id']}: metadata Research Area is {c['fields']['area']['value']!r}")
 
     # Gap list: investigations named in the brief, matched to what is on disk by hand-checked PSI ID only.
     brief = re.sub(r"\s+", " ", BRIEF.read_text())
@@ -141,6 +171,8 @@ def main():
     total_quote = "you will see 24 investigations with 12 terabytes of"
     if total_quote not in brief:
         problems.append("24-investigation quote not found in brief")
+    if len(comb) != 24:
+        problems.append(f"index lists {len(comb)} Combustion Science investigations; the challenge video says 24")
 
     if problems:
         print("\n".join("FAIL " + p for p in problems))
@@ -148,14 +180,16 @@ def main():
     write_json("catalog.json", {
         "schema": 1, "investigations": cards,
         "coverage": {
-            "combustion_total": 24,
+            "combustion_total": len(comb),
+            "index_source": {"file": rel(idx_file), "doc": "PSI Combustion Science listing (psi.nasa.gov), transcribed 2026-11-14"},
+            "index_rows_not_combustion": [{"psi_id": r["psi_id"], "title": r["title"], "research_area": r["research_area"]} for r in other],
+            "slots": slots,
             "combustion_total_source": {"doc": "Official challenge video transcript", "file": rel(BRIEF), "locator": "sec. 3, [5:52]", "quote": total_quote},
             "on_disk": len(cards),
             "named_in_brief": named,
             "on_disk_not_named_in_brief": unmapped,
             "brief_source": {"doc": "NASA Space Apps 2026 challenge page, Flame in Freefall", "file": rel(BRIEF), "locator": "sec. 1"},
-            "note": "The brief names investigations but gives no PSI IDs, and some names (e.g. SAME and SAME-R) may share one PSI record. "
-                    "The full list of 24 is not in our sources yet.",
+            "note": "Slots follow the PSI Combustion Science index; its count matches the 24 in the challenge video.",
         },
     })
 

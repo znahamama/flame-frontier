@@ -9,9 +9,9 @@ const cell = (v, s) => `<td title="${esc(srcText(s))}">${v == null || v === '' ?
 
 function testLevel(c) {
   if (!c.tables.length) return { short: 'No', long: 'No experimental table in our PSI download.' };
-  const t = c.tables[0];
-  const what = t.kind === 'per_test' ? 'per-test rows' : t.kind === 'summary' ? 'summary rows' : 'rows (unreviewed)';
-  return { short: `${c.test_level === 'yes' ? 'Yes' : 'Summary only'}: ${t.test_rows} ${what}`, long: `${t.file}: ${t.kind_reason}` };
+  const long = c.tables.map((t) => `${t.file}: ${t.kind_reason}`).join(' | ');
+  if (c.test_level === 'yes') return { short: `Yes: ${c.test_rows} per-test rows`, long };
+  return { short: `Summary only: ${c.summary_rows} rows`, long };
 }
 
 function card(c) {
@@ -34,22 +34,22 @@ export async function render(root) {
   const cat = await loadJSON('catalog.json');
   const cov = cat.coverage;
   const inv = cat.investigations;
-  const missing = cov.named_in_brief.filter((n) => !n.on_disk);
-  const notDownloaded = cov.combustion_total - inv.length;
-  const slots = Array.from({ length: cov.combustion_total }, (_, i) => `<span class="slot ${i < inv.length ? 'have' : ''}" title="${i < inv.length ? esc(`${inv[i].psi_id}: ${inv[i].fields.title.value}`) : 'not downloaded yet'}"></span>`).join('');
+  const n = (lvl) => cov.slots.filter((x) => x.test_level === lvl).length;
+  const slots = cov.slots.map((x) => `<span class="slot ${x.on_disk ? 'have' : ''} ${x.test_level === 'yes' ? 'tests' : ''}" title="${esc(`${x.psi_id}: ${x.title} (${x.type}) · ${x.on_disk ? `metadata on disk; test-level data: ${x.test_level}` : 'not downloaded'}`)}"></span>`).join('');
+  const gone = cov.slots.filter((x) => !x.on_disk);
 
   root.innerHTML = `
     <section class="card"><h2>Catalog</h2>
-      <p class="headline">We have ${inv.length} of the ${cov.combustion_total} PSI combustion investigations. ${notDownloaded} are not downloaded yet.</p>
-      <div class="slots" role="img" aria-label="${inv.length} of ${cov.combustion_total} investigations on disk">${slots}</div>
-      <p class="note">Total of ${cov.combustion_total}: ${esc(cov.combustion_total_source.doc)} ${esc(cov.combustion_total_source.locator)}, "${esc(cov.combustion_total_source.quote)}".</p>
-      <p class="note"><b>Named in the challenge brief but not downloaded:</b> ${missing.map((n) => `<span class="chip" title="${esc(`Brief: "${n.quote}"${n.note ? ` · ${n.note}` : ''}`)}">${esc(n.name)}${n.note ? '*' : ''}</span>`).join(' ')}</p>
-      <p class="note">${esc(cov.note)} *May not be filed under Combustion Science.</p>
+      <p class="headline">${cov.on_disk === cov.combustion_total ? `All ${cov.combustion_total}` : `${cov.on_disk} of the ${cov.combustion_total}`} PSI combustion investigations are catalogued. ${n('yes')} have per-test data; ${n('summary only')} have summary tables only; ${n('no')} have no experimental table.</p>
+      <div class="slots" role="img" aria-label="${cov.combustion_total} investigations: ${n('yes')} with per-test data">${slots}</div>
+      <p class="note"><span class="key tests"></span> per-test table on disk · <span class="key have"></span> metadata only or summary table${gone.length ? ` · <span class="key"></span> not downloaded: ${gone.map((x) => esc(x.psi_id)).join(', ')}` : ''}. Hover a slot for its title.</p>
+      <p class="note">The ${cov.combustion_total} come from the PSI Combustion Science index (${esc(cov.index_source.file)}); the count matches the challenge video (${esc(cov.combustion_total_source.locator)}: "${esc(cov.combustion_total_source.quote)}").
+        ${cov.index_rows_not_combustion.length ? `Left out: ${cov.index_rows_not_combustion.map((r) => `${esc(r.psi_id)} (${esc(r.research_area)})`).join(', ')}.` : ''}</p>
       <div class="table-wrap"><table class="cat">
-        <thead><tr><th>PSI ID</th><th>Investigation</th><th>Platform</th><th>Hardware</th><th>PI</th><th>Released</th><th>Publications</th><th>Test-level data?</th></tr></thead>
+        <thead><tr><th>PSI ID</th><th>Investigation</th><th>Type</th><th>Platform</th><th>Hardware</th><th>PI</th><th>Released</th><th>Publications</th><th>Test-level data?</th></tr></thead>
         <tbody>${inv.map((c) => {
           const f = c.fields; const tl = testLevel(c);
-          return `<tr><td class="id"><a href="#catalog" data-open="${esc(c.psi_id)}">${esc(c.psi_id)}</a></td>${cell(f.title.value, f.title.source)}${cell(f.platform.value, f.platform.source)}${cell(f.hardware.value, f.hardware.source)}
+          return `<tr><td class="id"><a href="#catalog" data-open="${esc(c.psi_id)}">${esc(c.psi_id)}</a></td>${cell(f.title.value, f.title.source)}${cell(c.index_type?.value?.replace(' Investigation', ''), c.index_type?.source)}${cell(f.platform.value, f.platform.source)}${cell(f.hardware.value, f.hardware.source)}
             ${cell(c.pi.value.join(', ') || null, c.pi.source)}${cell(f.released.value, f.released.source)}${cell(`${c.publications.value.length} (${c.publications.value.filter((p) => p.doi).length} DOI)`, c.publications.source)}
             <td title="${esc(tl.long)}" class="${c.test_level === 'yes' ? 'yes' : ''}">${esc(tl.short)}</td></tr>`;
         }).join('')}</tbody></table></div>
