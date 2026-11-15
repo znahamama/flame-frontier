@@ -78,10 +78,10 @@ export async function render(root, arg) {
   const kinds = [...new Set(chunks.chunks.map((c) => c.id.split(':')[0]))];
   const counts = Object.fromEntries(kinds.map((k) => [k, chunks.chunks.filter((c) => c.id.startsWith(`${k}:`)).length]));
   root.innerHTML = `<section class="card"><h2>Ask the evidence</h2>
-    <p class="note">Answers come only from ${chunks.count} cited passages: PSI metadata text (${counts.meta ?? 0}), BASS-II report and paper pages (${(counts.report ?? 0) + (counts.paper ?? 0) + (counts.ntrs ?? 0)}),
+    <p class="note">Answers come only from ${chunks.count} cited passages, and every sentence cites one. ${OFFLINE ? '<b>Offline mode</b> (<code>?offline</code>): no AI calls; precomputed answers and matching passages only.' : ''}</p>
+    <details class="howask"><summary>How answers are made</summary><p class="note">The passages: PSI metadata text (${counts.meta ?? 0}), BASS-II report and paper pages (${(counts.report ?? 0) + (counts.paper ?? 0) + (counts.ntrs ?? 0)}),
       the challenge page (${counts.brief ?? 0}), the Saffire table restated row by row (${counts.data ?? 0}), and this site's own derived summaries (${counts.limits ?? 0}), which rank below the primary text and name what they were derived from. A keyword search (BM25) picks the ${chunks.retrieval.top_k} best passages;
-      an AI model (${esc(cache.model)}) writes a short answer that must cite a passage in every sentence and copy every number from one. If the passages don't answer it, the reply is "${NOT_IN_DATA}"
-      ${OFFLINE ? '<br><b>Offline mode</b> (<code>?offline</code>): no AI calls; precomputed answers and matching passages only.' : ''}</p>
+      an AI model (${esc(cache.model)}) writes a short answer that must cite a passage in every sentence and copy every number from one. If the passages don't answer it, the reply is "${NOT_IN_DATA}"</p></details>
     <form class="askform"><label for="q" class="vh">Question</label>
       <input id="q" name="q" type="text" maxlength="300" autocomplete="off" placeholder="e.g. Which solids burned at Moon-base oxygen?" required>
       <button type="submit">Ask</button></form>

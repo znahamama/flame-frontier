@@ -26,8 +26,8 @@ const SECTIONS = [
   { id: 'start', label: 'Story', views: ['start'], story: () => import('./stories/start.js') },
   { id: 'evidence', label: 'Evidence', views: ['evidence', 'sandbox', 'clips'], story: () => import('./stories/evidence.js') },
   { id: 'explore', label: 'Explore', views: ['catalog', 'ranking', 'compare', 'gaps', 'controls'], story: () => import('./stories/explore.js') },
-  { id: 'ask', label: 'Ask', views: ['ask'] },
-  { id: 'about', label: 'About', views: ['limits', 'references', 'earth'] },
+  { id: 'ask', label: 'Ask', views: ['ask'], story: () => import('./stories/ask.js') },
+  { id: 'about', label: 'About', views: ['limits', 'references', 'earth'], story: () => import('./stories/about.js') },
 ];
 export const viewHref = (sec, v) => (v === sec.id ? `#${v}/view` : `#${v}`);
 
@@ -137,8 +137,11 @@ async function show(hash) {
     if (r.target === 'step') cur.story?.goTo(r.step, smooth);
     else if (r.target === 'view' || (r.target === 'view0' && !newSec)) {
       const vt = panel.querySelector('#viewtop');
-      vt.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
-      if (!newSec) vt.focus({ preventScroll: true });   // keyboard users continue from the view
+      // A view can name a spot inside itself for this link (e.g. #limits/panel2, #catalog/PSI-25) with data-goto.
+      const spot = panel.querySelector('#view [data-goto]');
+      spot?.removeAttribute('data-goto');
+      (spot ?? vt).scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+      if (!newSec) (spot ?? vt).focus({ preventScroll: true });   // keyboard users continue from the view
     }
     else if (newSec || r.target === 'top') scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
   } catch (err) {

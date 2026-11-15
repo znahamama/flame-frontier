@@ -73,7 +73,7 @@ export async function render(root, arg) {
   setMode(mode);
   // #catalog/<PSI-ID>: open that investigation's full record (the drawer) and bring it into view.
   const want = /^PSI-\d+$/.test(arg ?? '') && root.querySelector(`#${CSS.escape(arg)}`);
-  if (want) { want.open = true; requestAnimationFrame(() => want.scrollIntoView({ block: 'start' })); }
+  if (want) { want.open = true; want.dataset.goto = ''; want.tabIndex = -1; }
   root.querySelectorAll('[data-open]').forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
     const d = root.querySelector(`#${CSS.escape(a.dataset.open)}`);

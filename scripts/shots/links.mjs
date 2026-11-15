@@ -36,6 +36,15 @@ const LINKS = [
   ['Known Limits', 'limits', '#view .limits, #view h2'],
   ['References', 'references', '#view ul.refs, #view table'],
   ['On Earth', 'earth', '#view .earthapp'],
+  ['Ask story', 'ask', '.story .step'],
+  ['Ask story step', 'ask/s=checks', '#ask-s-checks.on'],
+  ['About story step', 'about/s=oxygen', '#about-s-oxygen.on'],
+  ['Ask view (question box)', 'ask/view', '#view form.askform'],
+  ['About story', 'about', '.story .step'],
+  ['Known Limits group link', 'limits/panel2', '#view details#lim-panel2[open]'],
+  ['Known Limits whose oxygen', 'limits/oxygen', '#view details#lim-oxygen[open] table'],
+  ['References group link', 'references/software', '#view details#ref-software[open] table'],
+  ['On Earth card link', 'earth/water_mist', '#view #earth-water_mist'],
   ['Explore story', 'explore', '.story .step'],
   ['Explore story step', 'explore/s=ranges', '#explore-s-ranges.on'],
   ['Explore section', 'explore', '#view table.cat'],
@@ -62,10 +71,15 @@ for (const [feature, hash, sel] of LINKS) {
   try { await page.waitForSelector(sel, { timeout: 8000, state: 'attached' }); } catch { ok = false; why = `missing ${sel}`; }
   if (await page.$('#panel .error')) { ok = false; why += ' error card'; }
   // A view link (not a story top or step) must land with the interactive view at the top of the screen.
-  const story = /^(start|evidence|explore)$/.test(hash) || /\/s=/.test(hash);   // sections with a story open at the top
+  const story = /^(start|evidence|explore|ask|about)$/.test(hash) || /\/s=/.test(hash);   // sections with a story open at the top
   if (!story) {
     await page.waitForTimeout(400);
-    const [top, vh] = await page.evaluate(() => [document.querySelector('#viewtop')?.getBoundingClientRect().top, innerHeight]);
+    // Deep links inside a view (#limits/panel2, #catalog/PSI-25, ...) land on their own spot: then that spot must be on screen.
+    const [top, vh] = await page.evaluate((s) => {
+      const vt = document.querySelector('#viewtop'); const el = document.querySelector(s);
+      const inside = el && vt && vt !== el && vt.contains(el) && location.hash.split('/').length > 1 && !/\/view$/.test(location.hash);
+      return [(inside && el.closest('[tabindex="-1"]:not(#viewtop)') ? el.closest('[tabindex="-1"]') : vt)?.getBoundingClientRect().top, innerHeight];
+    }, sel);
     if (top == null || top < -20 || top > vh * 0.4) { ok = false; why += ` view not on screen (top ${Math.round(top)})`; }
   }
   if (errors.length) { ok = false; why += ` ${[...new Set(errors)].join(' | ')}`; }

@@ -2,6 +2,13 @@ import { loadJSON } from '../data.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const list = (items) => `<ul class="limits">${items.filter(Boolean).map((x) => `<li>${x}</li>`).join('')}</ul>`;
+// Groups: every group is one <details>; the headline group is open. #limits/<id> opens one group and lands on it.
+export const GROUPS = [['headline', 'The headline'], ['panel1', 'Evidence Map, Panel 1'], ['panel2', 'Evidence Map, Panel 2'], ['catalog', 'Catalog'],
+  ['ranking', 'Ranking'], ['clips', 'Clips'], ['sandbox', 'Flame Sandbox'], ['oxygen', 'Whose oxygen?'], ['sources', 'Sources']];
+const group = (id, title, items, open = false) => {
+  const n = items.filter(Boolean).length;
+  return `<details class="lgroup" id="lim-${id}"${open ? ' open' : ''}><summary><h3>${title}</h3><span class="lcount">${n} item${n === 1 ? '' : 's'}</span></summary>${list(items)}</details>`;
+};
 
 const rng = (r, u) => (r ? `${r[0]}${r[0] === r[1] ? '' : `–${r[1]}`}${u}` : 'not recorded');
 // Per-test tables with ambient O2 that Panel 1 does not draw (ranges from ranking.json, not typed here).
@@ -11,7 +18,7 @@ function notPlotted(moon) {
 }
 
 // Known Limits: what the site and each source cannot tell you. Numbers come from the pipeline JSON, not typed here.
-export async function render(root) {
+export async function render(root, arg) {
   const [ext, flex, bass2, ref, cat, rank, cfig, sweep] = await Promise.all(
     ['external_tests.json', 'flex_tests.json', 'bass2_tests.json', 'reference.json', 'catalog.json', 'ranking.json', 'cfig_tests.json', 'o2_sweep.json'].map(loadJSON));
   const sbx = await loadJSON('sandbox.json');
@@ -27,17 +34,16 @@ export async function render(root) {
 
   root.innerHTML = `
   <section class="card"><h2>Known Limits</h2>
-    <p class="note">What this site and its sources cannot tell you, so nothing on a chart implies more than the sources say.</p>
+    <p class="note">What this site and its sources cannot tell you, so nothing on a chart implies more than the sources say. Grouped by part of the site; open a group, or expand all.</p>
+    <nav class="jump" aria-label="Known Limits groups">${GROUPS.map(([id, t]) => `<a href="#limits/${id}">${t}</a>`).join('')}<button type="button" class="expandall">Expand all</button></nav>
 
-    <h3>The headline</h3>
-    ${list([
+    ${group('headline', 'The headline', [
       `It counts <b>solid-material</b> tests only, and only those <b>in our sources</b> (PSI downloads plus ${Object.keys(ext.sources).length} cited papers and pages). We do not claim to have seen every test ever run.`,
       `The ${zone.length} tests inside the Moon-base zone (${zone.map((t) => `${esc(t.id.replace(/^saffire-/, 'Saffire '))}, ${esc(t.material)}`).join('; ')}) ran at ${[...new Set(zone.map((t) => t.flow_cm_s))].map((f) => `${f} cm/s`).join(' and ')} airflow, in microgravity. None ran in partial gravity: "${esc('there is currently no partial-gravity combustion data available in PSI')}" (challenge page).`,
       'Two tests are not a flammability boundary. They show that these materials burned under those conditions, not where they stop burning.',
-    ])}
+    ], true)}
 
-    <h3>Evidence Map, Panel 1 (initial O2 vs pressure)</h3>
-    ${list([
+    ${group('panel1', 'Evidence Map, Panel 1 (initial O2 vs pressure)', [
       `BASS-II: all ${bass2.count} PSI-25 rows are plotted at 1 atm (${bass2.constants.pressure_kpa} kPa) because the report states 1 atm; pressure is not logged per test. O2 is the calibrated INITIAL value.`,
       `FLEX (PSI-69) is liquid droplets, not solid materials, so it is drawn as its own layer and never counted in the headline. ${flex.count} tests plotted; ${flex.moon_zone.count} inside the Moon-base zone; ${flex.moon_zone.near_misses.length} near misses at ≥30% O2 just above 70.3 kPa (closest ${Math.min(...flex.moon_zone.near_misses.map((t) => t.pressure_kpa))} kPa). Skipped: ${skipped || 'none'}.`,
       'SSCE: NASA gives O2 and pressure lists for flights 1-8 without saying which went together, so they are drawn as range markers, not per-flight points. All are at ≥1 atm.',
@@ -48,8 +54,7 @@ export async function render(root) {
       'O2 is plotted as mol % (= vol % for an ideal gas). Saffire VI\'s O2 is given in mol %.',
     ])}
 
-    <h3>Evidence Map, Panel 2 (BASS-II flammability boundary)</h3>
-    ${list([
+    ${group('panel2', 'Evidence Map, Panel 2 (BASS-II flammability boundary)', [
       `Only ${bass2.panel2_points.length} PSI-25 tests can be placed on NASA's boundary; NASA's Figure 6.10 shows about ${fig.iss_points_approx} ISS points (${esc(fig.iss_points_note)}). Why: ${fig.why_not_reproducible.map(esc).join(' ')}`,
       '"Last stable flow before extinction" markers are the last flow recorded in cm/s at which the flame was still burning; the crew then turned the flow down (pot settings below the fan calibration) until it went out, so the extinction flow itself is not plotted. Blowoff markers come from same-day fan calibration at the exact pot setting; the air probe needs about 1 minute to respond, so the true blowoff flow is at or below the marker.',
       `The curve is solid only over the stretch rates the PSI table actually recorded (${ref.panel2.tested_a_range.map((x) => x.toFixed(2)).join('–')} 1/s) and dashed outside it.`,
@@ -58,16 +63,14 @@ export async function render(root) {
       'Panel 2 y-axis is POST-BURN O2, as in NASA\'s Figure 6.9; Panel 1 uses initial O2.',
     ])}
 
-    <h3>Catalog</h3>
-    ${list([
+    ${group('catalog', 'Catalog', [
       `The list of ${cov.combustion_total} investigations is the PSI Combustion Science listing transcribed by hand (${esc(cov.index_source.file)}); its count matches the challenge video. ${cov.index_rows_not_combustion.map((r) => `${esc(r.psi_id)} (${esc(r.research_area)})`).join(' and ')} were in the same listing but are filed under other research areas, so they are left out.`,
       `"Test-level data" means a per-test table in our PSI download: ${lvl('yes')} yes, ${lvl('summary only')} summary only, ${lvl('no')} none. PSI raw data (video, sensor logs) runs to terabytes and is not all downloaded.`,
       'BASS (PSI-26) has a per-test table but no O2, pressure or flow columns, so it cannot be placed on the Evidence Map.',
       'Metadata quirks are shown as-is, not fixed: Saffire-I and III list the ISS as flight platform though they flew in Cygnus; Saffire I-III share one Hypothesis text; BASS-II assigns no PI role; PSI folder names carry a second number whose meaning we do not know, so it is never used as an ID.',
     ])}
 
-    <h3>Ranking</h3>
-    ${list([
+    ${group('ranking', 'Ranking', [
       `Weights (${['o2', 'pressure', 'flow', 'gravity', 'material', 'data'].map((k) => rank.rules[k]).map((r) => `${esc(r.label)} ${r.weight}`).join(', ')}) are our design choice, not a NASA rating. Change them and the order changes; the per-component points are shown so you can recompute.`,
       'Unknown scores 0. A low score means "the data does not show it", not "it is safe" or "it is dangerous".',
       'Values from summary tables get half credit, because a summary row may list O2 and pressure separately without saying which ran together.',
@@ -75,14 +78,12 @@ export async function render(root) {
       'Material class and flow regime are our classification, each tied to a quoted word in the metadata, table or brief (data/manual/investigation_features.csv).',
     ])}
 
-    <h3>Clips</h3>
-    ${list([
+    ${group('clips', 'Clips', [
       'Three of 129 BASS-II tests, trimmed and re-encoded (macOS avconvert) to stay small. Nothing is measured from the video by software; the facts beside each clip come from the PSI table.',
       'The on-screen date is one day ahead of the test date (BASS-II FAQ: leap year was not set on board).',
     ])}
 
-    <h3>Flame Sandbox</h3>
-    ${list([
+    ${group('sandbox', 'Flame Sandbox', [
       'The flame picture is a teaching model, not a simulation. It follows NASA\'s qualitative description (official challenge video 2:37–3:12; challenge page) and computes nothing: no temperature, size, spread rate or extinction. O2 changes only its brightness; pressure changes nothing in it.',
       'Moon and Mars gravity: no flame is drawn, only the Earth and microgravity outlines, because PSI has no partial-gravity combustion data (challenge page). The sandbox never interpolates between them.',
       `Its evidence panel counts the same ${sbx.tests.length} solid tests as the Habitat Gaps tab. "Nearby" (±${sbx.rules.near_o2_pts} points O2, ±${sbx.rules.near_p_kpa} kPa), flow match (±${sbx.rules.flow_tol_cm_s} cm/s) and "thin" (≤${sbx.rules.thin_max}) are our display tolerances, not NASA criteria.`,
@@ -90,17 +91,25 @@ export async function render(root) {
     ])}
   </section>
 
-  <section class="card"><h2>Whose oxygen? Every O2 column in our PSI tables</h2>
+  <section class="card"><details class="lgroup" id="lim-oxygen"><summary><h2>Whose oxygen? Every O2 column in our PSI tables</h2><span class="lcount">${sweep.rows.length} columns: ${Object.entries(sweep.rows.reduce((m, r) => ({ ...m, [r.verdict]: (m[r.verdict] ?? 0) + 1 }), {})).map(([v, k]) => `${k} ${{ ambient: 'atmosphere', oxidizer_stream: 'burner stream', not_o2: 'not oxygen' }[v] ?? v}`).join(', ')}</span></summary>
     <p class="note">${esc(sweep.question)} An O2 value only belongs on the Evidence Map if it is the atmosphere around the flame. Each quote below is checked against its file by the pipeline (${esc(sweep.source)}).</p>
     <div class="scroll"><table><thead><tr><th>PSI</th><th>Table, column</th><th>Verdict</th><th>Evidence (exact quote)</th><th>Reading</th></tr></thead><tbody>
     ${sweep.rows.map((r) => `<tr><td>${esc(r.psi_id)}</td><td>${esc(r.table)}: "${esc(r.column)}"</td><td>${esc(VERDICT[r.verdict] ?? r.verdict)}</td>
       <td>"${esc(r.evidence_quote)}"<br><span class="src">${esc(r.evidence_file)}</span></td><td>${esc(r.reading)}</td></tr>`).join('')}
     </tbody></table></div>
     <p class="note">Investigations with no O2 column in our download are not listed. Saffire IV-VI and SSCE values come from the cited papers (see Sources below).</p>
-  </section>
+  </details></section>
 
-  <section class="card"><h2>Sources: what each gives and does not give</h2>
+  <section class="card"><details class="lgroup" id="lim-sources"><summary><h2>Sources: what each gives and does not give</h2><span class="lcount">${Object.keys(ext.sources).length} sources</span></summary>
     ${Object.values(ext.sources).map((s) => `<h3>${esc(s.short)}</h3><p class="note">${esc(s.citation)}</p>
-      <p><b>Gives:</b> ${esc(s.gives)}</p>${list(s.does_not_give.map(esc))}`).join('')}
-  </section>`;
+      <p><b>Gives:</b> ${esc(s.gives)}</p><p class="note"><b>Does not give:</b></p>${list(s.does_not_give.map(esc))}`).join('')}
+  </details></section>`;
+  const all = [...root.querySelectorAll('details.lgroup')];
+  const btn = root.querySelector('.expandall');
+  const sync = () => { btn.textContent = all.every((d) => d.open) ? 'Collapse all' : 'Expand all'; };
+  btn.addEventListener('click', () => { const open = !all.every((d) => d.open); all.forEach((d) => { d.open = open; }); sync(); });
+  all.forEach((d) => d.addEventListener('toggle', sync));
+  const want = arg && root.querySelector(`#lim-${CSS.escape(arg)}`);
+  if (want) { want.open = true; want.dataset.goto = ''; want.tabIndex = -1; }
+  sync();
 }
