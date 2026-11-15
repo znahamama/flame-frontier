@@ -29,19 +29,19 @@ def r(x: float, n: int = 4) -> float:
     return round(x, n)
 
 
-def panel1() -> dict:
+def panel1(x_max: int) -> dict:
     kpa = lambda psi: r(psi * PSI_TO_KPA, 2)
     brief = CHALLENGE_BRIEF["doc"]
     pp_lines = []
     for pp, label in [(21.2, "Same pO2 as Earth sea-level air"), (29.6, "Same pO2 as spacesuit")]:
-        pts = [[p, r(100 * pp / p, 2)] for p in range(10, 211, 2) if 100 * pp / p <= 100]
+        pts = [[p, r(100 * pp / p, 2)] for p in range(10, x_max + 1, 2) if 100 * pp / p <= 100]
         pp_lines.append({"pp_o2_kpa": pp, "label": f"{label} (pO2 = {pp} kPa)", "points": pts,
                          "source": "Derived: O2% = 100 * pO2 / P_total (Dalton's law)"})
     p_max = kpa(10.2)
     return {
         "x_axis": "Total pressure (kPa)",
         "y_axis": "O2 before ignition (mol % = vol %)",
-        "x_max": 210,
+        "x_max": x_max,  # from the highest plotted pressure (SSCE 2 atm, FLEX up to ~309 kPa)
         "spacesuit": {"o2_pct": 100, "p_kpa": kpa(4.3), "label": "Spacesuit: 100% O2 at 4.3 psi (4.3 x 6.894757 = 29.65 kPa)",
                       "source": brief},
         "earth_sea_level": {"p_kpa": kpa(14.7), "label": "Earth sea level, 14.7 psi", "source": brief},
@@ -88,4 +88,7 @@ def panel2(bass2: dict) -> dict:
 if __name__ == "__main__":
     bass2_path = PROCESSED / "bass2_tests.json"
     bass2 = json.loads(bass2_path.read_text()) if bass2_path.exists() else {}
-    write_json("reference.json", {"schema": 1, "panel1": panel1(), "panel2": panel2(bass2)})
+    flex_path = PROCESSED / "flex_tests.json"
+    p_max = max([2 * 101.325] + [t["pressure_kpa"] for t in json.loads(flex_path.read_text())["tests"]] if flex_path.exists() else [2 * 101.325])
+    x_max = int(math.ceil(p_max / 20) * 20)
+    write_json("reference.json", {"schema": 1, "panel1": panel1(x_max), "panel2": panel2(bass2)})

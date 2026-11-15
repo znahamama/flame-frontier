@@ -39,6 +39,7 @@ function saffireItem(t) {
   };
 }
 
+const FLEX_NAME = 'FLEX droplets (liquid, PSI-69)';
 const OUTCOME = { extinguished: 'extinguished', blowoff: 'blowoff', no_ignition: 'no ignition', not_sustained: 'would not stay lit', unclear: 'unclear (flagged for review)', not_stated: 'not stated in the table' };
 const bassSrc = (t) => `${t.source.file}, line ${t.source.line}`
   + (t.source_xlsx ? `; ${t.source_xlsx.file}, tab "${t.source_xlsx.tab}", row ${t.source_xlsx.row}` : '');
@@ -77,7 +78,7 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, bass2, c) {
+function panel1(el, ref, ext, bass2, flex, c) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
@@ -126,6 +127,19 @@ function panel1(el, ref, ext, bass2, c) {
     data: bass2.tests.filter((t) => t.o2_initial_pct != null).map(bass2Item),
   });
 
+  // FLEX liquid droplets: a 4th source, so it is encoded by SHAPE in a neutral colour (max 3 hues per chart).
+  series.push({
+    name: FLEX_NAME, type: 'scatter', z: 3, symbol: 'triangle', symbolSize: 8,
+    itemStyle: { color: 'transparent', borderColor: c.text2, borderWidth: 1.2 },
+    data: flex.tests.map((t) => ({
+      value: [t.pressure_kpa, t.o2_pct],
+      tip: `FLEX test ${esc(t.id)} (${esc(t.flex_identifier)}), ${esc(t.date)}<br>${esc(t.fuel)} droplet (liquid, not a solid material)<br>`
+        + `${t.pressure_mmhg} mmHg = ${t.pressure_kpa} kPa; initial O2 ${t.o2_pct}% (mole fraction ${t.o2_pct / 100})`
+        + `${t.he_frac ? `; He ${t.he_frac}` : ''}<br>Test end: ${esc(t.test_end)}`,
+      src: `${t.source.file}, line ${t.source.line}`,
+    })),
+  });
+
   series.push({
     name: 'Spacesuit', type: 'scatter', symbol: 'diamond', symbolSize: 13, z: 5, itemStyle: { color: c.text2 },
     data: [{ value: [p.spacesuit.p_kpa, p.spacesuit.o2_pct], tip: esc(p.spacesuit.label), src: cite(p.spacesuit.source) }],
@@ -148,7 +162,7 @@ function panel1(el, ref, ext, bass2, c) {
   chart.setOption({
     grid: { left: 56, right: 96, top: el.clientWidth < 600 ? 104 : 48, bottom: 52 },   // legend wraps to 3-4 lines on phones
     tooltip: tip(c, seriesTips),
-    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, 'Spacesuit'] },
+    legend: { top: 0, textStyle: { color: c.text2 }, data: ['Saffire (per-test point)', 'SSCE (range, pairing not given)', `BASS-II (${bass2.count} tests, PSI-25)`, FLEX_NAME, 'Spacesuit'] },
     xAxis: axis(c, p.x_axis, { min: 0, max: p.x_max, axisLabel: { color: c.text2, showMaxLabel: false } }),
     yAxis: axis(c, p.y_axis, { min: 0, max: 100, nameGap: 36 }),
     series,
@@ -222,6 +236,15 @@ function panel2(el, ref, bass2, c) {
   return chart;
 }
 
+// FLEX sentence is a template over flex_tests.json; liquid droplets never enter the solid-material headline.
+function flexLine(flex) {
+  const z = flex.moon_zone; const nm = z.near_misses;
+  const closest = nm.length ? Math.min(...nm.map((t) => t.pressure_kpa)) : null;
+  return `FLEX (liquid droplets, not solids): ${z.count} of ${flex.count} tests in Moon-base air.`
+    + (nm.length ? ` ${nm.length} reached ≥${z.o2_min_pct}% O2 within 2 kPa above the zone's ${z.p_max_kpa} kPa limit (closest ${closest} kPa).` : '')
+    + (flex.skipped.length ? ` ${flex.skipped.length} row not plotted (pressure recorded as 0 mmHg).` : '');
+}
+
 // Headline is a template over the data: count, test names and airflow are never typed by hand.
 function headline(inZone) {
   const flows = [...new Set(inZone.map((t) => t.flow_cm_s))];
@@ -234,13 +257,14 @@ function headline(inZone) {
 }
 
 export async function render(root) {
-  const [ref, ext, bass2] = await Promise.all([loadJSON('reference.json'), loadJSON('external_tests.json'), loadJSON('bass2_tests.json')]);
+  const [ref, ext, bass2, flex] = await Promise.all([loadJSON('reference.json'), loadJSON('external_tests.json'), loadJSON('bass2_tests.json'), loadJSON('flex_tests.json')]);
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
     <section class="card"><h2>Where the tests are</h2>
       <p class="headline">${headline(inZone)}</p>
       <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
+      <p class="note">${flexLine(flex)}</p>
       <div class="chart tall" id="p1"></div>${table1(ref, ext)}</section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
@@ -254,7 +278,7 @@ export async function render(root) {
           <figcaption>NASA's own plot, for comparison (image only; points not digitized). ${esc(cite(ref.panel2.nasa_figure.source))}</figcaption></figure>
       </div>
       <div class="chart" id="p2"></div></section>`;
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
   ro.observe(root);
   return () => { ro.disconnect(); charts.forEach((ch) => ch.dispose()); };

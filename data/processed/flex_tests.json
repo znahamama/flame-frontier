@@ -1,0 +1,5663 @@
+{
+  "count": 273,
+  "material_class": "liquid droplets (methanol, heptane), not solid materials",
+  "moon_zone": {
+    "by_end": {},
+    "count": 0,
+    "ids": [],
+    "near_misses": [
+      {
+        "fuel": "Methanol",
+        "id": "37",
+        "o2_pct": 34.0,
+        "pressure_kpa": 71.23,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 38
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "41",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.23,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 42
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "38",
+        "o2_pct": 34.0,
+        "pressure_kpa": 71.25,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 39
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "39",
+        "o2_pct": 34.0,
+        "pressure_kpa": 71.31,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 40
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "43",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.31,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 44
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "42",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.33,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 43
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "40",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.34,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 41
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "25",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.63,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 26
+        },
+        "test_end": "Completion"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "26",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.78,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 27
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "19",
+        "o2_pct": 34.0,
+        "pressure_kpa": 71.87,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 20
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "20",
+        "o2_pct": 34.0,
+        "pressure_kpa": 71.93,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 21
+        },
+        "test_end": "Completion"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "28",
+        "o2_pct": 30.0,
+        "pressure_kpa": 71.95,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 29
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "22",
+        "o2_pct": 34.0,
+        "pressure_kpa": 72.06,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 23
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Methanol",
+        "id": "21",
+        "o2_pct": 34.0,
+        "pressure_kpa": 72.07,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 22
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "27",
+        "o2_pct": 30.0,
+        "pressure_kpa": 72.09,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 28
+        },
+        "test_end": "Disruption"
+      },
+      {
+        "fuel": "Heptane",
+        "id": "23",
+        "o2_pct": 34.0,
+        "pressure_kpa": 72.23,
+        "source": {
+          "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "line": 24
+        },
+        "test_end": "Disruption"
+      }
+    ],
+    "o2_min_pct": 30.0,
+    "p_max_kpa": 70.33
+  },
+  "schema": 1,
+  "skipped": [
+    {
+      "issue": "pressure 0.0 mmHg: impossible for a burning droplet; not plotted",
+      "line": 115,
+      "test": "114"
+    }
+  ],
+  "tests": [
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.69,
+      "date": "3/5/2009",
+      "flex_identifier": "20CAL08",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "1",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.02,
+      "pressure_mmhg": 757.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 2
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.86,
+      "date": "3/5/2009",
+      "flex_identifier": "20CAL10",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "2",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.59,
+      "pressure_mmhg": 762.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 3
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.61,
+      "date": "3/5/2009",
+      "flex_identifier": "20CAL12",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "3",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.88,
+      "pressure_mmhg": 764.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 4
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.06,
+      "date": "3/31/2009",
+      "flex_identifier": "30CAL02",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "4",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.33,
+      "pressure_mmhg": 760.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 5
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.92,
+      "date": "3/31/2009",
+      "flex_identifier": "30CAL03",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "5",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.33,
+      "pressure_mmhg": 760.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 6
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.54,
+      "date": "3/31/2009",
+      "flex_identifier": "40CAL01",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "6",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.33,
+      "pressure_mmhg": 760.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 7
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.87,
+      "date": "4/10/2009",
+      "flex_identifier": "20CAL13",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "7",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.5,
+      "pressure_mmhg": 761.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 8
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.95,
+      "date": "4/10/2009",
+      "flex_identifier": "30CAL06",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "8",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.64,
+      "pressure_mmhg": 762.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 9
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "4/10/2009",
+      "flex_identifier": "30CAL07",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "9",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.33,
+      "pressure_mmhg": 760.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 10
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 3.86,
+      "date": "5/22/2009",
+      "flex_identifier": "256F002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "10",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 309.27,
+      "pressure_mmhg": 2319.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 11
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 3.03,
+      "date": "5/22/2009",
+      "flex_identifier": "256R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "11",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 309.15,
+      "pressure_mmhg": 2318.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 12
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 2.74,
+      "date": "5/22/2009",
+      "flex_identifier": "264F003",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "12",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 309.29,
+      "pressure_mmhg": 2319.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 13
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 2.59,
+      "date": "6/25/2009",
+      "flex_identifier": "256R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "13",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 276.54,
+      "pressure_mmhg": 2074.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 14
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 3.7,
+      "date": "6/29/2009",
+      "flex_identifier": "256F007",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "14",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 274.06,
+      "pressure_mmhg": 2055.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 15
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 4.42,
+      "date": "6/29/2009",
+      "flex_identifier": "256F008",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "15",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 275.52,
+      "pressure_mmhg": 2066.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 16
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 1.66,
+      "date": "6/29/2009",
+      "flex_identifier": "256F009",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "16",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 276.26,
+      "pressure_mmhg": 2072.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 17
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 2.67,
+      "date": "7/1/2009",
+      "flex_identifier": "240R003",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "17",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 206.08,
+      "pressure_mmhg": 1545.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 18
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.7,
+      "d0_mm": 2.74,
+      "date": "7/1/2009",
+      "flex_identifier": "248F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "18",
+      "in_moon_zone": false,
+      "n2_frac": 0.09,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 207.16,
+      "pressure_mmhg": 1553.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 19
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.39,
+      "date": "8/26/2009",
+      "flex_identifier": "196F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "19",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 71.87,
+      "pressure_mmhg": 539.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 20
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.4,
+      "date": "10/24/09",
+      "flex_identifier": "192F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "20",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 71.93,
+      "pressure_mmhg": 539.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 21
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.49,
+      "date": "10/24/09",
+      "flex_identifier": "192F002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "21",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 72.07,
+      "pressure_mmhg": 540.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 22
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.5,
+      "date": "10/24/09",
+      "flex_identifier": "192F003",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "22",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 72.06,
+      "pressure_mmhg": 540.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 23
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.01,
+      "date": "10/24/09",
+      "flex_identifier": "196F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "23",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 72.23,
+      "pressure_mmhg": 541.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 24
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "10/24/09",
+      "flex_identifier": "196F003",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "24",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 72.37,
+      "pressure_mmhg": 542.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 25
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.6,
+      "date": "11/9/2009",
+      "flex_identifier": "191R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "25",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.63,
+      "pressure_mmhg": 537.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 26
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.63,
+      "date": "11/9/2009",
+      "flex_identifier": "191F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "26",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.78,
+      "pressure_mmhg": 538.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 27
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.87,
+      "date": "11/9/2009",
+      "flex_identifier": "195F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "27",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 72.09,
+      "pressure_mmhg": 540.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 28
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.36,
+      "date": "11/9/2009",
+      "flex_identifier": "195F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "28",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.95,
+      "pressure_mmhg": 539.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 29
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.57,
+      "date": "11/13/09",
+      "flex_identifier": "178R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "29",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.24,
+      "pressure_mmhg": 766.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 30
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.26,
+      "date": "11/13/09",
+      "flex_identifier": "178F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "30",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.55,
+      "pressure_mmhg": 769.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 31
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.39,
+      "date": "11/13/09",
+      "flex_identifier": "182F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "31",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.72,
+      "pressure_mmhg": 770.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 32
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.07,
+      "date": "11/13/09",
+      "flex_identifier": "182F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "32",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.79,
+      "pressure_mmhg": 771.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 33
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.62,
+      "date": "11/27/09",
+      "flex_identifier": "177R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "33",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.92,
+      "pressure_mmhg": 764.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 34
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.89,
+      "date": "11/27/09",
+      "flex_identifier": "177F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "34",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.35,
+      "pressure_mmhg": 767.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 35
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.85,
+      "date": "11/27/09",
+      "flex_identifier": "181F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "35",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.4,
+      "pressure_mmhg": 768.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 36
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.4,
+      "date": "12/15/09",
+      "flex_identifier": "190R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "36",
+      "in_moon_zone": false,
+      "n2_frac": 0.8,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 71.86,
+      "pressure_mmhg": 539.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 37
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.31,
+      "date": "1/7/2010",
+      "flex_identifier": "220R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "37",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 71.23,
+      "pressure_mmhg": 534.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 38
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.59,
+      "date": "1/7/2010",
+      "flex_identifier": "220R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "38",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 71.25,
+      "pressure_mmhg": 534.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 39
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.91,
+      "date": "1/7/2010",
+      "flex_identifier": "224F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "39",
+      "in_moon_zone": false,
+      "n2_frac": 0.66,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 34.0,
+      "pressure_kpa": 71.31,
+      "pressure_mmhg": 534.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 40
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.77,
+      "date": "1/8/2010",
+      "flex_identifier": "219R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "40",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.34,
+      "pressure_mmhg": 535.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 41
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.35,
+      "date": "1/8/2010",
+      "flex_identifier": "219F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "41",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.23,
+      "pressure_mmhg": 534.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 42
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.92,
+      "date": "1/8/2010",
+      "flex_identifier": "223F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "42",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.33,
+      "pressure_mmhg": 535.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 43
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.97,
+      "date": "1/8/2010",
+      "flex_identifier": "223F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "43",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 71.31,
+      "pressure_mmhg": 534.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 44
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.49,
+      "date": "1/11/2010",
+      "flex_identifier": "206F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "44",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.23,
+      "pressure_mmhg": 766.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 45
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.42,
+      "date": "1/11/2010",
+      "flex_identifier": "206R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "45",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.43,
+      "pressure_mmhg": 768.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 46
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.78,
+      "date": "1/12/2010",
+      "flex_identifier": "205R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "46",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.59,
+      "pressure_mmhg": 769.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 47
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.36,
+      "date": "1/12/2010",
+      "flex_identifier": "209F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "47",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.67,
+      "pressure_mmhg": 770.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 48
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.66,
+      "date": "1/12/2010",
+      "flex_identifier": "205F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "48",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.48,
+      "pressure_mmhg": 768.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 49
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.46,
+      "date": "1/19/2010",
+      "flex_identifier": "209F003",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "49",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.98,
+      "pressure_mmhg": 764.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 50
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.57,
+      "date": "1/19/2010",
+      "flex_identifier": "209F004",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "50",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.67,
+      "pressure_mmhg": 770.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 51
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.41,
+      "date": "1/19/2010",
+      "flex_identifier": "209F005",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "51",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.84,
+      "pressure_mmhg": 771.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 52
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.53,
+      "date": "1/11/2010",
+      "flex_identifier": "210F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "52",
+      "in_moon_zone": false,
+      "n2_frac": 0.7,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 30.0,
+      "pressure_kpa": 102.8,
+      "pressure_mmhg": 771.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 53
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "1/12/2010",
+      "flex_identifier": "209F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "53",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.68,
+      "pressure_mmhg": 770.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 54
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.56,
+      "date": "1/29/2010",
+      "flex_identifier": "190F003",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "54",
+      "in_moon_zone": false,
+      "n2_frac": 0.8,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 72.18,
+      "pressure_mmhg": 541.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 55
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.37,
+      "date": "1/29/2010",
+      "flex_identifier": "218F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "55",
+      "in_moon_zone": false,
+      "n2_frac": 0.8,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 72.34,
+      "pressure_mmhg": 542.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 56
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.56,
+      "date": "1/29/2010",
+      "flex_identifier": "194F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "56",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 72.54,
+      "pressure_mmhg": 544.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 57
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.1,
+      "date": "1/29/2010",
+      "flex_identifier": "303F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "57",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 72.58,
+      "pressure_mmhg": 544.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 58
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.69,
+      "date": "2/4/2010",
+      "flex_identifier": "176F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "58",
+      "in_moon_zone": false,
+      "n2_frac": 0.82,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 103.1,
+      "pressure_mmhg": 773.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 59
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.93,
+      "date": "2/4/2010",
+      "flex_identifier": "176R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "59",
+      "in_moon_zone": false,
+      "n2_frac": 0.82,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.55,
+      "pressure_mmhg": 769.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 60
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.43,
+      "date": "2/4/2010",
+      "flex_identifier": "204F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "60",
+      "in_moon_zone": false,
+      "n2_frac": 0.82,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 103.15,
+      "pressure_mmhg": 773.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 61
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.68,
+      "date": "2/4/2010",
+      "flex_identifier": "204R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "61",
+      "in_moon_zone": false,
+      "n2_frac": 0.82,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 103.2,
+      "pressure_mmhg": 774.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 62
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.43,
+      "date": "3/11/2010",
+      "flex_identifier": "301F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "62",
+      "in_moon_zone": false,
+      "n2_frac": 0.82,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.56,
+      "pressure_mmhg": 761.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 63
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.15,
+      "date": "3/11/2010",
+      "flex_identifier": "301F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "63",
+      "in_moon_zone": false,
+      "n2_frac": 0.81,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.34,
+      "pressure_mmhg": 767.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 64
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.69,
+      "date": "3/11/2010",
+      "flex_identifier": "302F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "64",
+      "in_moon_zone": false,
+      "n2_frac": 0.81,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.94,
+      "pressure_mmhg": 764.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 65
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.37,
+      "date": "3/19/2010",
+      "flex_identifier": "189R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "65",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.11,
+      "pressure_mmhg": 765.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 66
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.52,
+      "date": "3/19/2010",
+      "flex_identifier": "189F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "66",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.23,
+      "pressure_mmhg": 766.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 67
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.97,
+      "date": "3/19/2010",
+      "flex_identifier": "189F002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "67",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.35,
+      "pressure_mmhg": 767.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 68
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.38,
+      "date": "3/19/2010",
+      "flex_identifier": "189R003",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "68",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.5,
+      "pressure_mmhg": 768.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 69
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.1,
+      "date": "3/23/2010",
+      "flex_identifier": "193R002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "69",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 102.27,
+      "pressure_mmhg": 767.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 70
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 4.67,
+      "date": "3/23/2010",
+      "flex_identifier": "193F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "70",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 101.46,
+      "pressure_mmhg": 761.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 71
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.25,
+      "date": "3/19/2010",
+      "flex_identifier": "189R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "71",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.43,
+      "pressure_mmhg": 768.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 72
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.13,
+      "date": "3/23/2010",
+      "flex_identifier": "193R001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "72",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.02,
+      "pressure_mmhg": 765.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 73
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 4.64,
+      "date": "3/23/2010",
+      "flex_identifier": "193F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "73",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 101.46,
+      "pressure_mmhg": 761.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 74
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.33,
+      "date": "3/23/2010",
+      "flex_identifier": "221F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "74",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.11,
+      "pressure_mmhg": 765.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 75
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.54,
+      "date": "3/29/2010",
+      "flex_identifier": "203R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "75",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 102.76,
+      "pressure_mmhg": 770.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 76
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.21,
+      "date": "3/29/2010",
+      "flex_identifier": "203F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "76",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 102.59,
+      "pressure_mmhg": 769.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 77
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.33,
+      "date": "3/29/2010",
+      "flex_identifier": "175R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "77",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 102.44,
+      "pressure_mmhg": 768.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 78
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.66,
+      "date": "3/29/2010",
+      "flex_identifier": "175F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "78",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 102.12,
+      "pressure_mmhg": 766.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 79
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.92,
+      "date": "3/30/2010",
+      "flex_identifier": "179F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "79",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 102.4,
+      "pressure_mmhg": 768.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 80
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "3/30/2010",
+      "flex_identifier": "207F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "80",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 102.66,
+      "pressure_mmhg": 770.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 81
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "3/30/2010",
+      "flex_identifier": "207F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "81",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 102.68,
+      "pressure_mmhg": 770.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 82
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.84,
+      "date": "4/19/2010",
+      "flex_identifier": "304F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "82",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 101.94,
+      "pressure_mmhg": 764.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 83
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "4/19/2010",
+      "flex_identifier": "304F002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "83",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 102.92,
+      "pressure_mmhg": 772.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 84
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.35,
+      "date": "4/19/2010",
+      "flex_identifier": "304R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "84",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 102.28,
+      "pressure_mmhg": 767.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 85
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.4,
+      "date": "4/19/2010",
+      "flex_identifier": "304R002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "85",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 102.82,
+      "pressure_mmhg": 771.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 86
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.07,
+      "date": "4/19/2010",
+      "flex_identifier": "305F002",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "86",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 102.66,
+      "pressure_mmhg": 770.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 87
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.64,
+      "date": "4/19/2010",
+      "flex_identifier": "305F003",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "87",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 102.82,
+      "pressure_mmhg": 771.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 88
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.01,
+      "date": "5/5/2010",
+      "flex_identifier": "053R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "88",
+      "in_moon_zone": false,
+      "n2_frac": 0.6,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 25.0,
+      "pressure_kpa": 71.66,
+      "pressure_mmhg": 537.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 89
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.7,
+      "date": "5/5/2010",
+      "flex_identifier": "053F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "89",
+      "in_moon_zone": false,
+      "n2_frac": 0.6,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 25.0,
+      "pressure_kpa": 71.65,
+      "pressure_mmhg": 537.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 90
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.62,
+      "date": "5/6/2010",
+      "flex_identifier": "141R001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "90",
+      "in_moon_zone": false,
+      "n2_frac": 0.6,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 25.0,
+      "pressure_kpa": 71.89,
+      "pressure_mmhg": 539.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 91
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.51,
+      "date": "5/5/2010",
+      "flex_identifier": "141F001",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "91",
+      "in_moon_zone": false,
+      "n2_frac": 0.6,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 25.0,
+      "pressure_kpa": 71.77,
+      "pressure_mmhg": 538.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 92
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.41,
+      "date": "6/14/2010",
+      "flex_identifier": "061F002",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "92",
+      "in_moon_zone": false,
+      "n2_frac": 0.6,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 25.0,
+      "pressure_kpa": 71.5,
+      "pressure_mmhg": 536.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 93
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 2.48,
+      "date": "6/15/2010",
+      "flex_identifier": "149F001",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "93",
+      "in_moon_zone": false,
+      "n2_frac": 0.6,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 25.0,
+      "pressure_kpa": 71.63,
+      "pressure_mmhg": 537.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 94
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.53,
+      "date": "6/15/2010",
+      "flex_identifier": "C08H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "94",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.14,
+      "pressure_mmhg": 533.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 95
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.6,
+      "date": "6/15/2010",
+      "flex_identifier": "C08H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "95",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.25,
+      "pressure_mmhg": 534.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 96
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": null,
+      "date": "6/15/2010",
+      "flex_identifier": "C08H301",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "96",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.25,
+      "pressure_mmhg": 534.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 97
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 4.25,
+      "date": "6/16/2010",
+      "flex_identifier": "C08M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "97",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.22,
+      "pressure_mmhg": 534.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 98
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.64,
+      "date": "6/21/2010",
+      "flex_identifier": "C09M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "98",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.61,
+      "pressure_mmhg": 537.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 99
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 4.28,
+      "date": "6/21/2010",
+      "flex_identifier": "C09M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "99",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.33,
+      "pressure_mmhg": 535.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 100
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 4.14,
+      "date": "6/29/2010",
+      "flex_identifier": "C09H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "100",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.55,
+      "pressure_mmhg": 536.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 101
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.88,
+      "date": "6/29/2010",
+      "flex_identifier": "C09H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "101",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.82,
+      "pressure_mmhg": 538.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 102
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.3,
+      "d0_mm": 3.57,
+      "date": "6/29/2010",
+      "flex_identifier": "C10H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "102",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 71.22,
+      "pressure_mmhg": 534.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 103
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.3,
+      "d0_mm": 4.0,
+      "date": "6/29/2010",
+      "flex_identifier": "C10H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "103",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 71.23,
+      "pressure_mmhg": 534.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 104
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.6,
+      "date": "6/16/2010",
+      "flex_identifier": "C08M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "104",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.21,
+      "pressure_mmhg": 534.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 105
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 4.17,
+      "date": "6/16/2010",
+      "flex_identifier": "C08M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "105",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.27,
+      "pressure_mmhg": 534.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 106
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.08,
+      "date": "6/21/2010",
+      "flex_identifier": "C09M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "106",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.77,
+      "pressure_mmhg": 538.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 107
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.18,
+      "date": "6/16/2010",
+      "flex_identifier": "C08M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "107",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.33,
+      "pressure_mmhg": 535.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 108
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.75,
+      "date": "6/21/2010",
+      "flex_identifier": "C09M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "108",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.77,
+      "pressure_mmhg": 538.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 109
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.3,
+      "d0_mm": 3.56,
+      "date": "8/31/2010",
+      "flex_identifier": "C10M102",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "109",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 71.53,
+      "pressure_mmhg": 536.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 110
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.3,
+      "d0_mm": 2.83,
+      "date": "8/31/2010",
+      "flex_identifier": "C10M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "110",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 71.59,
+      "pressure_mmhg": 537.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 111
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.3,
+      "d0_mm": 3.37,
+      "date": "8/31/2010",
+      "flex_identifier": "C10M303",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "111",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 71.58,
+      "pressure_mmhg": 536.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 112
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.3,
+      "d0_mm": 3.99,
+      "date": "9/1/2010",
+      "flex_identifier": "C10M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "112",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 70.75,
+      "pressure_mmhg": 530.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 113
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.35,
+      "d0_mm": 4.2,
+      "date": "9/1/2010",
+      "flex_identifier": "C11M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "113",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 71.27,
+      "pressure_mmhg": 534.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 114
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.35,
+      "d0_mm": 3.97,
+      "date": "9/1/2010",
+      "flex_identifier": "C11M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "115",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 71.43,
+      "pressure_mmhg": 535.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 116
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.35,
+      "d0_mm": 3.16,
+      "date": "9/1/2010",
+      "flex_identifier": "C11M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "116",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 71.5,
+      "pressure_mmhg": 536.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 117
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.35,
+      "d0_mm": 3.84,
+      "date": "9/6/2010",
+      "flex_identifier": "C11H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "117",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 70.81,
+      "pressure_mmhg": 531.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 118
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.35,
+      "d0_mm": 3.03,
+      "date": "9/6/2010",
+      "flex_identifier": "C11H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "118",
+      "in_moon_zone": false,
+      "n2_frac": 0.44,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 71.03,
+      "pressure_mmhg": 532.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 119
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.4,
+      "d0_mm": 2.6,
+      "date": "9/7/2010",
+      "flex_identifier": "C12H103",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "119",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 71.01,
+      "pressure_mmhg": 532.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 120
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.4,
+      "d0_mm": 2.45,
+      "date": "9/7/2010",
+      "flex_identifier": "C12H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "120",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.99,
+      "pressure_mmhg": 532.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 121
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.4,
+      "d0_mm": 4.25,
+      "date": "9/8/2010",
+      "flex_identifier": "C12M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "121",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.17,
+      "pressure_mmhg": 526.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 122
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.4,
+      "d0_mm": 3.46,
+      "date": "9/8/2010",
+      "flex_identifier": "C12M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "122",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.82,
+      "pressure_mmhg": 531.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 123
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.4,
+      "d0_mm": 4.13,
+      "date": "9/8/2010",
+      "flex_identifier": "C12M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "123",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.93,
+      "pressure_mmhg": 532.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 124
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.4,
+      "d0_mm": 2.87,
+      "date": "9/8/2010",
+      "flex_identifier": "C12M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "124",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.98,
+      "pressure_mmhg": 532.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 125
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 3.63,
+      "date": "9/13/2010",
+      "flex_identifier": "C13M103",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "125",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.62,
+      "pressure_mmhg": 537.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 126
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 2.8,
+      "date": "9/13/2010",
+      "flex_identifier": "C13M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "126",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.47,
+      "pressure_mmhg": 536.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 127
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 3.22,
+      "date": "9/13/2010",
+      "flex_identifier": "C13M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "127",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.55,
+      "pressure_mmhg": 536.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 128
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 2.91,
+      "date": "9/13/2010",
+      "flex_identifier": "C13M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "128",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.63,
+      "pressure_mmhg": 537.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 129
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 3.33,
+      "date": "9/17/2010",
+      "flex_identifier": "C13H102",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "129",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.49,
+      "pressure_mmhg": 536.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 130
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 2.91,
+      "date": "9/17/2010",
+      "flex_identifier": "C13H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "130",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.62,
+      "pressure_mmhg": 537.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 131
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 1.72,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "131",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 101.84,
+      "pressure_mmhg": 763.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 132
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 2.63,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "132",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.02,
+      "pressure_mmhg": 765.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 133
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.25,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H301",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "133",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.22,
+      "pressure_mmhg": 766.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 134
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.66,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H401",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "134",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.28,
+      "pressure_mmhg": 767.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 135
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 2.78,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H501",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "135",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.42,
+      "pressure_mmhg": 768.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 136
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.08,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H302",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "136",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.4,
+      "pressure_mmhg": 768.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 137
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.13,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H303",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "137",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.42,
+      "pressure_mmhg": 768.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 138
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": null,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H304",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "138",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.47,
+      "pressure_mmhg": 768.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 139
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 1.75,
+      "date": "10/6/2010",
+      "flex_identifier": "C21H305",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "139",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 102.39,
+      "pressure_mmhg": 768.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 140
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.5,
+      "d0_mm": 3.98,
+      "date": "11/4/2010",
+      "flex_identifier": "C14M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "140",
+      "in_moon_zone": false,
+      "n2_frac": 0.35,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 71.13,
+      "pressure_mmhg": 533.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 141
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.5,
+      "d0_mm": 2.86,
+      "date": "11/4/2010",
+      "flex_identifier": "C14M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "141",
+      "in_moon_zone": false,
+      "n2_frac": 0.35,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 71.21,
+      "pressure_mmhg": 534.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 142
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.5,
+      "d0_mm": 1.86,
+      "date": "11/4/2010",
+      "flex_identifier": "C14M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "142",
+      "in_moon_zone": false,
+      "n2_frac": 0.35,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 71.26,
+      "pressure_mmhg": 534.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 143
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.5,
+      "d0_mm": 2.25,
+      "date": "11/4/2010",
+      "flex_identifier": "C14M302",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "143",
+      "in_moon_zone": false,
+      "n2_frac": 0.35,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 71.29,
+      "pressure_mmhg": 534.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 144
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 3.53,
+      "date": "11/16/10",
+      "flex_identifier": "C01M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "144",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.58,
+      "pressure_mmhg": 761.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 145
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 3.33,
+      "date": "11/16/10",
+      "flex_identifier": "C01M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "145",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.79,
+      "pressure_mmhg": 763.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 146
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 4.35,
+      "date": "11/16/10",
+      "flex_identifier": "C01M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "146",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 102.06,
+      "pressure_mmhg": 765.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 147
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.45,
+      "d0_mm": 3.02,
+      "date": "9/13/2010",
+      "flex_identifier": "C13M102",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "147",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 71.42,
+      "pressure_mmhg": 535.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 148
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 2.58,
+      "date": "11/18/10",
+      "flex_identifier": "C01H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "148",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.91,
+      "pressure_mmhg": 764.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 149
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 2.21,
+      "date": "11/18/10",
+      "flex_identifier": "C01H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "149",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 102.15,
+      "pressure_mmhg": 766.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 150
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 3.18,
+      "date": "11/18/10",
+      "flex_identifier": "C01H302",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "150",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 102.34,
+      "pressure_mmhg": 767.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 151
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.86,
+      "date": "12/8/2010",
+      "flex_identifier": "C03M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "151",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.66,
+      "pressure_mmhg": 762.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 152
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.33,
+      "date": "12/8/2010",
+      "flex_identifier": "C03M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "152",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.99,
+      "pressure_mmhg": 765.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 153
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 2.78,
+      "date": "12/8/2010",
+      "flex_identifier": "C03M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "153",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.07,
+      "pressure_mmhg": 765.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 154
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.7,
+      "date": "12/9/2010",
+      "flex_identifier": "C03H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "154",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.63,
+      "pressure_mmhg": 762.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 155
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 2.73,
+      "date": "12/9/2010",
+      "flex_identifier": "C03H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "155",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.98,
+      "pressure_mmhg": 764.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 156
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 1.34,
+      "date": "12/9/2010",
+      "flex_identifier": "C03H401",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "156",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.08,
+      "pressure_mmhg": 765.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 157
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 4.24,
+      "date": "12/14/10",
+      "flex_identifier": "C05M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "157",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.6,
+      "pressure_mmhg": 762.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 158
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.7,
+      "date": "12/14/10",
+      "flex_identifier": "C05M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "158",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.91,
+      "pressure_mmhg": 764.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 159
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 2.71,
+      "date": "12/14/10",
+      "flex_identifier": "C05M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "159",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 102.06,
+      "pressure_mmhg": 765.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 160
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 2.77,
+      "date": "12/14/10",
+      "flex_identifier": "C05M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "160",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 102.34,
+      "pressure_mmhg": 767.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 161
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.32,
+      "d0_mm": 3.72,
+      "date": "12/28/10",
+      "flex_identifier": "C06M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "161",
+      "in_moon_zone": false,
+      "n2_frac": 0.54,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 101.76,
+      "pressure_mmhg": 763.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 162
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.32,
+      "d0_mm": 3.05,
+      "date": "12/28/10",
+      "flex_identifier": "C06M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "162",
+      "in_moon_zone": false,
+      "n2_frac": 0.53,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 101.91,
+      "pressure_mmhg": 764.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 163
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.32,
+      "d0_mm": 2.59,
+      "date": "12/28/10",
+      "flex_identifier": "C06M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "163",
+      "in_moon_zone": false,
+      "n2_frac": 0.53,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.11,
+      "pressure_mmhg": 765.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 164
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.32,
+      "d0_mm": 2.59,
+      "date": "12/28/10",
+      "flex_identifier": "C06M401",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "164",
+      "in_moon_zone": false,
+      "n2_frac": 0.53,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 102.14,
+      "pressure_mmhg": 766.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 165
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 1.96,
+      "date": "12/9/2010",
+      "flex_identifier": "C03H302",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "165",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.04,
+      "pressure_mmhg": 765.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 166
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.36,
+      "d0_mm": 3.22,
+      "date": "1/12/2011",
+      "flex_identifier": "C07M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "166",
+      "in_moon_zone": false,
+      "n2_frac": 0.5,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.43,
+      "pressure_mmhg": 760.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 167
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.36,
+      "d0_mm": 2.32,
+      "date": "1/12/2011",
+      "flex_identifier": "C07M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "167",
+      "in_moon_zone": false,
+      "n2_frac": 0.5,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.54,
+      "pressure_mmhg": 761.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 168
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.03,
+      "date": "1/18/2011",
+      "flex_identifier": "C15M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "168",
+      "in_moon_zone": false,
+      "n2_frac": 0.64,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.78,
+      "pressure_mmhg": 763.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 169
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.05,
+      "date": "1/18/2011",
+      "flex_identifier": "C15M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "169",
+      "in_moon_zone": false,
+      "n2_frac": 0.64,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.14,
+      "pressure_mmhg": 766.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 170
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.53,
+      "date": "1/18/2011",
+      "flex_identifier": "C15M301",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "170",
+      "in_moon_zone": false,
+      "n2_frac": 0.64,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.22,
+      "pressure_mmhg": 766.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 171
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.74,
+      "date": "2/21/2011",
+      "flex_identifier": "C03H501",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "171",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.31,
+      "pressure_mmhg": 759.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 172
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 2.4,
+      "date": "2/21/2011",
+      "flex_identifier": "C03H601",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "172",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.59,
+      "pressure_mmhg": 762.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 173
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 1.35,
+      "date": "2/21/2011",
+      "flex_identifier": "C03H701",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "173",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.6,
+      "pressure_mmhg": 762.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 174
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 2.5,
+      "date": "2/21/2011",
+      "flex_identifier": "C08H502",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "174",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 70.89,
+      "pressure_mmhg": 531.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 175
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 2.88,
+      "date": "2/21/2011",
+      "flex_identifier": "C08H601",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "175",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 70.94,
+      "pressure_mmhg": 532.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 176
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 4.53,
+      "date": "4/18/2011",
+      "flex_identifier": "C08M501",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "176",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.58,
+      "pressure_mmhg": 536.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 177
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.02,
+      "date": "4/18/2011",
+      "flex_identifier": "C08M601",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "177",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.59,
+      "pressure_mmhg": 537.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 178
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.32,
+      "date": "4/20/2011",
+      "flex_identifier": "C09H501",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "178",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.14,
+      "pressure_mmhg": 533.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 179
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 2.07,
+      "date": "4/20/2011",
+      "flex_identifier": "C09H601",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "179",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.25,
+      "pressure_mmhg": 534.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 180
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.1,
+      "d0_mm": 3.4,
+      "date": "4/20/2011",
+      "flex_identifier": "C02H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "180",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 101.11,
+      "pressure_mmhg": 758.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 181
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.1,
+      "d0_mm": 2.48,
+      "date": "4/20/2011",
+      "flex_identifier": "C02H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "181",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 101.21,
+      "pressure_mmhg": 759.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 182
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.1,
+      "d0_mm": 1.64,
+      "date": "4/20/2011",
+      "flex_identifier": "C02H202",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "182",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 101.19,
+      "pressure_mmhg": 759.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 183
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.72,
+      "date": "8/8/2011",
+      "flex_identifier": "C09M501",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "183",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.25,
+      "pressure_mmhg": 534.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 184
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 3.42,
+      "date": "8/8/2011",
+      "flex_identifier": "C09M502",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "184",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.34,
+      "pressure_mmhg": 535.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 185
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 2.8,
+      "date": "8/8/2011",
+      "flex_identifier": "C09M601",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "185",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.35,
+      "pressure_mmhg": 535.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 186
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.25,
+      "d0_mm": 2.47,
+      "date": "8/8/2011",
+      "flex_identifier": "C09M701",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "186",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 71.49,
+      "pressure_mmhg": 536.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 187
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.1,
+      "d0_mm": 3.38,
+      "date": "8/8/2011",
+      "flex_identifier": "C02M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "187",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 101.06,
+      "pressure_mmhg": 758.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 188
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.1,
+      "d0_mm": 2.47,
+      "date": "8/8/2011",
+      "flex_identifier": "C02M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "188",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 101.07,
+      "pressure_mmhg": 758.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 189
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 3.77,
+      "date": "8/9/2011",
+      "flex_identifier": "C03M501",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "189",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.48,
+      "pressure_mmhg": 761.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 190
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 2.74,
+      "date": "8/9/2011",
+      "flex_identifier": "C03M601",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "190",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.94,
+      "pressure_mmhg": 764.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 191
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.15,
+      "d0_mm": 1.76,
+      "date": "8/9/2011",
+      "flex_identifier": "C03M701",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "191",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.03,
+      "pressure_mmhg": 765.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 192
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.46,
+      "date": "8/9/2011",
+      "flex_identifier": "C04M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "192",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 101.26,
+      "pressure_mmhg": 759.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 193
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 2.77,
+      "date": "8/9/2011",
+      "flex_identifier": "C04M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "193",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 101.21,
+      "pressure_mmhg": 759.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 194
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 3.76,
+      "date": "8/17/2011",
+      "flex_identifier": "C04H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "194",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 100.26,
+      "pressure_mmhg": 752.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 195
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.2,
+      "d0_mm": 2.9,
+      "date": "8/17/2011",
+      "flex_identifier": "C04H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "195",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 100.33,
+      "pressure_mmhg": 752.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 196
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 3.06,
+      "date": "8/18/2011",
+      "flex_identifier": "C01H501",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "196",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.11,
+      "pressure_mmhg": 758.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 197
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 3.04,
+      "date": "8/18/2011",
+      "flex_identifier": "C01H601",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "197",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.3,
+      "pressure_mmhg": 759.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 198
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 2.12,
+      "date": "8/18/2011",
+      "flex_identifier": "C01H701",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "198",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.34,
+      "pressure_mmhg": 760.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 199
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 3.37,
+      "date": "8/24/2011",
+      "flex_identifier": "C01M501",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "199",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 100.53,
+      "pressure_mmhg": 754.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 200
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 2.57,
+      "date": "8/24/2011",
+      "flex_identifier": "C01M602",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "200",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 100.81,
+      "pressure_mmhg": 756.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 201
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.05,
+      "d0_mm": 2.4,
+      "date": "8/24/2011",
+      "flex_identifier": "C01M603",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "201",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 100.91,
+      "pressure_mmhg": 756.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 202
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.3,
+      "date": "8/24/2011",
+      "flex_identifier": "N01M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "202",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.35,
+      "pressure_mmhg": 760.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 203
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.75,
+      "date": "8/24/2011",
+      "flex_identifier": "N01M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "203",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.54,
+      "pressure_mmhg": 761.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 204
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.56,
+      "date": "8/29/2011",
+      "flex_identifier": "N01H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "204",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 100.86,
+      "pressure_mmhg": 756.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 205
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.58,
+      "date": "8/29/2011",
+      "flex_identifier": "N01H102",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "205",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 100.97,
+      "pressure_mmhg": 757.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 206
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.96,
+      "date": "8/29/2011",
+      "flex_identifier": "N01H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "206",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.35,
+      "pressure_mmhg": 760.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 207
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.72,
+      "date": "8/29/2011",
+      "flex_identifier": "N01H202",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "207",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.68,
+      "pressure_mmhg": 762.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 208
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.92,
+      "date": "8/29/2011",
+      "flex_identifier": "N01H301",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "208",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.71,
+      "pressure_mmhg": 762.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 209
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.34,
+      "date": "8/29/2011",
+      "flex_identifier": "N02H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "209",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.3,
+      "pressure_mmhg": 759.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 210
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "8/29/2011",
+      "flex_identifier": "N02H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "210",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.3,
+      "pressure_mmhg": 759.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 211
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.52,
+      "date": "8/30/2011",
+      "flex_identifier": "N02H203",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "211",
+      "in_moon_zone": false,
+      "n2_frac": 0.84,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.31,
+      "pressure_mmhg": 759.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 212
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.55,
+      "date": "9/1/2011",
+      "flex_identifier": "N03H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "212",
+      "in_moon_zone": false,
+      "n2_frac": 0.85,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 101.86,
+      "pressure_mmhg": 764.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 213
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 4.16,
+      "date": "9/1/2011",
+      "flex_identifier": "N04H101",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "213",
+      "in_moon_zone": false,
+      "n2_frac": 0.86,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.3,
+      "pressure_mmhg": 759.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 214
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.83,
+      "date": "9/1/2011",
+      "flex_identifier": "N04H201",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "214",
+      "in_moon_zone": false,
+      "n2_frac": 0.86,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.31,
+      "pressure_mmhg": 759.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 215
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.5,
+      "date": "9/8/2011",
+      "flex_identifier": "N04M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "215",
+      "in_moon_zone": false,
+      "n2_frac": 0.86,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.01,
+      "pressure_mmhg": 757.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 216
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.67,
+      "date": "9/8/2011",
+      "flex_identifier": "N04M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "216",
+      "in_moon_zone": false,
+      "n2_frac": 0.86,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.1,
+      "pressure_mmhg": 758.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 217
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.46,
+      "date": "9/8/2011",
+      "flex_identifier": "N05M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "217",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 101.25,
+      "pressure_mmhg": 759.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 218
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.75,
+      "date": "9/8/2011",
+      "flex_identifier": "N05M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "218",
+      "in_moon_zone": false,
+      "n2_frac": 0.87,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 101.4,
+      "pressure_mmhg": 760.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 219
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.6,
+      "date": "9/9/2011",
+      "flex_identifier": "N06M101",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "219",
+      "in_moon_zone": false,
+      "n2_frac": 0.88,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 101.54,
+      "pressure_mmhg": 761.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 220
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.94,
+      "date": "9/9/2011",
+      "flex_identifier": "N06M201",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "220",
+      "in_moon_zone": false,
+      "n2_frac": 0.88,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 101.58,
+      "pressure_mmhg": 761.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 221
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.84,
+      "date": "9/9/2011",
+      "flex_identifier": "N06M202",
+      "fuel": "Methanol",
+      "he_frac": 0.0,
+      "id": "221",
+      "in_moon_zone": false,
+      "n2_frac": 0.88,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 12.0,
+      "pressure_kpa": 101.82,
+      "pressure_mmhg": 763.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 222
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.91,
+      "date": "9/9/2011",
+      "flex_identifier": "H01M102",
+      "fuel": "Methanol",
+      "he_frac": 0.05,
+      "id": "222",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.22,
+      "pressure_mmhg": 759.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 223
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "9/9/2011",
+      "flex_identifier": "H01M104",
+      "fuel": "Methanol",
+      "he_frac": 0.05,
+      "id": "223",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 101.27,
+      "pressure_mmhg": 759.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 224
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.25,
+      "date": "9/13/2011",
+      "flex_identifier": "H01H102",
+      "fuel": "Heptane",
+      "he_frac": 0.05,
+      "id": "224",
+      "in_moon_zone": false,
+      "n2_frac": 0.75,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 100.7,
+      "pressure_mmhg": 755.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 225
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.78,
+      "date": "9/21/2011",
+      "flex_identifier": "H02M101",
+      "fuel": "Methanol",
+      "he_frac": 0.1,
+      "id": "225",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 100.45,
+      "pressure_mmhg": 753.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 226
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.79,
+      "date": "9/22/2011",
+      "flex_identifier": "H03M101",
+      "fuel": "Methanol",
+      "he_frac": 0.15,
+      "id": "226",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.22,
+      "pressure_mmhg": 759.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 227
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.95,
+      "date": "9/22/2011",
+      "flex_identifier": "H03M201",
+      "fuel": "Methanol",
+      "he_frac": 0.15,
+      "id": "227",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.36,
+      "pressure_mmhg": 760.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 228
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.32,
+      "date": "9/23/2011",
+      "flex_identifier": "N01H401",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "228",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.31,
+      "pressure_mmhg": 767.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 229
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.39,
+      "date": "9/24/2011",
+      "flex_identifier": "N01H502",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "229",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.4,
+      "pressure_mmhg": 768.1,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 230
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.65,
+      "date": "9/24/2011",
+      "flex_identifier": "N01H601",
+      "fuel": "Heptane",
+      "he_frac": 0.0,
+      "id": "230",
+      "in_moon_zone": false,
+      "n2_frac": 0.79,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.55,
+      "pressure_mmhg": 769.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 231
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.59,
+      "date": "9/24/2011",
+      "flex_identifier": "H02H101",
+      "fuel": "Heptane",
+      "he_frac": 0.1,
+      "id": "231",
+      "in_moon_zone": false,
+      "n2_frac": 0.71,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 19.0,
+      "pressure_kpa": 101.17,
+      "pressure_mmhg": 758.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 232
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.52,
+      "date": "9/27/2011",
+      "flex_identifier": "H03H101",
+      "fuel": "Heptane",
+      "he_frac": 0.15,
+      "id": "232",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 101.82,
+      "pressure_mmhg": 763.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 233
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.3,
+      "date": "9/27/2011",
+      "flex_identifier": "H03H201",
+      "fuel": "Heptane",
+      "he_frac": 0.15,
+      "id": "233",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.11,
+      "pressure_mmhg": 765.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 234
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.27,
+      "date": "9/27/2011",
+      "flex_identifier": "H03H202",
+      "fuel": "Heptane",
+      "he_frac": 0.15,
+      "id": "234",
+      "in_moon_zone": false,
+      "n2_frac": 0.67,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 102.19,
+      "pressure_mmhg": 766.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 235
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.85,
+      "date": "9/27/2011",
+      "flex_identifier": "H04H101",
+      "fuel": "Heptane",
+      "he_frac": 0.2,
+      "id": "235",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 101.23,
+      "pressure_mmhg": 759.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 236
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.12,
+      "date": "9/27/2011",
+      "flex_identifier": "H04H201",
+      "fuel": "Heptane",
+      "he_frac": 0.2,
+      "id": "236",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 101.23,
+      "pressure_mmhg": 759.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 237
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "9/27/2011",
+      "flex_identifier": "H04H302",
+      "fuel": "Heptane",
+      "he_frac": 0.2,
+      "id": "237",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 101.27,
+      "pressure_mmhg": 759.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 238
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.61,
+      "date": "9/27/2011",
+      "flex_identifier": "H04H303",
+      "fuel": "Heptane",
+      "he_frac": 0.2,
+      "id": "238",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 101.3,
+      "pressure_mmhg": 759.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 239
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.99,
+      "date": "10/1/2011",
+      "flex_identifier": "H04M101",
+      "fuel": "Methanol",
+      "he_frac": 0.2,
+      "id": "239",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 100.55,
+      "pressure_mmhg": 754.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 240
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.9,
+      "date": "10/1/2011",
+      "flex_identifier": "H04M202",
+      "fuel": "Methanol",
+      "he_frac": 0.2,
+      "id": "240",
+      "in_moon_zone": false,
+      "n2_frac": 0.63,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 100.93,
+      "pressure_mmhg": 757.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 241
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.4,
+      "date": "10/1/2011",
+      "flex_identifier": "H05M102",
+      "fuel": "Methanol",
+      "he_frac": 0.25,
+      "id": "241",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.31,
+      "pressure_mmhg": 759.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 242
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": null,
+      "date": "10/1/2011",
+      "flex_identifier": "H05M202",
+      "fuel": "Methanol",
+      "he_frac": 0.25,
+      "id": "242",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.46,
+      "pressure_mmhg": 761.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 243
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.49,
+      "date": "10/5/2011",
+      "flex_identifier": "H05H103",
+      "fuel": "Heptane",
+      "he_frac": 0.25,
+      "id": "243",
+      "in_moon_zone": false,
+      "n2_frac": 0.59,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 16.0,
+      "pressure_kpa": 101.05,
+      "pressure_mmhg": 757.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 244
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.67,
+      "date": "10/7/2011",
+      "flex_identifier": "H06M102",
+      "fuel": "Methanol",
+      "he_frac": 0.3,
+      "id": "244",
+      "in_moon_zone": false,
+      "n2_frac": 0.55,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 100.74,
+      "pressure_mmhg": 755.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 245
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.52,
+      "date": "10/7/2011",
+      "flex_identifier": "H06M201",
+      "fuel": "Methanol",
+      "he_frac": 0.3,
+      "id": "245",
+      "in_moon_zone": false,
+      "n2_frac": 0.55,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 15.0,
+      "pressure_kpa": 100.89,
+      "pressure_mmhg": 756.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 246
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.44,
+      "date": "10/7/2011",
+      "flex_identifier": "H07M101",
+      "fuel": "Methanol",
+      "he_frac": 0.35,
+      "id": "246",
+      "in_moon_zone": false,
+      "n2_frac": 0.51,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.22,
+      "pressure_mmhg": 759.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 247
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.88,
+      "date": "10/7/2011",
+      "flex_identifier": "H07M202",
+      "fuel": "Methanol",
+      "he_frac": 0.35,
+      "id": "247",
+      "in_moon_zone": false,
+      "n2_frac": 0.51,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 14.0,
+      "pressure_kpa": 101.3,
+      "pressure_mmhg": 759.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 248
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.56,
+      "date": "10/11/11",
+      "flex_identifier": "H08M101",
+      "fuel": "Methanol",
+      "he_frac": 0.4,
+      "id": "248",
+      "in_moon_zone": false,
+      "n2_frac": 0.47,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 13.0,
+      "pressure_kpa": 101.79,
+      "pressure_mmhg": 763.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 249
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.78,
+      "date": "10/12/11",
+      "flex_identifier": "H10H101",
+      "fuel": "Heptane",
+      "he_frac": 0.2,
+      "id": "249",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.19,
+      "pressure_mmhg": 534.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 250
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.8,
+      "date": "10/12/11",
+      "flex_identifier": "H11H101",
+      "fuel": "Heptane",
+      "he_frac": 0.25,
+      "id": "250",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 70.95,
+      "pressure_mmhg": 532.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 251
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.82,
+      "date": "11/18/11",
+      "flex_identifier": "H10M101",
+      "fuel": "Methanol",
+      "he_frac": 0.2,
+      "id": "251",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.23,
+      "pressure_mmhg": 534.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 252
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.79,
+      "date": "11/18/11",
+      "flex_identifier": "H10M102",
+      "fuel": "Methanol",
+      "he_frac": 0.2,
+      "id": "252",
+      "in_moon_zone": false,
+      "n2_frac": 0.56,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 24.0,
+      "pressure_kpa": 71.27,
+      "pressure_mmhg": 534.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 253
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.45,
+      "date": "11/18/11",
+      "flex_identifier": "H11M101",
+      "fuel": "Methanol",
+      "he_frac": 0.25,
+      "id": "253",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 70.89,
+      "pressure_mmhg": 531.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 254
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.61,
+      "date": "11/18/11",
+      "flex_identifier": "H11M102",
+      "fuel": "Methanol",
+      "he_frac": 0.25,
+      "id": "254",
+      "in_moon_zone": false,
+      "n2_frac": 0.52,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 23.0,
+      "pressure_kpa": 70.9,
+      "pressure_mmhg": 531.8,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 255
+      },
+      "test_end": "Disruption"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.22,
+      "date": "11/18/11",
+      "flex_identifier": "H12M101",
+      "fuel": "Methanol",
+      "he_frac": 0.3,
+      "id": "255",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 70.91,
+      "pressure_mmhg": 531.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 256
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.25,
+      "date": "11/18/11",
+      "flex_identifier": "H12M102",
+      "fuel": "Methanol",
+      "he_frac": 0.3,
+      "id": "256",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 70.82,
+      "pressure_mmhg": 531.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 257
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.67,
+      "date": "11/18/11",
+      "flex_identifier": "H12M201",
+      "fuel": "Methanol",
+      "he_frac": 0.3,
+      "id": "257",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 70.82,
+      "pressure_mmhg": 531.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 258
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.23,
+      "date": "11/22/11",
+      "flex_identifier": "H12H101",
+      "fuel": "Heptane",
+      "he_frac": 0.3,
+      "id": "258",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 70.61,
+      "pressure_mmhg": 529.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 259
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.86,
+      "date": "11/22/11",
+      "flex_identifier": "H12H201",
+      "fuel": "Heptane",
+      "he_frac": 0.3,
+      "id": "259",
+      "in_moon_zone": false,
+      "n2_frac": 0.49,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 70.53,
+      "pressure_mmhg": 529.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 260
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.69,
+      "date": "11/22/11",
+      "flex_identifier": "H13H101",
+      "fuel": "Heptane",
+      "he_frac": 0.35,
+      "id": "260",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 70.99,
+      "pressure_mmhg": 532.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 261
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.08,
+      "date": "11/22/11",
+      "flex_identifier": "H13H201",
+      "fuel": "Heptane",
+      "he_frac": 0.35,
+      "id": "261",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 70.93,
+      "pressure_mmhg": 532.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 262
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.87,
+      "date": "11/28/11",
+      "flex_identifier": "H13M102",
+      "fuel": "Methanol",
+      "he_frac": 0.35,
+      "id": "262",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 70.34,
+      "pressure_mmhg": 527.6,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 263
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.95,
+      "date": "11/28/11",
+      "flex_identifier": "H13M201",
+      "fuel": "Methanol",
+      "he_frac": 0.35,
+      "id": "263",
+      "in_moon_zone": false,
+      "n2_frac": 0.45,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 20.0,
+      "pressure_kpa": 70.38,
+      "pressure_mmhg": 527.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 264
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.5,
+      "date": "11/28/11",
+      "flex_identifier": "H14M101",
+      "fuel": "Methanol",
+      "he_frac": 0.4,
+      "id": "264",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.98,
+      "pressure_mmhg": 532.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 265
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.7,
+      "date": "11/28/11",
+      "flex_identifier": "H14M201",
+      "fuel": "Methanol",
+      "he_frac": 0.4,
+      "id": "265",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 71.05,
+      "pressure_mmhg": 532.9,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 266
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.84,
+      "date": "11/28/11",
+      "flex_identifier": "H14M202",
+      "fuel": "Methanol",
+      "he_frac": 0.4,
+      "id": "266",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 71.09,
+      "pressure_mmhg": 533.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 267
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.27,
+      "date": "11/30/11",
+      "flex_identifier": "H14H101",
+      "fuel": "Heptane",
+      "he_frac": 0.4,
+      "id": "267",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.39,
+      "pressure_mmhg": 528.0,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 268
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.86,
+      "date": "11/30/11",
+      "flex_identifier": "H14H201",
+      "fuel": "Heptane",
+      "he_frac": 0.4,
+      "id": "268",
+      "in_moon_zone": false,
+      "n2_frac": 0.42,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 18.0,
+      "pressure_kpa": 70.7,
+      "pressure_mmhg": 530.3,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 269
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.22,
+      "date": "11/30/11",
+      "flex_identifier": "H15H101",
+      "fuel": "Heptane",
+      "he_frac": 0.45,
+      "id": "269",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 70.95,
+      "pressure_mmhg": 532.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 270
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 1.61,
+      "date": "11/30/11",
+      "flex_identifier": "H15H201",
+      "fuel": "Heptane",
+      "he_frac": 0.45,
+      "id": "270",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 70.99,
+      "pressure_mmhg": 532.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 271
+      },
+      "test_end": "Completion"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.79,
+      "date": "12/5/2011",
+      "flex_identifier": "H15M102",
+      "fuel": "Methanol",
+      "he_frac": 0.45,
+      "id": "271",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 70.71,
+      "pressure_mmhg": 530.4,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 272
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.68,
+      "date": "12/5/2011",
+      "flex_identifier": "H15M201",
+      "fuel": "Methanol",
+      "he_frac": 0.45,
+      "id": "272",
+      "in_moon_zone": false,
+      "n2_frac": 0.38,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 17.0,
+      "pressure_kpa": 70.86,
+      "pressure_mmhg": 531.5,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 273
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 3.54,
+      "date": "12/8/2011",
+      "flex_identifier": "H19H101",
+      "fuel": "Heptane",
+      "he_frac": 0.15,
+      "id": "273",
+      "in_moon_zone": false,
+      "n2_frac": 0.64,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 101.95,
+      "pressure_mmhg": 764.7,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 274
+      },
+      "test_end": "Extinction"
+    },
+    {
+      "co2_frac": 0.0,
+      "d0_mm": 2.82,
+      "date": "12/8/2011",
+      "flex_identifier": "H19H201",
+      "fuel": "Heptane",
+      "he_frac": 0.15,
+      "id": "274",
+      "in_moon_zone": false,
+      "n2_frac": 0.64,
+      "o2_basis": "initial ambient mole fraction x 100",
+      "o2_pct": 21.0,
+      "pressure_kpa": 102.15,
+      "pressure_mmhg": 766.2,
+      "source": {
+        "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+        "line": 275
+      },
+      "test_end": "Extinction"
+    }
+  ],
+  "units": {
+    "o2": "mole fraction in source; % = x100",
+    "pressure": "mmHg in source; kPa = mmHg x 101.325/760"
+  }
+}
