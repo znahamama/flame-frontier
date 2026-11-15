@@ -180,6 +180,7 @@ export async function render(root, arg) {
         <label class="sbx-ctl"><span>Airflow <output id="o-u"></output></span>
           <input type="range" id="in-u" min="0" max="60" step="0.5"></label>
         <p class="note sbx-po2" id="o-po2"></p>
+        <div class="sbx-sum" id="sbx-sum" aria-live="polite"></div>
       </div>
     </div>
   </section>
@@ -218,13 +219,16 @@ export async function render(root, arg) {
     flame?.set({ gravity: st.g, o2: st.o2, flow: st.u });
 
     const A = assess(S, st);
-    $('#sbx-ev').innerHTML = `<h2>Evidence for these conditions</h2>
-      <div class="sbx-total"><span class="sbx-num">${A.all.length}</span>
+    const pill = (b) => (b.verdict ? (b.verdict === 'above' ? 'Above boundary' : 'Below boundary') : STATE_LABEL[b.state]);
+    $('#sbx-sum').innerHTML = `<div class="sbx-total"><span class="sbx-num">${A.all.length}</span>
         <span>${A.all.length ? `solid-material ${A.all.length === 1 ? 'test' : 'tests'} in our sources ${A.all.length === 1 ? 'matches' : 'match'} all of these conditions: ${A.all.slice(0, 6).map((t) => esc(t.id)).join(', ')}${A.all.length > 6 ? ` and ${A.all.length - 6} more` : ''}.`
           : 'solid-material tests in our sources match all of these conditions (atmosphere, gravity and airflow together).'}</span></div>
+      <ul class="sbx-mini">${A.badges.map((b) => `<li class="st-${b.state}"><span>${esc(b.key)}</span> <span class="sbx-pill">${pill(b)}</span></li>`).join('')}</ul>
+      <p class="note"><a href="#sbx-ev" class="sbx-jump">Why: evidence details${A.clip?.match ? ' and the matching flight video' : ''} ↓</a></p>`;
+    $('#sbx-ev').innerHTML = `<h2>Evidence for these conditions</h2>
       <ul class="sbx-badges">${A.badges.map((b) => `<li class="st-${b.state}${b.verdict ? ` v-${b.verdict}` : ''}">
         <div class="sbx-bhead"><span class="sbx-bkey">${esc(b.key)}</span> <span class="muted">${esc(b.sub)}</span>
-          <span class="sbx-pill">${b.verdict ? (b.verdict === 'above' ? 'Above boundary' : 'Below boundary') : STATE_LABEL[b.state]}</span></div>
+          <span class="sbx-pill">${pill(b)}</span></div>
         <p>${b.html}</p>${b.src ? `<p class="src">Source: ${esc(b.src)}</p>` : ''}</li>`).join('')}</ul>
       ${A.clip ? clipCard(S, st, A.clip) : ''}
       <p class="sbx-links"><a href="#evidence/at=${f2(st.p)},${f2(st.o2)},${st.g},${f2(st.u)}">Show these conditions on the Evidence Map →</a>
@@ -251,6 +255,7 @@ export async function render(root, arg) {
     b.onclick = () => { const p = S.presets.find((x) => x.id === b.dataset.preset); Object.assign(st, { g: p.gravity, o2: p.o2, p: p.p_kpa, u: p.flow }); paint(); };
   });
   root.addEventListener('click', (e) => {
+    if (e.target.closest('a.sbx-jump')) { e.preventDefault(); $('#sbx-ev').scrollIntoView({ block: 'start', behavior: reduced ? 'auto' : 'smooth' }); return; }
     const b = e.target.closest('button.go');
     if (!b) return;
     if (b.dataset.g) st.g = b.dataset.g;

@@ -7,3 +7,4 @@ docs/ref/*.pdf
 node_modules/
 # Raw videos live only in data/raw/ (ignored above); the trimmed clips in web/public/clips/ must upload.
 web/dist/
+media/

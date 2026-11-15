@@ -24,8 +24,10 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 9. Flame Sandbox tab (`#sandbox`): Three.js teaching-model candle (Earth teardrop / microgravity sphere morph; Moon and Mars draw only the two bounding outlines, "Unknown: no data"), controls for gravity, O2, pressure, airflow plus 5 habitat presets. Evidence panel from `sandbox.json` (`scripts/05_build_sandbox.py`): tests matching all conditions, 4 badges (atmosphere, gravity, airflow, BASS-II eq. 6.1 boundary), nearest/matching BASS-II clip, link to the Evidence Map with the point ringed (`#evidence/at=P,O2,g,u`). Lazy (three.js chunk ~135 kB gzip loads only on this tab, after the controls), adaptive quality, paused off-screen/hidden, still frame under reduced motion, SVG fallback without WebGL. Limits added to Known Limits.
 
+- 10. Demo assets: `scripts/shots/demo.mjs` (24 tab stills + 12 story stills at 1920x1080, light and dark; `--tour` plays the 30 s shot list live for screen recording) and `docs/demo/SHOT_LIST.md` (problem → feel the difference → empty Moon-base zone → trace and ask → the gap NASA can close; captions and voice-over filled from data). Sandbox now shows the verdict (matching-test count + 4 badge pills) beside the flame.
+
 ## In progress
-- 10. Demo assets (screenshots script + 30 s shot list)
+- 11. (Task 3) see Proposed below
 
 ## Needs me (the user)
 - Push to GitHub (public): `git push -u origin main` then `git push origin v1 v2`. The 28 rewritten commits are unsigned (signatures cannot survive a rewrite); commits after the rewrite are signed.

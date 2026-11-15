@@ -285,3 +285,11 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
   .sbx-clip { grid-template-columns: minmax(0, 1fr); }
   .sbx-clip > *, .sbx-clip > :not(video), .sbx-clip video { grid-column: 1; grid-row: auto; }
 }
+.sbx-sum .sbx-total { padding: 8px 12px; }
+.sbx-sum .sbx-num { font-size: 2.2rem; }
+.sbx-sum .sbx-total span:last-child { font-size: 0.9rem; }
+.sbx-mini { list-style: none; padding: 0; margin: 8px 0 4px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.sbx-mini li { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border: 1px solid var(--grid); border-left: 4px solid var(--text-secondary); border-radius: 6px; min-width: 0; }
+.sbx-mini .sbx-pill { margin-left: 0; }
+.sbx-sum .note { margin: 4px 0 0; }
+@media (max-width: 420px) { .sbx-mini { grid-template-columns: minmax(0, 1fr); } }
