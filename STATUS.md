@@ -33,8 +33,47 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 13. (Task 3, round 2) Objective 3 "Highlight research that informs ... fire safety controls" had no home on the site. New tab Prevent · Detect · Suppress: per role, the challenge page's sentence, the investigations linked by exact quotes (brief or PSI metadata), what their tables hold (counted), and where that leaves a Moon base. Findings: 0 of 172 FLEX suppressant tests in Moon-base air (closest: 25% O2 at 71.5 kPa); no SAME/SAME-R smoke test can be placed (no O2/pressure columns); SF6 named but not in the table. No AI, no new chart numbers.
 
+## UI overhaul (Direction A, scrollytelling; branch `ui-overhaul`, plan in `docs/ui/UI_PLAN.md`)
+Live: https://flame-frontier.vercel.app (production = latest finished phase). Data, pipeline and validity rules unchanged.
+
+### Phase 1: shell + Start story. Done, live 2026-11-15 11:04 NST (commit 775c000)
+- 5 sections in the header (phone: bottom bar): Story, Evidence, Explore, Ask, About, plus "Known limits" always in the header and footer. Sub-views as pills under each section.
+- Start story: 10 steps over a pinned visual. The 134 solid tests fall in as dots (one dot = one test, hover/tap for its file and row) and settle by crew-air window (104 none, 28 ISS cabin, 2 Moon base & rover, 0 spacesuit; computed from sandbox.json + gaps.json), then the teaching-model candle (Earth, microgravity, partial-gravity bounds). Every step: deep link `#start/s=<id>`, Next link (keyboard path), source chips. "Skip to the overview" at the top. Reduced motion: each step shows its static final state.
+- Source paths are chips with one shared popover (hover, tap or focus; Esc closes), across all views.
+- Checks: `node scripts/shots/links.mjs <url> [width]` (every feature link below, plus downloads), `node scripts/shots/story.mjs <url> <out> start` (one shot per step, 1440/375 x light/dark x motion on/off; reports overflow and console errors).
+- Verified live: links.mjs ALL PASS at 1440 and 375; story.mjs 96 shots, no overflow, no console errors; keyboard Next steps 1-10 then the view; Lighthouse live Start 100/100/100/100 desktop and mobile, Evidence 100/100/100/100 desktop, 98/100/100/100 mobile; gitleaks: no leaks.
+- Words (audit.mjs, visible words; before -> after): Start above the fold 350 -> 115 (desktop), 158 -> 114 (phone). Start now holds the story (10 steps, <= 25 words each) plus the overview; total visible 350 -> 814 because the story steps and overview are on one page. Other views: unchanged until their phase (e.g. Evidence fold 143 -> 123, from the smaller header).
+- Screenshots: `docs/ui/shots/phase1/` (live), audit folds `docs/ui/audit/before/` vs `docs/ui/audit/after-phase1/`.
+- Demo: `docs/demo/SHOT_LIST.md` regenerated; all 6 shots render against live (`demo.mjs --story`); `--tour` uses the same hashes. OG card script points at `#evidence/view`.
+
+### Feature checklist (old link -> new link; "OK" = links.mjs PASS after the phase)
+| Feature | New location | Old link -> new link | P1 |
+|---|---|---|---|
+| Start (headline, 4 tiles, entries) | Story section: story, then Overview view | `#start` -> `#start` (story), `#start/view` (tiles, entries, downloads) | OK |
+| Evidence Map Panel 1 + 2, toggles, tooltips, data table, NASA Fig. 6.10 thumbnail | Evidence > Evidence Map | `#evidence` -> `#evidence` (same), `#evidence/view` | OK |
+| Gap highlight / ringed point | Evidence > Evidence Map | `#evidence/gap=...`, `#evidence/at=...` unchanged | OK |
+| Flame Sandbox (all controls, presets, evidence panel, nearest clip, URL state) | Evidence > Flame Sandbox (own view); also linked from Story step 10 and Overview | `#sandbox`, `#sandbox/<preset>`, `#sandbox/g=..&o2=..&p=..&u=..` unchanged | OK |
+| Clips (3, captions, sources) | Evidence > Clips | `#clips` unchanged | OK |
+| Catalog (24, full table) | Explore > Catalog | `#catalog` unchanged; `#explore` opens it | OK |
+| Ranking (all habitats, fuel filter, rule table) | Explore > Ranking | `#ranking` unchanged | OK |
+| Compare (any 2-3 of 24) | Explore > Compare | `#compare`, `#compare/<ids>` unchanged | OK |
+| Habitat Gaps + Show on map | Explore > Habitat Gaps | `#gaps` unchanged | OK |
+| Prevent · Detect · Suppress | Explore > Prevent · Detect · Suppress | `#controls` unchanged | OK |
+| Ask (live, precomputed, passages, checks) | Ask | `#ask`, `#ask/<question>` unchanged | OK |
+| Known Limits | About > Known Limits; header + footer link | `#limits` unchanged; `#about` opens it | OK |
+| References | About > References | `#references` unchanged | OK |
+| On Earth | About > On Earth | `#earth` unchanged | OK |
+| Data downloads (tests.csv, boundary points, SSCE ranges, data dictionary) | Overview, Evidence Map, References, footer | files under `/data/export/` unchanged | OK |
+No feature merged, moved to a less prominent place, or removed.
+
+### Re-estimate (wall clock, from 11:10 NST)
+- Phase 2 Evidence (story: atmosphere map with empty-zone card, U-curve drawing itself; Clips step strip; Sandbox kept as its own view): ~2.5 h -> ~13:45.
+- Phase 3 Explore (catalog tiles + table toggle, ranking stacked rule bars, compare range bars, gaps coverage strips with Moon/rover merged, controls restructure + suppressant map + jump index): ~3.5 h -> ~17:15.
+- Phase 4 Ask + About (Known Limits grouped/collapsed with jump index, References grouped, On Earth cards, Ask explainer): ~2 h -> ~19:15.
+- Total ~8 h. That runs past demo-ready (16:00) and the deadline (18:00). Every phase ships to production on its own, so production stays on the last finished phase.
+
 ## Task 3 proposal (kept for the record)
 - 11. Evidence export. Proposal: the challenge's objective 2 is "Extract data that supports predictive modeling", and so far the site only shows the data; a researcher cannot take it away. Build `scripts/05_build_export.py` -> `data/processed/export/`: `tests.csv` (every test placed on Panel 1, one row each: program, PSI ID + DOI, fuel state, material/fuel, O2 + which reading, pressure + basis, recorded flows, outcome, Moon-base flag, source file + line or paper/table/page), `ssce_ranges.csv` (kept separate: pairing not given), `bass2_boundary_points.csv` (Panel 2 points with a, U, r, post-burn O2, kind) and a generated data dictionary `README.md` with caveats. Download links on the Evidence Map and References tab. Why this one: it scores on Relevance (NASA data as a reusable core output), Impact (reach beyond the site), Validity (every row keeps its provenance); it adds no new claims and no AI.
 
 ## Needs me (the user)
-- Push to GitHub (public): `git push -u origin main` then `git push origin v1 v2`. The 28 rewritten commits are unsigned (signatures cannot survive a rewrite); commits after the rewrite are signed.
+- Nothing pending.
