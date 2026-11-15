@@ -2,6 +2,7 @@ import * as echarts from 'echarts/core';
 import { ScatterChart, LineChart } from 'echarts/charts';
 import { GridComponent, TooltipComponent, LegendComponent, MarkAreaComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
+import { headline } from '../headline.js';
 import { loadJSON, cite } from '../data.js';
 import { tokens } from '../theme.js';
 
@@ -286,17 +287,6 @@ function layerToggles(chart, box) {
     `<label><input type="checkbox" data-name="${esc(name)}" checked> ${esc(label)}</label>`).join(' ')}`;
   box.querySelectorAll('input').forEach((i) => { i.onchange = () => chart.dispatchAction({ type: i.checked ? 'legendSelect' : 'legendUnSelect', name: i.dataset.name }); });
   chart.on('legendselectchanged', (e) => box.querySelectorAll('input').forEach((i) => { i.checked = e.selected[i.dataset.name] !== false; }));
-}
-
-// Headline is a template over the data: count, test names and airflow are never typed by hand.
-function headline(inZone) {
-  const flows = [...new Set(inZone.map((t) => t.flow_cm_s))];
-  // Name each program once: "Saffire VI-2 and VI-3".
-  const names = inZone.map((t, i) => (i && inZone[i - 1].program === t.program ? t.sample : `${t.program} ${t.sample}`)).join(' and ');
-  const flow = flows.length === 1 ? `one airflow (${flows[0]} cm/s)` : `${flows.length} airflows`;
-  const all = inZone.length === 2 ? 'both' : 'all';
-  return `Of the solid-material space fire tests in our sources, only ${inZone.length} burned in Moon-base air `
-    + `(${esc(names)}), ${all} at ${flow}, none in partial gravity.`;
 }
 
 // "#evidence/gap=moon_base.flow" -> {habitat, gap, region, label}

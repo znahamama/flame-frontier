@@ -16,8 +16,11 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 6. On Earth tab: water mist, smoke-vs-dust detector, firefighter air tanks and clothing; each with the challenge page's words, its NASA Spinoff link, and related PSI investigations quoted from their metadata (or "no PSI link" where there is none). Live AI answers switched on (key in Vercel, Production).
 
+- History cleaned before first push (2026-11-15): Saffire VI paper text removed from every commit (NTRS marks it "may include copyright material"); author/committer/tagger email -> GitHub noreply; v1/v2 re-tagged on rewritten commits; gitleaks + manual scan PASS.
+- 7. Start screen (default tab): the headline (same template as the Evidence Map), 4 stat tiles computed from data (24 investigations, 586 tests placed, 2 solids in Moon-base air, 0 partial-gravity tests), numbered entries 1 Evidence, 2 Investigations, 3 Ask.
+
 ## In progress
-- 7. Landing / story first screen
+- 8. Polish pass
 
 ## Needs me (the user)
-- Git commit signing (Secretive / ssh-agent) needs your Touch ID: commits since item 4 are waiting on it.
+- Push to GitHub (public): `git push -u origin main` then `git push origin v1 v2`. The 28 rewritten commits are unsigned (signatures cannot survive a rewrite); commits after the rewrite are signed.

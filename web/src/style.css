@@ -187,3 +187,24 @@ a.cite { font-size: 0.75em; vertical-align: super; text-decoration: none; paddin
 .earthapp blockquote { margin: 6px 0 8px; padding: 4px 12px; border-left: 3px solid var(--grid); }
 ul.related { padding-left: 1.2em; margin: 4px 0 8px; }
 ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
+
+/* Start screen */
+.hero { padding: 20px; }
+.eyebrow { margin: 0 0 6px; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); }
+.herohead { font-size: 1.5rem; line-height: 1.3; margin: 0 0 10px; max-width: 46em; }
+.tiles { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.tile { display: flex; flex-direction: column; gap: 2px; height: 100%; box-sizing: border-box; padding: 12px; border: 1px solid var(--grid); border-radius: 8px; background: var(--surface-0); color: var(--text-primary); text-decoration: none; }
+.tile:hover, .tile:focus-visible { border-color: var(--accent); }
+.tilenum { font-size: 2rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tilelabel { font-size: 0.9rem; font-weight: 600; }
+.tilecap { font-size: 0.78rem; color: var(--text-secondary); }
+.entries { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.entry { display: flex; gap: 12px; align-items: flex-start; }
+.entry h3 { margin: 0 0 4px; font-size: 1.1rem; }
+.entry h3 a { color: var(--text-primary); text-decoration: none; }
+.entry p { margin: 0 0 6px; font-size: 0.9rem; }
+.entry .more { font-size: 0.85rem; }
+.entrynum { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent); font-weight: 700; display: grid; place-items: center; }
+.footnote { margin-top: 12px; }
+@media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .entries { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { .herohead { font-size: 1.25rem; } .tilenum { font-size: 1.6rem; } }

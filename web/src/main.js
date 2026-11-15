@@ -1,3 +1,4 @@
+import { render as start } from './tabs/start.js';
 import { render as evidence } from './tabs/evidence.js';
 import { render as limits } from './tabs/limits.js';
 import { render as catalog } from './tabs/catalog.js';
@@ -10,6 +11,7 @@ import { render as ask } from './tabs/ask.js';
 import { render as earth } from './tabs/earth.js';
 
 const TABS = [
+  ['start', 'Start', { render: start }],
   ['evidence', 'Evidence Map', { render: evidence }],
   ['catalog', 'Catalog', { render: catalog }],
   ['ranking', 'Ranking', { render: ranking }],
