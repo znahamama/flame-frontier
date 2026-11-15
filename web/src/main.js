@@ -14,6 +14,27 @@ const TABS = [
   ['references', 'References', () => import('./tabs/references.js')],
 ];
 
+// Stale-tab guard. Navigation is hash-only, so a tab left open (or restored from the back/forward cache) keeps running
+// the build it first loaded, and after a deploy its lazy chunks no longer exist. Compare this build's ID with the
+// server's /version.json (never cached) and reload once if they differ. The hash survives the reload.
+const BUILD = __BUILD_ID__;
+let lastCheck = 0;
+async function checkVersion(force = false) {
+  if (import.meta.env.DEV || (!force && Date.now() - lastCheck < 30000)) return false;
+  lastCheck = Date.now();
+  try {
+    const r = await fetch('/version.json', { cache: 'no-store' });
+    const { build } = r.ok ? await r.json() : {};
+    if (!build || build === BUILD) return false;
+    const key = `ff-reload-${build}`;
+    try { if (sessionStorage.getItem(key)) return false; sessionStorage.setItem(key, '1'); } catch { /* storage blocked: still reload */ }
+    location.reload();
+    return true;
+  } catch { return false; }   // offline: keep the running build
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden) checkVersion(); });
+window.addEventListener('pageshow', (e) => { if (e.persisted) checkVersion(true); });
+
 const nav = document.querySelector('.tabs');
 const panel = document.querySelector('#panel');
 let cleanup = null;
@@ -37,6 +58,7 @@ async function show(hash) {
     if (location.hash.slice(1) !== hash && hash !== '') return;   // user moved on while it loaded
     cleanup = await mod.render(panel, arg);
   } catch (err) {
+    if (await checkVersion(true)) return;   // a missing chunk usually means a newer deploy: reload into it
     const esc = (x) => String(x).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
     panel.innerHTML = `<section class="card error" role="alert"><h2>This section could not load</h2>
       <p>${esc(err.message)}</p><p class="note">The site's data files are static; reloading usually fixes this. <button type="button" class="retry">Try again</button></p></section>`;
@@ -71,5 +93,5 @@ const edges = () => {
 };
 nav.addEventListener('scroll', edges, { passive: true });
 window.addEventListener('resize', edges);
-window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+window.addEventListener('hashchange', () => { checkVersion(); show(location.hash.slice(1)); });
 show(location.hash.slice(1)).then(edges);

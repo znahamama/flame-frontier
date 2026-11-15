@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { cpSync, existsSync, createReadStream, statSync } from 'node:fs';
+import { cpSync, existsSync, createReadStream, statSync, writeFileSync } from 'node:fs';
 import { resolve, dirname, normalize, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
@@ -7,6 +7,8 @@ import { headline, inMoonZone } from './src/headline.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PROCESSED = resolve(here, '../data/processed');
+// One ID per build: baked into the JS and published as /version.json, so a long-open tab can tell it is stale.
+const BUILD_ID = new Date().toISOString();
 
 // Serves data/processed/* at /data/* in dev and copies it into dist/data on build,
 // so pipeline output stays in data/processed (single location) and the site stays static.
@@ -23,6 +25,7 @@ function processedData() {
     },
     closeBundle() {
       cpSync(PROCESSED, resolve(here, 'dist/data'), { recursive: true });
+      writeFileSync(resolve(here, 'dist/version.json'), JSON.stringify({ build: BUILD_ID }) + '\n');
     },
   };
 }
@@ -41,5 +44,6 @@ function metaHeadline() {
 export default defineConfig({
   root: here,
   plugins: [processedData(), metaHeadline()],
+  define: { __BUILD_ID__: JSON.stringify(BUILD_ID) },
   build: { outDir: 'dist', emptyOutDir: true, chunkSizeWarningLimit: 700 }, // echarts ~180 kB gzip
 });
