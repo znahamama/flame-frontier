@@ -1,0 +1,25 @@
+psi_id,material_class,material_quote,material_where,flow,flow_quote,flow_where
+PSI-10,gas,ethylene,metadata,not_stated,,
+PSI-20,gas_emulating_solid,"While it burned gaseous fuels, the Burning Rate Emulator (BRE) experiment of the Advanced Combustion via Microgravity Experiments (ACME) project was a study of materials flammability in still atmospheres",brief,quiescent,materials flammability in still atmospheres,brief
+PSI-21,gas,laminar diffusion flames,metadata,not_stated,,
+PSI-22,gas,Methane flames,metadata,not_stated,,
+PSI-23,gas,Hydrogen–air flames,metadata,not_stated,,
+PSI-25,solid,Solid Fuels,metadata,varied,Forced Flow Velocity,metadata
+PSI-26,solid,PMMA sphere 2 cm,table,stated,Forced Flow Flame,metadata
+PSI-39,liquid,Droplet combustion,metadata,not_stated,,
+PSI-47,dust,P-Trak particulate counter,metadata,not_stated,,
+PSI-60,gas,Laminar diffusion flames,metadata,not_applicable,,
+PSI-62,solid,Concurrent Flame Spread,metadata,not_applicable,,
+PSI-68,liquid,Droplet Combustion,metadata,varied,0.1 - 5,table
+PSI-69,liquid,Droplet,metadata,not_stated,,
+PSI-98,solid,SIBAL Fabric,table,single,Air Flow (cm/s),table
+PSI-99,solid,Nomex,metadata,not_stated,,
+PSI-100,solid,SIBAL Fabric,table,single,30 cm/s,table
+PSI-101,solid_smoke,Kapton,metadata,stated,Inlet velocity (cm/s),table
+PSI-102,solid_smoke,Teflon,table,stated,Air Flow (cm/s),table
+PSI-106,gas,Diffusion Flame,metadata,varied,inlet velocity,metadata
+PSI-107,gas,Laminar diffusion flames,metadata,stated,Air Rate (cm/s),table
+PSI-115,solid_smoke,Aerosol Smoke Generation,metadata,not_applicable,,
+PSI-117,liquid,Droplet combustion,metadata,not_applicable,,
+PSI-142,gas,Counterflow flames,metadata,not_applicable,,
+PSI-159,gas,porous burner,metadata,not_stated,,

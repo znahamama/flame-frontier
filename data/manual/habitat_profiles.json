@@ -1,0 +1,26 @@
+{
+  "_note": "Every number has a source + exact quote; scripts/04_build_ranking.py checks each quote against the source text and fails otherwise.",
+  "habitats": [
+    {"id": "iss", "name": "ISS cabin",
+     "o2_pct": [21.0, 24.1], "o2_quote": "The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point of the curve. Nonetheless, it has obtained much of its data at 24.1% O2, 101.4 kPa (14.7 psia) conditions due to sinusoidal fluctuations of oxygen with a mean of 21% O2",
+     "o2_source": "ntrs_20160001047", "o2_page": 3,
+     "p_kpa": [96.53, 102.72], "p_as_stated": "724 – 770.5 mmHg (14.0 – 14.9 psia)",
+     "p_quote": "the total pressure is maintained between 724 – 770.5 mmHg (14.0 – 14.9 psia)", "p_source": "ntrs_20150010425", "p_page": 1,
+     "gravity": "micro", "gravity_quote": "Results from low-gravity combustion experiments, conducted for example on the International Space Station (ISS)", "gravity_source": "challenge_brief"},
+    {"id": "moon_base", "name": "Moon base",
+     "o2_pct": [30.0, 100.0], "o2_quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.",
+     "o2_source": "challenge_brief", "o2_note": "'30% or greater': no upper bound given, so the window runs to 100%.",
+     "p_kpa": [0.0, 70.33], "p_as_stated": "10.2 psi or less", "p_quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.", "p_source": "challenge_brief",
+     "gravity": "partial", "gravity_quote": "there is currently no partial-gravity combustion data available in PSI", "gravity_source": "challenge_brief"},
+    {"id": "rover", "name": "Pressurized rover",
+     "o2_pct": [30.0, 100.0], "o2_quote": "it is expected that the Moon Base and pressurized rover(s) will be at a pressure and oxygen concentration between those in a spacesuit and the Earth’s atmosphere.",
+     "o2_source": "challenge_brief", "o2_note": "The brief gives one atmosphere for the Moon base and rovers, so the rover uses the Moon-base window.",
+     "p_kpa": [0.0, 70.33], "p_as_stated": "10.2 psi or less (Moon-base value)", "p_quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.", "p_source": "challenge_brief",
+     "gravity": "partial", "gravity_quote": "there is currently no partial-gravity combustion data available in PSI", "gravity_source": "challenge_brief"},
+    {"id": "spacesuit", "name": "Spacesuit",
+     "o2_pct": [100.0, 100.0], "o2_quote": "spacesuits are filled with 100% oxygen to only 4.3 psi", "o2_source": "challenge_brief",
+     "p_kpa": [29.65, 29.65], "p_as_stated": "4.3 psi", "p_quote": "spacesuits are filled with 100% oxygen to only 4.3 psi", "p_source": "challenge_brief",
+     "gravity": "partial", "gravity_quote": "To reduce the pre-breathing duration and thus facilitate lunar excursions", "gravity_source": "challenge_brief",
+     "gravity_note": "Suits are also used in orbit (microgravity); scored here for lunar excursions, as the brief frames them."}
+  ]
+}

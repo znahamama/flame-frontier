@@ -54,5 +54,28 @@
       "ACME CFI-G gas-flame tests reached higher O2: \"an oxygen-nitrogen mixture of up to 85% oxygen flowed from the spherical burner creating an inside-out flame\" (sec. 1). That is the burner's oxidizer stream, not a chamber atmosphere, and not solid materials. Kept off the charts.",
       "No lower pressure bound for the Moon-base zone, so the zone is drawn down to 0 kPa."
     ]
+  },
+  "ntrs_20160001047": {
+    "citation": "Harper, S. A., Juarez, A., Perez, H. III, Hirsch, D. B., \"Oxygen Partial Pressure and Oxygen Concentration Flammability: Can They Be Correlated?\", Journal of ASTM International / ASTM Symposium on Flammability and Sensitivity of Materials in Oxygen-Enriched Atmospheres. NTRS 20160001047.",
+    "short": "NTRS 20160001047 (O2 partial pressure vs concentration flammability)",
+    "url": "https://ntrs.nasa.gov/api/citations/20160001047/downloads/20160001047.pdf",
+    "file": "docs/ref/NTRS_20160001047_O2_partial_pressure_flammability.pdf",
+    "sha256": "c8ca843cabc135097c9081352a2255498e2cedf7fc9aca53fc2c1faa1eac51bc",
+    "gives": "ISS operating point (21% O2, 101.4 kPa; data often at 24.1% O2 from O2 fluctuations), and the finding that 21% O2 / 101.4 kPa flammability data cannot be conservatively applied to 30% O2 / 70.3 kPa.",
+    "does_not_give": [
+      "Microgravity data: these are normal-gravity material tests (NASA-STD-6001 style).",
+      "A Moon-base or rover specification."
+    ]
+  },
+  "ntrs_20150010425": {
+    "citation": "Schaezler, R. N., Cook, A. J., \"Report on ISS O2 Production, Gas Supply and Partial Pressure Management\", International Conference on Environmental Systems (AIAA). NTRS 20150010425.",
+    "short": "NTRS 20150010425 (ISS O2 and pressure management)",
+    "url": "https://ntrs.nasa.gov/api/citations/20150010425/downloads/20150010425.pdf",
+    "file": "docs/ref/NTRS_20150010425_ISS_O2_gas_supply.pdf",
+    "sha256": "23281e159632dd3f67b53aa797938ad26e4f75def94758ee39e30c3aa90008e1",
+    "gives": "ISS total pressure band 724-770.5 mmHg (14.0-14.9 psia) and O2 partial pressure band 146-178 mmHg.",
+    "does_not_give": [
+      "Any combustion or flammability data."
+    ]
   }
 }

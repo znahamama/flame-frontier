@@ -88,3 +88,21 @@ table.cat td.id { white-space: nowrap; }
 .key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px dashed var(--text-secondary); vertical-align: -1px; }
 .key.have { background: var(--series-1); border: 1px solid var(--series-1); }
 .key.tests { background: var(--series-3); border: 1px solid var(--series-3); }
+
+/* Ranking */
+.seg { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+.seg button { font: inherit; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--grid); background: var(--surface-0); color: var(--text-primary); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); border-color: var(--text-primary); }
+dl.hab { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; font-size: 0.85rem; margin: 8px 0 12px; }
+dl.hab dt { color: var(--text-secondary); font-weight: 600; }
+dl.hab dd { margin: 0; }
+table.rank, table.rules { font-size: 0.85rem; }
+table.rank td.num, table.rank th.num, table.rules .num { text-align: right; font-variant-numeric: tabular-nums; }
+table.rank td.zero { color: var(--text-secondary); }
+table.rank .t { color: var(--text-secondary); }
+table.rank td.bar { min-width: 120px; position: relative; }
+table.rank td.bar span { display: block; height: 8px; border-radius: 0 4px 4px 0; background: var(--series-1); margin-top: 6px; }
+table.rank td.bar b { font-variant-numeric: tabular-nums; font-size: 0.85rem; }
+table.rank tr.why td { background: var(--surface-0); }
+table.rank tr.why ul { margin: 4px 0; padding-left: 18px; }
+.linkish { font: inherit; font-weight: 600; background: none; border: 0; padding: 0; color: var(--series-1); cursor: pointer; text-decoration: underline; white-space: nowrap; }

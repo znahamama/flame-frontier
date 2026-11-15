@@ -1,0 +1,12 @@
+psi_id,file,o2_col,o2_parse,o2_scale,o2_kind,p_col,p_parse,p_unit,paired,note
+PSI-25,PSI-25/PSI-25_Experimental table_BASS-II.csv,Calibrated initial O2 % by vol,num,1,ambient,,fixed,1 atm,yes,"Pressure 1 atm from the BASS-II report (printed p.11, p.94), not logged per test."
+PSI-69,PSI-69/PSI-69_Experimental table_FLEX.csv,O initial ambient composition; mole fraction,num,100,ambient,Ambient pressure; mmHg,num,mmHg,yes,
+PSI-68,PSI-68/PSI-68_Experimental table_Flex2.csv,Oxygen Mole Fraction,all_nums,100,ambient,Ambient Pressure (atm),all_nums,atm,no,Summary rows: lists of O2 and pressure; which pairs were run is not given.
+PSI-39,PSI-39/PSI-39_Experimental table_CFI.csv,Oxygen,num,100,ambient,Pressure,atm_text,atm,yes,
+PSI-10,PSI-10/PSI-10_Experimental table_Flame Design_Normal Flame.csv,XO2 (init),num,100,ambient,pmean (atm),num,atm,yes,
+PSI-10,PSI-10/PSI-10_Experimental table_Flame Design_Inverse Flame.csv,XO2,num,100,oxidizer_stream,pmean (atm),num,atm,yes,Inverse flames: XO2 is the oxidizer flowing from the burner; not used as ambient O2.
+PSI-159,PSI-159/PSI-159_Experimental table_CFI-G_Normal Flames.csv,XO2 before test,num,100,ambient,approx p (bar),num,bar,yes,Pressure is 'approx'.
+PSI-159,PSI-159/PSI-159_Experimental table_CFI-G_Inverse Flames.csv,XO2,num,100,oxidizer_stream,approx p (bar),num,bar,yes,Inverse flames: XO2 is the oxidizer flowing from the burner; not used as ambient O2.
+PSI-20,PSI-20/PSI-20_Experimental table_ACME BRE.csv,Oxygen Conc (percent),all_nums,1,ambient,,none,,no,"Per-day lists; pressures 'not identified in this summary table'. Values over 100 ('3400%', '2100%') are skipped."
+PSI-23,PSI-23/PSI-23_Experimental table_ACME s-Flame.csv,Atmosphere*,pct,1,ambient,,fixed,1 atm,no,"Approximate: '~21% O2', '~30% O2'; table note: 'Atmosphere is ~1 atm'."
+PSI-98,PSI-98/PSI-98_Experimental table_SAFFIRE-1.csv,Percent O2,all_nums,1,ambient,,none,,no,No pressure column.
