@@ -31,3 +31,6 @@ __pycache__/
 .DS_Store
 .vercel
 .claude/settings.local.json
+
+# UI audit: full-resolution screenshots stay local (small copies in docs/ui/audit/before, after-*)
+docs/ui/audit/shots/

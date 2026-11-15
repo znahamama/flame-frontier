@@ -45,7 +45,7 @@ const nInv = cat.investigations.length;
 const SHOTS = [
   { id: 'problem', t: [0, 4], hash: 'start', caption: `${nInv} NASA fire investigations. Moon bases need answers.`,
     vo: `NASA's PSI database holds ${nInv} combustion investigations. Moon bases will breathe ${moonPreset.o2}% oxygen or more at ${(moonPreset.p_kpa / sbx.units.psi_to_kpa).toFixed(1)} psi or less: more oxygen than Earth's air, at lower pressure.`,
-    screen: `Start tab: the headline and the four stat tiles (${placed} tests placed; ${zone.length} solids in Moon-base air; 0 in partial gravity).` },
+    screen: `Story (Start) top: the headline, and the ${sbx.tests.length} solid-material tests falling in as dots (one dot per test). Overview tiles at #start/view: ${placed} tests placed; ${zone.length} solids in Moon-base air; 0 in partial gravity.` },
   { id: 'feel', t: [4, 10], hash: 'sandbox/earth', act: 'iss', caption: 'In space, fire changes shape.',
     vo: `In microgravity, NASA's challenge page says, "a candle flame becomes a ghostly blue sphere".`,
     screen: 'Flame Sandbox: Earth teardrop; at 0:06 click "ISS microgravity" and let the flame morph (teaching model, labelled).' },
@@ -153,8 +153,11 @@ const headed = flags.has('--tour');
 const browser = await chromium.launch({ channel: 'chrome', headless: !headed, args: headed ? [`--window-size=${W},${H + 87}`] : [] });
 try {
   if (all || flags.has('--tabs')) {
+    // Every view (VIEWS in main.js) plus every section's story top. The Start view is the overview (#start/view).
     const main = readFileSync(resolve(ROOT, 'web/src/main.js'), 'utf8');
-    const tabs = [...main.matchAll(/\['([a-z]+)', '([^']+)', \(\) => import/g)].map(([, id]) => ({ id, hash: id, file: id }));
+    const views = [...main.matchAll(/^ {2}([a-z]+): \['[^']+', \(\) => import/gm)].map(([, id]) => ({ id, hash: id === 'start' ? 'start/view' : id, file: id }));
+    const stories = [...main.matchAll(/\{ id: '([a-z]+)', label: '[^']+', views: \[[^\]]*\], story:/g)].map(([, id]) => ({ id, hash: id, file: `story-${id}` }));
+    const tabs = [...stories, ...views];
     await capture(browser, tabs, `${OUT}/tabs`);
   }
   if (all || flags.has('--story')) await capture(browser, SHOTS.map((s, i) => ({ ...s, file: `${String(i + 1).padStart(2, '0')}-${s.id}` })), `${OUT}/story`);

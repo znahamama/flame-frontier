@@ -10,11 +10,12 @@ const pub = new URL('../../web/public/', import.meta.url).pathname;
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 
 const og = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1, colorScheme: 'light' });
-await og.goto(`${base}/#evidence`, { waitUntil: 'networkidle' });
+await og.goto(`${base}/#evidence/view`, { waitUntil: 'networkidle' });
+await og.waitForSelector('#view #p1 canvas');
 await og.addStyleTag({ content: `
-  .top, .skip, .layers, details, #panel > section:not(:first-child) { display: none !important; }
-  #panel { padding: 0 !important; max-width: none !important; margin: 0 !important; }
-  #panel > section:first-child { border: 0; border-radius: 0; padding: 22px 32px 0; height: 630px; }
+  .top, .skip, .foot, .botnav, .viewhead, .layers, details, #view > section:not(:first-child) { display: none !important; }
+  main, #panel, .viewwrap { padding: 0 !important; max-width: none !important; margin: 0 !important; }
+  #view > section:first-child { border: 0; border-radius: 0; padding: 22px 32px 0; height: 630px; }
   .headline { font-size: 1.35rem !important; margin: 0 0 4px; }
   .chart.tall { height: 520px !important; }
   .ogmark { position: fixed; right: 28px; bottom: 16px; font: 600 15px system-ui; color: #52514e; }` });
