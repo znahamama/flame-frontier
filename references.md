@@ -62,6 +62,7 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 | Package | Version | Licence | Used for |
 |---|---|---|---|
 | [echarts](https://echarts.apache.org) | 6.1.0 | Apache-2.0 | shipped in the web page |
+| [three](https://threejs.org/) | 0.187.0 | MIT | shipped in the web page |
 | [playwright-core](https://playwright.dev) | 1.64.1 | Apache-2.0 | build/QA only, not shipped |
 | [vite](https://vite.dev) | 8.3.8 | MIT | build/QA only, not shipped |
 | [anthropic](https://github.com/anthropics/anthropic-sdk-python) | 2.8.0 | Apache Software License | Vercel function (api/); build-time pipeline (scripts/) |

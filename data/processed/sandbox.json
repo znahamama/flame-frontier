@@ -1,0 +1,1909 @@
+{
+  "boundary": {
+    "a_formula": "a = (3/2)(U/r0), rod radius r = r0",
+    "check_a10": 13.6074,
+    "equation": "X_O2 = 6 exp(-0.5 a) + 0.0167 a + 13.4",
+    "minimum": {
+      "a": 10.38,
+      "note": "Computed from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2'",
+      "x_o2": 13.61
+    },
+    "p_tested_kpa": 101.325,
+    "p_window_kpa": [
+      96.53,
+      102.72
+    ],
+    "p_window_source": {
+      "page": 1,
+      "quote": "the total pressure is maintained between 724 – 770.5 mmHg (14.0 – 14.9 psia)",
+      "short": "NTRS 20150010425 (ISS O2 and pressure management)"
+    },
+    "r0_cm": 0.318,
+    "source": {
+      "doc": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021)",
+      "equation_no": "6.1",
+      "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+      "pdf_page": 83,
+      "pdf_page_offset": 8,
+      "printed_page": 75,
+      "section": "6.1.4.4"
+    },
+    "tested_a_range": [
+      4.75,
+      182.95
+    ],
+    "u_range_cm_s": [
+      1.01,
+      38.79
+    ],
+    "y": "Post-burn (final) O2, % by vol"
+  },
+  "clips": [
+    {
+      "clip": "clips/bass2_O4_extinction.mp4",
+      "flow_bound": null,
+      "flow_note": "Air display steps",
+      "flows": [
+        5.0
+      ],
+      "geometry": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2_initial_pct": 14.8,
+      "outcome": "extinguished",
+      "p_kpa": 101.325,
+      "poster": "clips/bass2_O4_extinction.jpg",
+      "rod_diameter_in": 0.375,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 52",
+      "test": "O4",
+      "title": "O4: flame goes out as the flow is turned down"
+    },
+    {
+      "clip": "clips/bass2_O7_blowoff.mp4",
+      "flow_bound": "upper",
+      "flow_note": "blowoff; flow at most 37.0 cm/s (Panel 2 upper bound)",
+      "flows": [
+        37.0
+      ],
+      "geometry": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2_initial_pct": 16.0,
+      "outcome": "blowoff",
+      "p_kpa": 101.325,
+      "poster": "clips/bass2_O7_blowoff.jpg",
+      "rod_diameter_in": 0.25,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 56",
+      "test": "O7",
+      "title": "O7: blowoff when the fan is stepped to maximum"
+    },
+    {
+      "clip": "clips/bass2_O1_stills.mp4",
+      "flow_bound": null,
+      "flow_note": "Air display steps",
+      "flows": [
+        20.0,
+        10.0,
+        5.0,
+        2.0,
+        1.0
+      ],
+      "geometry": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2_initial_pct": 22.2,
+      "outcome": "not_stated",
+      "p_kpa": 101.325,
+      "poster": "clips/bass2_O1_stills.jpg",
+      "rod_diameter_in": 0.25,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 48",
+      "test": "O1",
+      "title": "O1: Nikon still sequence of a burning rod"
+    }
+  ],
+  "habitats": [
+    {
+      "flows_cm_s": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        7.0,
+        8.0,
+        9.5,
+        10.0,
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        18.0,
+        20.0
+      ],
+      "gaps": [],
+      "gravity": "micro",
+      "id": "iss",
+      "materials": [
+        "Nomex III fabric",
+        "PMMA rod, upstream ignition (stagnation / concurrent)",
+        "SIBAL Cloth",
+        "Thick PMMA slab, 1-sided",
+        "Thick PMMA slab, 2-sided",
+        "Thick PMMA slab, sides not stated",
+        "Thin PMMA film"
+      ],
+      "name": "ISS cabin",
+      "o2_pct": [
+        21.0,
+        24.1
+      ],
+      "p_kpa": [
+        96.53,
+        102.72
+      ],
+      "solids_inside": 28,
+      "window": "21–24.1% O2 at 96.5–102.7 kPa"
+    },
+    {
+      "flows_cm_s": [
+        20.0
+      ],
+      "gaps": [
+        {
+          "id": "flow",
+          "text": "Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow."
+        },
+        {
+          "id": "materials",
+          "text": "Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA."
+        },
+        {
+          "id": "boundary",
+          "text": "No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+        },
+        {
+          "id": "gravity",
+          "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+        }
+      ],
+      "gravity": "partial",
+      "id": "moon_base",
+      "materials": [
+        "SIBAL Cloth",
+        "Two-Sided PMMA"
+      ],
+      "name": "Moon base",
+      "o2_pct": [
+        30.0,
+        100.0
+      ],
+      "p_kpa": [
+        0.0,
+        70.33
+      ],
+      "solids_inside": 2,
+      "window": "≥30% O2 at ≤70.3 kPa"
+    },
+    {
+      "flows_cm_s": [
+        20.0
+      ],
+      "gaps": [
+        {
+          "id": "flow",
+          "text": "Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow."
+        },
+        {
+          "id": "materials",
+          "text": "Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA."
+        },
+        {
+          "id": "boundary",
+          "text": "No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+        },
+        {
+          "id": "gravity",
+          "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+        }
+      ],
+      "gravity": "partial",
+      "id": "rover",
+      "materials": [
+        "SIBAL Cloth",
+        "Two-Sided PMMA"
+      ],
+      "name": "Pressurized rover",
+      "o2_pct": [
+        30.0,
+        100.0
+      ],
+      "p_kpa": [
+        0.0,
+        70.33
+      ],
+      "solids_inside": 2,
+      "window": "≥30% O2 at ≤70.3 kPa"
+    },
+    {
+      "flows_cm_s": [],
+      "gaps": [
+        {
+          "id": "solid_window",
+          "text": "No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together."
+        },
+        {
+          "id": "boundary",
+          "text": "No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+        },
+        {
+          "id": "gravity",
+          "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+        }
+      ],
+      "gravity": "partial",
+      "id": "spacesuit",
+      "materials": [],
+      "name": "Spacesuit",
+      "o2_pct": [
+        100.0,
+        100.0
+      ],
+      "p_kpa": [
+        29.65,
+        29.65
+      ],
+      "solids_inside": 0,
+      "window": "100% O2 at 29.6 kPa"
+    }
+  ],
+  "note": "Flame Sandbox data. The flame picture is a teaching model and computes nothing; every number on the tab comes from here.",
+  "po2_sea_level": {
+    "kpa": 21.2,
+    "label": "Same pO2 as Earth sea-level air (pO2 = 21.2 kPa)"
+  },
+  "presets": [
+    {
+      "flow": 0.0,
+      "gravity": "earth",
+      "habitat": null,
+      "id": "earth",
+      "name": "Earth sea level",
+      "o2": 21.0,
+      "p_kpa": 101.35,
+      "sources": [
+        {
+          "quote": "the Earth’s pressure at sea level is 14.7 psi",
+          "short": "Space Apps 2026 challenge page",
+          "what": "pressure"
+        },
+        {
+          "page": 3,
+          "quote": "The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point",
+          "short": "NTRS 20160001047 (O2 partial pressure vs concentration flammability)",
+          "what": "21% O2"
+        }
+      ]
+    },
+    {
+      "flow": 0.0,
+      "gravity": "micro",
+      "habitat": "iss",
+      "id": "iss",
+      "name": "ISS cabin",
+      "o2": 21.0,
+      "p_kpa": 101.4,
+      "sources": [
+        {
+          "page": 3,
+          "quote": "The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point of the curve. Nonetheless, it has obtained much of its data at 24.1% O2, 101.4 kPa (14.7 psia) conditions due to sinusoidal fluctuations of oxygen with a mean of 21% O2",
+          "short": "NTRS 20160001047 (O2 partial pressure vs concentration flammability)",
+          "what": "set point"
+        }
+      ]
+    },
+    {
+      "flow": 0.0,
+      "gravity": "moon",
+      "habitat": "moon_base",
+      "id": "moon_base",
+      "name": "Moon base",
+      "o2": 30.0,
+      "p_kpa": 70.33,
+      "sources": [
+        {
+          "page": null,
+          "quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.",
+          "short": "Space Apps challenge page",
+          "what": "limit"
+        }
+      ]
+    },
+    {
+      "flow": 0.0,
+      "gravity": "moon",
+      "habitat": "rover",
+      "id": "rover",
+      "name": "Pressurized rover",
+      "o2": 30.0,
+      "p_kpa": 70.33,
+      "sources": [
+        {
+          "page": null,
+          "quote": "it is expected that the Moon Base and pressurized rover(s) will be at a pressure and oxygen concentration between those in a spacesuit and the Earth’s atmosphere.",
+          "short": "Space Apps challenge page",
+          "what": "same window as the Moon base"
+        }
+      ]
+    },
+    {
+      "flow": 0.0,
+      "gravity": "moon",
+      "habitat": "spacesuit",
+      "id": "spacesuit",
+      "name": "Spacesuit",
+      "o2": 100.0,
+      "p_kpa": 29.65,
+      "sources": [
+        {
+          "page": null,
+          "quote": "spacesuits are filled with 100% oxygen to only 4.3 psi",
+          "short": "Space Apps challenge page",
+          "what": "suit"
+        }
+      ]
+    }
+  ],
+  "quotes": {
+    "bound": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "Microgravity and normal-gravity results could bound what occurs at intermediate gravity levels."
+    },
+    "buoyancy": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "Compared to Earth, flames in free fall (i.e., in microgravity) are often dramatically different because of the absence of buoyancy and thus rising hot gases."
+    },
+    "candle": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "Instead of a flickering teardrop, a candle flame becomes a ghostly blue sphere reliant on diffusion for its oxygen."
+    },
+    "flow": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "Flammability is highly dependent on oxygen concentration, and air flow is also important in microgravity."
+    },
+    "future": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "We expect such data will be added in the future, for example from the Lunar-g Combustion Investigation (LUCI) and the Flammability of Materials on the Moon (FM2) experiment."
+    },
+    "mars": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "bases on the lunar and Martian surfaces"
+    },
+    "moon": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less."
+    },
+    "partial": {
+      "file": "docs/ref/challenge_brief.md",
+      "section": "1",
+      "source": "Space Apps 2026 challenge page",
+      "text": "there is currently no partial-gravity combustion data available in PSI"
+    }
+  },
+  "rules": {
+    "clip_flow_cm_s": 2.0,
+    "clip_o2_pts": 1.0,
+    "flow_tol_cm_s": 2.0,
+    "near_o2_pts": 2.0,
+    "near_p_kpa": 5.0,
+    "thin_max": 2
+  },
+  "schema": 1,
+  "ssce": [
+    {
+      "material": "ashless filter paper",
+      "mission": "Space Shuttle flights 1-5 (not individually identified)",
+      "o2_levels": [
+        35.0,
+        50.0
+      ],
+      "p_kpa": [
+        101.33,
+        151.99,
+        202.65
+      ],
+      "src": "SSCE, NTRS 20050177200, NTRS abstract"
+    },
+    {
+      "material": "polymethyl methacrylate (plexiglass)",
+      "mission": "Space Shuttle flights 6-8 (incl. STS-64 and STS-63)",
+      "o2_levels": [
+        50.0,
+        70.0
+      ],
+      "p_kpa": [
+        101.33,
+        202.65
+      ],
+      "src": "SSCE, NTRS 20050177200, NTRS abstract"
+    }
+  ],
+  "tests": [
+    {
+      "flows": [
+        20.0
+      ],
+      "id": "Saffire IV-1",
+      "material": "SIBAL Cloth",
+      "o2": 22.0,
+      "p_kpa": 100.0,
+      "src": "Saffire ICES-2024-365, Table 1, p.3, data/manual/external_tests.csv"
+    },
+    {
+      "flows": [
+        20.0
+      ],
+      "id": "Saffire V-2",
+      "material": "Cotton Jersey",
+      "o2": 26.2,
+      "p_kpa": 70.7,
+      "src": "Saffire ICES-2024-365, Table 1, p.3, data/manual/external_tests.csv"
+    },
+    {
+      "flows": [
+        20.0
+      ],
+      "id": "Saffire VI-2",
+      "material": "SIBAL Cloth",
+      "o2": 31.0,
+      "p_kpa": 54.1,
+      "src": "Saffire ICES-2024-365, Table 1, p.3, data/manual/external_tests.csv"
+    },
+    {
+      "flows": [
+        20.0
+      ],
+      "id": "Saffire VI-3",
+      "material": "Two-Sided PMMA",
+      "o2": 30.3,
+      "p_kpa": 54.6,
+      "src": "Saffire ICES-2024-365, Table 1, p.3, data/manual/external_tests.csv"
+    },
+    {
+      "flows": [
+        20.0
+      ],
+      "id": "Saffire VI-4",
+      "material": "One-Sided PMMA",
+      "o2": 28.8,
+      "p_kpa": 55.2,
+      "src": "Saffire ICES-2024-365, Table 1, p.3, data/manual/external_tests.csv"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II B1",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 2"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II B2",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 3"
+    },
+    {
+      "flows": [
+        2.0
+      ],
+      "id": "BASS-II B3",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 4"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II B4",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 5"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II B5",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 6"
+    },
+    {
+      "flows": [
+        3.0,
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II B6",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 7"
+    },
+    {
+      "flows": [
+        2.0
+      ],
+      "id": "BASS-II B7",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 8"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II B8",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 9"
+    },
+    {
+      "flows": [
+        2.0
+      ],
+      "id": "BASS-II B9",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 10"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "id": "BASS-II B10",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 11"
+    },
+    {
+      "flows": [
+        1.0,
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II B11",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 12"
+    },
+    {
+      "flows": [
+        2.0
+      ],
+      "id": "BASS-II B12",
+      "material": "Thin PMMA film",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 13"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II B13",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 14"
+    },
+    {
+      "flows": [
+        2.0,
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II B14",
+      "material": "Thin PMMA film",
+      "o2": 15.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 15"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II B15",
+      "material": "Thin PMMA film",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 16"
+    },
+    {
+      "flows": [
+        3.0
+      ],
+      "id": "BASS-II B16",
+      "material": "Thin PMMA film",
+      "o2": 17.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 17"
+    },
+    {
+      "flows": [
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II B17",
+      "material": "Thin PMMA film",
+      "o2": 17.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 18"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II B18",
+      "material": "Thin PMMA film",
+      "o2": 17.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 19"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II B19",
+      "material": "Thin PMMA film",
+      "o2": 17.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 20"
+    },
+    {
+      "flows": [
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II B20",
+      "material": "Thin PMMA film",
+      "o2": 17.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 21"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II B21",
+      "material": "Thin PMMA film",
+      "o2": 20.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 22"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0,
+        5.0
+      ],
+      "id": "BASS-II B22",
+      "material": "Thin PMMA film",
+      "o2": 20.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 23"
+    },
+    {
+      "flows": [
+        9.5
+      ],
+      "id": "BASS-II F1",
+      "material": "Nomex III fabric",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 24"
+    },
+    {
+      "flows": [
+        15.0
+      ],
+      "id": "BASS-II F2",
+      "material": "Nomex III fabric",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 25"
+    },
+    {
+      "flows": [
+        8.0
+      ],
+      "id": "BASS-II F3",
+      "material": "Nomex III fabric",
+      "o2": 21.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 26"
+    },
+    {
+      "flows": [
+        3.0
+      ],
+      "id": "BASS-II F4",
+      "material": "Japan wax candle",
+      "o2": 17.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 27"
+    },
+    {
+      "flows": [
+        8.0,
+        10.0
+      ],
+      "id": "BASS-II M1",
+      "material": "Thick PMMA slab, 1-sided",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 28"
+    },
+    {
+      "flows": [
+        13.0,
+        14.0,
+        15.0,
+        20.0
+      ],
+      "id": "BASS-II M2",
+      "material": "Thick PMMA slab, 1-sided",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 29"
+    },
+    {
+      "flows": [
+        10.0,
+        18.0,
+        20.0
+      ],
+      "id": "BASS-II M3",
+      "material": "Thick PMMA slab, 1-sided",
+      "o2": 20.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 30"
+    },
+    {
+      "flows": [
+        3.0,
+        4.0,
+        5.0
+      ],
+      "id": "BASS-II M4",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 21.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 31"
+    },
+    {
+      "flows": [
+        5.0,
+        8.0,
+        10.0,
+        13.0,
+        20.0
+      ],
+      "id": "BASS-II M5",
+      "material": "Thick PMMA slab, 2-sided",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 32"
+    },
+    {
+      "flows": [
+        0.0,
+        3.0,
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II M6",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 21.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 33"
+    },
+    {
+      "flows": [
+        3.0,
+        4.0,
+        4.5,
+        5.0,
+        6.0,
+        10.0
+      ],
+      "id": "BASS-II M7",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 18.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 34"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II M8",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 19.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 35"
+    },
+    {
+      "flows": [
+        10.0,
+        14.0
+      ],
+      "id": "BASS-II M9",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 18.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 36"
+    },
+    {
+      "flows": [
+        8.0,
+        10.0,
+        14.0,
+        17.0
+      ],
+      "id": "BASS-II M10",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 20.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 37"
+    },
+    {
+      "flows": [
+        10.0,
+        12.0,
+        15.0,
+        20.0
+      ],
+      "id": "BASS-II M11",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 20.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 38"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II M12",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 21.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 39"
+    },
+    {
+      "flows": [
+        4.0,
+        5.0,
+        6.0
+      ],
+      "id": "BASS-II M13",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 20.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 40"
+    },
+    {
+      "flows": [
+        8.0,
+        10.0
+      ],
+      "id": "BASS-II M14",
+      "material": "Thick PMMA slab, 1-sided",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 41"
+    },
+    {
+      "flows": [
+        7.0,
+        8.0,
+        10.0,
+        15.0,
+        16.0,
+        18.0,
+        20.0
+      ],
+      "id": "BASS-II M15",
+      "material": "Thick PMMA slab, 1-sided",
+      "o2": 21.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 42"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        3.0,
+        6.0,
+        10.0
+      ],
+      "id": "BASS-II M16",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 19.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 43"
+    },
+    {
+      "flows": [
+        0.0,
+        3.0,
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II M17",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 18.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 44"
+    },
+    {
+      "flows": [
+        8.0,
+        10.0,
+        15.0
+      ],
+      "id": "BASS-II M18",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 17.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 45"
+    },
+    {
+      "flows": [
+        5.0,
+        7.0,
+        10.0,
+        14.0,
+        17.0
+      ],
+      "id": "BASS-II M19",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 19.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 46"
+    },
+    {
+      "flows": [
+        8.0,
+        10.0
+      ],
+      "id": "BASS-II M20",
+      "material": "Thick PMMA slab, sides not stated",
+      "o2": 18.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 47"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        5.0,
+        10.0,
+        20.0
+      ],
+      "id": "BASS-II O1",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 48"
+    },
+    {
+      "flows": [
+        0.0
+      ],
+      "id": "BASS-II O2",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 22.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 49"
+    },
+    {
+      "flows": [
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II O3a",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 18.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 50"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II O3b",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 18.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 51"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II O4",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 14.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 52"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II O5a",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 53"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II O5b",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 14.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 54"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O6",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 16.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 55"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O7",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 16.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 56"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O8a",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 57"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O8b",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 58"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O9",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 59"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0,
+        5.0
+      ],
+      "id": "BASS-II O10",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 16.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 60"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II O11",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 61"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O12",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 13.6,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 62"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O13a",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 63"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II O13b",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 14.6,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 64"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II O14",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 16.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 65"
+    },
+    {
+      "flows": [
+        0.0,
+        5.0
+      ],
+      "id": "BASS-II O15a",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 17.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 66"
+    },
+    {
+      "flows": [
+        0.0,
+        5.0
+      ],
+      "id": "BASS-II O15b",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 16.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 67"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II O16",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 14.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 68"
+    },
+    {
+      "flows": [
+        0.0,
+        3.0,
+        11.0
+      ],
+      "id": "BASS-II O17",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 69"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0,
+        5.0,
+        11.0
+      ],
+      "id": "BASS-II O18",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 70"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II O19",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 71"
+    },
+    {
+      "flows": [
+        5.0,
+        8.0,
+        38.5
+      ],
+      "id": "BASS-II O20",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 16.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 72"
+    },
+    {
+      "flows": [
+        28.0
+      ],
+      "id": "BASS-II O21",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 73"
+    },
+    {
+      "flows": [
+        4.0,
+        26.5
+      ],
+      "id": "BASS-II O22",
+      "material": "PMMA rod, upstream ignition (stagnation / concurrent)",
+      "o2": 15.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 74"
+    },
+    {
+      "flows": [
+        2.0,
+        5.0
+      ],
+      "id": "BASS-II P1",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 75"
+    },
+    {
+      "flows": [
+        2.0,
+        2.5,
+        5.0
+      ],
+      "id": "BASS-II P2",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 76"
+    },
+    {
+      "flows": [
+        2.5,
+        5.0
+      ],
+      "id": "BASS-II P3a",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 77"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P3b",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 78"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P4",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 18.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 79"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P5",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 19.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 80"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P6",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 18.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 81"
+    },
+    {
+      "flows": [],
+      "id": "BASS-II P8",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 16.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 82"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P9",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.6,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 83"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P10",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 84"
+    },
+    {
+      "flows": [
+        0.5,
+        1.0,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II P12",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 85"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P13a",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 20.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 86"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P13b",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 20.6,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 87"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P14",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 18.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 88"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P15",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 18.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 89"
+    },
+    {
+      "flows": [
+        2.0,
+        5.0,
+        8.0
+      ],
+      "id": "BASS-II P16",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 18.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 90"
+    },
+    {
+      "flows": [
+        2.0,
+        3.0,
+        5.0,
+        22.0
+      ],
+      "id": "BASS-II P17",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 16.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 91"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0
+      ],
+      "id": "BASS-II P18",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 20.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 92"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0,
+        5.0,
+        8.0
+      ],
+      "id": "BASS-II P19",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 17.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 93"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0
+      ],
+      "id": "BASS-II P20",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 19.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 94"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P21a",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 16.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 95"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P21b",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 16.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 96"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P22a",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 20.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 97"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P22b",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 20.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 98"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0
+      ],
+      "id": "BASS-II P23",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 18.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 99"
+    },
+    {
+      "flows": [
+        0.0,
+        2.0
+      ],
+      "id": "BASS-II P24",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 19.0,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 100"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II P25",
+      "material": "PMMA rod, downstream ignition (opposed flow)",
+      "o2": 20.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 101"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II T1",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 102"
+    },
+    {
+      "flows": [
+        4.0,
+        5.0,
+        9.0
+      ],
+      "id": "BASS-II T2",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 103"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II T3",
+      "material": "PMMA spherical section (4 cm)",
+      "o2": 17.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 104"
+    },
+    {
+      "flows": [
+        1.0,
+        9.0
+      ],
+      "id": "BASS-II T4",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 105"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        10.0
+      ],
+      "id": "BASS-II T5",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 106"
+    },
+    {
+      "flows": [
+        1.0,
+        2.0,
+        5.0
+      ],
+      "id": "BASS-II T6",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 107"
+    },
+    {
+      "flows": [
+        1.0,
+        3.0,
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II T7",
+      "material": "PMMA spherical section (4 cm)",
+      "o2": 17.3,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 108"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II T9",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 16.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 109"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II T10",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 16.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 110"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II T11",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 111"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II T12",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 16.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 112"
+    },
+    {
+      "flows": [
+        1.0,
+        5.0
+      ],
+      "id": "BASS-II T13",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.5,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 113"
+    },
+    {
+      "flows": [
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II T14",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 16.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 114"
+    },
+    {
+      "flows": [
+        9.0,
+        29.0
+      ],
+      "id": "BASS-II T15",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 115"
+    },
+    {
+      "flows": [
+        3.0,
+        5.0
+      ],
+      "id": "BASS-II T16",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.6,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 116"
+    },
+    {
+      "flows": [
+        6.0,
+        53.0
+      ],
+      "id": "BASS-II T17",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 16.9,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 117"
+    },
+    {
+      "flows": [
+        2.0,
+        5.0
+      ],
+      "id": "BASS-II T18",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.4,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 118"
+    },
+    {
+      "flows": [
+        11.0
+      ],
+      "id": "BASS-II T19",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 119"
+    },
+    {
+      "flows": [
+        3.0,
+        11.0
+      ],
+      "id": "BASS-II T20",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 120"
+    },
+    {
+      "flows": [
+        11.0,
+        47.0
+      ],
+      "id": "BASS-II T21",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 121"
+    },
+    {
+      "flows": [
+        5.0,
+        10.0
+      ],
+      "id": "BASS-II T22",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.1,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 122"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II T23",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 17.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 123"
+    },
+    {
+      "flows": [
+        10.0
+      ],
+      "id": "BASS-II T24",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 18.2,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 124"
+    },
+    {
+      "flows": [
+        2.5,
+        5.0
+      ],
+      "id": "BASS-II T25",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 20.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 125"
+    },
+    {
+      "flows": [
+        2.5,
+        5.0
+      ],
+      "id": "BASS-II T26",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 20.8,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 126"
+    },
+    {
+      "flows": [
+        2.0,
+        5.0
+      ],
+      "id": "BASS-II T27",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 20.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 127"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II T28a",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 20.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 128"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II T28b",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 20.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 129"
+    },
+    {
+      "flows": [
+        5.0
+      ],
+      "id": "BASS-II T29",
+      "material": "SIBAL fabric (75/25 cotton/fiberglass)",
+      "o2": 20.7,
+      "p_kpa": 101.33,
+      "src": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv, line 130"
+    }
+  ],
+  "units": {
+    "psi_to_kpa": 6.894757
+  },
+  "video": {
+    "from": "2:37",
+    "start_s": 157,
+    "summary": "on Earth, a teardrop shape, yellow from soot carried upward, flickering; in microgravity, more spherical, soot-free, blue, no flicker in the same way.",
+    "summary_note": "Flame Frontier's summary of the official challenge video (auto-transcript errors corrected in brief sec. 4)",
+    "to": "3:12",
+    "url": "https://www.youtube.com/watch?v=AVuEiKxOpc0&t=157s"
+  },
+  "x_max_kpa": 320,
+  "zone": {
+    "o2_min_pct": 30,
+    "p_max_kpa": 70.33
+  }
+}

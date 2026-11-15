@@ -580,6 +580,14 @@
       },
       {
         "from": "package.json",
+        "license": "MIT",
+        "name": "three",
+        "url": "https://threejs.org/",
+        "use": "shipped in the web page",
+        "version": "0.187.0"
+      },
+      {
+        "from": "package.json",
         "license": "Apache-2.0",
         "name": "playwright-core",
         "url": "https://playwright.dev",

@@ -2,6 +2,7 @@
 const TABS = [
   ['start', 'Start', () => import('./tabs/start.js')],
   ['evidence', 'Evidence Map', () => import('./tabs/evidence.js')],
+  ['sandbox', 'Flame Sandbox', () => import('./tabs/sandbox.js')],
   ['catalog', 'Catalog', () => import('./tabs/catalog.js')],
   ['ranking', 'Ranking', () => import('./tabs/ranking.js')],
   ['compare', 'Compare', () => import('./tabs/compare.js')],

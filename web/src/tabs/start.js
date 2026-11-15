@@ -35,7 +35,7 @@ export async function render(root) {
       <li class="card entry"><span class="entrynum" aria-hidden="true">1</span><div>
         <h3><a href="#evidence">Evidence</a></h3>
         <p>Every test on one map of oxygen against pressure, with the Moon-base zone drawn in, and NASA's only published flammability boundary for these solids (BASS-II, at 1 atm).</p>
-        <p class="more"><a href="#evidence">Open the Evidence Map →</a> · <a href="#gaps">Habitat gaps</a> · <a href="#clips">Flight video</a></p></div></li>
+        <p class="more"><a href="#evidence">Open the Evidence Map →</a> · <a href="#sandbox/earth">Flame Sandbox</a> · <a href="#gaps">Habitat gaps</a> · <a href="#clips">Flight video</a></p></div></li>
       <li class="card entry"><span class="entrynum" aria-hidden="true">2</span><div>
         <h3><a href="#catalog">Investigations</a></h3>
         <p>All ${cat.investigations.length} combustion investigations in NASA's PSI repository: what each tested, ranked against a habitat with a visible rule table, and compared side by side.</p>

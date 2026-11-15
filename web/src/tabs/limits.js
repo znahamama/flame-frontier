@@ -14,6 +14,7 @@ function notPlotted(moon) {
 export async function render(root) {
   const [ext, flex, bass2, ref, cat, rank, cfig, sweep] = await Promise.all(
     ['external_tests.json', 'flex_tests.json', 'bass2_tests.json', 'reference.json', 'catalog.json', 'ranking.json', 'cfig_tests.json', 'o2_sweep.json'].map(loadJSON));
+  const sbx = await loadJSON('sandbox.json');
   const cz = cfig.moon_zone;
   const VERDICT = { ambient: 'Atmosphere around the flame', oxidizer_stream: 'Burner oxidizer stream (NOT the atmosphere)', not_o2: 'Not oxygen (fuel concentration)' };
   const zone = ext.tests.filter((t) => t.in_moon_zone);
@@ -78,6 +79,14 @@ export async function render(root) {
     ${list([
       'Three of 129 BASS-II tests, trimmed and re-encoded (macOS avconvert) to stay small. Nothing is measured from the video by software; the facts beside each clip come from the PSI table.',
       'The on-screen date is one day ahead of the test date (BASS-II FAQ: leap year was not set on board).',
+    ])}
+
+    <h3>Flame Sandbox</h3>
+    ${list([
+      'The flame picture is a teaching model, not a simulation. It follows NASA\'s qualitative description (official challenge video 2:37–3:12; challenge page) and computes nothing: no temperature, size, spread rate or extinction. O2 changes only its brightness; pressure changes nothing in it.',
+      'Moon and Mars gravity: no flame is drawn, only the Earth and microgravity outlines, because PSI has no partial-gravity combustion data (challenge page). The sandbox never interpolates between them.',
+      `Its evidence panel counts the same ${sbx.tests.length} solid tests as the Habitat Gaps tab. "Nearby" (±${sbx.rules.near_o2_pts} points O2, ±${sbx.rules.near_p_kpa} kPa), flow match (±${sbx.rules.flow_tol_cm_s} cm/s) and "thin" (≤${sbx.rules.thin_max}) are our display tolerances, not NASA criteria.`,
+      `The boundary verdict uses BASS-II eq. 6.1 for a ${sbx.boundary.r0_cm} cm radius PMMA rod only, in microgravity, at ${sbx.boundary.p_window_kpa.join('–')} kPa and flows ${sbx.boundary.u_range_cm_s.join('–')} cm/s (the recorded stretch rates). Outside that it says "Unknown: no data". The fit is in post-burn O2 while the slider is the cabin O2.`,
     ])}
   </section>
 

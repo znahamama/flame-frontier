@@ -81,7 +81,7 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers) {
+function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers, pick) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
@@ -213,6 +213,16 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers) {
     });
   }
 
+  // Flame Sandbox pick (#evidence/at=<kPa>,<O2>): a user-chosen point, NOT a test; drawn as an accent ring.
+  if (pick) {
+    series.push({
+      name: 'Your sandbox conditions', type: 'scatter', z: 8, symbol: 'circle', symbolSize: 18, legendHoverLink: false,
+      itemStyle: { color: 'transparent', borderColor: c.accent, borderWidth: 3 },
+      label: { show: el.clientWidth >= 600, position: pick.o2 > 85 ? 'bottom' : 'top', color: c.accent, fontWeight: 600, formatter: 'Your conditions' },
+      data: [{ value: [pick.p, pick.o2], tip: `${pick.o2}% O2 at ${pick.p} kPa, picked in the Flame Sandbox. Not a test.`, src: 'your input in the Flame Sandbox (not data)' }],
+    });
+  }
+
   const chart = echarts.init(el);
   chart.setOption({
     grid: { left: 48, right: el.clientWidth < 600 ? 72 : 96, top: el.clientWidth < 600 ? 84 : 40, bottom: 52 },   // 3-entry legend: 1 line on desktop, 3 on phones
@@ -335,12 +345,15 @@ async function gapFromArg(arg) {
 export async function render(root, arg) {
   const [ref, ext, bass2, flex, cfig] = await Promise.all(['reference.json', 'external_tests.json', 'bass2_tests.json', 'flex_tests.json', 'cfig_tests.json'].map(loadJSON));
   const hl = await gapFromArg(arg);
+  const pm = /^at=([\d.]+),([\d.]+)(?:,(earth|micro|moon|mars),([\d.]+))?$/.exec(arg ?? '');
+  const pick = pm ? { p: Number(pm[1]), o2: Number(pm[2]), g: pm[3] ?? 'micro', u: Number(pm[4] ?? 0) } : null;
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
     <section class="card"><h2 class="vh">Where the tests are</h2>
       <p class="headline">${headline(inZone)}</p>
       ${hl ? `<p class="gapbanner" id="gapbanner"><b>Gap (${esc(hl.h.habitat.name)}):</b> ${esc(hl.gap.text)} ${hl.region.panel === 2 ? 'See Panel 2 below: it is the only boundary, at 1 atm.' : 'Highlighted with a dashed box.'} <a href="#gaps">Back to the gap report</a></p>` : ''}
+      ${pick ? `<p class="gapbanner" id="gapbanner"><b>Your Flame Sandbox conditions:</b> ${pick.o2}% O2 at ${pick.p} kPa, the ringed point. Real tests are the filled markers. <a href="#sandbox/g=${pick.g}&o2=${pick.o2}&p=${pick.p}&u=${pick.u}">Back to the sandbox</a></p>` : ''}
       <div class="layers" id="p1-layers"></div>
       <div class="chart tall" id="p1" role="img" aria-label="Scatter of O2 against total pressure for every placed test, with the Moon-base zone shaded"></div>
       <details class="table-view"><summary>About these layers</summary>
@@ -362,8 +375,8 @@ export async function render(root, arg) {
       </div>
       <div class="chart" id="p2"></div></section>`;
   const layers = { flex: false, cfig: false };
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl, layers), panel2(root.querySelector('#p2'), ref, bass2, c)];
-  if (hl) requestAnimationFrame(() => root.querySelector(hl.region.panel === 2 ? '#p2' : '#gapbanner')?.scrollIntoView({ block: 'start' }));
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl, layers, pick), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  if (hl || pick) requestAnimationFrame(() => root.querySelector(hl?.region.panel === 2 ? '#p2' : '#gapbanner')?.scrollIntoView({ block: 'start' }));
   layerToggles(charts[0], root.querySelector('#p1-layers'), { flex: flex.count, cfig: cfig.count }, layers);
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
   ro.observe(root);
