@@ -1,0 +1,3 @@
+program,mission,material,o2_levels_pct,pressures_kpa,pairing,flow,source
+SSCE,Space Shuttle flights 1-5 (not individually identified),ashless filter paper,35;50,101.33;151.99;202.65,not given: which O2 went with which pressure on which flight is not stated,not stated,"SSCE, NTRS 20050177200: ""filled with a 50-percent or 35-percent mixture of oxygen in nitrogen at pressures of 1.0, 1.5, and 2.0 atm"""
+SSCE,Space Shuttle flights 6-8 (incl. STS-64 and STS-63),polymethyl methacrylate (plexiglass),50;70,101.33;202.65,not given: which O2 went with which pressure on which flight is not stated,not stated,"SSCE, NTRS 20050177200: ""tested in a 70-percent or 50-percent mixture of oxygen and nitrogen at pressures of 1.0 and 2.0 atm"""

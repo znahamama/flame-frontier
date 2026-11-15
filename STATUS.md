@@ -26,8 +26,10 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 10. Demo assets: `scripts/shots/demo.mjs` (24 tab stills + 12 story stills at 1920x1080, light and dark; `--tour` plays the 30 s shot list live for screen recording) and `docs/demo/SHOT_LIST.md` (problem → feel the difference → empty Moon-base zone → trace and ask → the gap NASA can close; captions and voice-over filled from data). Sandbox now shows the verdict (matching-test count + 4 badge pills) beside the flame.
 
-## In progress
-- 11. (Task 3) see Proposed below
+- 11. (Task 3) Evidence export: built as proposed below; 586-row tests.csv + boundary points + SSCE ranges + data dictionary, download links on Evidence Map, References, Start.
+
+## Task 3 proposal (kept for the record)
+- 11. Evidence export. Proposal: the challenge's objective 2 is "Extract data that supports predictive modeling", and so far the site only shows the data; a researcher cannot take it away. Build `scripts/05_build_export.py` -> `data/processed/export/`: `tests.csv` (every test placed on Panel 1, one row each: program, PSI ID + DOI, fuel state, material/fuel, O2 + which reading, pressure + basis, recorded flows, outcome, Moon-base flag, source file + line or paper/table/page), `ssce_ranges.csv` (kept separate: pairing not given), `bass2_boundary_points.csv` (Panel 2 points with a, U, r, post-burn O2, kind) and a generated data dictionary `README.md` with caveats. Download links on the Evidence Map and References tab. Why this one: it scores on Relevance (NASA data as a reusable core output), Impact (reach beyond the site), Validity (every row keeps its provenance); it adds no new claims and no AI.
 
 ## Needs me (the user)
 - Push to GitHub (public): `git push -u origin main` then `git push origin v1 v2`. The 28 rewritten commits are unsigned (signatures cannot survive a rewrite); commits after the rewrite are signed.

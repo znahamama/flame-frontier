@@ -293,3 +293,4 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
 .sbx-mini .sbx-pill { margin-left: 0; }
 .sbx-sum .note { margin: 4px 0 0; }
 @media (max-width: 420px) { .sbx-mini { grid-template-columns: minmax(0, 1fr); } }
+.dl { margin-top: 10px; overflow-wrap: anywhere; }

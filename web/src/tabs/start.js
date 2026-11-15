@@ -45,5 +45,5 @@ export async function render(root) {
         <p>Ask in plain English. Answers quote NASA text and cite every sentence; if the sources don't say, the answer is "Not in the data."</p>
         <p class="more">${sample.map((a) => `<a href="#ask/${encodeURIComponent(a.question)}">${esc(a.question)}</a>`).join('<br>')}</p></div></li>
     </ol>
-    <p class="note footnote">Every number on this site is computed from NASA files or cited papers and carries its source; see <a href="#limits">Known Limits</a> for what the data cannot tell you, and <a href="#references">References</a>.</p>`;
+    <p class="note footnote">Every number on this site is computed from NASA files or cited papers and carries its source; see <a href="#limits">Known Limits</a> for what the data cannot tell you, and <a href="#references">References</a>. <a href="/data/export/tests.csv" download>Download all ${mapped.toLocaleString('en-US')} placed tests (CSV, with sources)</a>.</p>`;
 }

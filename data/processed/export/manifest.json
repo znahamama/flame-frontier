@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "file": "tests.csv",
+      "rows": 586,
+      "what": "every test on the Evidence Map, with its source"
+    },
+    {
+      "file": "bass2_boundary_points.csv",
+      "rows": 7,
+      "what": "BASS-II points vs NASA's boundary (Panel 2)"
+    },
+    {
+      "file": "ssce_ranges.csv",
+      "rows": 2,
+      "what": "SSCE O2/pressure sets (unpaired)"
+    },
+    {
+      "file": "README.md",
+      "rows": null,
+      "what": "data dictionary and caveats"
+    }
+  ]
+}

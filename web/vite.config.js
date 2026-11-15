@@ -17,7 +17,7 @@ function processedData() {
       server.middlewares.use('/data', (req, res, next) => {
         const file = normalize(resolve(PROCESSED, '.' + decodeURIComponent(req.url.split('?')[0])));
         if (!file.startsWith(PROCESSED + sep) || !existsSync(file) || !statSync(file).isFile()) return next();
-        res.setHeader('Content-Type', file.endsWith('.json') ? 'application/json' : 'text/plain');
+        res.setHeader('Content-Type', file.endsWith('.json') ? 'application/json' : file.endsWith('.csv') ? 'text/csv; charset=utf-8' : 'text/plain; charset=utf-8');
         createReadStream(file).pipe(res);
       });
     },

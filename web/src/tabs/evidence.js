@@ -5,6 +5,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { headline } from '../headline.js';
 import { loadJSON, cite } from '../data.js';
 import { tokens } from '../theme.js';
+import { exportLinks } from '../export.js';
 
 echarts.use([ScatterChart, LineChart, GridComponent, TooltipComponent, LegendComponent, MarkAreaComponent, CanvasRenderer]);
 
@@ -344,7 +345,7 @@ async function gapFromArg(arg) {
 
 export async function render(root, arg) {
   const [ref, ext, bass2, flex, cfig] = await Promise.all(['reference.json', 'external_tests.json', 'bass2_tests.json', 'flex_tests.json', 'cfig_tests.json'].map(loadJSON));
-  const hl = await gapFromArg(arg);
+  const [hl, dl] = await Promise.all([gapFromArg(arg), exportLinks()]);
   const pm = /^at=([\d.]+),([\d.]+)(?:,(earth|micro|moon|mars),([\d.]+))?$/.exec(arg ?? '');
   const pick = pm ? { p: Number(pm[1]), o2: Number(pm[2]), g: pm[3] ?? 'micro', u: Number(pm[4] ?? 0) } : null;
   const c = tokens();
@@ -361,7 +362,8 @@ export async function render(root, arg) {
         <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
         <p class="note">${flexLine(flex)}</p>
         <p class="note">${cfigLine(cfig)}</p></details>
-      ${table1(ref, ext)}</section>
+      ${table1(ref, ext)}
+      <p class="note dl"><b>Download the data</b> (CSV, every row with its source; for your own models): ${dl.join(' · ')}</p></section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
       <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
       Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s. Points: ${bass2.panel2_points.length} Olson tests whose flow can be read from PSI files without extrapolation: the last flow recorded in cm/s at which the flame was still burning before the crew turned it down to extinction, and blowoffs whose flow is only bounded from above by the same-day fan calibration.
