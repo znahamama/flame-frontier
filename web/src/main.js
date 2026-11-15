@@ -80,8 +80,8 @@ let cur = { sec: null, view: null, arg: undefined, story: null, viewCleanup: nul
 function shell(sec) {
   panel.innerHTML = `${sec.story ? '<div class="story-host"></div>' : ''}
     <section class="viewwrap" id="viewtop" tabindex="-1" aria-label="${esc(sec.label)}: interactive view">
-      <div class="viewhead"><p class="viewsec">${esc(sec.label)}</p>
-        ${sec.views.length > 1 ? `<nav class="subnav" aria-label="${esc(sec.label)} views">${sec.views.map((v) => `<a href="${viewHref(sec, v)}" data-v="${v}">${esc(VIEWS[v][0])}</a>`).join('')}</nav>` : ''}</div>
+      ${sec.views.length > 1 ? `<div class="viewhead"><p class="viewsec">${esc(sec.label)}</p>
+        <nav class="subnav" aria-label="${esc(sec.label)} views">${sec.views.map((v) => `<a href="${viewHref(sec, v)}" data-v="${v}">${esc(VIEWS[v][0])}</a>`).join('')}</nav></div>` : ''}
       <div id="view" class="viewgrid"></div>
     </section>`;
 }

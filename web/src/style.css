@@ -469,7 +469,8 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
 .atmos .sea line { stroke: var(--text-secondary); stroke-width: 1; stroke-dasharray: 2 4; }
 .atmos .sea text, .atmos .ppo2 text, .atmos .suit text { font-size: 12px; fill: var(--text-secondary); }
 .atmos .ppo2 polyline { fill: none; stroke: var(--text-secondary); stroke-width: 1.6; stroke-dasharray: 1 4; stroke-linecap: round; transition: opacity 0.4s ease; }
-.atmos .ppo2 { opacity: 0.45; transition: opacity 0.4s ease; }
+.atmos .ppo2 { transition: opacity 0.4s ease; }
+.atmos .ppo2 polyline { opacity: 0.5; }
 .atmos .suit path { fill: var(--surface-1); stroke: var(--text-primary); stroke-width: 2; cursor: pointer; }
 .atmos .zonegrp { opacity: 0; transition: opacity 0.5s ease; }
 .atmos .zonegrp.on { opacity: 1; }
@@ -488,7 +489,7 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
 .atmos.map[data-hl="ppo2"] .pt:not(.inz), .atmos.map[data-hl="ppo2"] .ssce line:not(.hit) { opacity: 0.15; }
 .atmos.map[data-hl="ppo2"] .ppo2.sealvl { opacity: 1; }
 .atmos.map[data-hl="ppo2"] .ppo2.sealvl text { fill: var(--text-primary); font-weight: 600; }
-.atmos.map[data-hl="ppo2"] .ppo2.sealvl polyline { stroke: var(--accent); stroke-width: 2.4; }
+.atmos.map[data-hl="ppo2"] .ppo2.sealvl polyline { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
 .atmos.map[data-hl="suit"] .suit path { fill: var(--accent); stroke: var(--accent); }
 .atmos .pt.inz { stroke: var(--text-primary); stroke-width: 2; }
 /* curve */
@@ -671,3 +672,112 @@ details.howask > summary { cursor: pointer; font-size: 14px; color: var(--text-s
   .qans { font-size: 13px; } .qchecks { font-size: 13px; gap: 5px; }
 }
 .viewwrap { min-height: calc(100svh - var(--hdr)); }
+
+/* ===== Story stage composition (all sections) =====
+   Desktop: the story breaks out of the 1200 px page column (up to 1600 px) so the pinned visual can use the screen;
+   the stage is a framed panel with a persistent header (section · step title) and the visual centred in the rest.
+   Sizes inside the stage use container units (cqi/cqh of .stage-inner), clamped, so they scale with the stage. */
+:root { --stage-glow: color-mix(in srgb, var(--accent) 7%, transparent); --stage-dot: color-mix(in srgb, var(--text-secondary) 20%, transparent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --stage-glow: color-mix(in srgb, var(--accent) 11%, transparent); --stage-dot: color-mix(in srgb, var(--text-secondary) 26%, transparent); } }
+:root[data-theme="dark"] { --stage-glow: color-mix(in srgb, var(--accent) 11%, transparent); --stage-dot: color-mix(in srgb, var(--text-secondary) 26%, transparent); }
+@media (min-width: 761px) {
+  .story { --sw: max(100%, min(1600px, calc(100vw - 64px))); width: var(--sw); margin-left: calc((100% - var(--sw)) / 2); }
+  .story-grid { grid-template-columns: clamp(300px, 25vw, 440px) minmax(0, 1fr); column-gap: clamp(28px, 2.6vw, 52px); }
+  .step-text { font-size: clamp(1.05rem, 0.92rem + 0.3vw, 1.3rem); }
+}
+.story-stage { display: flex; flex-direction: column; isolation: isolate; border-radius: 18px; border: 1px solid var(--hair);
+  background: radial-gradient(ellipse 60% 55% at 50% 55%, var(--stage-glow), transparent 70%), var(--surface-0); overflow: hidden; }
+.story-stage::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle, var(--stage-dot) 1px, transparent 1.4px) 0 0 / 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 30%, transparent 85%); mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 30%, transparent 85%); }
+.stage-head { flex: none; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 12px 16px 6px; }
+.stage-title { margin: 0; font-size: 13px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.stage-sec { font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; }
+.stage-step { color: var(--text-primary); font-weight: 600; }
+.story-stage .stage-count { position: static; flex: none; font-size: 12px; }
+.stage-inner { flex: 1; min-height: 0; container-type: size; padding: 0 clamp(8px, 1.6cqi, 28px) clamp(8px, 2cqh, 24px); }
+.stage-inner > .scene { inset: 0 clamp(8px, 1.6vw, 28px) clamp(8px, 1.6vh, 24px); }
+.step-title { font-weight: 600; letter-spacing: 0; color: var(--text-secondary); }
+@media (max-width: 760px) {
+  .story-stage { border-radius: 0; border-width: 0 0 1px; padding: 0; }
+  .stage-head { padding: 8px 2px 4px; }
+  .stage-inner { padding: 0 0 6px; }
+  .stage-inner > .scene { inset: 0 0 6px; }
+}
+
+/* Visuals fill their scene (SVGs keep their aspect ratio: meet). */
+.scene-bins, .scene-map, .scene-curve, .scene-x { display: flex; align-items: center; justify-content: center; }
+.bins, .atmos { width: 100%; height: 100%; max-height: none; }
+.bins .bmsg { font-size: 13.5px; fill: var(--zone-text); }
+.bins .bmsg.first { font-weight: 600; }
+.bins.rows .bmsg { font-size: 10.5px; }
+.bins .cards .zonebox { transition: opacity 0.4s ease; }
+.bins[data-mode="rain"] .zonebox { opacity: 0; }
+.bins[data-hl] .zonebox { opacity: 0.22; }
+.bins[data-hl="moon_base"] .zonebox { opacity: 1; }
+/* Halos: labels drawn over lines keep a clear background, so dotted lines never strike through text. */
+.atmos .ppo2 text, .atmos .sea text, .atmos .suit text, .atmos .zonelab, .atmos .reg, .atmos .branch text, .atmos .minmk text, .bins .bname, .bins .bsub, .bins .bnum {
+  paint-order: stroke; stroke: var(--surface-0); stroke-width: 4px; stroke-linejoin: round; }
+.bins .onzone .bnum, .bins .onzone .bname, .bins .onzone .bsub { stroke: none; }
+.atmos .ppo2 text { stroke-dasharray: none; stroke-width: 5px; }
+.atmos .zonelab { stroke: color-mix(in srgb, var(--surface-0) 100%, var(--zone)); }
+
+/* HTML stage cards (Explore, Ask, About) fill the stage and scale with it. */
+.scene-x .stagecard { display: flex; flex-direction: column; gap: clamp(6px, 1.4cqh, 14px); height: 100%; max-height: 100cqh;
+  font-size: clamp(12px, 1.25cqi + 0.35cqh, 17px); padding: clamp(10px, 2cqi, 24px); }
+.scene-x .stagecard > * { margin: 0; }
+.scene-x .stagetitle { font-size: 0.9em; }
+/* tiles */
+.scene-x .tilescene .tiles2 { flex: 1; min-height: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: clamp(4px, 0.8cqi, 10px); }
+.scene-x .tile2 a { padding: 0.5em 0.6em; gap: 0.25em; }
+.scene-x .t2id { font-size: 0.8em; } .scene-x .t2t { font-size: 0.92em; -webkit-line-clamp: 3; } .scene-x .t2foot { font-size: 0.82em; }
+.scene-x .rb { width: 1.5em; height: 1.5em; font-size: 0.72em; }
+/* ranking bars */
+.scene-x .stacklegend { font-size: 0.85em; }
+.scene-x .rankbars { flex: 1; min-height: 0; display: grid; grid-auto-rows: minmax(0, 1fr); align-items: center; gap: 0; font-size: 1.05em; }
+.scene-x .rankbars li { grid-template-columns: 8.5em 1fr 3em; font-size: 1em; }
+.scene-x .rankbars .stack { height: clamp(16px, 4.5cqh, 40px); max-width: none; border-radius: 6px; }
+/* SVG cards: the drawing takes the remaining height */
+.scene-x .stagecard > svg, .scene-x .stagecard > .rangebars { flex: 1; min-height: 0; width: 100%; height: 100%; max-width: none; }
+.scene-x .rangebars text { font-size: 12px; }
+.scene-x .splegend { font-size: 0.85em; }
+/* coverage table */
+.scene-x .stagecard > .table-wrap { min-height: 0; overflow: visible; margin-block: auto; }
+.scene-x table.cover { font-size: clamp(1em, 0.6em + 0.9cqh, 1.45em); }
+.scene-x table.cover td > * { padding-block: clamp(6px, 6.6cqh, 66px); }
+.scene-x table.cover tbody th { padding-block: clamp(4px, 1.5cqh, 14px); }
+/* Ask */
+.scene-x .qgrid { grid-template-columns: repeat(22, minmax(0, 1fr)); gap: clamp(2px, 0.4cqi, 5px); align-self: center;
+  width: min(100%, calc((100cqh - 9em) * 22 / 12)); }
+.scene-x .askcorp.picked .qgrid { width: min(100%, calc((100cqh - 25em) * 22 / 12)); }
+.scene-x .askcorp { justify-content: center; }
+.scene-x .qgrid i { border-radius: 3px; }
+.scene-x .picklist { font-size: 0.85em; }
+.scene-x .qans { font-size: clamp(14px, 2.2cqi + 1.4cqh, 34px); line-height: 1.5; }
+.scene-x .qchecks { font-size: clamp(14px, 2.4cqi + 2.4cqh, 44px); gap: 0.8em; }
+.scene-x .qcenter .note { font-size: clamp(12px, 1.1cqi + 1cqh, 20px); }
+.scene-x .stagecard.qcenter { justify-content: center; }
+.scene-x .qoff .picklist { font-size: clamp(12px, 1.6cqi + 1.4cqh, 26px); gap: 0.55em; }
+/* About */
+.scene-x .aboutcards { flex: 1; min-height: 0; grid-auto-rows: minmax(0, 1fr); gap: clamp(6px, 1.2cqi, 14px); }
+.scene-x .aboutcards a { padding: 0.9em; justify-content: center; }
+.scene-x .aboutcards .acn { font-size: clamp(26px, 6.5cqi, 96px); }
+.scene-x .vstrip { margin-top: 0.8em; }
+.scene-x .aboutcards .acl { font-size: 1.2em; }
+.scene-x .vstrip i { height: 0.8em; }
+/* Reduced motion: snapshots sit inside the step cards, not in a sized stage. */
+.snapx .stagecard { height: auto; }
+@media (max-width: 760px) {
+  .scene-x .tilescene .tiles2 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .scene-x .stagecard { padding: 8px; font-size: clamp(11px, 2.4cqi, 14px); }
+  .scene-x .rankbars li { grid-template-columns: 6.2em 1fr 2.6em; }
+  .scene-x .aboutcards .acn { font-size: clamp(20px, 7cqi, 32px); }
+}
+@media (max-width: 760px) {
+  .scene-x .tilescene .tiles2 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .scene-x .stagecard .t2t { display: -webkit-box; -webkit-line-clamp: 2; font-size: 0.82em; line-height: 1.2; }
+  .scene-x .tile2 a { padding: 0.35em 0.45em; align-items: stretch; }
+  .scene-x .aboutcards .acl { font-size: 1em; }
+}
+/* Header aligns with the widened story column on large screens. */
+@media (min-width: 761px) { .topin { max-width: min(1648px, calc(100vw - 16px)); } }

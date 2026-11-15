@@ -26,12 +26,23 @@ function createVisual(model, S) {
   let root; let binsHost; let flameHost; let canvas; let flame = null; let flameTried = false; let layout = '';
   let mode = 'rain'; let fell = false; let ro;
   const cap = { earth: 'Earth, 1 g', micro: 'Microgravity (ISS)', partial: 'Moon or Mars: no data, only the two bounds' };
+  // Dots per row adapt to the stage's shape, so the columns grow to fill a tall stage instead of leaving it empty.
+  const maxN = Math.max(...model.bins.map((b) => b.items.length));
+  const pickCols = () => {
+    const w = binsHost.clientWidth || root.clientWidth; const h = binsHost.clientHeight || root.clientHeight;
+    if (!w || !h) return 9;
+    const rows = Math.max(6, Math.floor((820 * h / w - 190) / 17.6));
+    return Math.min(11, Math.max(3, Math.ceil(maxN / rows)));
+  };
+  const aspect = () => { const w = binsHost.clientWidth || root.clientWidth; const h = binsHost.clientHeight || root.clientHeight; return w && h ? w / h : null; };
+  const layoutKey = () => (root.clientWidth < 560 ? `rows:${(aspect() ?? 0).toFixed(2)}` : `cols:${pickCols()}`);
   const drawBins = (instant) => {
-    const L = root.clientWidth < 560 ? 'rows' : 'cols';
+    const key = layoutKey();
+    const L = key.startsWith('cols') ? 'cols' : 'rows';
     const first = !fell && !instant;
-    if (L !== layout || first) {
-      layout = L;
-      binsHost.innerHTML = binsSVG(model, mode, L, { pre: first });
+    if (key !== layout || first) {
+      layout = key;
+      binsHost.innerHTML = binsSVG(model, mode, L, { pre: first, cols: L === 'cols' ? Number(key.split(':')[1]) : undefined, rowsAspect: L === 'rows' ? aspect() : undefined });
       if (first) { fell = true; binsHost.querySelector('svg').getBoundingClientRect(); requestAnimationFrame(() => requestAnimationFrame(() => binsHost.querySelector('svg')?.classList.remove('pre'))); }
       fell = true;
     } else {
@@ -61,7 +72,7 @@ function createVisual(model, S) {
           <p class="sbx-legend" hidden><span class="lg-y">Earth outline</span><span class="lg-b">Microgravity outline</span></p>
           <p class="flamecap"></p></div>`;
       binsHost = el.querySelector('.scene-bins'); flameHost = el.querySelector('.scene-flame'); canvas = el.querySelector('canvas');
-      ro = new ResizeObserver(() => { if (layout && (root.clientWidth < 560 ? 'rows' : 'cols') !== layout) drawBins(true); });
+      ro = new ResizeObserver(() => { if (layout && layoutKey() !== layout) drawBins(true); });
       ro.observe(el);
     },
     near(i) { if (i >= 3) loadFlame(); },
@@ -97,37 +108,37 @@ export async function render(host) {
   const bassNone = none.items.filter((t) => t.id.startsWith('BASS-II'));
   const issLo = S.habitats.find((h) => h.id === 'iss').o2_pct[0];
   const steps = [
-    { id: 'dots', state: { scene: 'bins', mode: 'rain' },
+    { id: 'dots', title: 'One dot per test', state: { scene: 'bins', mode: 'rain' },
       html: `Each dot is one solid-material fire test in our sources: <b>${model.total}</b>. Hover one for its source.`,
       chips: [['Every dot: one row of sandbox.json tests (BASS-II CSV rows and Saffire ICES-2024-365 Table 1 rows); hover a dot for its own file and line.', 'one row each']] },
-    { id: 'bins', state: { scene: 'bins', mode: 'bins' },
+    { id: 'bins', title: 'Where the tests burned', state: { scene: 'bins', mode: 'bins' },
       html: 'Sorted by the air each test burned in, matched to the crew-air windows our sources give.',
       chips: model.bins.filter((b) => b.sources).map((b) => [b.sources, b.label]) },
-    { id: 'none', state: { scene: 'bins', mode: 'none' },
+    { id: 'none', title: 'No crew air', state: { scene: 'bins', mode: 'none' },
       html: `<b>${none.items.length}</b> match no crew habitat. ${bassNone.length} of them are BASS-II tests at 1 atm${bassNone.every((t) => t.o2 < issLo) ? `, all below the ISS window's ${issLo}% O2` : ''}.`,
       chips: [['BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021): "pressure P = 1 atm" (printed p.11), "Ambient pressure was 1 atm" (p.94); not measured per test. O2: data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv (calibrated initial O2)', 'BASS-II report · p.11']] },
-    { id: 'iss', state: { scene: 'bins', mode: 'iss' },
+    { id: 'iss', title: 'ISS cabin air', state: { scene: 'bins', mode: 'iss' },
       html: `<b>${iss.items.length}</b> burned in ISS cabin air: ${esc(iss.window)}.`,
       chips: [[iss.sources, 'NTRS sources']] },
-    { id: 'moon', state: { scene: 'bins', mode: 'moon_base' },
+    { id: 'moon', title: 'Moon-base air', state: { scene: 'bins', mode: 'moon_base' },
       html: `Moon-base air: ${esc(moon.window)}. Only <b>${moon.items.length}</b> solid tests burned there: ${esc(zone.map((t) => `${t.program} ${t.sample}`).join(' and '))}, ${moon.items.length === 2 ? "both" : "all"} at ${flows.join(', ')} cm/s.`,
       chips: [qchip('moon'), [zone.map((t) => `${t.program} ${t.sample}: ${t.o2_as_stated[0]}% O2 (${t.o2_basis}) at ${t.pressure_conversion[0]}, ${t.flow_cm_s} cm/s. ${t.source.doc}, ${t.source.locator}, p.${t.source.printed_page}`).join(' | '), 'ICES-2024-365 · Table 1 · p.3']] },
-    { id: 'suit', state: { scene: 'bins', mode: 'spacesuit' },
+    { id: 'suit', title: 'Spacesuit air', state: { scene: 'bins', mode: 'spacesuit' },
       html: `Spacesuits: ${esc(suit.window)}. <b>${suit.items.length === 0 ? 'No' : suit.items.length}</b> solid test in our sources burned in that air.`,
       chips: [[suit.sources, 'challenge page']] },
-    { id: 'earth', state: { scene: 'flame', g: 'earth' },
+    { id: 'earth', title: 'A flame on Earth', state: { scene: 'flame', g: 'earth' },
       html: 'Gravity changes fire too. On Earth, rising hot gas pulls a candle flame into a flickering yellow teardrop.',
       chips: [[`Official challenge video ${vid.from}–${vid.to}: ${vid.summary} (${vid.summary_note}) ${vid.url}`, `challenge video ${vid.from}–${vid.to}`]] },
-    { id: 'micro', state: { scene: 'flame', g: 'micro' },
+    { id: 'micro', title: 'A flame in microgravity', state: { scene: 'flame', g: 'micro' },
       html: `In microgravity, "${esc(q.candle.text.replace(/^Instead of a flickering teardrop, /, ''))}"`, chips: [qchip('candle')] },
-    { id: 'partial', state: { scene: 'flame', g: 'partial' },
+    { id: 'partial', title: 'Partial gravity', state: { scene: 'flame', g: 'partial' },
       html: `Moon and Mars lie in between, and "${esc(q.partial.text)}".`, chips: [qchip('partial'), qchip('bound')] },
-    { id: 'next', state: { scene: 'bins', mode: 'moon_base' },
+    { id: 'next', title: 'Where next', state: { scene: 'bins', mode: 'moon_base' },
       html: 'Where next? Follow the evidence, explore the 24 investigations, try any air in the sandbox, or ask.',
       extra: `<p class="step-links"><a href="#evidence">Evidence</a><a href="#explore">Explore</a><a href="#sandbox">Flame Sandbox</a><a href="#ask">Ask</a><a href="#about">About</a></p>` },
   ];
   return mountStory(host, {
-    section: 'start', title: 'Flame Frontier', viewHash: 'start/view', viewLabel: 'the overview',  // the Skip link reads "Skip to the overview"
+    section: 'start', title: 'Flame Frontier', label: 'Story', viewHash: 'start/view', viewLabel: 'the overview',  // the Skip link reads "Skip to the overview"
     intro: `<p class="eyebrow">NASA Space Apps 2026 · Flame in Freefall</p>
       <h1 class="story-h1">${headline(zone)}</h1>
       <p class="story-sub">Scroll to see it, one dot per test.</p>`,

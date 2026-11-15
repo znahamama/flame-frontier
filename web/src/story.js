@@ -13,8 +13,8 @@ const narrow = () => matchMedia('(max-width: 760px)').matches;
 
 /**
  * @param {HTMLElement} host
- * @param {{section: string, title: string, intro?: string, viewHash: string, viewLabel: string,
- *   steps: {id: string, html: string, chips?: (string|[string,string])[], state: any, extra?: string}[],
+ * @param {{section: string, title: string, label?: string, intro?: string, viewHash: string, viewLabel: string,
+ *   steps: {id: string, title: string, html: string, chips?: (string|[string,string])[], state: any, extra?: string}[],
  *   visual: {mount: (el: HTMLElement) => void, set: (state: any, o: {instant: boolean, index: number}) => void,
  *            snapshot: (state: any) => string, dispose?: () => void, near?: (i: number) => void}}} cfg
  */
@@ -29,11 +29,11 @@ export function mountStory(host, cfg) {
         ${cfg.intro ?? ''}
         <p class="story-tools"><a class="skipview" href="#${cfg.viewHash}">Skip to ${esc(cfg.viewLabel)} ↓</a></p>
       </header>
-      ${stat ? '' : '<div class="story-stage"><div class="stage-inner"></div><p class="stage-count" aria-hidden="true"></p></div>'}
+      ${stat ? '' : `<div class="story-stage"><div class="stage-head" aria-hidden="true"><p class="stage-title"><span class="stage-sec">${esc(cfg.label ?? cfg.title)}</span><span class="stage-step"></span></p><p class="stage-count"></p></div><div class="stage-inner"></div></div>`}
       <ol class="story-steps">
         ${steps.map((s, i) => `<li class="step" id="${sid(s)}" data-i="${i}" tabindex="-1">
           <div class="step-card">
-            <p class="step-n"><a href="#${section}/s=${s.id}" title="Link to this step">${i + 1} / ${steps.length}</a></p>
+            <p class="step-n"><a href="#${section}/s=${s.id}" title="Link to this step">${i + 1} / ${steps.length}</a>${s.title ? `<span class="step-title"> · ${esc(s.title)}</span>` : ''}</p>
             <p class="step-text">${s.html}</p>
             ${s.extra ?? ''}
             ${s.chips?.length ? `<p class="step-chips">${chipsHTML(s)}</p>` : ''}
@@ -54,6 +54,7 @@ export function mountStory(host, cfg) {
 
   const stage = host.querySelector('.stage-inner');
   const count = host.querySelector('.stage-count');
+  const stepTitle = host.querySelector('.stage-step');
   visual.mount(stage);
   const items = [...host.querySelectorAll('.step')];
   let active = -1; let userScrolled = false; let io;
@@ -63,6 +64,7 @@ export function mountStory(host, cfg) {
     active = i;
     items.forEach((el, k) => el.classList.toggle('on', k === i));
     count.textContent = `${i + 1} / ${steps.length}`;
+    stepTitle.textContent = steps[i].title ? ` · ${steps[i].title}` : '';
     visual.near?.(i);
     visual.set(steps[i].state, { instant, index: i });
     // Keep the address bar on the current step (shareable), without a history entry or a route change.
@@ -70,7 +72,15 @@ export function mountStory(host, cfg) {
       history.replaceState(null, '', `${location.search}#${section}/s=${steps[i].id}`);
     }
   }
-  const line = () => (narrow() ? 0.74 : 0.5);
+  // The active step is the one crossing a line: on desktop, the vertical centre of the visual (so the caption card
+  // sits level with it); on phones, low in the screen below the pinned visual.
+  const line = () => {
+    if (narrow()) return 0.74;
+    const r = stage.getBoundingClientRect();
+    const top = Math.max(r.top, 0);
+    const c = r.height ? (Math.min(r.bottom, innerHeight) + top) / 2 : innerHeight / 2;
+    return Math.min(0.7, Math.max(0.3, c / innerHeight));
+  };
   function observe() {
     io?.disconnect();
     const l = line();
@@ -83,6 +93,8 @@ export function mountStory(host, cfg) {
   const mq = matchMedia('(max-width: 760px)');
   const onMq = () => observe();
   mq.addEventListener('change', onMq);
+  let rt; const onResize = () => { clearTimeout(rt); rt = setTimeout(observe, 200); };
+  addEventListener('resize', onResize);
   const onScroll = () => { userScrolled = true; };
   addEventListener('wheel', onScroll, { passive: true, once: true });
   addEventListener('touchmove', onScroll, { passive: true, once: true });
@@ -103,7 +115,7 @@ export function mountStory(host, cfg) {
       userScrolled = true;
     },
     dispose() {
-      io?.disconnect(); mq.removeEventListener('change', onMq);
+      io?.disconnect(); mq.removeEventListener('change', onMq); removeEventListener('resize', onResize);
       removeEventListener('wheel', onScroll); removeEventListener('touchmove', onScroll); removeEventListener('keydown', onScroll);
       visual.dispose?.();
     },

@@ -19,14 +19,14 @@ function createVisual(P) {
     if (k === 'answer') {
       const n = new Map(P.picked.map((c, i) => [c.id, i + 1]));
       const text = esc(P.a.answer).replace(/\[([^[\]]+)\]/g, (m, g) => g.split(',').map((id) => `<sup class="cite">[${n.get(id.trim()) ?? '?'}]</sup>`).join(''));
-      return `<div class="stagecard"><p class="stagetitle">Q: ${esc(P.a.question)}</p><p class="qans">${text}</p>
+      return `<div class="stagecard qcenter"><p class="stagetitle">Q: ${esc(P.a.question)}</p><p class="qans">${text}</p>
         <p class="note">Written by ${esc(P.a.model)} from the ${P.picked.length} passages only. Numbers in brackets = passage numbers.</p></div>`;
     }
     if (k === 'checks') {
-      return `<div class="stagecard"><p class="stagetitle">Checks run by code on every answer</p><ul class="qchecks">${P.checks.map((c) => `<li><span class="cv-ok" aria-hidden="true">✓</span> ${esc(c)}</li>`).join('')}</ul>
+      return `<div class="stagecard qcenter"><p class="stagetitle">Checks run by code on every answer</p><ul class="qchecks">${P.checks.map((c) => `<li><span class="cv-ok" aria-hidden="true">✓</span> ${esc(c)}</li>`).join('')}</ul>
         <p class="note">This answer: ${P.a.checks.ok ? 'passed' : 'flagged'}; it cites ${P.a.checks.cited.length} of the ${P.picked.length} passages. A failed answer is retried once, then shown with a warning.</p></div>`;
     }
-    return `<div class="stagecard"><p class="stagetitle">Works with no AI key</p><ol class="picklist">${P.qs.map((q) => `<li>${esc(q)}</li>`).join('')}</ol>
+    return `<div class="stagecard qcenter qoff"><p class="stagetitle">Works with no AI key</p><ol class="picklist">${P.qs.map((q) => `<li>${esc(q)}</li>`).join('')}</ol>
       <p class="note">${P.qs.length} precomputed answers, checked again on every build. Any other question offline: the matching passages, no AI text.</p></div>`;
   };
   return {
@@ -49,19 +49,19 @@ export async function render(host) {
     checks: ['every cited passage was among the retrieved ones', 'every sentence cites a passage', 'every number appears in a cited passage', "this site's own readings are credited to Flame Frontier, NASA text to NASA"],
   };
   const steps = [
-    { id: 'corpus', state: { scene: 'corpus' },
+    { id: 'corpus', title: 'The passages', state: { scene: 'corpus' },
       html: `Answers come only from <b>${Q.count}</b> passages: NASA metadata, report and paper pages, the challenge page, and ${derived} labelled summaries of our own.`,
       chips: [[counts.map(([k, n]) => `${KIND[k] ?? k}: ${n}`).join(' · '), 'qa_chunks.json']] },
-    { id: 'pick', state: { scene: 'pick' },
+    { id: 'pick', title: 'Keyword search', state: { scene: 'pick' },
       html: `A keyword search (BM25, no AI) picks the <b>${Q.retrieval.top_k}</b> best. Our own summaries score ${Q.retrieval.derived_weight}× and come after NASA text.`,
       chips: [[`BM25 k1 ${Q.retrieval.k1}, b ${Q.retrieval.b}; derived passages × ${Q.retrieval.derived_weight}; same code in api/ask.py and the browser`, 'retrieval config']] },
-    { id: 'answer', state: { scene: 'answer' },
+    { id: 'answer', title: 'A cited answer', state: { scene: 'answer' },
       html: `${esc(a.model)} then writes a short answer from those passages only. Every sentence must cite one.`,
       chips: [['api/ask.py: max_tokens 450, called server-side only; the browser never calls the Anthropic API', 'api/ask.py']] },
-    { id: 'checks', state: { scene: 'checks' },
+    { id: 'checks', title: 'Code checks', state: { scene: 'checks' },
       html: 'Code checks every answer before it is shown: citations, numbers and who said what. A failing answer gets one retry, then a warning.',
       chips: [['api/ask.py checks; scripts/precompute_qa.py re-checks every cached answer with the current rules', 'checks']] },
-    { id: 'offline', state: { scene: 'offline' },
+    { id: 'offline', title: 'Without an AI key', state: { scene: 'offline' },
       html: `No AI key needed to use it: <b>${C.answers.length}</b> answers are precomputed; other questions offline get the matching passages.`,
       chips: [['data/llm_cache/qa/*.json (committed) -> qa_cache.json; ?offline or any API failure -> BM25 in the browser', 'qa_cache.json']] },
   ];

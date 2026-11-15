@@ -44,13 +44,15 @@ export function rankBarsHTML(H, d, { top = 6 } = {}) {
 
 // ---------- Compare: tested O2 and pressure ranges vs a habitat window ----------
 // Ranges come from ranking.json rows (o2_range_pct, p_range_kpa: min-max over the condition columns named in o2_cols/p_cols).
-export function rangeBarsSVG(rows, win, { narrow = false } = {}) {
-  // Desktop: the two panels side by side. Phone: stacked, each full width, so text stays readable.
-  const W = narrow ? 360 : 640; const lw = narrow ? 64 : 92; const rowH = 26; const pad = 30;
+export function rangeBarsSVG(rows, win, { narrow = false, stacked = false, rowH = 26 } = {}) {
+  // Desktop view: the two panels side by side. Phone, or a tall story stage: stacked, each full width.
+  const W = narrow ? 360 : 640; const lw = narrow ? 64 : 92; const pad = 30;
+  narrow = narrow || stacked;
   const pMax = Math.max(120, ...rows.flatMap((r) => r.p_range_kpa ?? []), win.p[1]) * 1.05;
   const axes = [{ key: 'o2', label: 'O2 tested (%)', max: 100, w: win.o2, get: (r) => r.o2_range_pct, cols: (r) => r.o2_cols },
     { key: 'p', label: 'Pressure tested (kPa)', max: pMax, w: win.p, get: (r) => r.p_range_kpa, cols: (r) => r.p_cols }];
   const panelW = narrow ? W - lw - 12 : (W - lw - 40) / 2;
+  const barH = Math.min(18, Math.max(10, rowH * 0.4));
   const blockH = pad + rows.length * rowH + 30;
   let out = '';
   axes.forEach((ax, k) => {
@@ -67,8 +69,8 @@ export function rangeBarsSVG(rows, win, { narrow = false } = {}) {
       if (!v) { out += `<text class="rgna" x="${x0 + 4}" y="${y + 4}">not in table</text>`; return; }
       const tip = `<b>${esc(r.psi_id)}</b>: ${ax.key === 'o2' ? 'O2' : 'pressure'} ${v[0]}–${v[1]} ${ax.key === 'o2' ? '%' : 'kPa'} (min–max over the table's condition columns)`;
       out += v[0] === v[1]
-        ? `<circle class="rgpt" cx="${X(v[0])}" cy="${y}" r="5" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(cols)}"/>`
-        : `<rect class="rgbar" x="${X(v[0])}" y="${y - 5}" width="${Math.max(3, X(v[1]) - X(v[0]))}" height="10" rx="3" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(cols)}"/>`;
+        ? `<circle class="rgpt" cx="${X(v[0])}" cy="${y}" r="${barH / 2}" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(cols)}"/>`
+        : `<rect class="rgbar" x="${X(v[0])}" y="${y - barH / 2}" width="${Math.max(3, X(v[1]) - X(v[0]))}" height="${barH}" rx="3" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(cols)}"/>`;
     });
     if (narrow || k === 0) rows.forEach((r, i) => { out += `<text class="rgid" x="0" y="${pad + i * rowH + rowH / 2}">${esc(r.psi_id)}</text>`; });
     out += '</g>';
@@ -117,7 +119,8 @@ export function suppSVG(flex, win, { narrow = false } = {}) {
   const grid = [0, 10, 20, 30, 40].map((o) => `<line class="ag" x1="${l}" x2="${W - r}" y1="${Y(o)}" y2="${Y(o)}"/><text class="at" x="${l - 6}" y="${Y(o) + 4}" text-anchor="end">${o}</text>`).join('')
     + Array.from({ length: pMax / 50 + 1 }, (_, i) => i * 50).filter((p, i) => !narrow || i % 2 === 0).map((p) => `<text class="at" x="${X(p)}" y="${Hh - b + 16}" text-anchor="middle">${p}</text>`).join('');
   const zone = `<rect class="spzone" x="${X(0)}" y="${Y(oMax)}" width="${X(win.p[1]) - X(0)}" height="${Y(win.o2[0]) - Y(oMax)}" data-tip="${esc(`<b>${win.name}</b>: ${win.text}. 0 FLEX suppressant tests inside.`)}" data-src="NASA Space Apps 2026 challenge page, Flame in Freefall"/>
-    <text class="spzl" x="${X(win.p[1] / 2)}" y="${Y(oMax) + 16}" text-anchor="middle">${esc(win.name)}</text>`;
+    ${narrow ? `<text class="spzl" x="${X(win.p[1]) + 5}" y="${Y(oMax) + 14}">${esc(win.name)}</text>`
+    : `<text class="spzl" x="${X(win.p[1] / 2)}" y="${Y(oMax) + 16}" text-anchor="middle">${esc(win.name)}</text>`}`;
   return `<svg class="atmos supp" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${esc(`${tests.length} FLEX tests with CO2 or helium, by O2 and pressure; none inside ${win.name} air.`)}">
     ${grid}${zone}${dots}
     <text class="al" x="${(l + W - r) / 2}" y="${Hh - 4}" text-anchor="middle">Total pressure (kPa)</text>

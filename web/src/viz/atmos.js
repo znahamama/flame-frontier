@@ -10,8 +10,8 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const r1 = (x) => Math.round(x * 10) / 10;
 
 // Wide (desktop) and narrow (phone) frames: same data, a smaller viewBox on phones so text stays readable.
-const MAP = { W: 640, H: 440, l: 50, r: 18, t: 14, b: 44 };
-const MAPN = { W: 360, H: 400, l: 40, r: 10, t: 12, b: 42 };
+const MAP = { W: 640, H: 440, l: 50, r: 18, t: 30, b: 44 };
+const MAPN = { W: 360, H: 400, l: 40, r: 10, t: 26, b: 42 };
 const CV = { amin: 0.25, amax: 200, ymin: 12, ymax: 22 };
 const CURVE = { W: 640, H: 440, l: 50, r: 18, t: 14, b: 50, ...CV };
 const CURVEN = { W: 360, H: 400, l: 40, r: 10, t: 12, b: 48, ...CV };
@@ -51,9 +51,9 @@ export function mapSVG(m, { hl = '', zone = false, card = null, narrow = false }
   const zoneTip = `<b>Moon base and pressurized rover air</b><br>${esc(z.label)}`;
   const zoneBox = `<g class="zonegrp ${zone ? 'on' : ''}"><rect class="zonerect" x="${X(0)}" y="${Y(100)}" width="${X(z.p_max_kpa) - X(0)}" height="${Y(z.o2_min_pct) - Y(100)}" tabindex="0" data-tip="${esc(zoneTip)}" data-src="${esc(z.source)}"/>
     <text class="zonelab" x="${X(z.p_max_kpa / 2)}" y="${Y(62)}" text-anchor="middle">Moon base</text><text class="zonelab" x="${X(z.p_max_kpa / 2)}" y="${Y(62) + 16}" text-anchor="middle">&amp; rover</text></g>`;
-  const seaLine = `<g class="sea"><line x1="${X(sea.p_kpa)}" x2="${X(sea.p_kpa)}" y1="${Y(100)}" y2="${Y(0)}"/><text x="${X(sea.p_kpa) + 6}" y="${Y(96)}">${esc(sea.label)}</text></g>`;
+  const seaLine = `<g class="sea"><line x1="${X(sea.p_kpa)}" x2="${X(sea.p_kpa)}" y1="${Y(100)}" y2="${Y(0)}"/><text x="${X(sea.p_kpa) + 6}" y="${Y(3.5)}">${esc(sea.label)}</text></g>`;
   const suitMark = `<g class="suit"><path d="M${X(suit.p_kpa)} ${Y(suit.o2_pct) - 8} l8 8 l-8 8 l-8 -8z" tabindex="0" data-tip="${esc(suit.label)}" data-src="${esc(suit.source)}"/>
-    <text x="${X(suit.p_kpa) + 12}" y="${Y(suit.o2_pct) + 4}">Spacesuit</text></g>`;
+    <text x="${X(suit.p_kpa)}" y="${Y(suit.o2_pct) - 13}" text-anchor="middle">Spacesuit</text></g>`;
   const bars = m.bars.map((bar) => {
     const tip = `<b>SSCE</b>: ${bar.o2}% O2 stated with ${bar.p.map((p) => `${r1(p)}`).join('–')} kPa; which O2 went with which pressure is not given.<br>${bar.rows.map((x) => `${esc(x.material)}: "${esc(x.source.quote)}"`).join('<br>')}`;
     return `<g class="ssce"><line x1="${X(bar.p[0])}" x2="${X(bar.p[1])}" y1="${Y(bar.o2)}" y2="${Y(bar.o2)}"/><line class="hit" x1="${X(bar.p[0])}" x2="${X(bar.p[1])}" y1="${Y(bar.o2)}" y2="${Y(bar.o2)}" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(`${bar.rows[0].source.short}, ${bar.rows[0].source.locator}; ${bar.rows[0].source.file}`)}"/></g>`;
@@ -66,12 +66,13 @@ export function mapSVG(m, { hl = '', zone = false, card = null, narrow = false }
   }).join('');
   let cardSVG = '';
   if (card) {
-    const cx = X(z.p_max_kpa) + 10; const cy = Y(97); const w = narrow ? 200 : 248;
+    const w = narrow ? 200 : 248; const lh = narrow ? 15 : 17;
+    const cx = W - r - w; const cy = Y(100);
     const lines = card.lines;
-    const h = 30 + lines.length * 19;
+    const h = (narrow ? 24 : 26) + lines.length * lh + 6;
     cardSVG = `<g class="zcard ${zone ? 'on' : ''}" aria-hidden="true"><rect x="${cx}" y="${cy}" width="${w}" height="${h}" rx="10"/>
-      <text class="zct" x="${cx + 12}" y="${cy + 20}">${esc(card.title)}</text>
-      ${lines.map((ln, i) => `<text class="zcl" x="${cx + 12}" y="${cy + 40 + i * 19}">✕ ${esc(ln)}</text>`).join('')}
+      <text class="zct" x="${cx + 12}" y="${cy + 18}">${esc(card.title)}</text>
+      ${lines.map((ln, i) => `<text class="zcl" x="${cx + 12}" y="${cy + (narrow ? 36 : 40) + i * lh}">✕ ${esc(ln)}</text>`).join('')}
       <line class="zcline" x1="${cx}" y1="${cy + 14}" x2="${X(z.p_max_kpa)}" y2="${cy + 14}"/></g>`;
   }
   const aria = `Atmosphere map: ${m.tests.length} solid-material tests by O2 and total pressure, plus ${m.bars.length} SSCE range bars.`;
