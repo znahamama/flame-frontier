@@ -1,0 +1,12 @@
+# gitleaks config: default rules, plus one narrow allowlist.
+# The Q&A cache files store "key": a 24-hex SHA-256 prefix of (model, prompt, question, passages), equal to the
+# cache filename. It is not a credential; gitleaks' generic-api-key rule matches it on the field name alone.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Q&A cache keys (sha256 prefixes), not secrets"
+condition = "AND"
+regexTarget = "match"
+regexes = ['''key": "[0-9a-f]{24}"''']
+paths = ['''^data/(llm_cache/qa/[0-9a-f]{24}(-r[0-9]+)?\.json|processed/qa_cache\.json)$''']
