@@ -43,11 +43,11 @@ function table(H, d) {
     const joint = r.joint_rows.length ? `<p class="src">Tests inside both windows: ${r.joint_rows.slice(0, 8).map((x) => `${esc(x.file.split('/').pop())} line ${x.line} (${x.o2_pct}% O2, ${x.p_kpa} kPa)`).join('; ')}${r.joint_tests > 8 ? ` and ${r.joint_tests - 8} more` : ''}.</p>` : '';
     return `<tr class="rk" data-id="${esc(r.psi_id)}">
       <td class="num">${r.rank}</td>
-      <td><button class="linkish" aria-expanded="false">${esc(r.psi_id)}</button> <span class="t">${esc(r.title)}</span></td>
+      <td><button class="linkish" aria-expanded="false" title="${esc(r.title)}">${esc(r.psi_id)}</button> <span class="t">${esc(r.title)}</span></td>
       <td class="bar"><span style="width:${(100 * r.score) / max}%"></span><b>${n(r.score)}</b></td>
       ${cells}
       <td class="num">${r.joint_tests || '<span class="muted">0</span>'}</td></tr>
-      <tr class="why" hidden><td></td><td colspan="${keys.length + 3}"><ul>${why}</ul>${cols.length ? `<p class="src">${cols.map(esc).join('<br>')}</p>` : ''}${joint}
+      <tr class="why" hidden><td></td><td colspan="${keys.length + 3}"><p class="t-full">${esc(r.title)}</p><ul>${why}</ul>${cols.length ? `<p class="src">${cols.map(esc).join('<br>')}</p>` : ''}${joint}
         ${r.notes.length ? `<p class="src">${r.notes.map(esc).join(' ')}</p>` : ''}</td></tr>`;
   }).join('');
   return `<div class="table-wrap"><table class="rank">
