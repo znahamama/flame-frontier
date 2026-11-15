@@ -97,8 +97,11 @@
     {
       "citation": "Urban, D. L. et al., \"Preliminary Results from the Saffire VI Experiment\", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024",
       "cited_pages": [
+        1,
+        2,
         3,
-        4
+        4,
+        6
       ],
       "id": "saffire_ices2024",
       "ntrs_id": "20240002981",
@@ -120,9 +123,20 @@
     {
       "citation": "BASS-II Summary Report, NASA/TM-20210011385, Oct 2021",
       "cited_pages": [
+        1,
+        2,
         3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
         11,
         66,
+        67,
+        74,
         75,
         76,
         94
@@ -137,6 +151,8 @@
     {
       "citation": "Harper, S. A., Juarez, A., Perez, H. III, Hirsch, D. B., \"Oxygen Partial Pressure and Oxygen Concentration Flammability: Can They Be Correlated?\", Journal of ASTM International / ASTM Symposium on Flammability and Sensitivity of Materials in Oxygen-Enriched Atmospheres. NTRS 20160001047.",
       "cited_pages": [
+        1,
+        2,
         3
       ],
       "id": "ntrs_20160001047",
@@ -534,10 +550,10 @@
       "use": "hosting (static site + one Python function), free tier"
     },
     {
-      "model": null,
+      "model": "claude-haiku-5-5",
       "name": "Anthropic API",
       "url": "https://www.anthropic.com/api",
-      "use": "cited Q&A (api/ask.py): not wired up yet"
+      "use": "cited Q&A answers in api/ask.py (model claude-haiku-5-5)"
     }
   ],
   "software": {

@@ -1,0 +1,84 @@
+{
+  "answer": "The passages contain no BASS-II sample size data, so the sample size comparison cannot be made [limits:disagree:bass2_max_flow]. Saffire-I used a sample approximately 0.94 meters long and 0.4 meters wide at an air flow velocity of 20 cm/s [meta:PSI-98:approach.1]. The BASS-II maximum airflow is disputed: the PSI metadata says up to 40 cm/s, while the BASS-II report says about 55 cm/s with no restrictor and about 35 cm/s with two [limits:disagree:bass2_max_flow]. The passages do not state BASS-II's airflow used in any specific test, so a direct comparison is not possible.",
+  "attempts": 2,
+  "checks": {
+    "cited": [
+      "limits:disagree:bass2_max_flow",
+      "meta:PSI-98:approach.1"
+    ],
+    "ok": false,
+    "problems": [
+      "sentence without a citation: \"The passages do not state BASS-II's airflow used in any spec\""
+    ]
+  },
+  "chunks": [
+    {
+      "file": "data/raw/PSI-98/PSI-98_metadata_PSI-166_SAFFIRE-I/i_Investigation.txt",
+      "id": "meta:PSI-98:approach.1",
+      "line": 40,
+      "page": null,
+      "score": 8.625,
+      "source": "PSI-98 Spacecraft Fire Safety Experiment-I: PSI metadata Comment[Approach]",
+      "text": "The Saffire-1 experiments was performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. The sample material for Saffire-I is a composite fabric called Sibal consisting of cotton on a fiberglass substrate (75% cotton, 25% fiberglass by weight). It has been used in many space experiments because it burns like cotton but maintains structural integrity after the cotton is consumed. The sample was approximately 0.94 meters long and 0.4 meters wide, simulating a large piece of flammable fabric. The Saffire-1 flight unit had a sample card installed in the middle of a large flow duct. Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module. Saffire-I was conducted at an air flow velocity of 20 cm/s. Once the sample was ignited flame images were captured using two cameras."
+    },
+    {
+      "file": "data/manual/source_disagreements.csv",
+      "id": "limits:disagree:bass2_max_flow",
+      "line": null,
+      "page": null,
+      "score": 8.526,
+      "source": "Flame Frontier Known Limits: sources disagree (BASS-II maximum airflow)",
+      "text": "Sources disagree on BASS-II maximum airflow. The PSI metadata says up to 40 cm/s; the BASS-II report says about 55 cm/s with no restrictor and about 35 cm/s with two. Flame Frontier uses the report for flow."
+    },
+    {
+      "file": "data/raw/PSI-26/PSI-26_metadata_PSI-102_BASS/i_Investigation.txt",
+      "id": "meta:PSI-26:approach.1",
+      "line": 40,
+      "page": null,
+      "score": 7.747,
+      "source": "PSI-26 Burning and Suppression of Solids: PSI metadata Comment[Approach]",
+      "text": "The experiment was conducted aboard the International Space Station (ISS) inside the Microgravity Glove Box (MSG). Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem. A Kanthal wire (29-gage)igniter was used to initiate combustion at one end of the fabric. Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s. The airflow was directed along the fuel surface in either the opposed or concurrent direction. This investigation explored two primary air flow configurations; concurrent-flow and opposed-flow. With concurrent-flow air flows in the same direction as the flame spread and in opposed-flow air flows in the opposite direction of flame spread. Flames were observed in the top and edge profiles and data was collected on flame size, shape, color, spread rate, and potential flame quenching. The samples were placed in a small flow duct (76 mm x 76 mm cross section) that allowed for airflow across the fabric."
+    },
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.18",
+      "line": null,
+      "page": null,
+      "score": 7.378,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "Variables: how did tests from the same investigation differ and how were they the same?"
+    },
+    {
+      "file": "data/raw/PSI-99/PSI-99_metadata_PSI-167_SAFFIRE-II/i_Investigation.txt",
+      "id": "meta:PSI-99:approach.1",
+      "line": 40,
+      "page": null,
+      "score": 6.624,
+      "source": "PSI-99 Spacecraft Fire Experiment-II: PSI metadata Comment[Approach]",
+      "text": "The Saffire-II experiment was performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS. As a follow on to the Saffire-I investigation, the Saffire-II investigation added more samples including SIBAL, silicone, structure PMMA, flat PMMA, and PMMA with Nomex. The Saffire-1I flight unit had a sample card installed in the middle of a large flow duct. Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module. Saffire-II has a sample card that contains 9 samples, each 5 cm x 29 cm. Depending on the sample material, the Saffire-II was conducted at an air flow velocity of either 20 or 30 cm/s, the flow being either concurrent or opposed. Once the sample was ignited flame images were captured using two cameras. In addition, thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity."
+    },
+    {
+      "file": "data/manual/o2_atmosphere_sweep.csv",
+      "id": "limits:o2:PSI-98:Saffire-I",
+      "line": null,
+      "page": null,
+      "score": 6.466,
+      "source": "Flame Frontier Known Limits: whose oxygen?",
+      "text": "PSI-98 Saffire-I, column \"Percent O2\": verdict ambient. Evidence: \"Air is drawn through the flow duct by fans located at the top of the duct\". Cygnus cabin air drawn through the duct. No pressure column."
+    }
+  ],
+  "flagged": true,
+  "key": "350bd0b11e568fb58330b91f",
+  "model": "claude-haiku-5-5",
+  "question": "How do BASS-II and Saffire-I differ in sample size and airflow?",
+  "usage": [
+    {
+      "input_tokens": 1820,
+      "output_tokens": 191
+    },
+    {
+      "input_tokens": 1870,
+      "output_tokens": 233
+    }
+  ]
+}

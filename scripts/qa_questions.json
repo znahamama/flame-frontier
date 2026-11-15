@@ -1,0 +1,13 @@
+{
+  "questions": [
+    "Which solid materials have been burned in Moon-base air, at 30% oxygen or more and 10.2 psi or less?",
+    "What oxygen concentration and pressure did the Saffire VI tests use?",
+    "How does the airflow in BASS-II compare with Saffire-I and Saffire-III?",
+    "How did FLEX study fire suppression in microgravity?",
+    "How did SAME and SAME-R test smoke detection in microgravity?",
+    "Is there any partial-gravity combustion data in PSI?",
+    "What is the minimum oxygen concentration on the BASS-II flammability boundary for PMMA rods?",
+    "Why is the 85% oxygen in ACME CFI-G not the chamber atmosphere?"
+  ],
+  "why": "Demo questions: the Moon-base evidence gap (1, 2, 6), comparison (3), suppression (4), detection (5), the boundary (7), data validity (8)."
+}

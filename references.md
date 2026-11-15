@@ -35,10 +35,10 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 
 ## Reports and papers
 
-- Urban, D. L. et al., "Preliminary Results from the Saffire VI Experiment", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024. NTRS 20240002981: <https://ntrs.nasa.gov/citations/20240002981>. Pages cited: p.3, p.4.
+- Urban, D. L. et al., "Preliminary Results from the Saffire VI Experiment", ICES-2024-365, 53rd International Conference on Environmental Systems, 2024. NTRS 20240002981: <https://ntrs.nasa.gov/citations/20240002981>. Pages cited: p.1, p.2, p.3, p.4, p.6.
 - "Solid Surface Combustion Experiment Completes a Series of Eight Successful Flights", Research and Technology 1995, NASA Lewis Research Center (NTRS 20050177200). NTRS 20050177200: <https://ntrs.nasa.gov/citations/20050177200>. No page numbers (abstract record).
-- BASS-II Summary Report, NASA/TM-20210011385, Oct 2021. NTRS 20210011385: <https://ntrs.nasa.gov/citations/20210011385>. Pages cited: p.3, p.11, p.66, p.75, p.76, p.94.
-- Harper, S. A., Juarez, A., Perez, H. III, Hirsch, D. B., "Oxygen Partial Pressure and Oxygen Concentration Flammability: Can They Be Correlated?", Journal of ASTM International / ASTM Symposium on Flammability and Sensitivity of Materials in Oxygen-Enriched Atmospheres. NTRS 20160001047. <https://ntrs.nasa.gov/api/citations/20160001047/downloads/20160001047.pdf>. Pages cited: p.3.
+- BASS-II Summary Report, NASA/TM-20210011385, Oct 2021. NTRS 20210011385: <https://ntrs.nasa.gov/citations/20210011385>. Pages cited: p.1, p.2, p.3, p.4, p.5, p.6, p.7, p.8, p.9, p.10, p.11, p.66, p.67, p.74, p.75, p.76, p.94.
+- Harper, S. A., Juarez, A., Perez, H. III, Hirsch, D. B., "Oxygen Partial Pressure and Oxygen Concentration Flammability: Can They Be Correlated?", Journal of ASTM International / ASTM Symposium on Flammability and Sensitivity of Materials in Oxygen-Enriched Atmospheres. NTRS 20160001047. <https://ntrs.nasa.gov/api/citations/20160001047/downloads/20160001047.pdf>. Pages cited: p.1, p.2, p.3.
 - Schaezler, R. N., Cook, A. J., "Report on ISS O2 Production, Gas Supply and Partial Pressure Management", International Conference on Environmental Systems (AIAA). NTRS 20150010425. <https://ntrs.nasa.gov/api/citations/20150010425/downloads/20150010425.pdf>. Pages cited: p.1.
 
 ## Challenge
@@ -73,7 +73,7 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 ## Services
 
 - [Vercel](https://vercel.com): hosting (static site + one Python function), free tier.
-- [Anthropic API](https://www.anthropic.com/api): cited Q&A (api/ask.py): not wired up yet.
+- [Anthropic API](https://www.anthropic.com/api): cited Q&A answers in api/ask.py (model claude-haiku-5-5).
 
 ## Use of AI
 

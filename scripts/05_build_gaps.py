@@ -102,7 +102,7 @@ def habitat(h, solids, ssce, flex, cfig, bass2, ref):
                      "text": f"No flammability boundary (where a solid stops burning) was measured in {w}. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at {f1(p_b)} kPa.",
                      "evidence": [p2["source"]]})
     else:
-        covered.append({"id": "boundary", "text": f"A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, {f1(p_b)} kPa), post-burn O2 minimum {p2['minimum']['x_o2']}%.", "evidence": [p2["source"]]})
+        covered.append({"id": "boundary", "text": f"A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, {f1(p_b)} kPa), post-burn O2 minimum {p2['minimum']['x_o2']}% ({p2['minimum']['note'].replace('Computed', 'computed by Flame Frontier')}).", "evidence": [p2["source"]]})
 
     if h["gravity"] == "partial":
         gaps.append({"id": "gravity", "region": {"panel": 1, "all": True},

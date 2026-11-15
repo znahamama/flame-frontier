@@ -12,9 +12,12 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 4. Habitat Gaps tab: ISS / Moon base / rover / spacesuit, target vs tested, template-only gap sentences, each with "Show on map" (dashed box on Panel 1, or Panel 2).
 
+- 5. Cited Q&A ("Ask" tab): 262 cited passages, BM25, claude-haiku-5-5 answers checked by code (citations + numbers), 8 precomputed demo answers committed (all pass checks), offline mode `?offline` and automatic fallback. Live AI answers switch on when the key is in Vercel env vars. API spend so far ~$0.02.
+
 ## In progress
-- 5. Cited Q&A
+- 6. Earth applications
 
 ## Needs me (the user)
 - The official challenge video URL (it is embedded on the challenge page; we only saved the transcript). Paste it and References will show it.
-- (Item 5 will need the Anthropic key added to Vercel env vars; I will stop and say exactly when.)
+- Add ANTHROPIC_API_KEY to Vercel (project flame-frontier, Production) to switch on live answers; without it the site serves the 8 precomputed answers and passages.
+- Git commit signing (Secretive / ssh-agent) needs your Touch ID: commits since item 4 are waiting on it.

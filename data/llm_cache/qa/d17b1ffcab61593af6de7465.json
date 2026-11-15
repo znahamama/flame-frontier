@@ -1,0 +1,78 @@
+{
+  "answer": "Table 1 lists oxygen concentrations for the Saffire VI samples: VI-2 at 31.0 mol % with ambient pressure 54.1 kPa, VI-3 at 30.3 mol % with 54.6 kPa, and VI-4 at 28.8 mol % with 55.2 kPa [paper:saffire6:p3.2]. The Saffire VI test 1 (Nomex) did not ignite and its conditions are not in Table 1 [limits:source:saffire_ices2024].",
+  "attempts": 1,
+  "checks": {
+    "cited": [
+      "paper:saffire6:p3.2",
+      "limits:source:saffire_ices2024"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/Saffire-VI_ICES-2024-365.pdf",
+      "id": "paper:saffire6:p3.2",
+      "line": null,
+      "page": 3,
+      "score": 12.272,
+      "source": "Saffire ICES-2024-365, PDF p. 3",
+      "text": "[text removed: Saffire VI paper (NTRS 20240002981) may include copyright material]"
+    },
+    {
+      "file": "docs/ref/Saffire-VI_ICES-2024-365.pdf",
+      "id": "paper:saffire6:p3.1",
+      "line": null,
+      "page": 3,
+      "score": 10.139,
+      "source": "Saffire ICES-2024-365, PDF p. 3",
+      "text": "[text removed: Saffire VI paper (NTRS 20240002981) may include copyright material]"
+    },
+    {
+      "file": "docs/ref/Saffire-VI_ICES-2024-365.pdf",
+      "id": "paper:saffire6:p2.4",
+      "line": null,
+      "page": 2,
+      "score": 9.674,
+      "source": "Saffire ICES-2024-365, PDF p. 2",
+      "text": "[text removed: Saffire VI paper (NTRS 20240002981) may include copyright material]"
+    },
+    {
+      "file": "docs/ref/Saffire-VI_ICES-2024-365.pdf",
+      "id": "paper:saffire6:p4.3",
+      "line": null,
+      "page": 4,
+      "score": 9.673,
+      "source": "Saffire ICES-2024-365, PDF p. 4",
+      "text": "[text removed: Saffire VI paper (NTRS 20240002981) may include copyright material]"
+    },
+    {
+      "file": "data/manual/sources.json",
+      "id": "limits:source:saffire_ices2024",
+      "line": null,
+      "page": null,
+      "score": 9.42,
+      "source": "Flame Frontier Known Limits: Saffire ICES-2024-365",
+      "text": "Saffire ICES-2024-365 gives: Per-test ambient pressure (kPa), O2 (mol %), air flow (cm/s), flow direction, material, for the 5 samples in Table 1 (p.3). It does not give: Table 1 lists only the samples 'considered in this paper' (IV-1, V-2, VI-2, VI-3, VI-4). Other Saffire I-V samples are not in it. Saffire VI test 1 (Nomex) did not ignite (p.4). Its conditions are not in Table 1, so it is not plotted. One flow speed only: 20 cm/s concurrent for every listed test. For the PMMA tests the flow was reduced at 1120 s (p.4); the reduced speed is not in Table 1. One O2 value per test (the set condition). No pre/post-burn split. Microgravity (orbiting Cygnus) only. No partial gravity. No extinction or flammability-limit data: every plotted test ignited and burned."
+    },
+    {
+      "file": "docs/ref/Saffire-VI_ICES-2024-365.pdf",
+      "id": "paper:saffire6:p2.5",
+      "line": null,
+      "page": 2,
+      "score": 9.316,
+      "source": "Saffire ICES-2024-365, PDF p. 2",
+      "text": "[text removed: Saffire VI paper (NTRS 20240002981) may include copyright material]"
+    }
+  ],
+  "flagged": false,
+  "key": "d17b1ffcab61593af6de7465",
+  "model": "claude-haiku-5-5",
+  "question": "What oxygen concentration and pressure did the Saffire VI tests use?",
+  "usage": [
+    {
+      "input_tokens": 2518,
+      "output_tokens": 171
+    }
+  ]
+}

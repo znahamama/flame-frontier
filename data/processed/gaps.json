@@ -63,7 +63,7 @@
             }
           ],
           "id": "boundary",
-          "text": "A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, 101.3 kPa), post-burn O2 minimum 13.61%."
+          "text": "A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, 101.3 kPa), post-burn O2 minimum 13.61% (computed by Flame Frontier from eq. 6.1; report text says 'a = 8 to 12 1/s at approximately 13.5 percent O2')."
         },
         {
           "evidence": [],

@@ -1,0 +1,3 @@
+id,topic,a_chunk,a_quote,b_chunk,b_quote,reading
+bass2_max_flow,BASS-II maximum airflow,meta:PSI-25:approach,could impose airflow speeds up to 40 cm/s,report:bass2:p66.4,"With no restrictors, the maximum flow velocity was ~55 cm/s, and with two restrictors this was reduced to a maximum of ~35 cm/s","The PSI metadata says up to 40 cm/s; the BASS-II report says about 55 cm/s with no restrictor and about 35 cm/s with two. Flame Frontier uses the report for flow."
+bass2_test_count,BASS-II number of tests,report:bass2:p3.3,A total of 126 tests were conducted,,{bass2_rows} rows,"The report says 126 tests; the PSI experimental table has {bass2_rows} rows (a/b re-runs of the same sample are separate rows). Flame Frontier plots the table rows."

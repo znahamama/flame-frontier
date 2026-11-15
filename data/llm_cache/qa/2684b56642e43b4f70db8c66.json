@@ -1,0 +1,79 @@
+{
+  "answer": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R) [brief:s1.6]. SAME-R used the SAME hardware flown on orbit, replaced the DBP samples with Pyrell foam, broadened test conditions, and substituted an M-pass instrument for one of the two Commercial Diagnostic Enclosures [meta:PSI-101:approach]. Its primary objective was to quantify the sizes liquid smoke particulate reaches in low gravity and relate droplet size distribution to smoke generation and transport conditions [meta:PSI-101:objective].",
+  "attempts": 1,
+  "checks": {
+    "cited": [
+      "brief:s1.6",
+      "meta:PSI-101:approach",
+      "meta:PSI-101:objective"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.20",
+      "line": null,
+      "page": null,
+      "score": 21.606,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies."
+    },
+    {
+      "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+      "id": "meta:PSI-101:impacts",
+      "line": 67,
+      "page": null,
+      "score": 16.803,
+      "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Research Impacts]",
+      "text": "Along with the results from the original SAME investigation, the results from SAME-R can lead to technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated. The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
+    },
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.6",
+      "line": null,
+      "page": null,
+      "score": 16.199,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
+    },
+    {
+      "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+      "id": "meta:PSI-101:approach",
+      "line": 40,
+      "page": null,
+      "score": 16.117,
+      "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Approach]",
+      "text": "SAME-R utilized the SAME hardware used on-orbit. Based on the experience gained from SAME, SAME-R included the following modifications: 1) a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples, 2) test conditions were broadened including higher heating temperatures and no-flow during sample heating time, and 3) a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points. After SAME-R flight tests, three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R."
+    },
+    {
+      "file": "data/raw/PSI-102/PSI-102_metadata_PSI-170_SAME/i_Investigation.txt",
+      "id": "meta:PSI-102:impacts",
+      "line": 66,
+      "page": null,
+      "score": 13.767,
+      "source": "PSI-102 Smoke and Aerosol Measurement Experiment: PSI metadata Comment[Research Impacts]",
+      "text": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
+    },
+    {
+      "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+      "id": "meta:PSI-101:objective",
+      "line": 60,
+      "page": null,
+      "score": 12.471,
+      "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Objective]",
+      "text": "Similar to the original SAME investigation, the primary objective of the SAME-R investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions in the experiment. One of the problems encountered during the SAME investigation was that after the thermal precipitators were returned to the ground, it was found that all the TEM grids were severely contaminated with some unidentified foreign particles, making these grids unusable although some of them showed shapes of certain types of smoke particles. Based on that experience the SAME-R investigation employed several modification covering new materials, extended operating conditions, and diagnostic equipments."
+    }
+  ],
+  "flagged": false,
+  "key": "2684b56642e43b4f70db8c66",
+  "model": "claude-haiku-5-5",
+  "question": "How did SAME and SAME-R test smoke detection in microgravity?",
+  "usage": [
+    {
+      "input_tokens": 1890,
+      "output_tokens": 217
+    }
+  ]
+}
