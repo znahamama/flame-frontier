@@ -65,7 +65,8 @@ Vercel free tier: static Vite build (`web/dist`) plus one Python function (`api/
 - `data/llm_cache/`: committed.
 - `data/manual/`: hand-entered rows from outside PSI (`external_tests.csv`), plus `sources.json` (citation, checksum, and what each source gives and does NOT give; the Known Limits tab renders the latter). Every row cites document + table + page + an exact quote, and the pipeline fails if a quote or a Saffire Table 1 value doesn't match the source.
 - `docs/ref/`: reference PDFs, gitignored (the SSCE NTRS record JSON is small and committed). The BASS-II report is 49 MB; its SHA-256 is in docs/ref/README.md. Commit derived, page-cited outputs instead.
-- `web/`: Vite + plain JS + Apache ECharts (tree-shaken). Tabs: Evidence Map, Catalog, Ranking, Clips, Known Limits. Colors are CSS tokens in style.css (light and dark).
+- `web/`: Vite + plain JS + Apache ECharts (tree-shaken). Tabs: Evidence Map, Catalog, Ranking, Clips, Known Limits, References.
+- References: `scripts/05_build_references.py` -> `references.json` + `references.md` (repo root, generated; never hand-edit). Sources: catalog (PSI DOIs), sources.json (+ pages cited anywhere, attributed to the nearest preceding source marker), brief URLs, media, package.json/node_modules and requirements + installed metadata (licences), `MODEL` constant in api/ask.py. The challenge video URL is NOT recorded (null until the user supplies it). Colors are CSS tokens in style.css (light and dark).
 - Media: raw MP4s never go in git. Web clips are trimmed and small (<5 MB each, enforced by the hook) and go in `web/public/clips/` via an explicit gitignore exception, added when the clips are made.
 
 ## Verified data facts

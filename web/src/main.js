@@ -3,6 +3,7 @@ import { render as limits } from './tabs/limits.js';
 import { render as catalog } from './tabs/catalog.js';
 import { render as clips } from './tabs/clips.js';
 import { render as ranking } from './tabs/ranking.js';
+import { render as references } from './tabs/references.js';
 
 const TABS = [
   ['evidence', 'Evidence Map', { render: evidence }],
@@ -10,6 +11,7 @@ const TABS = [
   ['ranking', 'Ranking', { render: ranking }],
   ['clips', 'Clips', { render: clips }],
   ['limits', 'Known Limits', { render: limits }],
+  ['references', 'References', { render: references }],
 ];
 
 const nav = document.querySelector('.tabs');

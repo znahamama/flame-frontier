@@ -112,3 +112,16 @@ table.rank .t-full { display: none; margin: 0 0 4px; font-weight: 600; }
 /* Panel 1 layer toggles */
 .layers { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.85rem; margin: 4px 0; }
 .layers label { cursor: pointer; white-space: nowrap; }
+
+/* References */
+ul.refs { padding-left: 18px; }
+ul.refs li { margin-bottom: 6px; overflow-wrap: anywhere; }
+td.small { font-size: 0.78rem; color: var(--text-secondary); overflow-wrap: anywhere; }
+td.nowrap { white-space: nowrap; }
+a { color: var(--series-1); }
+@media (max-width: 640px) {
+  table.stack thead { display: none; }
+  table.stack tr { display: block; padding: 8px 0; border-bottom: 1px solid var(--grid); }
+  table.stack td { display: block; border: 0; padding: 1px 0; }
+  table.stack td:first-child { font-weight: 600; }
+}
