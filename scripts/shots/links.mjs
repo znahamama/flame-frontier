@@ -11,6 +11,8 @@ const LINKS = [
   ['Start story', 'start', '.story .step'],
   ['Start overview + downloads', 'start/view', '#view .overview .tile'],
   ['Story step deep link', 'start/s=moon', '#start-s-moon.on'],
+  ['Evidence story', 'evidence', '.story .step'],
+  ['Evidence story step', 'evidence/s=zone', '#evidence-s-zone.on'],
   ['Evidence Map (old)', 'evidence', '#view #p1 canvas'],
   ['Evidence Map (view)', 'evidence/view', '#view #p2 canvas'],
   ['Evidence gap highlight', 'evidence/gap=moon_base.flow', '#view #gapbanner'],
@@ -22,6 +24,7 @@ const LINKS = [
   ['Sandbox preset', 'sandbox/moon_base', '#view .sbx-total'],
   ['Sandbox URL state', 'sandbox/g=micro&o2=21&p=101.4&u=20', '#view .sbx-badges li'],
   ['Clips', 'clips', '#view video'],
+  ['Clips step strip', 'clips', '#view .steps li'],
   ['Catalog', 'catalog', '#view table.cat'],
   ['Ranking', 'ranking', '#view table.rank'],
   ['Compare default', 'compare', '#view table.compare'],
@@ -50,6 +53,13 @@ for (const [feature, hash, sel] of LINKS) {
   let ok = true; let why = '';
   try { await page.waitForSelector(sel, { timeout: 8000, state: 'attached' }); } catch { ok = false; why = `missing ${sel}`; }
   if (await page.$('#panel .error')) { ok = false; why += ' error card'; }
+  // A view link (not a story top or step) must land with the interactive view at the top of the screen.
+  const story = /^(start|evidence)$/.test(hash) || /\/s=/.test(hash);   // sections with a story open at the top
+  if (!story) {
+    await page.waitForTimeout(400);
+    const [top, vh] = await page.evaluate(() => [document.querySelector('#viewtop')?.getBoundingClientRect().top, innerHeight]);
+    if (top == null || top < -20 || top > vh * 0.4) { ok = false; why += ` view not on screen (top ${Math.round(top)})`; }
+  }
   if (errors.length) { ok = false; why += ` ${[...new Set(errors)].join(' | ')}`; }
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${feature.padEnd(30)} #${hash.length > 50 ? `${hash.slice(0, 47)}...` : hash}${ok ? '' : `  -> ${why.trim()}`}`);
   if (!ok) fail++;

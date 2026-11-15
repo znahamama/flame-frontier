@@ -1,0 +1,4628 @@
+[
+ {
+  "tab": "evidence",
+  "width": 1440,
+  "total": 992,
+  "fold": 106,
+  "hidden": 328,
+  "pageHeight": 8162,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 101,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 182,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 217,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 289,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 313,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 349,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 815,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 890,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 914,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 950,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1416,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1491,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1515,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1551,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2017,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2092,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2116,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2152,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2618,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2692,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2716,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2752,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3219,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3293,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3317,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3353,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3820,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3894,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3918,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3980,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4446,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4521,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4545,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4581,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5047,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5122,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 5146,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5182,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5648,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5723,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5747,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5783,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6249,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6353,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "vh",
+    "words": 4,
+    "top": 6415,
+    "text": "Where the tests are"
+   },
+   {
+    "tag": "p",
+    "cls": "headline",
+    "words": 29,
+    "top": 6415,
+    "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2 and VI-3), both at one airflow (20 cm/s), none in partial gravity."
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6469,
+    "text": "FLEX droplets (liquid, PSI-69) (+273 tests)"
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6469,
+    "text": "CFI-G gas flames (PSI-159) (+179 tests)"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 3,
+    "top": 7022,
+    "text": "About these layers"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 7,
+    "top": 7053,
+    "text": "Data table (7 rows) and unit notes"
+   },
+   {
+    "tag": "p",
+    "cls": "note dl",
+    "words": 50,
+    "top": 7085,
+    "text": "Download the data (CSV, every row with its source; for your own models): tests.csv (586 rows): every test on the Evidence Map, with its source · bass2_boundary_points.csv (7 rows): BASS-II points vs NASA's boundary (Panel 2) · ssce_ranges.csv (2 rows): SSCE O2/pressure sets (unpaired) · README.md: data dictionary and caveats"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 6,
+    "top": 7212,
+    "text": "BASS-II published flammability boundary (PMMA rods)"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 38,
+    "top": 7243,
+    "text": "NASA's published fit (report sec. 6.1.4.4, p.75): above the line PMMA rods burn, below they go out. Solid over a = 4.75–182.95 1/s (every Olson flow recorded in cm/s), dashed beyond. Computed minimum 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 6,
+    "top": 7294,
+    "text": "How the 7 points were chosen"
+   },
+   {
+    "tag": "p",
+    "cls": "callout",
+    "words": 16,
+    "top": 7320,
+    "text": "Only 7 of NASA's ~50 ISS boundary points can be reconstructed from the public PSI files."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7347,
+    "text": "Most extinction (quenching-branch) flows are recorded only as fan pot settings (0.27-0.36) below the lowest calibrated pot (0.5)."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 6,
+    "top": 7390,
+    "text": "Drop-tower data are not in PSI."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7412,
+    "text": "Our count of plotted ISS symbols (about 27 stable, 16 blowoff, 8 quench); the report states no total."
+   },
+   {
+    "tag": "figcaption",
+    "cls": "",
+    "words": 18,
+    "top": 7547,
+    "text": "NASA's own plot, for comparison (image only; points not digitized). BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p. 76"
+   }
+  ],
+  "visuals": {
+   "canvas": 2,
+   "svg": 10,
+   "img": 1,
+   "video": 0,
+   "tables": 1,
+   "tableRows": 8,
+   "details": 3
+  }
+ },
+ {
+  "tab": "evidence/view",
+  "width": 1440,
+  "total": 992,
+  "fold": 97,
+  "hidden": 328,
+  "pageHeight": 8162,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 101,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 182,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 217,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 289,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 313,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 349,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 815,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 890,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 914,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 950,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1416,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1491,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1515,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1551,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2017,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2092,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2116,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2152,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2618,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2692,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2716,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2752,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3219,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3293,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3317,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3353,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3820,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3894,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3918,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3980,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4446,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4521,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4545,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4581,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5047,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5122,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 5146,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5182,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5648,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5723,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5747,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5783,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6249,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6353,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "vh",
+    "words": 4,
+    "top": 6415,
+    "text": "Where the tests are"
+   },
+   {
+    "tag": "p",
+    "cls": "headline",
+    "words": 29,
+    "top": 6415,
+    "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2 and VI-3), both at one airflow (20 cm/s), none in partial gravity."
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6469,
+    "text": "FLEX droplets (liquid, PSI-69) (+273 tests)"
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6469,
+    "text": "CFI-G gas flames (PSI-159) (+179 tests)"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 3,
+    "top": 7022,
+    "text": "About these layers"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 7,
+    "top": 7053,
+    "text": "Data table (7 rows) and unit notes"
+   },
+   {
+    "tag": "p",
+    "cls": "note dl",
+    "words": 50,
+    "top": 7085,
+    "text": "Download the data (CSV, every row with its source; for your own models): tests.csv (586 rows): every test on the Evidence Map, with its source · bass2_boundary_points.csv (7 rows): BASS-II points vs NASA's boundary (Panel 2) · ssce_ranges.csv (2 rows): SSCE O2/pressure sets (unpaired) · README.md: data dictionary and caveats"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 6,
+    "top": 7212,
+    "text": "BASS-II published flammability boundary (PMMA rods)"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 38,
+    "top": 7243,
+    "text": "NASA's published fit (report sec. 6.1.4.4, p.75): above the line PMMA rods burn, below they go out. Solid over a = 4.75–182.95 1/s (every Olson flow recorded in cm/s), dashed beyond. Computed minimum 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 6,
+    "top": 7294,
+    "text": "How the 7 points were chosen"
+   },
+   {
+    "tag": "p",
+    "cls": "callout",
+    "words": 16,
+    "top": 7320,
+    "text": "Only 7 of NASA's ~50 ISS boundary points can be reconstructed from the public PSI files."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7347,
+    "text": "Most extinction (quenching-branch) flows are recorded only as fan pot settings (0.27-0.36) below the lowest calibrated pot (0.5)."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 6,
+    "top": 7390,
+    "text": "Drop-tower data are not in PSI."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7412,
+    "text": "Our count of plotted ISS symbols (about 27 stable, 16 blowoff, 8 quench); the report states no total."
+   },
+   {
+    "tag": "figcaption",
+    "cls": "",
+    "words": 18,
+    "top": 7547,
+    "text": "NASA's own plot, for comparison (image only; points not digitized). BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p. 76"
+   }
+  ],
+  "visuals": {
+   "canvas": 2,
+   "svg": 10,
+   "img": 1,
+   "video": 0,
+   "tables": 1,
+   "tableRows": 8,
+   "details": 3
+  }
+ },
+ {
+  "tab": "sandbox",
+  "width": 1440,
+  "total": 1130,
+  "fold": 106,
+  "hidden": 531,
+  "pageHeight": 7892,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 101,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 182,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 217,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 289,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 313,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 349,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 815,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 890,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 914,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 950,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1416,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1491,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1515,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1551,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2017,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2092,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2116,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2152,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2618,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2692,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2716,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2752,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3219,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3293,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3317,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3353,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3820,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3894,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3918,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3980,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4446,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4521,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4545,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4581,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5047,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5122,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 5146,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5182,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5648,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5723,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5747,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5783,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6249,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6353,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 2,
+    "top": 6415,
+    "text": "Flame Sandbox"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 30,
+    "top": 6445,
+    "text": "Pick the gravity and the air. The picture shows why fire in space looks different; the panel beside it shows how much real NASA evidence exists for exactly those conditions."
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-badge",
+    "words": 5,
+    "top": 6506,
+    "text": "Teaching model, not a simulation"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-caption note",
+    "words": 22,
+    "top": 6944,
+    "text": "Earth: hot gas rises, pulling the flame into a flickering teardrop; soot carried upward glows yellow (official challenge video, 2:37–3:12)."
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 8,
+    "top": 6995,
+    "text": "What the picture does and does not show"
+   },
+   {
+    "tag": "label",
+    "cls": "sbx-ctl",
+    "words": 2,
+    "top": 6648,
+    "text": "Oxygen 21%"
+   },
+   {
+    "tag": "label",
+    "cls": "sbx-ctl",
+    "words": 6,
+    "top": 6720,
+    "text": "Total pressure 101.4 kPa (14.7 psi)"
+   },
+   {
+    "tag": "label",
+    "cls": "sbx-ctl",
+    "words": 3,
+    "top": 6793,
+    "text": "Airflow 0 cm/s"
+   },
+   {
+    "tag": "p",
+    "cls": "note sbx-po2",
+    "words": 9,
+    "top": 6865,
+    "text": "Oxygen partial pressure 21.3 kPa (sea-level air: 21.2 kPa)."
+   },
+   {
+    "tag": "li",
+    "cls": "st-tested",
+    "words": 2,
+    "top": 6968,
+    "text": "Atmosphere Tested"
+   },
+   {
+    "tag": "li",
+    "cls": "st-none",
+    "words": 2,
+    "top": 6968,
+    "text": "Gravity None"
+   },
+   {
+    "tag": "li",
+    "cls": "st-tested",
+    "words": 2,
+    "top": 7005,
+    "text": "Airflow Tested"
+   },
+   {
+    "tag": "li",
+    "cls": "st-unknown",
+    "words": 5,
+    "top": 7005,
+    "text": "Flammability boundary Unknown: no data"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 3,
+    "top": 7060,
+    "text": "Why: evidence details ↓"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 4,
+    "top": 7136,
+    "text": "Evidence for these conditions"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 42,
+    "top": 7210,
+    "text": "52 solid tests within ±2 points O2 and ±5 kPa: Saffire IV-1, BASS-II B1, BASS-II B2, BASS-II B3, BASS-II B4 and 47 more. Inside the ISS cabin window (21–24.1% O2 at 96.5–102.7 kPa): 28 solid tests in that whole window (Habitat Gaps)."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 4,
+    "top": 7299,
+    "text": "ICES-2024-365 · Table 1 · p.3"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 25,
+    "top": 7210,
+    "text": "None in our sources: every solid test on this site flew in microgravity. Normal-gravity tests are outside this site's sources, not proof that none exist."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 5,
+    "top": 7257,
+    "text": "Habitat Gaps gravity rule (gaps.json"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 34,
+    "top": 7378,
+    "text": "16 nearby tests ran within ±2 cm/s of your flow. Recorded flows nearby: 0, 1, 2, 2.5, 3, 4, 5, 6, 7, 8, 9.5, 10, 12, 13, 14, 15, 16, 17, 18, 20 cm/s."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7425,
+    "text": "Table 1"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 21,
+    "top": 7378,
+    "text": "The only boundary in our sources (BASS-II eq. 6.1, PMMA rods) was measured in microgravity. At Earth gravity there is none."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 5,
+    "top": 7425,
+    "text": "BASS-II report · eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-cliphead",
+    "words": 13,
+    "top": 7481,
+    "text": "Nearest filmed test (differs in gravity (filmed on the ISS), O2 (22.2% initial))"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-cliptitle",
+    "words": 8,
+    "top": 7517,
+    "text": "O1: Nikon still sequence of a burning rod"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 28,
+    "top": 7553,
+    "text": "PMMA rod, upstream ignition (stagnation / concurrent) (0.25\") · initial O2 22.2% · Air display 20, 10, 5, 2, 1 cm/s · 1 atm · microgravity. Set the sandbox to O1 · All clips"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7622,
+    "text": "BASS-II.csv · L48"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-links",
+    "words": 12,
+    "top": 7669,
+    "text": "Show these conditions on the Evidence Map → · ISS cabin gaps · Known Limits"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 4,
+    "top": 7754,
+    "text": "How this panel decides"
+   }
+  ],
+  "visuals": {
+   "canvas": 1,
+   "svg": 10,
+   "img": 0,
+   "video": 1,
+   "tables": 0,
+   "tableRows": 0,
+   "details": 2
+  }
+ },
+ {
+  "tab": "clips",
+  "width": 1440,
+  "total": 1284,
+  "fold": 97,
+  "hidden": 0,
+  "pageHeight": 7506,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 101,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 182,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 217,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 289,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 313,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 349,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 815,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 890,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 914,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 950,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1416,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1491,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1515,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1551,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2017,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2092,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2116,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2152,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2618,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2692,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2716,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2752,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3219,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3293,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3317,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3353,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3820,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3894,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3918,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3980,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4446,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4521,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4545,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4581,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5047,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5122,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 5146,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5182,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5648,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5723,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5747,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5783,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6249,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6353,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 6,
+    "top": 6415,
+    "text": "Clips: BASS-II flames on the ISS"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 46,
+    "top": 6445,
+    "text": "Flight video from NASA PSI (BASS-II, PSI-25). The on-screen date is one day ahead of the test date (the FAQ says leap year was not set on board). FUEL, AIR, FAN and RAD are the on-board displays; nothing here is read off the video by software."
+   },
+   {
+    "tag": "h3",
+    "cls": "",
+    "words": 10,
+    "top": 6705,
+    "text": "O4: flame goes out as the flow is turned down"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 47,
+    "top": 6733,
+    "text": "A 3/8-inch clear PMMA rod burning at its upstream tip. The crew lowered the fan step by step; the flame shrinks and goes out about 21 s into this clip. On-screen AIR is the duct flow display in cm/s; it responds in about 1 min (report p.66)."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 10,
+    "top": 6849,
+    "text": "Air display (duct flow, cm/s), as noted by the crew"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6876,
+    "text": "1 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6881,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "end",
+    "words": 4,
+    "top": 6876,
+    "text": "2 down to ext"
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 11,
+    "top": 6908,
+    "text": "Fan display (crew setting: pot or fan voltage ×10), as noted"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6957,
+    "text": "1 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6962,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6957,
+    "text": "2 0.7"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6962,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6957,
+    "text": "3 0.5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6962,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6957,
+    "text": "4 0.4"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6962,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "end",
+    "words": 3,
+    "top": 6987,
+    "text": "5 0.36 ext"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 23,
+    "top": 7018,
+    "text": "Steps in the order written; no times are given. Raw notes: Fan \"5, 0.7, 0.5, 0.4, 0.36 ext\" · Air \"5, down to ext\"."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7089,
+    "text": "BASS-II.csv · L52"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 1,
+    "top": 7121,
+    "text": "Test"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 10,
+    "top": 7121,
+    "text": "O4 · Olson · 2014-07-08 · PMMA rod, upstream ignition (stagnation / concurrent) (0.375\")"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7182,
+    "text": "O2 (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 6,
+    "top": 7182,
+    "text": "initial 14.8%, post-burn 13.6% by vol"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7204,
+    "text": "Outcome (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 1,
+    "top": 7204,
+    "text": "extinguished"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7226,
+    "text": "On Panel 2"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 26,
+    "top": 7226,
+    "text": "Last stable flow before extinction, Air 5 cm/s (the extinction flow itself is below the fan calibration): a = 19.399 1/s at 13.6% post-burn O2 · Evidence Map"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7330,
+    "text": "BASS-II.csv · L52"
+   },
+   {
+    "tag": "h3",
+    "cls": "",
+    "words": 9,
+    "top": 6705,
+    "text": "O7: blowoff when the fan is stepped to maximum"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 45,
+    "top": 6757,
+    "text": "The on-screen FAN readout jumps to 122 (fan voltage x10, its maximum). The flame is pushed back and blows off about 15 s into this clip, while the AIR readout is still climbing. That lag is why Panel 2 treats blowoff flows as upper bounds."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 10,
+    "top": 6873,
+    "text": "Air display (duct flow, cm/s), as noted by the crew"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 6,
+    "top": 6900,
+    "text": "No entry in the PSI table."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 11,
+    "top": 6928,
+    "text": "Fan display (crew setting: pot or fan voltage ×10), as noted"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6977,
+    "text": "1 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6982,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6977,
+    "text": "2 .36"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6982,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6977,
+    "text": "3 .32"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6982,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6977,
+    "text": "4 ..305"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6982,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "end",
+    "words": 5,
+    "top": 7007,
+    "text": "5 blowoff fan max 10"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 19,
+    "top": 7038,
+    "text": "Steps in the order written; no times are given. Raw notes: Fan \"5, .36,.32,..305, blowoff fan max 10\" · Air \"\"."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7109,
+    "text": "BASS-II.csv · L56"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 1,
+    "top": 7141,
+    "text": "Test"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 10,
+    "top": 7141,
+    "text": "O7 · Olson · 2014-06-26 · PMMA rod, upstream ignition (stagnation / concurrent) (0.25\")"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7202,
+    "text": "O2 (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 6,
+    "top": 7202,
+    "text": "initial 16%, post-burn 15.5% by vol"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7224,
+    "text": "Outcome (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 1,
+    "top": 7224,
+    "text": "blowoff"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7246,
+    "text": "On Panel 2"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 19,
+    "top": 7246,
+    "text": "Blowoff at a flow of at most Air 37 cm/s: a ≤ 175.818 1/s at 15.5% post-burn O2 · Evidence Map"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7311,
+    "text": "BASS-II.csv · L56"
+   },
+   {
+    "tag": "h3",
+    "cls": "",
+    "words": 8,
+    "top": 6705,
+    "text": "O1: Nikon still sequence of a burning rod"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 27,
+    "top": 6733,
+    "text": "Still images from the Nikon camera (Total Frames Shot in the PSI table), shown as a slideshow, not real time. Camera settings are printed on each frame."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 10,
+    "top": 6805,
+    "text": "Air display (duct flow, cm/s), as noted by the crew"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6833,
+    "text": "1 20"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6838,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6833,
+    "text": "2 10"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6838,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6833,
+    "text": "3 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6838,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6833,
+    "text": "4 2"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6838,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6833,
+    "text": "5 1"
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 11,
+    "top": 6865,
+    "text": "Fan display (crew setting: pot or fan voltage ×10), as noted"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6914,
+    "text": "1 89"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6919,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6914,
+    "text": "2 62"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6919,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6914,
+    "text": "3 50"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6919,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6914,
+    "text": "4 41"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 15,
+    "top": 6945,
+    "text": "Steps in the order written; no times are given. Raw notes: Fan \"89,62,50,41\" · Air \"20,10,5,2,1\"."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 6995,
+    "text": "BASS-II.csv · L48"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 1,
+    "top": 7027,
+    "text": "Test"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 10,
+    "top": 7027,
+    "text": "O1 · Olson · 2014-02-18 · PMMA rod, upstream ignition (stagnation / concurrent) (0.25\")"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7088,
+    "text": "O2 (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 6,
+    "top": 7088,
+    "text": "initial 22.2%, post-burn 21.7% by vol"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7110,
+    "text": "Outcome (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 5,
+    "top": 7110,
+    "text": "not stated in the table"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7135,
+    "text": "BASS-II.csv · L48"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 15,
+    "top": 7361,
+    "text": "PSI-25 (BASS-II) raw video, CC0-1.0, DOI 10.60555/4qc4-de67; trimmed and re-encoded with macOS avconvert (scripts/make_clips.sh)."
+   }
+  ],
+  "visuals": {
+   "canvas": 0,
+   "svg": 10,
+   "img": 0,
+   "video": 3,
+   "tables": 0,
+   "tableRows": 0,
+   "details": 0
+  }
+ },
+ {
+  "tab": "evidence",
+  "width": 375,
+  "total": 992,
+  "fold": 100,
+  "hidden": 328,
+  "pageHeight": 8633,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 75,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 173,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 256,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 336,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 360,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 465,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 846,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 920,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 944,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 1025,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1434,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1509,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1533,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1614,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1995,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2069,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2093,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2198,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2578,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2653,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2677,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2781,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3162,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3237,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3261,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3342,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3723,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3797,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3821,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3926,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4306,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4381,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4405,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4486,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4867,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4941,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 4965,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5070,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5451,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5525,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5549,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5630,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6011,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6106,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "vh",
+    "words": 4,
+    "top": 6202,
+    "text": "Where the tests are"
+   },
+   {
+    "tag": "p",
+    "cls": "headline",
+    "words": 29,
+    "top": 6202,
+    "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2 and VI-3), both at one airflow (20 cm/s), none in partial gravity."
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6357,
+    "text": "FLEX droplets (liquid, PSI-69) (+273 tests)"
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6382,
+    "text": "CFI-G gas flames (PSI-159) (+179 tests)"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 3,
+    "top": 6935,
+    "text": "About these layers"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 7,
+    "top": 6966,
+    "text": "Data table (7 rows) and unit notes"
+   },
+   {
+    "tag": "p",
+    "cls": "note dl",
+    "words": 50,
+    "top": 6998,
+    "text": "Download the data (CSV, every row with its source; for your own models): tests.csv (586 rows): every test on the Evidence Map, with its source · bass2_boundary_points.csv (7 rows): BASS-II points vs NASA's boundary (Panel 2) · ssce_ranges.csv (2 rows): SSCE O2/pressure sets (unpaired) · README.md: data dictionary and caveats"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 6,
+    "top": 7233,
+    "text": "BASS-II published flammability boundary (PMMA rods)"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 38,
+    "top": 7290,
+    "text": "NASA's published fit (report sec. 6.1.4.4, p.75): above the line PMMA rods burn, below they go out. Solid over a = 4.75–182.95 1/s (every Olson flow recorded in cm/s), dashed beyond. Computed minimum 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 6,
+    "top": 7428,
+    "text": "How the 7 points were chosen"
+   },
+   {
+    "tag": "p",
+    "cls": "callout",
+    "words": 16,
+    "top": 7454,
+    "text": "Only 7 of NASA's ~50 ISS boundary points can be reconstructed from the public PSI files."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7526,
+    "text": "Most extinction (quenching-branch) flows are recorded only as fan pot settings (0.27-0.36) below the lowest calibrated pot (0.5)."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 6,
+    "top": 7590,
+    "text": "Drop-tower data are not in PSI."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7612,
+    "text": "Our count of plotted ISS symbols (about 27 stable, 16 blowoff, 8 quench); the report states no total."
+   },
+   {
+    "tag": "figcaption",
+    "cls": "",
+    "words": 18,
+    "top": 7980,
+    "text": "NASA's own plot, for comparison (image only; points not digitized). BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p. 76"
+   }
+  ],
+  "visuals": {
+   "canvas": 2,
+   "svg": 10,
+   "img": 1,
+   "video": 0,
+   "tables": 1,
+   "tableRows": 8,
+   "details": 3
+  }
+ },
+ {
+  "tab": "evidence/view",
+  "width": 375,
+  "total": 992,
+  "fold": 91,
+  "hidden": 328,
+  "pageHeight": 8633,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 75,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 173,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 256,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 336,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 360,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 465,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 846,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 920,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 944,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 1025,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1434,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1509,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1533,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1614,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1995,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2069,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2093,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2198,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2578,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2653,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2677,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2781,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3162,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3237,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3261,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3342,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3723,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3797,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3821,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3926,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4306,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4381,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4405,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4486,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4867,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4941,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 4965,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5070,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5451,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5525,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5549,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5630,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6011,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6106,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "vh",
+    "words": 4,
+    "top": 6202,
+    "text": "Where the tests are"
+   },
+   {
+    "tag": "p",
+    "cls": "headline",
+    "words": 29,
+    "top": 6202,
+    "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2 and VI-3), both at one airflow (20 cm/s), none in partial gravity."
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6357,
+    "text": "FLEX droplets (liquid, PSI-69) (+273 tests)"
+   },
+   {
+    "tag": "label",
+    "cls": "",
+    "words": 6,
+    "top": 6382,
+    "text": "CFI-G gas flames (PSI-159) (+179 tests)"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 3,
+    "top": 6935,
+    "text": "About these layers"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 7,
+    "top": 6966,
+    "text": "Data table (7 rows) and unit notes"
+   },
+   {
+    "tag": "p",
+    "cls": "note dl",
+    "words": 50,
+    "top": 6998,
+    "text": "Download the data (CSV, every row with its source; for your own models): tests.csv (586 rows): every test on the Evidence Map, with its source · bass2_boundary_points.csv (7 rows): BASS-II points vs NASA's boundary (Panel 2) · ssce_ranges.csv (2 rows): SSCE O2/pressure sets (unpaired) · README.md: data dictionary and caveats"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 6,
+    "top": 7233,
+    "text": "BASS-II published flammability boundary (PMMA rods)"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 38,
+    "top": 7290,
+    "text": "NASA's published fit (report sec. 6.1.4.4, p.75): above the line PMMA rods burn, below they go out. Solid over a = 4.75–182.95 1/s (every Olson flow recorded in cm/s), dashed beyond. Computed minimum 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 6,
+    "top": 7428,
+    "text": "How the 7 points were chosen"
+   },
+   {
+    "tag": "p",
+    "cls": "callout",
+    "words": 16,
+    "top": 7454,
+    "text": "Only 7 of NASA's ~50 ISS boundary points can be reconstructed from the public PSI files."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7526,
+    "text": "Most extinction (quenching-branch) flows are recorded only as fan pot settings (0.27-0.36) below the lowest calibrated pot (0.5)."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 6,
+    "top": 7590,
+    "text": "Drop-tower data are not in PSI."
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 18,
+    "top": 7612,
+    "text": "Our count of plotted ISS symbols (about 27 stable, 16 blowoff, 8 quench); the report states no total."
+   },
+   {
+    "tag": "figcaption",
+    "cls": "",
+    "words": 18,
+    "top": 7980,
+    "text": "NASA's own plot, for comparison (image only; points not digitized). BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), p. 76"
+   }
+  ],
+  "visuals": {
+   "canvas": 2,
+   "svg": 10,
+   "img": 1,
+   "video": 0,
+   "tables": 1,
+   "tableRows": 8,
+   "details": 3
+  }
+ },
+ {
+  "tab": "sandbox",
+  "width": 375,
+  "total": 1130,
+  "fold": 100,
+  "hidden": 531,
+  "pageHeight": 9088,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 75,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 173,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 256,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 336,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 360,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 465,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 846,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 920,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 944,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 1025,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1434,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1509,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1533,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1614,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1995,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2069,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2093,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2198,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2578,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2653,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2677,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2781,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3162,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3237,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3261,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3342,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3723,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3797,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3821,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3926,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4306,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4381,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4405,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4486,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4867,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4941,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 4965,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5070,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5451,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5525,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5549,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5630,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6011,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6106,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 2,
+    "top": 6202,
+    "text": "Flame Sandbox"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 30,
+    "top": 6233,
+    "text": "Pick the gravity and the air. The picture shows why fire in space looks different; the panel beside it shows how much real NASA evidence exists for exactly those conditions."
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-badge",
+    "words": 5,
+    "top": 6337,
+    "text": "Teaching model, not a simulation"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-caption note",
+    "words": 22,
+    "top": 6655,
+    "text": "Earth: hot gas rises, pulling the flame into a flickering teardrop; soot carried upward glows yellow (official challenge video, 2:37–3:12)."
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 8,
+    "top": 6728,
+    "text": "What the picture does and does not show"
+   },
+   {
+    "tag": "label",
+    "cls": "sbx-ctl",
+    "words": 2,
+    "top": 6999,
+    "text": "Oxygen 21%"
+   },
+   {
+    "tag": "label",
+    "cls": "sbx-ctl",
+    "words": 6,
+    "top": 7072,
+    "text": "Total pressure 101.4 kPa (14.7 psi)"
+   },
+   {
+    "tag": "label",
+    "cls": "sbx-ctl",
+    "words": 3,
+    "top": 7144,
+    "text": "Airflow 0 cm/s"
+   },
+   {
+    "tag": "p",
+    "cls": "note sbx-po2",
+    "words": 9,
+    "top": 7216,
+    "text": "Oxygen partial pressure 21.3 kPa (sea-level air: 21.2 kPa)."
+   },
+   {
+    "tag": "li",
+    "cls": "st-tested",
+    "words": 2,
+    "top": 7384,
+    "text": "Atmosphere Tested"
+   },
+   {
+    "tag": "li",
+    "cls": "st-none",
+    "words": 2,
+    "top": 7421,
+    "text": "Gravity None"
+   },
+   {
+    "tag": "li",
+    "cls": "st-tested",
+    "words": 2,
+    "top": 7459,
+    "text": "Airflow Tested"
+   },
+   {
+    "tag": "li",
+    "cls": "st-unknown",
+    "words": 5,
+    "top": 7496,
+    "text": "Flammability boundary Unknown: no data"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 3,
+    "top": 7531,
+    "text": "Why: evidence details ↓"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 4,
+    "top": 7607,
+    "text": "Evidence for these conditions"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 42,
+    "top": 7706,
+    "text": "52 solid tests within ±2 points O2 and ±5 kPa: Saffire IV-1, BASS-II B1, BASS-II B2, BASS-II B3, BASS-II B4 and 47 more. Inside the ISS cabin window (21–24.1% O2 at 96.5–102.7 kPa): 28 solid tests in that whole window (Habitat Gaps)."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 4,
+    "top": 7837,
+    "text": "ICES-2024-365 · Table 1 · p.3"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 25,
+    "top": 7916,
+    "text": "None in our sources: every solid test on this site flew in microgravity. Normal-gravity tests are outside this site's sources, not proof that none exist."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 5,
+    "top": 8005,
+    "text": "Habitat Gaps gravity rule (gaps.json"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 34,
+    "top": 8084,
+    "text": "16 nearby tests ran within ±2 cm/s of your flow. Recorded flows nearby: 0, 1, 2, 2.5, 3, 4, 5, 6, 7, 8, 9.5, 10, 12, 13, 14, 15, 16, 17, 18, 20 cm/s."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 8173,
+    "text": "Table 1"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 21,
+    "top": 8277,
+    "text": "The only boundary in our sources (BASS-II eq. 6.1, PMMA rods) was measured in microgravity. At Earth gravity there is none."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 5,
+    "top": 8344,
+    "text": "BASS-II report · eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-cliphead",
+    "words": 13,
+    "top": 8401,
+    "text": "Nearest filmed test (differs in gravity (filmed on the ISS), O2 (22.2% initial))"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-cliptitle",
+    "words": 8,
+    "top": 8621,
+    "text": "O1: Nikon still sequence of a burning rod"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 28,
+    "top": 8648,
+    "text": "PMMA rod, upstream ignition (stagnation / concurrent) (0.25\") · initial O2 22.2% · Air display 20, 10, 5, 2, 1 cm/s · 1 atm · microgravity. Set the sandbox to O1 · All clips"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 8750,
+    "text": "BASS-II.csv · L48"
+   },
+   {
+    "tag": "p",
+    "cls": "sbx-links",
+    "words": 12,
+    "top": 8787,
+    "text": "Show these conditions on the Evidence Map → · ISS cabin gaps · Known Limits"
+   },
+   {
+    "tag": "summary",
+    "cls": "",
+    "words": 4,
+    "top": 8894,
+    "text": "How this panel decides"
+   }
+  ],
+  "visuals": {
+   "canvas": 1,
+   "svg": 10,
+   "img": 0,
+   "video": 1,
+   "tables": 0,
+   "tableRows": 0,
+   "details": 2
+  }
+ },
+ {
+  "tab": "clips",
+  "width": 375,
+  "total": 1284,
+  "fold": 91,
+  "hidden": 0,
+  "pageHeight": 9312,
+  "overflow": 0,
+  "blocks": [
+   {
+    "tag": "p",
+    "cls": "eyebrow",
+    "words": 1,
+    "top": 75,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "p",
+    "cls": "story-sub",
+    "words": 19,
+    "top": 173,
+    "text": "Two NASA views of the same evidence: the air each test burned in, and the one measured flammability boundary."
+   },
+   {
+    "tag": "p",
+    "cls": "story-tools",
+    "words": 5,
+    "top": 256,
+    "text": "Skip to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 336,
+    "text": "1 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 360,
+    "text": "Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). 134 tests, one dot each."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 465,
+    "text": "one row each"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 846,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 920,
+    "text": "2 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 20,
+    "top": 944,
+    "text": "BASS-II on the ISS: all 129 tests at 1 atm, the pressure of Earth's air, from 13.6% to 22.2% O2."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 1025,
+    "text": "BASS-II report · p.11 challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1434,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 1509,
+    "text": "3 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 22,
+    "top": 1533,
+    "text": "SSCE: 35, 50, 70% O2 at 1–2 atm. NASA does not say which O2 went with which pressure, so these are ranges."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 1614,
+    "text": "NTRS 20050177200"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 1995,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2069,
+    "text": "4 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 2093,
+    "text": "Moon bases and rovers: ≥30% O2 at ≤70.33 kPa. Inside, only Saffire VI-2 and Saffire VI-3. Hover the box for what is missing."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 2198,
+    "text": "challenge page gaps.json rules"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 2578,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 2653,
+    "text": "5 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 21,
+    "top": 2677,
+    "text": "Same oxygen per breath: along the dotted line, pO2 equals sea-level air's 21.2 kPa. 30% at 70.33 kPa gives 21.1 kPa."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 2781,
+    "text": "pO2 = O2% × P"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3162,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3237,
+    "text": "6 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 3261,
+    "text": "Spacesuits: 100% O2 at 29.65 kPa. No solid test in our sources burned in that air."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 2,
+    "top": 3342,
+    "text": "challenge page"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 3723,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 3797,
+    "text": "7 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 23,
+    "top": 3821,
+    "text": "Our sources hold one measured flammability boundary: NASA's fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 3926,
+    "text": "BASS-II eq. 6.1 · p.75"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4306,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4381,
+    "text": "8 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 19,
+    "top": 4405,
+    "text": "Too little flow quenches the flame; too much blows it off. Lowest point: 13.61% O2 at a = 10.38 1/s."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 3,
+    "top": 4486,
+    "text": "report p.75 minimum"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 4867,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 4941,
+    "text": "9 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 26,
+    "top": 4965,
+    "text": "Only 7 flight tests can be rebuilt from public PSI files: 3 last stable flows (●) and 4 blowoffs, true value at or left of the marker (◂)."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 4,
+    "top": 5070,
+    "text": "of ~50 NASA points"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 1,
+    "top": 5451,
+    "text": "Next ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "step-n",
+    "words": 2,
+    "top": 5525,
+    "text": "10 / 10"
+   },
+   {
+    "tag": "p",
+    "cls": "step-text",
+    "words": 16,
+    "top": 5549,
+    "text": "Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure."
+   },
+   {
+    "tag": "p",
+    "cls": "step-chips",
+    "words": 5,
+    "top": 5630,
+    "text": "BASS-II report · p.11 boundary gap"
+   },
+   {
+    "tag": "p",
+    "cls": "step-nav",
+    "words": 5,
+    "top": 6011,
+    "text": "Go to the Evidence Map ↓"
+   },
+   {
+    "tag": "p",
+    "cls": "viewsec",
+    "words": 1,
+    "top": 6106,
+    "text": "EVIDENCE"
+   },
+   {
+    "tag": "h2",
+    "cls": "",
+    "words": 6,
+    "top": 6202,
+    "text": "Clips: BASS-II flames on the ISS"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 46,
+    "top": 6233,
+    "text": "Flight video from NASA PSI (BASS-II, PSI-25). The on-screen date is one day ahead of the test date (the FAQ says leap year was not set on board). FUEL, AIR, FAN and RAD are the on-board displays; nothing here is read off the video by software."
+   },
+   {
+    "tag": "h3",
+    "cls": "",
+    "words": 10,
+    "top": 6548,
+    "text": "O4: flame goes out as the flow is turned down"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 47,
+    "top": 6600,
+    "text": "A 3/8-inch clear PMMA rod burning at its upstream tip. The crew lowered the fan step by step; the flame shrinks and goes out about 21 s into this clip. On-screen AIR is the duct flow display in cm/s; it responds in about 1 min (report p.66)."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 10,
+    "top": 6738,
+    "text": "Air display (duct flow, cm/s), as noted by the crew"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6787,
+    "text": "1 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6792,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "end",
+    "words": 4,
+    "top": 6787,
+    "text": "2 down to ext"
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 11,
+    "top": 6819,
+    "text": "Fan display (crew setting: pot or fan voltage ×10), as noted"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6868,
+    "text": "1 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6873,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6868,
+    "text": "2 0.7"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6873,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6868,
+    "text": "3 0.5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6873,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 6868,
+    "text": "4 0.4"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 6873,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "end",
+    "words": 3,
+    "top": 6897,
+    "text": "5 0.36 ext"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 23,
+    "top": 6929,
+    "text": "Steps in the order written; no times are given. Raw notes: Fan \"5, 0.7, 0.5, 0.4, 0.36 ext\" · Air \"5, down to ext\"."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7000,
+    "text": "BASS-II.csv · L52"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 1,
+    "top": 7032,
+    "text": "Test"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 10,
+    "top": 7032,
+    "text": "O4 · Olson · 2014-07-08 · PMMA rod, upstream ignition (stagnation / concurrent) (0.375\")"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7113,
+    "text": "O2 (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 6,
+    "top": 7113,
+    "text": "initial 14.8%, post-burn 13.6% by vol"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7154,
+    "text": "Outcome (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 1,
+    "top": 7154,
+    "text": "extinguished"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 7176,
+    "text": "On Panel 2"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 26,
+    "top": 7176,
+    "text": "Last stable flow before extinction, Air 5 cm/s (the extinction flow itself is below the fan calibration): a = 19.399 1/s at 13.6% post-burn O2 · Evidence Map"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7300,
+    "text": "BASS-II.csv · L52"
+   },
+   {
+    "tag": "h3",
+    "cls": "",
+    "words": 9,
+    "top": 7524,
+    "text": "O7: blowoff when the fan is stepped to maximum"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 45,
+    "top": 7576,
+    "text": "The on-screen FAN readout jumps to 122 (fan voltage x10, its maximum). The flame is pushed back and blows off about 15 s into this clip, while the AIR readout is still climbing. That lag is why Panel 2 treats blowoff flows as upper bounds."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 10,
+    "top": 7714,
+    "text": "Air display (duct flow, cm/s), as noted by the crew"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 6,
+    "top": 7763,
+    "text": "No entry in the PSI table."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 11,
+    "top": 7791,
+    "text": "Fan display (crew setting: pot or fan voltage ×10), as noted"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 7840,
+    "text": "1 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 7845,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 7840,
+    "text": "2 .36"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 7845,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 7840,
+    "text": "3 .32"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 7845,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 7840,
+    "text": "4 ..305"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 7845,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "end",
+    "words": 5,
+    "top": 7869,
+    "text": "5 blowoff fan max 10"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 19,
+    "top": 7901,
+    "text": "Steps in the order written; no times are given. Raw notes: Fan \"5, .36,.32,..305, blowoff fan max 10\" · Air \"\"."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 7972,
+    "text": "BASS-II.csv · L56"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 1,
+    "top": 8004,
+    "text": "Test"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 10,
+    "top": 8004,
+    "text": "O7 · Olson · 2014-06-26 · PMMA rod, upstream ignition (stagnation / concurrent) (0.25\")"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 8085,
+    "text": "O2 (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 6,
+    "top": 8085,
+    "text": "initial 16%, post-burn 15.5% by vol"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 8126,
+    "text": "Outcome (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 1,
+    "top": 8126,
+    "text": "blowoff"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 8148,
+    "text": "On Panel 2"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 19,
+    "top": 8148,
+    "text": "Blowoff at a flow of at most Air 37 cm/s: a ≤ 175.818 1/s at 15.5% post-burn O2 · Evidence Map"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 8233,
+    "text": "BASS-II.csv · L56"
+   },
+   {
+    "tag": "h3",
+    "cls": "",
+    "words": 8,
+    "top": 8457,
+    "text": "O1: Nikon still sequence of a burning rod"
+   },
+   {
+    "tag": "p",
+    "cls": "",
+    "words": 27,
+    "top": 8509,
+    "text": "Still images from the Nikon camera (Total Frames Shot in the PSI table), shown as a slideshow, not real time. Camera settings are printed on each frame."
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 10,
+    "top": 8603,
+    "text": "Air display (duct flow, cm/s), as noted by the crew"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8653,
+    "text": "1 20"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8658,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8653,
+    "text": "2 10"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8658,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8653,
+    "text": "3 5"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8658,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8653,
+    "text": "4 2"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8658,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8653,
+    "text": "5 1"
+   },
+   {
+    "tag": "p",
+    "cls": "striplab",
+    "words": 11,
+    "top": 8684,
+    "text": "Fan display (crew setting: pot or fan voltage ×10), as noted"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8733,
+    "text": "1 89"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8738,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8733,
+    "text": "2 62"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8738,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8733,
+    "text": "3 50"
+   },
+   {
+    "tag": "li",
+    "cls": "arr",
+    "words": 0,
+    "top": 8738,
+    "text": "→"
+   },
+   {
+    "tag": "li",
+    "cls": "",
+    "words": 2,
+    "top": 8733,
+    "text": "4 41"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 15,
+    "top": 8765,
+    "text": "Steps in the order written; no times are given. Raw notes: Fan \"89,62,50,41\" · Air \"20,10,5,2,1\"."
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 8836,
+    "text": "BASS-II.csv · L48"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 1,
+    "top": 8868,
+    "text": "Test"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 10,
+    "top": 8868,
+    "text": "O1 · Olson · 2014-02-18 · PMMA rod, upstream ignition (stagnation / concurrent) (0.25\")"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 8949,
+    "text": "O2 (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 6,
+    "top": 8949,
+    "text": "initial 22.2%, post-burn 21.7% by vol"
+   },
+   {
+    "tag": "dt",
+    "cls": "",
+    "words": 3,
+    "top": 8990,
+    "text": "Outcome (PSI table)"
+   },
+   {
+    "tag": "dd",
+    "cls": "",
+    "words": 5,
+    "top": 8990,
+    "text": "not stated in the table"
+   },
+   {
+    "tag": "p",
+    "cls": "chiprow",
+    "words": 2,
+    "top": 9016,
+    "text": "BASS-II.csv · L48"
+   },
+   {
+    "tag": "p",
+    "cls": "note",
+    "words": 15,
+    "top": 9046,
+    "text": "PSI-25 (BASS-II) raw video, CC0-1.0, DOI 10.60555/4qc4-de67; trimmed and re-encoded with macOS avconvert (scripts/make_clips.sh)."
+   }
+  ],
+  "visuals": {
+   "canvas": 0,
+   "svg": 10,
+   "img": 0,
+   "video": 3,
+   "tables": 0,
+   "tableRows": 0,
+   "details": 0
+  }
+ }
+]

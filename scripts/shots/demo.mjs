@@ -52,7 +52,7 @@ const SHOTS = [
   { id: 'moon', t: [10, 15], hash: 'sandbox/moon_base', caption: 'Moon-base air: no data.',
     vo: `Set it to Moon-base air: no test matches all of these conditions, and partial gravity is unknown.`,
     screen: `Flame Sandbox, "Moon base" preset (${moonPreset.o2}% O2, ${moonPreset.p_kpa} kPa, Moon gravity): the two outline bounds next to "0 solid-material tests match" and the badges (Gravity, Airflow, Boundary: "Unknown: no data").` },
-  { id: 'empty-zone', t: [15, 20], hash: 'evidence', query: `tip=${tip}`, caption: `Only ${zone.length} solid tests in Moon-base air.`,
+  { id: 'empty-zone', t: [15, 20], hash: 'evidence/view', query: `tip=${tip}`, caption: `Only ${zone.length} solid tests in Moon-base air.`,
     vo: `Across ${placed} tests we could place, only ${zone.length} solid-material tests burned in Moon-base air, ${zone.length === 2 ? 'both' : 'all'} at ${flows.join(', ')} centimetres per second.`,
     screen: `Evidence Map Panel 1: the shaded Moon-base box with only ${names}; tooltip open on ${zone[0].program} ${zone[0].sample} showing its source (paper, table, page).` },
   { id: 'trace-ask', t: [20, 25], hash: `ask/${encodeURIComponent(q1.question)}`, caption: 'Every number traced. Ask, and see sources.',

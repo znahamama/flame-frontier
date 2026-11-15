@@ -105,7 +105,7 @@ table.cat td.id { white-space: nowrap; }
 /* Clips */
 .clips { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
 .clip { min-width: 0; }
-.clip video { width: 100%; height: auto; background: #000; border-radius: 6px; display: block; }
+.clip video { width: 100%; height: auto; aspect-ratio: 480 / 264; object-fit: contain; background: #000; border-radius: 6px; display: block; }   /* fixed box: no layout shift when metadata loads */
 .clip h3 { margin: 10px 0 4px; font-size: 1rem; }
 .clip p { margin: 0 0 6px; font-size: 0.9rem; }
 .clip .facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 8px; font-size: 0.82rem; margin: 6px 0; }
@@ -337,7 +337,7 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
 .ctl .maplink { white-space: normal; display: inline-block; margin: 2px 8px 2px 0; }
 
 /* ===== Sections: view header and sub-views ===== */
-.viewwrap { scroll-margin-top: var(--hdr); padding-top: 8px; }
+.viewwrap { padding-top: 8px; }
 .viewwrap:focus { outline: none; }
 .viewhead { position: sticky; top: var(--hdr); z-index: 10; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 12px 0; margin-bottom: 4px; background: color-mix(in srgb, var(--surface-0) 92%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .viewsec { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
@@ -371,7 +371,7 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
 .story-grid { display: grid; grid-template-columns: minmax(300px, 410px) minmax(0, 1fr); grid-template-areas: "head stage" "steps stage"; column-gap: 44px; }
 .story-stage { grid-area: stage; position: sticky; top: calc(var(--hdr) + 12px); align-self: start; height: calc(100vh - var(--hdr) - 24px); height: calc(100svh - var(--hdr) - 24px); }
 .stage-inner { position: relative; width: 100%; height: 100%; }
-.stage-count { position: absolute; right: 8px; bottom: 6px; margin: 0; font-size: 12px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.stage-count { position: absolute; right: 8px; top: 4px; margin: 0; font-size: 12px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0s linear 0.5s; }
 .scene.on { opacity: 1; visibility: visible; transition: opacity 0.5s ease; }
 .story-steps { grid-area: steps; list-style: none; margin: 0; padding: 4vh 0 42vh; }
@@ -454,3 +454,78 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
   .bins .dot, .bins .blabel, .scene, .step-card { transition: none !important; }
 }
 .story-host:empty { min-height: 100vh; min-height: 100svh; }   /* keeps the view below the fold until the story arrives (no layout shift) */
+
+/* Atmosphere map and boundary curve (Evidence story) */
+.scene-map, .scene-curve { display: flex; align-items: center; justify-content: center; }
+.atmos { display: block; width: 100%; height: 100%; max-height: 100%; overflow: visible; font-family: inherit; }
+.atmos .ag { stroke: var(--grid); stroke-width: 1; }
+.atmos .at { font-size: 12px; fill: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.atmos .al { font-size: 12.5px; fill: var(--text-secondary); }
+.atmos .pt { stroke: var(--surface-1); stroke-width: 1.2; transition: opacity 0.4s ease; cursor: pointer; }
+.atmos .pt.bass { fill: var(--series-3); }
+.atmos .pt.saf { fill: var(--series-1); stroke-width: 2; }
+.atmos .ssce line { stroke: var(--series-2); stroke-width: 3.5; stroke-dasharray: 7 4; transition: opacity 0.4s ease; }
+.atmos .ssce .hit { stroke: transparent; stroke-width: 16; stroke-dasharray: none; cursor: pointer; }
+.atmos .sea line { stroke: var(--text-secondary); stroke-width: 1; stroke-dasharray: 2 4; }
+.atmos .sea text, .atmos .ppo2 text, .atmos .suit text { font-size: 12px; fill: var(--text-secondary); }
+.atmos .ppo2 polyline { fill: none; stroke: var(--text-secondary); stroke-width: 1.6; stroke-dasharray: 1 4; stroke-linecap: round; transition: opacity 0.4s ease; }
+.atmos .ppo2 { opacity: 0.45; transition: opacity 0.4s ease; }
+.atmos .suit path { fill: var(--surface-1); stroke: var(--text-primary); stroke-width: 2; cursor: pointer; }
+.atmos .zonegrp { opacity: 0; transition: opacity 0.5s ease; }
+.atmos .zonegrp.on { opacity: 1; }
+.atmos .zonerect { fill: var(--zone); stroke: var(--text-primary); stroke-width: 1.5; cursor: help; }
+.atmos .zonelab { font-size: 13px; font-weight: 700; fill: var(--text-primary); }
+.atmos .zcard { opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.atmos .zcard.on, .atmos .zonegrp.on:hover ~ .zcard, .atmos .zonegrp.on:focus-within ~ .zcard { opacity: 1; }
+.atmos .zcard rect { fill: var(--surface-1); stroke: var(--text-primary); stroke-width: 1.2; filter: drop-shadow(0 6px 14px rgba(0,0,0,.12)); }
+.atmos .zcard .zct { font-size: 13px; font-weight: 700; fill: var(--text-primary); }
+.atmos .zcard .zcl { font-size: 12.5px; fill: var(--text-primary); }
+.atmos .zcline { stroke: var(--text-primary); stroke-width: 1; }
+.atmos.map[data-hl="bass"] .pt.saf, .atmos.map[data-hl="bass"] .ssce line:not(.hit),
+.atmos.map[data-hl="ssce"] .pt,
+.atmos.map[data-hl="zone"] .pt:not(.inz), .atmos.map[data-hl="zone"] .ssce line:not(.hit),
+.atmos.map[data-hl="suit"] .pt, .atmos.map[data-hl="suit"] .ssce line:not(.hit),
+.atmos.map[data-hl="ppo2"] .pt:not(.inz), .atmos.map[data-hl="ppo2"] .ssce line:not(.hit) { opacity: 0.15; }
+.atmos.map[data-hl="ppo2"] .ppo2.sealvl { opacity: 1; }
+.atmos.map[data-hl="ppo2"] .ppo2.sealvl text { fill: var(--text-primary); font-weight: 600; }
+.atmos.map[data-hl="ppo2"] .ppo2.sealvl polyline { stroke: var(--accent); stroke-width: 2.4; }
+.atmos.map[data-hl="suit"] .suit path { fill: var(--accent); stroke: var(--accent); }
+.atmos .pt.inz { stroke: var(--text-primary); stroke-width: 2; }
+/* curve */
+.atmos .below { fill: var(--zone); }
+.atmos .reg { font-size: 14px; font-weight: 700; fill: var(--text-secondary); }
+.atmos .cv { fill: none; stroke: var(--series-1); stroke-width: 3; }
+.atmos .cv.dash { stroke-width: 2; stroke-dasharray: 6 5; }
+.atmos .cv.draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease-out; }
+.atmos .cvhit { fill: none; stroke: transparent; stroke-width: 16; cursor: pointer; }
+.atmos .branch text, .atmos .minmk text { font-size: 12.5px; fill: var(--text-primary); font-weight: 600; }
+.atmos .minmk circle { fill: var(--surface-1); stroke: var(--series-1); stroke-width: 2.5; cursor: pointer; }
+.atmos .p2pt { stroke: var(--surface-1); stroke-width: 2; cursor: pointer; }
+.atmos .p2pt.st { fill: var(--series-3); }
+.atmos .p2pt.bo { fill: var(--series-2); }
+.atmos .atm rect { fill: var(--text-primary); }
+.atmos .atm text { font-size: 13px; font-weight: 700; fill: var(--surface-1); }
+.atmos.curve .below, .atmos.curve .reg, .atmos.curve .cv.dash, .atmos.curve .branch, .atmos.curve .minmk, .atmos.curve .p2pts, .atmos.curve .atm { opacity: 0; transition: opacity 0.5s ease; }
+.atmos.curve:not([data-stage="none"]) .cv.draw { stroke-dashoffset: 0; }
+.atmos.curve:not([data-stage="none"]) .below, .atmos.curve:not([data-stage="none"]) .reg, .atmos.curve:not([data-stage="none"]) .cv.dash { opacity: 1; transition-delay: 0.8s; }
+.atmos.curve[data-stage="branches"] .branch, .atmos.curve[data-stage="branches"] .minmk,
+.atmos.curve[data-stage="points"] .minmk, .atmos.curve[data-stage="points"] .p2pts,
+.atmos.curve[data-stage="atm"] .p2pts, .atmos.curve[data-stage="atm"] .atm { opacity: 1; }
+.step-static .atmos { max-height: 420px; }
+.atmos.narrow .at, .atmos.narrow .sea text, .atmos.narrow .ppo2 text, .atmos.narrow .suit text { font-size: 10.5px; }
+.atmos.narrow .al { font-size: 11px; }
+.atmos.narrow .zonelab { font-size: 10.5px; }
+.atmos.narrow .zcard .zct { font-size: 11.5px; } .atmos.narrow .zcard .zcl { font-size: 11px; }
+.atmos.narrow .branch text, .atmos.narrow .minmk text { font-size: 11px; } .atmos.narrow .reg { font-size: 12px; } .atmos.narrow .atm text { font-size: 12px; }
+@media (prefers-reduced-motion: reduce) { .atmos *, .atmos .cv.draw { transition: none !important; } }
+
+/* Clips: crew-note step strip (ordinal, equal-sized, verbatim) */
+.strips { margin: 8px 0; }
+.strip { margin: 6px 0; }
+.striplab { margin: 0 0 4px; font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.steps { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: 0; padding: 0; }
+.steps li { display: inline-flex; align-items: center; gap: 5px; min-width: 44px; justify-content: center; padding: 4px 9px; border: 1px solid var(--grid); border-radius: 8px; background: var(--surface-0); font: 600 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.steps li .sn { font: 500 10px/1 system-ui, sans-serif; color: var(--text-secondary); }
+.steps li.end { border-color: var(--text-primary); background: var(--text-primary); color: var(--surface-1); }
+.steps li.end .sn { color: inherit; opacity: .8; }
+.steps li.arr { min-width: 0; padding: 0; border: 0; background: none; color: var(--text-secondary); font-weight: 400; }

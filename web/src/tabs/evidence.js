@@ -82,7 +82,7 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers, pick) {
+function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers, pick, zoneGaps = []) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
@@ -199,7 +199,10 @@ function panel1(el, ref, ext, bass2, flex, cfig, c, hl, layers, pick) {
          { xAxis: zone.p_max_kpa, yAxis: 100 }],
       ],
       tooltip: {
-        formatter: () => `<b>Moon-base zone</b><br>${esc(zone.label)}<br><small>Source: ${esc(cite(zone.source))}</small>`,
+        // The empty-zone card: what is missing inside the box (gaps.json, the same template sentences as Habitat Gaps).
+        formatter: () => `<b>Moon-base zone</b><br>${esc(zone.label)}<br><small>Source: ${esc(cite(zone.source))}</small>`
+          + (zoneGaps.length ? `<br><b>Missing in this box</b> (Habitat Gaps rules, gaps.json):<br>${zoneGaps.map((g) => `✕ ${esc(g.text)}`).join('<br>')}` : ''),
+        extraCssText: 'max-width: 420px; white-space: normal;',
       },
     },
   });
@@ -345,7 +348,8 @@ async function gapFromArg(arg) {
 
 export async function render(root, arg) {
   const [ref, ext, bass2, flex, cfig] = await Promise.all(['reference.json', 'external_tests.json', 'bass2_tests.json', 'flex_tests.json', 'cfig_tests.json'].map(loadJSON));
-  const [hl, dl] = await Promise.all([gapFromArg(arg), exportLinks()]);
+  const [hl, dl, gapsAll] = await Promise.all([gapFromArg(arg), exportLinks(), loadJSON('gaps.json')]);
+  const zoneGaps = gapsAll.habitats.find((h) => h.habitat.id === 'moon_base')?.gaps ?? [];
   const pm = /^at=([\d.]+),([\d.]+)(?:,(earth|micro|moon|mars),([\d.]+))?$/.exec(arg ?? '');
   const pick = pm ? { p: Number(pm[1]), o2: Number(pm[2]), g: pm[3] ?? 'micro', u: Number(pm[4] ?? 0) } : null;
   const c = tokens();
@@ -365,9 +369,9 @@ export async function render(root, arg) {
       ${table1(ref, ext)}
       <p class="note dl"><b>Download the data</b> (CSV, every row with its source; for your own models): ${dl.join(' · ')}</p></section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
-      <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75), solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s: the stretch rates of every Olson flow recorded in cm/s.
-      Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s. Points: ${bass2.panel2_points.length} Olson tests whose flow can be read from PSI files without extrapolation: the last flow recorded in cm/s at which the flame was still burning before the crew turned it down to extinction, and blowoffs whose flow is only bounded from above by the same-day fan calibration.
-</p>
+      <p class="note">NASA's published fit (report sec. 6.1.4.4, p.75): above the line PMMA rods burn, below they go out. Solid over a = ${ref.panel2.tested_a_range.join('–')} 1/s (every Olson flow recorded in cm/s), dashed beyond. Computed minimum ${ref.panel2.minimum.x_o2}% O2 at a = ${ref.panel2.minimum.a} 1/s.</p>
+      <details class="table-view"><summary>How the ${bass2.panel2_points.length} points were chosen</summary>
+        <p class="note">Olson tests whose flow can be read from PSI files without extrapolation: the last flow recorded in cm/s at which the flame was still burning before the crew turned it down to extinction, and blowoffs whose flow is only bounded from above by the same-day fan calibration.</p></details>
       <div class="p2-honest">
         <div><p class="callout">Only ${bass2.panel2_points.length} of NASA's ~${ref.panel2.nasa_figure.iss_points_approx} ISS boundary points can be reconstructed from the public PSI files.</p>
           <ul class="note">${ref.panel2.nasa_figure.why_not_reproducible.map((w) => `<li>${esc(w)}</li>`).join('')}
@@ -377,7 +381,7 @@ export async function render(root, arg) {
       </div>
       <div class="chart" id="p2"></div></section>`;
   const layers = { flex: false, cfig: false };
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl, layers, pick), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl, layers, pick, zoneGaps), panel2(root.querySelector('#p2'), ref, bass2, c)];
   if (hl || pick) requestAnimationFrame(() => root.querySelector(hl?.region.panel === 2 ? '#p2' : '#gapbanner')?.scrollIntoView({ block: 'start' }));
   layerToggles(charts[0], root.querySelector('#p1-layers'), { flex: flex.count, cfig: cfig.count }, layers);
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));

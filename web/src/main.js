@@ -24,7 +24,7 @@ const VIEWS = {
 };
 const SECTIONS = [
   { id: 'start', label: 'Story', views: ['start'], story: () => import('./stories/start.js') },
-  { id: 'evidence', label: 'Evidence', views: ['evidence', 'sandbox', 'clips'] },
+  { id: 'evidence', label: 'Evidence', views: ['evidence', 'sandbox', 'clips'], story: () => import('./stories/evidence.js') },
   { id: 'explore', label: 'Explore', views: ['catalog', 'ranking', 'compare', 'gaps', 'controls'] },
   { id: 'ask', label: 'Ask', views: ['ask'] },
   { id: 'about', label: 'About', views: ['limits', 'references', 'earth'] },
@@ -100,7 +100,9 @@ async function renderView(r) {
   cur.mo.observe(host, { childList: true, subtree: true });
 }
 
+let navSeq = 0;
 async function show(hash) {
+  const nav = ++navSeq;   // views may rewrite the hash with replaceState while they load; only a newer show() cancels this one
   const r = parse(hash);
   navs.forEach((n) => n.querySelectorAll('a').forEach((a) => (a.dataset.sec === r.sec.id ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'))));
   const vlabel = VIEWS[r.view][0];
@@ -128,7 +130,9 @@ async function show(hash) {
     }
     await Promise.all(jobs);
     if (cur.sec !== r.sec) return;
-    if (location.hash.slice(1) !== hash && hash !== '') return;   // user moved on while it loaded
+    // Let the new story's height reach a frame before scrolling past it, so the jump is a scroll, not a layout shift.
+    if (newSec) await new Promise((res) => requestAnimationFrame(() => requestAnimationFrame(res)));
+    if (nav !== navSeq) return;   // the user navigated again while this loaded
     const smooth = !newSec && !reduced();
     if (r.target === 'step') cur.story?.goTo(r.step, smooth);
     else if (r.target === 'view' || (r.target === 'view0' && !newSec)) {
