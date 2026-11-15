@@ -6,3 +6,4 @@ docs/ref/*.pdf
 .venv/
 node_modules/
 *.mp4
+!web/public/clips/*.mp4
