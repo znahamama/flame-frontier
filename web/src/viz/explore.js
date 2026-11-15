@@ -3,6 +3,7 @@
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const n = (x) => (Number.isInteger(x) ? String(x) : x.toFixed(2).replace(/0$/, ''));
 const short = (f) => String(f ?? '').split('/').slice(-1)[0];
+import { nm, nmid, nameHTML } from '../names.js';
 
 // ---------- Catalog tiles ----------
 export const ROLE = { prevention: ['Prevent', 'P'], detection: ['Detect', 'D'], suppression: ['Suppress', 'S'] };
@@ -16,9 +17,9 @@ export function tileHTML(c, roles, { href = `#catalog/${c.psi_id}` } = {}) {
   const f = c.fields;
   const [dl, dk] = DATA[c.test_level] ?? [c.test_level, 'none'];
   const rs = roles[c.psi_id] ?? [];
-  const tip = `<b>${esc(c.psi_id)}</b>: ${esc(f.title.value)}<br>${esc(c.index_type?.value ?? '')} · ${esc(f.platform.value ?? 'platform not in metadata')}<br>Data: ${esc(dl)}${c.test_rows ? ` (${c.test_rows} rows)` : ''}${rs.length ? `<br>Fire-safety role: ${rs.map((r) => ROLE[r][0]).join(', ')} (quoted link, Prevent · Detect · Suppress)` : ''}`;
+  const tip = `<b>${esc(nmid(c.psi_id))}</b>: ${esc(f.title.value)}<br>${esc(c.index_type?.value ?? '')} · ${esc(f.platform.value ?? 'platform not in metadata')}<br>Data: ${esc(dl)}${c.test_rows ? ` (${c.test_rows} rows)` : ''}${rs.length ? `<br>Fire-safety role: ${rs.map((r) => ROLE[r][0]).join(', ')} (quoted link, Prevent · Detect · Suppress)` : ''}`;
   return `<li class="tile2 d-${dk}" data-psi="${esc(c.psi_id)}"><a href="${href}" data-tip="${esc(tip)}" data-src="${esc(`${f.title.source?.file ?? ''}, line ${f.title.source?.line ?? ''}`)}">
-    <span class="t2id">${esc(c.psi_id)}</span><span class="t2t">${esc(f.title.value)}</span>
+    <span class="t2n">${esc(nm(c.psi_id).replace(/-/g, '\u2011'))}</span><span class="t2id">${esc(c.psi_id)}</span>
     <span class="t2foot"><span class="t2data" title="${esc(dl)}"><i aria-hidden="true"></i>${esc(dk === 'tests' ? `${c.test_rows} tests` : dk === 'summary' ? 'summary' : 'no table')}</span>
       ${rs.map((r) => `<span class="rb rb-${r}" title="${ROLE[r][0]}">${ROLE[r][1]}</span>`).join('')}</span></a></li>`;
 }
@@ -31,14 +32,14 @@ export function tilesHTML(cat, controls, opts) {
 export const COMPONENTS = ['o2', 'pressure', 'flow', 'gravity', 'material', 'data'];
 export function stackHTML(r, d) {
   const segs = COMPONENTS.map((k) => r.parts.find((p) => p.key === k)).filter((p) => p && p.points > 0);
-  return `<span class="stack" role="img" aria-label="${esc(`${r.psi_id}: ${n(r.score)} of ${d.max_score}: ${segs.map((p) => `${p.label} ${n(p.points)}`).join(', ')}`)}">${segs.map((p) =>
-    `<span class="sg sg-${p.key}" style="width:${(100 * p.points) / d.max_score}%" data-tip="${esc(`<b>${r.psi_id}</b> · ${p.label}: ${n(p.points)} of ${p.weight} (× ${p.factor})<br>${p.why}`)}" data-src="${esc(`ranking.json rule "${d.rules[p.key]?.label ?? p.key}": ${d.rules[p.key]?.rule ?? ''}`)}"></span>`).join('')}</span>`;
+  return `<span class="stack" role="img" aria-label="${esc(`${nmid(r.psi_id)}: ${n(r.score)} of ${d.max_score}: ${segs.map((p) => `${p.label} ${n(p.points)}`).join(', ')}`)}">${segs.map((p) =>
+    `<span class="sg sg-${p.key}" style="width:${(100 * p.points) / d.max_score}%" data-tip="${esc(`<b>${nmid(r.psi_id)}</b> · ${p.label}: ${n(p.points)} of ${p.weight} (× ${p.factor})<br>${p.why}`)}" data-src="${esc(`ranking.json rule "${d.rules[p.key]?.label ?? p.key}": ${d.rules[p.key]?.rule ?? ''}`)}"></span>`).join('')}</span>`;
 }
 export function stackLegend(d) {
   return `<p class="stacklegend">${COMPONENTS.filter((k) => d.rules[k]).map((k) => `<span><i class="sw sg-${k}"></i>${esc(d.rules[k].label)} <small>(max ${d.rules[k].weight})</small></span>`).join('')}</p>`;
 }
 export function rankBarsHTML(H, d, { top = 6 } = {}) {
-  return `${stackLegend(d)}<ol class="rankbars">${H.rows.slice(0, top).map((r) => `<li data-psi="${esc(r.psi_id)}"><span class="rbid">#${r.rank} ${esc(r.psi_id)}</span>${stackHTML(r, d)}<b class="rbn">${n(r.score)}</b></li>`).join('')}</ol>
+  return `${stackLegend(d)}<ol class="rankbars">${H.rows.slice(0, top).map((r) => `<li data-psi="${esc(r.psi_id)}"><span class="rbid">#${r.rank} ${nameHTML(r.psi_id)}</span>${stackHTML(r, d)}<b class="rbn">${n(r.score)}</b></li>`).join('')}</ol>
     <p class="note">${esc(H.habitat.name)}: top ${top} of ${H.rows.length}, out of ${d.max_score} points.</p>`;
 }
 
@@ -67,12 +68,12 @@ export function rangeBarsSVG(rows, win, { narrow = false, stacked = false, rowH 
       const y = pad + i * rowH + rowH / 2 - 4; const v = ax.get(r);
       const cols = (ax.cols(r) ?? []).map((c) => (c.column ? `${c.file}, column "${c.column}"` : `${c.fixed} (${c.why})`)).join('; ');
       if (!v) { out += `<text class="rgna" x="${x0 + 4}" y="${y + 4}">not in table</text>`; return; }
-      const tip = `<b>${esc(r.psi_id)}</b>: ${ax.key === 'o2' ? 'O2' : 'pressure'} ${v[0]}–${v[1]} ${ax.key === 'o2' ? '%' : 'kPa'} (min–max over the table's condition columns)`;
+      const tip = `<b>${esc(nmid(r.psi_id))}</b>: ${ax.key === 'o2' ? 'O2' : 'pressure'} ${v[0]}–${v[1]} ${ax.key === 'o2' ? '%' : 'kPa'} (min–max over the table's condition columns)`;
       out += v[0] === v[1]
         ? `<circle class="rgpt" cx="${X(v[0])}" cy="${y}" r="${barH / 2}" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(cols)}"/>`
         : `<rect class="rgbar" x="${X(v[0])}" y="${y - barH / 2}" width="${Math.max(3, X(v[1]) - X(v[0]))}" height="${barH}" rx="3" tabindex="0" data-tip="${esc(tip)}" data-src="${esc(cols)}"/>`;
     });
-    if (narrow || k === 0) rows.forEach((r, i) => { out += `<text class="rgid" x="0" y="${pad + i * rowH + rowH / 2}">${esc(r.psi_id)}</text>`; });
+    if (narrow || k === 0) rows.forEach((r, i) => { out += `<text class="rgid" x="0" y="${pad + i * rowH + rowH / 2 - 2}">${esc(nm(r.psi_id))}<title>${esc(nmid(r.psi_id))}</title></text><text class="rgpid" x="0" y="${pad + i * rowH + rowH / 2 + 11}">${esc(r.psi_id)}</text>`; });
     out += '</g>';
   });
   const H = narrow ? 2 * blockH - 10 : pad + rows.length * rowH + 20;
@@ -95,7 +96,7 @@ export function mergedHabitats(gaps) {
 export function coverageHTML(gaps, { links = true } = {}) {
   const rows = mergedHabitats(gaps);
   return `<div class="table-wrap"><table class="cover"><thead><tr><th>Crew air</th>${RULES.map(([, l]) => `<th>${esc(l)}</th>`).join('')}</tr></thead><tbody>
-    ${rows.map(({ h, name }) => `<tr><th scope="row"><a href="#gap-${esc(h.habitat.id)}">${esc(name)}</a><small>${esc(h.window)}</small></th>${RULES.map(([id]) => {
+    ${rows.map(({ h, name }) => `<tr><th scope="row"><a href="#gaps/${esc(h.habitat.id)}">${esc(name)}</a><small>${esc(h.window)}</small></th>${RULES.map(([id]) => {
       const g = h.gaps.find((x) => x.id === id);
       const cov = h.covered.find((x) => x.id === id);
       const tip = g ? g.text : cov ? cov.text : 'No gap under this rule.';

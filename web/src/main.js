@@ -57,6 +57,7 @@ const panel = document.querySelector('#panel');
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function parse(hash) {
+  if (/^gap-[\w-]+$/.test(hash)) hash = `gaps/${hash.slice(4)}`;   // old in-page anchors (#gap-rover) open that card
   const [a, rest] = hash.split(/\/(.*)/s);
   let sec = SECTIONS.find((s) => s.id === a);
   if (sec) {

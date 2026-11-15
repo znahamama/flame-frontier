@@ -172,6 +172,9 @@ def main():
         psi.append({"psi_id": inv["psi_id"], "title": f["title"]["value"], "doi": doi, "url": f"https://doi.org/{doi}" if doi else None, "files_used": used,
                     "source": f["title"]["source"]})
     clip_list = [{"clip": c["clip"], "test": c["panel2"]["test"] if c.get("panel2") else c.get("test"), "source_name": c["source_name"], "psi_id": "PSI-25"} for c in clips["clips"]]
+    if clips.get("hero"):
+        h = clips["hero"]
+        clip_list.append({"clip": h["clip"], "test": h["test"], "source_name": h["source_name"] + " (Story hero loop)", "psi_id": "PSI-25"})
     papers = []
     for sid, s in sources.items():
         if sid == "challenge_brief":
@@ -180,6 +183,12 @@ def main():
         papers.append({"id": sid, "citation": s["citation"], "short": s["short"], "ntrs_id": nid,
                        "url": f"https://ntrs.nasa.gov/citations/{nid}" if nid else s.get("url"), "pdf_url": s.get("url"),
                        "cited_pages": pages.get(sid, []), "sha256": s.get("sha256")})
+    # Outside sources used only for plain-language companions (data/manual/glossary.json), e.g. the standard atmosphere.
+    gl = json.loads((ROOT / "data/manual/glossary.json").read_text(encoding="utf-8"))
+    for sid, s in gl.get("sources", {}).items():
+        nid = s["url"].rsplit("/", 1)[-1] if "ntrs.nasa.gov" in s["url"] else None
+        papers.append({"id": sid, "citation": s["citation"], "short": s["short"], "ntrs_id": nid, "url": s["url"], "pdf_url": None,
+                       "cited_pages": [], "sha256": None, "use": s["use"]})
     model = model_id()
     out = {
         "schema": 1,
@@ -195,7 +204,7 @@ def main():
                    "file": f"web/public/{ref['panel2']['nasa_figure']['image']}", "credit": "NASA (public domain U.S. Government work)"}]
                  + [{"what": f"BASS-II flight video, test {c['test']} (trimmed): PSI-25 raw data file {c['source_name']}", "file": f"web/public/{c['clip']}", "credit": "NASA PSI-25 (BASS-II)"} for c in clip_list],
         "software": {"npm": npm_pkgs(), "python": py_pkgs(),
-                     "tools": [{"name": "macOS avconvert", "use": "trimming the 3 BASS-II clips (scripts/make_clips.sh)"},
+                     "tools": [{"name": "macOS avconvert", "use": "trimming the BASS-II clips and the Story hero loop (scripts/make_clips.sh)"},
                                {"name": "Google Chrome (headless, via playwright-core)", "use": "screenshots and visual QA only"}]},
         "services": [{"name": "Vercel", "use": "hosting (static site + one Python function), free tier", "url": "https://vercel.com"},
                      {"name": "Anthropic API", "use": f"cited Q&A answers in api/ask.py (model {model})" if model else "cited Q&A (api/ask.py): not wired up yet",

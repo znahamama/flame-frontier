@@ -1,5 +1,6 @@
 import { loadJSON } from '../data.js';
 import { tilesHTML } from '../viz/explore.js';
+import { loadNames, nameHTML } from '../names.js';
 
 let mode = 'tiles';   // 'tiles' | 'table' (kept while the page is open)
 
@@ -22,7 +23,7 @@ function card(c) {
   const row = (k) => (f[k].value ? `<dt>${esc(f[k].label)} ${srcTag(f[k].source)}</dt><dd>${esc(f[k].value)}</dd>` : '');
   const tl = testLevel(c);
   const pubs = c.publications.value;
-  return `<details class="inv" id="${esc(c.psi_id)}"><summary><b>${esc(c.psi_id)}</b> ${esc(f.title.value)}</summary>
+  return `<details class="inv" id="${esc(c.psi_id)}"><summary>${nameHTML(c.psi_id, { tag: 'b' })} <span class="muted">${esc(f.title.value)}</span></summary>
     <dl>
       ${['objective', 'approach', 'hypothesis', 'impacts', 'hardware', 'platform', 'center', 'area', 'subarea', 'released', 'doi'].map(row).join('')}
       <dt>Keywords ${srcTag(c.keywords.source)}</dt><dd>${c.keywords.value.map(esc).join(' · ')}</dd>
@@ -34,7 +35,7 @@ function card(c) {
 }
 
 export async function render(root, arg) {
-  const [cat, controls] = await Promise.all([loadJSON('catalog.json'), loadJSON('controls.json')]);
+  const [cat, controls] = await Promise.all([loadJSON('catalog.json'), loadJSON('controls.json'), loadNames()]);
   const cov = cat.coverage;
   const inv = cat.investigations;
   const n = (lvl) => cov.slots.filter((x) => x.test_level === lvl).length;
@@ -47,21 +48,21 @@ export async function render(root, arg) {
       <div id="cat-tiles">${tilesHTML(cat, controls)}
       <p class="note"><span class="key2 tests"></span> per-test table on disk · <span class="key2 summary"></span> summary table only · <span class="key2 none"></span> no experimental table${gone.length ? ` · not downloaded: ${gone.map((x) => esc(x.psi_id)).join(', ')}` : ''}.
         Badges: <span class="rb rb-prevention">P</span> prevent, <span class="rb rb-detection">D</span> detect, <span class="rb rb-suppression">S</span> suppress, where the challenge page or the PSI record links the investigation to that role (<a href="#controls">Prevent · Detect · Suppress</a>). Open a tile for its full record.</p></div>
-      <p class="note">The ${cov.combustion_total} come from the PSI Combustion Science index (${esc(cov.index_source.file)}); the count matches the challenge video (${esc(cov.combustion_total_source.locator)}: "${esc(cov.combustion_total_source.quote)}").
-        ${cov.index_rows_not_combustion.length ? `Left out: ${cov.index_rows_not_combustion.map((r) => `${esc(r.psi_id)} (${esc(r.research_area)})`).join(', ')}.` : ''}</p>
+      <details class="more"><summary>Where the ${cov.combustion_total} come from</summary><p class="note">The ${cov.combustion_total} come from the PSI Combustion Science index (${esc(cov.index_source.file)}); the count matches the challenge video (${esc(cov.combustion_total_source.locator)}: "${esc(cov.combustion_total_source.quote)}").
+        ${cov.index_rows_not_combustion.length ? `Left out: ${cov.index_rows_not_combustion.map((r) => `${esc(r.psi_id)} (${esc(r.research_area)})`).join(', ')}.` : ''}</p></details>
       <div id="cat-table">
       <div class="table-wrap"><table class="cat">
-        <thead><tr><th>PSI ID</th><th>Investigation</th><th>Type</th><th>Platform</th><th>Hardware</th><th>PI</th><th>Released</th><th>Publications</th><th>Test-level data?</th></tr></thead>
+        <thead><tr><th>Name · PSI ID</th><th>Investigation (PSI title)</th><th>Type</th><th>Platform</th><th>Hardware</th><th>PI</th><th>Released</th><th>Publications</th><th>Test-level data?</th></tr></thead>
         <tbody>${inv.map((c) => {
           const f = c.fields; const tl = testLevel(c);
-          return `<tr><td class="id"><a href="#catalog" data-open="${esc(c.psi_id)}">${esc(c.psi_id)}</a></td>${cell(f.title.value, f.title.source)}${cell(c.index_type?.value?.replace(' Investigation', ''), c.index_type?.source)}${cell(f.platform.value, f.platform.source)}${cell(f.hardware.value, f.hardware.source)}
+          return `<tr><td class="id"><a href="#catalog" data-open="${esc(c.psi_id)}">${nameHTML(c.psi_id)}</a></td>${cell(f.title.value, f.title.source)}${cell(c.index_type?.value?.replace(' Investigation', ''), c.index_type?.source)}${cell(f.platform.value, f.platform.source)}${cell(f.hardware.value, f.hardware.source)}
             ${cell(c.pi.value.join(', ') || null, c.pi.source)}${cell(f.released.value, f.released.source)}${cell(`${c.publications.value.length} (${c.publications.value.filter((p) => p.doi).length} DOI)`, c.publications.source)}
             <td title="${esc(tl.long)}" class="${c.test_level === 'yes' ? 'yes' : ''}">${esc(tl.short)}</td></tr>`;
         }).join('')}</tbody></table></div>
       <p class="note">Hover any cell for its source (file, line, ISA-Tab key). An empty PI cell means the metadata assigns no PI role. "Test-level data?" reflects the files in our PSI download, not everything on PSI.</p></div>
     </section>
     <section class="card"><h2>Investigation details</h2>
-      <p class="note">Verbatim from each investigation's PSI metadata (i_Investigation.txt). Each field shows its file and line. Contact details are not shown.</p>
+      <p class="note">Open one for its full PSI record, verbatim from its metadata (i_Investigation.txt), each field with its file and line. Contact details are not shown.</p>
       ${inv.map(card).join('')}
     </section>`;
   const setMode = (m) => {

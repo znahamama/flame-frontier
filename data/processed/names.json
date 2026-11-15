@@ -1,0 +1,150 @@
+{
+  "names": {
+    "PSI-10": {
+      "basis": "psi_acronym",
+      "from": "PSI listing: \"Advanced Combustion via Microgravity Experiments / Flame Design(ACME/Flame Design)\"",
+      "short": "ACME Flame Design",
+      "title": "Advanced Combustion via Microgravity Experiments / Flame Design"
+    },
+    "PSI-100": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III)\"",
+      "short": "Saffire-III",
+      "title": "Spacecraft Fire Experiment-III"
+    },
+    "PSI-101": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R)\"",
+      "short": "SAME-R",
+      "title": "Smoke Aerosol Measurement Experiment-Reflight"
+    },
+    "PSI-102": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R)\"",
+      "short": "SAME",
+      "title": "Smoke and Aerosol Measurement Experiment"
+    },
+    "PSI-106": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"the Structure & Liftoff In Combustion Experiment (SLICE)\"",
+      "short": "SLICE",
+      "title": "Structure and Liftoff In Combustion Experiment"
+    },
+    "PSI-107": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"the Smoke Point In Co-flow Experiment (SPICE)\"",
+      "short": "SPICE",
+      "title": "Smoke Point In Co-flow Experiment"
+    },
+    "PSI-115": {
+      "basis": "our_label",
+      "from": "PSI lists no acronym. Title: \"Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation ...\". SAME is the acronym PSI gives for PSI-102, the experiment whose data this study uses.",
+      "short": "SAME smoke modeling",
+      "title": "Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity"
+    },
+    "PSI-117": {
+      "basis": "our_label",
+      "from": "PSI lists no acronym. Words from the title \"Effect of External Thermo-Convective Perturbation on Cool Flame Dynamics: ... CFD Analysis\".",
+      "short": "Cool-flame CFD",
+      "title": "Effect of External Thermo-Convective Perturbation on Cool Flame Dynamics: A Multidimensional Multi-Physics CFD Analysis"
+    },
+    "PSI-142": {
+      "basis": "our_label",
+      "from": "PSI lists no acronym. Words from the title \"Quantitative Studies of Cool Flame Transitions ... Using Counterflow Flames\".",
+      "short": "Cool-flame counterflow",
+      "title": "Quantitative Studies of Cool Flame Transitions at Radiation / Stretch Extinction Using Counterflow Flames"
+    },
+    "PSI-159": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"ACME’s Cool Flames Investigation with Gases (CFI-G)\"",
+      "short": "ACME CFI-G",
+      "title": "Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases"
+    },
+    "PSI-20": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Burning Rate Emulator (BRE) experiment of the Advanced Combustion via Microgravity Experiments (ACME) project\"",
+      "short": "ACME BRE",
+      "title": "Advanced Combustion via Microgravity Experiments - Burning Rate Emulator"
+    },
+    "PSI-21": {
+      "basis": "psi_acronym",
+      "from": "PSI listing: \"Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame(ACME CLD Flame)\"",
+      "short": "ACME CLD Flame",
+      "title": "Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame"
+    },
+    "PSI-22": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"ACME’s Electric-Field Effects on Laminar Diffusion Flames (E-FIELD Flames)\"",
+      "short": "ACME E-FIELD Flames",
+      "title": "Advanced Combustion via Microgravity Experiments Electric-Field Effects on Laminar Diffusion Flames"
+    },
+    "PSI-23": {
+      "basis": "psi_acronym",
+      "from": "PSI listing: \"Advanced Combustion via Microgravity Experiments-Structure and Response of Spherical Diffusion Flames(ACME s-Flame)\"",
+      "short": "ACME s-Flame",
+      "title": "Advanced Combustion via Microgravity Experiments-Structure and Response of Spherical Diffusion Flames"
+    },
+    "PSI-25": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Burning and Suppression of Solids (BASS and BASS-II)\"",
+      "short": "BASS-II",
+      "title": "Burning and Suppression of Solids - II"
+    },
+    "PSI-26": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"BASS, BASS-II, the Smoke Point In Co-flow Experiment (SPICE)\"",
+      "short": "BASS",
+      "title": "Burning and Suppression of Solids"
+    },
+    "PSI-39": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"FLEX, FLEX-2, and the Cool Flames Investigation (CFI)\"",
+      "short": "CFI",
+      "title": "Cool Flames Investigation"
+    },
+    "PSI-47": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2)\"",
+      "short": "DAFT / DAFT-2",
+      "title": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2"
+    },
+    "PSI-60": {
+      "basis": "our_label",
+      "from": "PSI lists no acronym. Words from the title \"Computational and Experimental Analysis of SPICE Data Sets\".",
+      "short": "SPICE data analysis",
+      "title": "Computational and Experimental Analysis of SPICE Data Sets"
+    },
+    "PSI-62": {
+      "basis": "our_label",
+      "from": "PSI lists no acronym. Words from the title \"Concurrent Flame Spread Modeling ... Comparison to BASS Experiments ...\" (model = Modeling).",
+      "short": "BASS flame-spread model",
+      "title": "Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography"
+    },
+    "PSI-68": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"FLEX, FLEX-2, and the Cool Flames Investigation (CFI)\"",
+      "short": "FLEX-2",
+      "title": "Flame Extinguishment Experiment - 2"
+    },
+    "PSI-69": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Flame Extinguishment Experiment (FLEX)\"",
+      "short": "FLEX",
+      "title": "Flame Extinguishment Experiment"
+    },
+    "PSI-98": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III)\"",
+      "short": "Saffire-I",
+      "title": "Spacecraft Fire Safety Experiment-I"
+    },
+    "PSI-99": {
+      "basis": "challenge_page",
+      "from": "challenge page: \"Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III)\"",
+      "short": "Saffire-II",
+      "title": "Spacecraft Fire Experiment-II"
+    }
+  },
+  "note": "Short display names: the challenge page's name where it gives one, else the acronym PSI prints after the title, else (5 ground studies) our label from the title's words.",
+  "schema": 1
+}

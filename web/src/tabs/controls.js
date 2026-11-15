@@ -1,5 +1,6 @@
 import { loadJSON } from '../data.js';
 import { suppSVG } from '../viz/explore.js';
+import { loadNames, nm, nameHTML } from '../names.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const short = (f) => String(f ?? '').split('/').slice(-1)[0];
@@ -15,8 +16,7 @@ function srcOf(q) {
 }
 
 function investigation(i) {
-  const name = i.short ? `${esc(i.short)} <span class="muted">${esc(i.psi_id)}</span>` : esc(i.psi_id);
-  return `<li><b>${name}</b> ${esc(i.title)}
+  return `<li>${nameHTML(i.psi_id, { tag: 'b' })} <span class="muted">${esc(i.title)}</span>
     <span class="badge" title="${esc(i.table.what)}">${esc(KIND[i.table.kind] ?? i.table.kind)}</span>
     ${i.doi ? `<a href="https://doi.org/${esc(i.doi)}" target="_blank" rel="noopener">DOI</a>` : ''}
     ${i.quotes.some((q) => q.basis === 'brief') ? `<span class="badge" title="${esc(i.quotes.find((q) => q.basis === 'brief').quote)}">named by the challenge page</span>` : ''}
@@ -44,24 +44,24 @@ function role(r, win, flex) {
       <p>${esc(m.text)}</p>
       ${m.gaps?.length ? `<p class="gapchips">${m.gaps.map((g) => `<a class="gapchip" href="${esc(g.href)}" data-tip="${esc(g.text)}" data-src="gaps.json (Habitat Gaps rules)">✕ ${esc(GAPNAME[g.id] ?? g.id)}</a>`).join('')}</p>` : ''}
       ${r.id === 'suppression' && flex ? `<figure class="suppfig">${suppSVG(flex, win)}</figure>` : ''}
-      ${r.extremes?.length ? `<p class="note">Closest suppressant tests to that air:</p><ul class="note">${r.extremes.map(extreme).join('')}</ul>` : ''}
+      ${r.extremes?.length ? `<details class="more"><summary>Closest suppressant tests to that air (${r.extremes.length})</summary><ul class="note">${r.extremes.map(extreme).join('')}</ul></details>` : ''}
       ${m.links.length ? `<p>${m.links.map((l) => `<a class="maplink" href="${esc(l.href)}">${esc(l.label)} →</a>`).join(' ')}</p>` : ''}
     </div>
-    <h3>What the PSI tables hold</h3>
+    <details class="more"><summary>What the PSI tables hold (${r.facts.length} facts)</summary>
     <ul class="ctl-facts">${r.facts.map((f) => `<li><span class="ctl-val">${esc(f.value)}</span>
       <span class="ctl-label">${esc(f.label)}</span>
       <span class="ctl-detail">${esc(f.detail)}</span>
       ${f.note ? `<span class="ctl-detail"><i>${esc(f.note)}</i></span>` : ''}
-      <span class="src" title="${esc(f.src)}">${esc(f.src)}</span></li>`).join('')}</ul>
-    <details class="ctl-invs"><summary><h3>Investigations that inform it (${r.investigations.length})</h3> <span class="muted">${r.investigations.map((i) => esc(i.short ?? i.psi_id)).join(', ')}</span></summary>
+      <span class="src" title="${esc(f.src)}">${esc(f.src)}</span></li>`).join('')}</ul></details>
+    <details class="ctl-invs"><summary><h3>Investigations that inform it (${r.investigations.length})</h3> <span class="muted">${r.investigations.map((i) => esc(nm(i.psi_id))).join(', ')}</span></summary>
     <ul class="related ctl-inv">${r.investigations.map(investigation).join('')}</ul></details>
-    <p>${r.compare.length >= 2 ? `<a class="maplink" href="#compare/${r.compare.map(esc).join(',')}">Compare ${r.compare.map(esc).join(', ')} →</a>` : ''}
+    <p>${r.compare.length >= 2 ? `<a class="maplink" href="#compare/${r.compare.map(esc).join(',')}">Compare ${r.compare.map((x) => esc(nm(x))).join(', ')} →</a>` : ''}
       ${r.earth ? `<a class="maplink" href="#earth">On Earth: ${esc(r.earth.title)} →</a>` : ''}</p>
   </section>`;
 }
 
 export async function render(root) {
-  const [d, flex, ref] = await Promise.all([loadJSON('controls.json'), loadJSON('flex_tests.json'), loadJSON('reference.json')]);
+  const [d, flex, ref] = await Promise.all([loadJSON('controls.json'), loadJSON('flex_tests.json'), loadJSON('reference.json'), loadNames()]);
   const z = ref.panel1.moon_base_zone;
   const win = { ...d.window, o2: [z.o2_min_pct, 100], p: [0, z.p_max_kpa] };
   root.innerHTML = `<section class="card"><h2>Fire safety controls: prevent, detect, suppress</h2>

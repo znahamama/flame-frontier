@@ -6,3 +6,7 @@ cd "$(dirname "$0")/.."
 tail -n +2 data/manual/clips.csv | while IFS=, read -r clip test src start dur preset _rest; do
   avconvert -s "$src" -p "$preset" -o "web/public/$clip" --start "$start" --duration "$dur" --replace
 done
+# Story hero loop (poster frame is grabbed separately with a browser; see data/manual/hero_clip.csv).
+tail -n +2 data/manual/hero_clip.csv | while IFS=, read -r clip test src start dur preset _rest; do
+  avconvert -s "$src" -p "$preset" -o "web/public/$clip" --start "$start" --duration "$dur" --replace
+done

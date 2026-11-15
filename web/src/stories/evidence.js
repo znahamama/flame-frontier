@@ -4,6 +4,7 @@
 import { loadJSON } from '../data.js';
 import { inMoonZone } from '../headline.js';
 import { mountStory } from '../story.js';
+import { loadGlossary, g, altHTML } from '../plain.js';
 import { atmosModel, mapSVG, curveSVG } from '../viz/atmos.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -56,7 +57,7 @@ function createVisual(m, card) {
 }
 
 export async function render(host) {
-  const [S, ext, ref, bass2, gaps] = await Promise.all(['sandbox.json', 'external_tests.json', 'reference.json', 'bass2_tests.json', 'gaps.json'].map(loadJSON));
+  const [S, ext, ref, bass2, gaps, G] = await Promise.all([...['sandbox.json', 'external_tests.json', 'reference.json', 'bass2_tests.json', 'gaps.json'].map(loadJSON), loadGlossary()]);
   const m = atmosModel({ S, ext, ref, bass2 });
   const bass = S.tests.filter((t) => t.id.startsWith('BASS-II'));
   const o2s = bass.map((t) => t.o2);
@@ -81,34 +82,34 @@ export async function render(host) {
   const bassReport = 'BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021): "pressure P = 1 atm" (printed p.11), "Ambient pressure was 1 atm" (p.94); not measured per test';
   const steps = [
     { id: 'map', title: 'Every test, by its air', state: { scene: 'map', hl: '' },
-      html: `Every solid-material test we could place: oxygen before ignition (up) against total pressure (across). <b>${S.tests.length}</b> tests, one dot each.`,
+      html: `Each dot is one fire test on a ${g('solids', 'solid material')}. Higher up means more ${g('o2pct', 'oxygen in the air')} before the fire was lit; further right means higher air pressure. <b>${S.tests.length}</b> tests.`,
       chips: [['Dots: sandbox.json tests (the solids on Evidence Map Panel 1): BASS-II rows of data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv and Saffire rows of ICES-2024-365 Table 1 (p.3). Hover a dot for its own row.', 'one row each']] },
     { id: 'bass', title: 'BASS-II at 1 atm', state: { scene: 'map', hl: 'bass' },
-      html: `BASS-II on the ISS: all <b>${bass.length}</b> tests at 1 atm, the pressure of Earth's air, from ${Math.min(...o2s)}% to ${Math.max(...o2s)}% O2.`,
-      chips: [[bassReport, 'BASS-II report · p.11'], [`${sea.label} (${sea.source})`, 'challenge page']] },
+      html: `${g('bass2', 'BASS-II')}, on the space station: all <b>${bass.length}</b> tests at Earth's sea-level pressure (${g('atm', '1 atm')}), with ${Math.min(...o2s)}% to ${Math.max(...o2s)}% oxygen (Earth's air: 21%).`,
+      chips: [[bassReport, 'BASS-II report · p.11'], [`${sea.label} (${sea.source})`, 'challenge page'], [G.terms.o2pct.src, "Earth's air 21%"]] },
     { id: 'ssce', title: 'SSCE as ranges', state: { scene: 'map', hl: 'ssce' },
-      html: `SSCE: ${ssceLv.join(', ')}% O2 at ${atm(ssceP[0])}–${atm(ssceP[1])} atm. NASA does not say which O2 went with which pressure, so these are ranges.`,
+      html: `${g('ssce', 'SSCE')}, early Space Shuttle tests: ${ssceLv.join(', ')}% oxygen at ${atm(ssceP[0])} to ${atm(ssceP[1])} times sea-level pressure (${g('atm', 'atm')}). NASA does not say which oxygen level went with which pressure, so these are drawn as ranges.`,
       chips: [[m.bars[0].rows.map((x) => `${x.material}: "${x.source.quote}"`).join(' | ') + ` (${m.bars[0].rows[0].source.doc})`, 'NTRS 20050177200']] },
     { id: 'zone', title: 'The Moon-base box', state: { scene: 'map', hl: 'zone', zone: true, card: true },
-      html: `Moon bases and rovers: ≥${z.o2_min_pct}% O2 at ≤${z.p_max_kpa} kPa. Inside, only ${esc(zone.map((t) => `${t.program} ${t.sample}`).join(' and '))}. Hover the box for what is missing.`,
+      html: `The box is ${g('moonair', 'Moon-base and rover air')}: ${z.o2_min_pct}% oxygen or more at ${z.p_max_kpa} kPa or less (${altHTML(z.p_max_kpa)}). Inside: only ${esc(zone.map((t) => `${t.program} ${t.sample}`).join(' and '))}. Hover the box for what is missing.`,
       chips: [[`${z.label} (${z.source})`, 'challenge page'], [moon.gaps.map((g) => g.text).join(' | '), 'gaps.json rules']] },
     { id: 'breath', title: 'Same oxygen per breath', state: { scene: 'map', hl: 'ppo2', zone: true },
-      html: `Same oxygen per breath: along the dotted line, pO2 equals sea-level air's ${pp.label.match(/[\d.]+ kPa/)[0]}. ${z.o2_min_pct}% at ${z.p_max_kpa} kPa gives ${ppZone} kPa.`,
+      html: `Along the dotted line, ${g('po2', 'each breath holds about as much oxygen')} as sea-level air (${pp.label.match(/[\d.]+ kPa/)[0]} of oxygen pressure). Moon-base air, ${z.o2_min_pct}% at ${z.p_max_kpa} kPa, gives ${ppZone} kPa.`,
       chips: [['pO2 = O2 fraction × total pressure (ideal gas); line built by scripts/04_build_reference.py', 'pO2 = O2% × P']] },
     { id: 'suit', title: 'Spacesuit air', state: { scene: 'map', hl: 'suit', zone: true },
-      html: `Spacesuits: ${suit.o2_pct}% O2 at ${suit.p_kpa} kPa. No solid test in our sources burned in that air.`,
+      html: `Spacesuits: ${suit.o2_pct}% oxygen at ${suit.p_kpa} kPa (${altHTML(suit.p_kpa)}). No solid test in our sources burned in that air.`,
       chips: [[`${suit.label} (${suit.source})`, 'challenge page']] },
     { id: 'curve', title: 'One measured boundary', state: { scene: 'curve', stage: 'curve' },
-      html: 'Our sources hold one measured flammability boundary: NASA\'s fit for PMMA rods in BASS-II. Above the line flames burn; below, they go out.',
+      html: `Our sources hold one measured ${g('boundary')}: NASA's fit for ${g('pmma', 'acrylic plastic')} rods in BASS-II. Above the line flames keep burning; below it they go out.`,
       chips: [[`${p2.equation}. ${src2}. The report uses the blowoff line's O2 at a = 0 as "an accurate but conservative estimate of the minimum O2 concentration for material flammability in space" (p.75).`, 'BASS-II eq. 6.1 · p.75']] },
     { id: 'branches', title: 'Quenching and blowoff', state: { scene: 'curve', stage: 'branches' },
-      html: `Too little flow quenches the flame; too much blows it off. Lowest point: <b>${p2.minimum.x_o2}%</b> O2 at a = ${p2.minimum.a} 1/s.`,
+      html: `Across: the ${g('stretch', 'stretch rate')}, how hard the oncoming air strains the flame. Too little airflow and ${g('quench', 'the flame grows too weak and goes out')}; too much and ${g('blowoff', 'the airflow blows it out')}. Lowest point: <b>${p2.minimum.x_o2}%</b> oxygen, at ${p2.minimum.a} 1/s.`,
       chips: [['"The O2 concentration (XO2) versus a boundary is defined by the combined empirical equations shown by the red (quenching branch, exponential expression) and black (blowoff branch, linear expression) dashed lines." BASS-II report p.75', 'report p.75'], [`Computed from eq. 6.1. ${p2.minimum.note}`, 'minimum']] },
     { id: 'points', title: 'Rebuilt flight tests', state: { scene: 'curve', stage: 'points' },
-      html: `Only <b>${nSt + nBo}</b> flight tests can be rebuilt from public PSI files: ${nSt} last stable flows (●) and ${nBo} blowoffs, true value at or left of the marker (◂).`,
+      html: `Only <b>${nSt + nBo}</b> flight tests can be rebuilt from NASA's public files: ${nSt} with the last airflow at which the flame still burned (●), and ${nBo} where ${g('blowoff', 'the airflow blew the flame out')}; for those the true value is at or left of the marker (◂).`,
       chips: [[`${p2.nasa_figure.why_not_reproducible.join(' ')} ${p2.nasa_figure.iss_points_note}`, `of ~${p2.nasa_figure.iss_points_approx} NASA points`]] },
     { id: 'atm', title: 'Only at 1 atm', state: { scene: 'curve', stage: 'atm' },
-      html: 'Every BASS-II test ran at 1 atm. Our sources hold no flammability boundary at Moon-base pressure.',
+      html: `Every BASS-II test ran at Earth's sea-level pressure (${g('atm', '1 atm')}). Our sources hold no such line at Moon-base pressure (${z.p_max_kpa} kPa or less).`,
       chips: [[bassReport, 'BASS-II report · p.11'], [moon.gaps.find((g) => g.id === 'boundary')?.text ?? '', 'boundary gap']] },
   ];
   return mountStory(host, {

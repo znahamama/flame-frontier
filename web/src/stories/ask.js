@@ -2,6 +2,7 @@
 // citations -> code checks -> offline fallback. Everything shown is read from qa_chunks.json and qa_cache.json.
 import { loadJSON } from '../data.js';
 import { mountStory } from '../story.js';
+import { loadGlossary, g } from '../plain.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const KIND = { meta: 'PSI metadata', report: 'BASS-II report pages', paper: 'paper pages', ntrs: 'NTRS record', brief: 'challenge page', data: 'Saffire table rows', limits: "this site's summaries" };
@@ -38,7 +39,7 @@ function createVisual(P) {
 }
 
 export async function render(host) {
-  const [Q, C] = await Promise.all([loadJSON('qa_chunks.json'), loadJSON('qa_cache.json')]);
+  const [Q, C] = await Promise.all([loadJSON('qa_chunks.json'), loadJSON('qa_cache.json'), loadGlossary()]);
   const a = C.answers[0];
   const picked = a.chunks;
   const counts = Object.entries(Q.chunks.reduce((m, c) => { const k = c.id.split(':')[0]; m[k] = (m[k] ?? 0) + 1; return m; }, {}));
@@ -50,19 +51,19 @@ export async function render(host) {
   };
   const steps = [
     { id: 'corpus', title: 'The passages', state: { scene: 'corpus' },
-      html: `Answers come only from <b>${Q.count}</b> passages: NASA metadata, report and paper pages, the challenge page, and ${derived} labelled summaries of our own.`,
+      html: `Answers come only from <b>${Q.count}</b> short passages of text: NASA's records, report and paper pages, the challenge page, and ${derived} clearly labelled summaries of our own.`,
       chips: [[counts.map(([k, n]) => `${KIND[k] ?? k}: ${n}`).join(' · '), 'qa_chunks.json']] },
     { id: 'pick', title: 'Keyword search', state: { scene: 'pick' },
-      html: `A keyword search (BM25, no AI) picks the <b>${Q.retrieval.top_k}</b> best. Our own summaries score ${Q.retrieval.derived_weight}× and come after NASA text.`,
+      html: `A ${g('bm25', 'keyword search (BM25)')}, with no AI, picks the <b>${Q.retrieval.top_k}</b> best matches. Our own summaries count ${Q.retrieval.derived_weight}× as much and come after NASA's text.`,
       chips: [[`BM25 k1 ${Q.retrieval.k1}, b ${Q.retrieval.b}; derived passages × ${Q.retrieval.derived_weight}; same code in api/ask.py and the browser`, 'retrieval config']] },
     { id: 'answer', title: 'A cited answer', state: { scene: 'answer' },
-      html: `${esc(a.model)} then writes a short answer from those passages only. Every sentence must cite one.`,
+      html: `An AI model (${esc(a.model)}) then writes a short answer from those passages only. Every sentence must name the passage it comes from.`,
       chips: [['api/ask.py: max_tokens 450, called server-side only; the browser never calls the Anthropic API', 'api/ask.py']] },
     { id: 'checks', title: 'Code checks', state: { scene: 'checks' },
-      html: 'Code checks every answer before it is shown: citations, numbers and who said what. A failing answer gets one retry, then a warning.',
+      html: 'Before an answer is shown, plain code checks it: its sources, its numbers, and who said what. A failing answer gets one retry, then a warning.',
       chips: [['api/ask.py checks; scripts/precompute_qa.py re-checks every cached answer with the current rules', 'checks']] },
     { id: 'offline', title: 'Without an AI key', state: { scene: 'offline' },
-      html: `No AI key needed to use it: <b>${C.answers.length}</b> answers are precomputed; other questions offline get the matching passages.`,
+      html: `It works without an AI key: <b>${C.answers.length}</b> answers are saved in advance, and with no key any other question gets the matching passages.`,
       chips: [['data/llm_cache/qa/*.json (committed) -> qa_cache.json; ?offline or any API failure -> BM25 in the browser', 'qa_cache.json']] },
   ];
   return mountStory(host, {

@@ -1,0 +1,190 @@
+{
+  "note": "One shared glossary. `plain` is the wording the story uses; `term` is the exact technical term shown on hover/tap with `def`. Every factual definition cites quotes that scripts/07_build_glossary.py checks word for word against the source text (a Q&A passage in qa_chunks.json or a committed file). Entries with no factual claim (a unit or a plain re-wording) say so in `kind`.",
+  "schema": 1,
+  "sources": {
+    "us_std_atm_1976": {
+      "citation": "U.S. Standard Atmosphere, 1976. NOAA, NASA and U.S. Air Force, NOAA-S/T 76-1562 / NASA-TM-X-74335 (NTRS 19770009539).",
+      "short": "U.S. Standard Atmosphere 1976",
+      "url": "https://ntrs.nasa.gov/citations/19770009539",
+      "use": "Altitude companions for pressures in the story: lower atmosphere (0-11 km) P = 101.325 kPa x (1 + L h / T0)^(-g0 M0 / (R* L)), with T0 = 288.15 K, L = -0.0065 K/m, g0 = 9.80665 m/s2, M0 = 0.0289644 kg/mol, R* = 8.31432 J/(mol K); 11-20 km isothermal at 216.65 K from 22.632 kPa. Height is geopotential (differs from geometric height by < 0.2% below 11 km); shown rounded to 100 m."
+    }
+  },
+  "terms": {
+    "atm": {
+      "def": "1 atm (one standard atmosphere) is defined as 101.325 kPa, Earth's average air pressure at sea level.",
+      "id": "atm",
+      "kind": "unit definition (no source needed)",
+      "plain": "Earth's sea-level air pressure",
+      "src": "unit definition (no source needed)",
+      "term": "atm"
+    },
+    "bass2": {
+      "def": "BASS-II (Burning and Suppression of Solids - II) burned small acrylic-plastic and fabric samples inside the space station's Microgravity Science Glovebox, varying the airflow and the oxygen.",
+      "id": "bass2",
+      "kind": "fact",
+      "plain": "BASS-II, a fire experiment on the space station",
+      "src": "PSI-25 Comment[Approach]: \"Main variables are airflow speed and oxygen concentration\" (PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Approach]) | BASS-II report p.3: \"the atmosphere in the Microgravity Science Glovebox (MSG)\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 3)",
+      "term": "BASS-II (PSI-25)"
+    },
+    "blowoff": {
+      "def": "Blowoff: the flame goes out because the air flowing past it is too fast.",
+      "id": "blowoff",
+      "kind": "fact",
+      "plain": "the airflow blew the flame out",
+      "src": "BASS-II report p.11: \"blowoff extinctions\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 11) | BASS-II report p.66: \"consist of a blowoff and new quenching branch\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 66)",
+      "term": "blowoff"
+    },
+    "bm25": {
+      "def": "BM25 is a standard keyword-ranking formula: passages that share more (and rarer) words with the question rank higher. No AI is involved in this step.",
+      "id": "bm25",
+      "kind": "method description (code: api/ask.py)",
+      "plain": "keyword search",
+      "src": "method description (code: api/ask.py)",
+      "term": "BM25"
+    },
+    "boundary": {
+      "def": "A flammability boundary is the line, in oxygen and airflow, between conditions where a material keeps burning and where its flame goes out.",
+      "id": "boundary",
+      "kind": "fact",
+      "plain": "the line between burns and doesn't burn",
+      "src": "BASS-II report p.94: \"O2-flow-velocity flammability boundary\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 94) | BASS-II report p.74: \"the flow speed at which the flames extinguished and the last flow speed at which a stable flame was obse\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 74)",
+      "term": "flammability boundary"
+    },
+    "cms": {
+      "def": "cm/s: centimetres per second, the speed of the air flowing past the sample (100 cm/s = 1 m/s).",
+      "id": "cms",
+      "kind": "unit definition (no source needed)",
+      "plain": "air speed",
+      "src": "unit definition (no source needed)",
+      "term": "cm/s"
+    },
+    "extinction": {
+      "def": "Extinction: the flame goes out. Blowoff (too much airflow) and quenching (too little) are two ways it happens.",
+      "id": "extinction",
+      "kind": "fact",
+      "plain": "the flame went out",
+      "src": "BASS-II report p.74: \"the flow speed at which the flames extinguished\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 74)",
+      "term": "extinction"
+    },
+    "kpa": {
+      "def": "kPa (kilopascal) is a unit of pressure. Earth's air at sea level is 14.7 psi = 101.3 kPa (1 psi = 6.894757 kPa).",
+      "id": "kpa",
+      "kind": "fact",
+      "plain": "kilopascals, a unit of air pressure",
+      "src": "challenge page: \"the Earth’s pressure at sea level is 14.7 psi\" (docs/ref/challenge_brief.md)",
+      "term": "kPa"
+    },
+    "micro": {
+      "def": "Microgravity is the near-weightless free fall of an orbiting spacecraft such as the International Space Station. Without buoyancy, hot gas does not rise, so flames change shape.",
+      "id": "micro",
+      "kind": "fact",
+      "plain": "near-weightless, like on the space station",
+      "src": "challenge page: \"flames in free fall (i.e., in microgravity) are often dramatically different because of the absence of buoyancy and thus rising hot gases\" (docs/ref/challenge_brief.md) | challenge page: \"low-gravity combustion experiments, conducted for example on the International Space Station (ISS)\" (docs/ref/challenge_brief.md)",
+      "term": "microgravity"
+    },
+    "moonair": {
+      "def": "Moon-base air: the atmosphere planned for Moon bases and pressurized rovers, 30% or more oxygen at 10.2 psi (70.3 kPa) or less, so astronauts can use spacesuits more easily.",
+      "id": "moonair",
+      "kind": "fact",
+      "plain": "the air planned for Moon bases",
+      "src": "challenge page: \"The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less\" (docs/ref/challenge_brief.md) | challenge page: \"To facilitate spacesuit use, an atmosphere with increased oxygen and reduced pressure compared to Earth’s is expected within the planned Moon Base and pressurized rovers\" (docs/ref/challenge_brief.md)",
+      "term": "Moon-base air"
+    },
+    "o2fire": {
+      "def": "Moon-base air is planned at 30% oxygen or more, over 40% more than Earth's air, which makes materials much more flammable. NASA prevents fires partly by choosing materials, which depends on knowing their flammability limits.",
+      "id": "o2fire",
+      "kind": "fact",
+      "plain": "more oxygen makes materials burn more easily",
+      "src": "challenge page: \"Compared to Earth’s atmosphere, that’s more than a 40% increase in the oxygen concentration making materials much more flammable\" (docs/ref/challenge_brief.md) | challenge page: \"Prevention is achieved by controlling ignition sources and through material selection, which depends on understanding flammability limits\" (docs/ref/challenge_brief.md)",
+      "term": "oxygen and flammability"
+    },
+    "o2pct": {
+      "def": "O2 % is the share of the gas that is oxygen, by volume (the same as mole %). Earth's normal air is 21% oxygen.",
+      "id": "o2pct",
+      "kind": "fact",
+      "plain": "share of the air that is oxygen",
+      "src": "PSI-20 Comment[Research Impacts]: \"a normal atmosphere of 21% oxygen\" (PSI-20 Advanced Combustion via Microgravity Experiments - Burning Rate Emulator: PSI metadata Comment[Research Impacts]) | NTRS 20160001047 p.3: \"is the same as referring to it by its mole percent (21 mole % O2)\" (NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 3)",
+      "term": "O2 % (mol % = vol %)"
+    },
+    "partial": {
+      "def": "Partial gravity is gravity weaker than Earth's but far above zero, as on the Moon or Mars. PSI holds no fire data from it yet.",
+      "id": "partial",
+      "kind": "fact",
+      "plain": "Moon or Mars gravity",
+      "src": "challenge page: \"there is currently no partial-gravity combustion data available in PSI\" (docs/ref/challenge_brief.md)",
+      "term": "partial gravity"
+    },
+    "pmma": {
+      "def": "PMMA (polymethylmethacrylate) is acrylic plastic. BASS-II burned it as rods, slabs and thin films.",
+      "id": "pmma",
+      "kind": "fact",
+      "plain": "acrylic plastic",
+      "src": "BASS-II report, abbreviations: \"PMMA polymethylmethacrylate (acrylic)\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 2) | BASS-II report p.5: \"cast polymethylmethacrylate (PMMA) samples were shaped as rods\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 5)",
+      "term": "PMMA"
+    },
+    "po2": {
+      "def": "Oxygen partial pressure (pO2) is the part of the total pressure that comes from oxygen: O2 fraction x total pressure. Equal pO2 means each breath holds about the same amount of oxygen.",
+      "id": "po2",
+      "kind": "fact",
+      "plain": "oxygen per breath",
+      "src": "NTRS 20160001047: \"Oxygen Partial Pressure and Oxygen Concentration Flammability\" (NTRS 20160001047 (O2 partial pressure vs concentration flammability), PDF p. 1)",
+      "term": "oxygen partial pressure (pO2)"
+    },
+    "psi": {
+      "def": "PSI (Physical Sciences Informatics, psi.nasa.gov) is NASA's public archive of physical-science experiments, including fire tests on the space station.",
+      "id": "psi",
+      "kind": "fact",
+      "plain": "NASA's public space-science data archive",
+      "src": "challenge page: \"are being made publicly available through NASA's Physical Science Informatics (PSI) database\" (docs/ref/challenge_brief.md)",
+      "term": "PSI"
+    },
+    "quench": {
+      "def": "Quenching: at very low airflow the flame becomes too weak to make up for the heat it loses, and goes out.",
+      "id": "quench",
+      "kind": "fact",
+      "plain": "the flame went out because the airflow was too weak",
+      "src": "BASS-II report p.66: \"quenching branch where the low power flame (due to the reduced temperature) is too weak to compensate for the surface radiative heat loss\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 66)",
+      "term": "quenching"
+    },
+    "saffire": {
+      "def": "Saffire (Spacecraft Fire Safety Demonstration) burned large material samples inside Cygnus cargo spacecraft in orbit, to see how a large fire grows in low gravity.",
+      "id": "saffire",
+      "kind": "fact",
+      "plain": "Saffire, large fire tests in an uncrewed cargo spacecraft",
+      "src": "PSI-98 Comment[Objective]: \"determine how rapidly a large scale fire grows in low-gravity\" (PSI-98 Spacecraft Fire Safety Experiment-I: PSI metadata Comment[Objective]) | Saffire ICES-2024-365 (our summary): \"Microgravity (orbiting Cygnus) only\" (Flame Frontier Known Limits: Saffire ICES-2024-365)",
+      "term": "Saffire"
+    },
+    "sibal": {
+      "def": "SIBAL is a fabric of cotton on a fiberglass backing (75% cotton, 25% fiberglass by weight), named after an earlier NASA project, Solid Inflammability Boundary at Low Speeds.",
+      "id": "sibal",
+      "kind": "fact",
+      "plain": "cotton-fiberglass cloth",
+      "src": "PSI-98 Comment[Approach]: \"Sibal consisting of cotton on a fiberglass substrate (75% cotton, 25% fiberglass by weight)\" (PSI-98 Spacecraft Fire Safety Experiment-I: PSI metadata Comment[Approach]) | BASS-II report p.94: \"The fabric is custom made for a previous project Solid Inflammability Boundary at Low Speeds (SIBAL)\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 94)",
+      "term": "SIBAL"
+    },
+    "solids": {
+      "def": "Solid materials: things like fabric and plastic, as opposed to gas or liquid fuels. NASA's flammability studies for crew cabins focus on them.",
+      "id": "solids",
+      "kind": "fact",
+      "plain": "solid materials such as fabrics and plastics",
+      "src": "challenge page: \"Flammability studies focus on solid materials such as fabrics and plastics\" (docs/ref/challenge_brief.md)",
+      "term": "solid materials"
+    },
+    "ssce": {
+      "def": "SSCE (Solid Surface Combustion Experiment) was the first combustion experiment flown on the Space Shuttle: flame spread over filter paper and acrylic plastic, over 8 flights.",
+      "id": "ssce",
+      "kind": "fact",
+      "plain": "SSCE, early fire tests on the Space Shuttle",
+      "src": "NTRS 20050177200: \"was the first combustion experiment to fly in the space shuttle\" (SSCE, NTRS 20050177200 (abstract)) | NTRS 20050177200: \"the fuel sample--ashless filter paper\" (SSCE, NTRS 20050177200 (abstract)) | NTRS 20050177200: \"a polymethyl methacrylate (plexiglass) fuel\" (SSCE, NTRS 20050177200 (abstract)) | NTRS 20050177200: \"the final two of eight flights\" (SSCE, NTRS 20050177200 (abstract))",
+      "term": "SSCE"
+    },
+    "stretch": {
+      "def": "Stretch rate a (unit 1/s) measures how strongly the oncoming air strains the flame at the sample's tip. It rises with air speed and is larger for thinner rods: a = (3/2)(U/r)(r/r0)^0.5 (BASS-II eq. 6.1).",
+      "id": "stretch",
+      "kind": "fact",
+      "plain": "how hard the oncoming air strains the flame",
+      "src": "BASS-II report p.66: \"The flammability map in terms of O2 and stretch rate a\" (BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021), printed p. 66)",
+      "term": "stretch rate (a)"
+    }
+  }
+}

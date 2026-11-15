@@ -1,5 +1,6 @@
 import { loadJSON } from '../data.js';
 import { stackHTML, stackLegend } from '../viz/explore.js';
+import { loadNames, nm, nameHTML } from '../names.js';
 
 // Ranking: a visible rule table, no AI. Every score = sum of per-component points; each component has a template explanation.
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -29,7 +30,7 @@ function headline(H) {
   const solid = j.filter((x) => x.material === 'solid');
   const total = H.rows.length;
   if (!j.length) return `${esc(h.name)}: none of the ${total} PSI combustion investigations ran a test with both O2 and pressure inside this window.`;
-  const list = j.map((x) => `${esc(x.psi_id)} (${x.n} test${x.n === 1 ? '' : 's'}, ${esc(MAT[x.material] ?? x.material)})`).join(', ');
+  const list = j.map((x) => `${esc(nm(x.psi_id))} <small>${esc(x.psi_id)}</small> (${x.n} test${x.n === 1 ? '' : 's'}, ${esc(MAT[x.material] ?? x.material)})`).join(', ');
   return `${esc(h.name)}: ${j.length} of the ${total} PSI combustion investigations ran a test with both O2 and pressure inside this window: ${list}. ${solid.length ? `${solid.length} used solid materials.` : 'None used solid materials.'}`;
 }
 
@@ -41,9 +42,9 @@ function topNote(rows, d) {
   const strong = top.parts.filter((p) => p.key !== 'material' && p.factor === 1).map((p) => `${p.label} (${n(p.points)} of ${p.weight})`);
   const m = pt('material');
   const solid = rows.find((r) => r.material_class === 'solid');
-  return `<p class="callout">${esc(top.psi_id)} ranks first under these rules although it burned ${esc(MAT[top.material_class] ?? top.material_class)}, not solid materials: `
+  return `<p class="callout">${esc(nm(top.psi_id))} <small>${esc(top.psi_id)}</small> ranks first under these rules although it burned ${esc(MAT[top.material_class] ?? top.material_class)}, not solid materials: `
     + `${strong.length ? `it scores full marks on ${strong.join(', ')}, ` : ''}and material class is worth only ${m.weight} of ${d.max_score} points (it gets ${n(m.points)}). `
-    + `${solid ? `The best-ranked solid-material study is ${esc(solid.psi_id)} (#${solid.rank}). ` : ''}Choose "Solids only" to list solid-material studies.</p>`;
+    + `${solid ? `The best-ranked solid-material study is ${esc(nm(solid.psi_id))} <small>${esc(solid.psi_id)}</small> (#${solid.rank}). ` : ''}Choose "Solids only" to list solid-material studies.</p>`;
 }
 
 function table(H, d) {
@@ -60,7 +61,7 @@ function table(H, d) {
     const joint = r.joint_rows.length ? `<p class="src">Tests inside both windows: ${r.joint_rows.slice(0, 8).map((x) => `${esc(x.file.split('/').pop())} line ${x.line} (${x.o2_pct}% O2, ${x.p_kpa} kPa)`).join('; ')}${r.joint_tests > 8 ? ` and ${r.joint_tests - 8} more` : ''}.</p>` : '';
     return `<tr class="rk" data-id="${esc(r.psi_id)}">
       <td class="num">${r.rank}</td>
-      <td><button class="linkish" aria-expanded="false" title="${esc(r.title)}">${esc(r.psi_id)}</button> <span class="t">${esc(r.title)}</span></td>
+      <td><button class="linkish" aria-expanded="false" title="${esc(r.title)}">${nameHTML(r.psi_id)}</button></td>
       <td class="bar2">${stackHTML(r, d)}<b>${n(r.score)}</b></td>
       ${cells}
       <td class="num">${r.joint_tests || '<span class="muted">0</span>'}</td></tr>
@@ -105,7 +106,7 @@ function draw(root, d, id) {
 }
 
 export async function render(root) {
-  const d = await loadJSON('ranking.json');
+  const [d] = await Promise.all([loadJSON('ranking.json'), loadNames()]);
   const want = new URLSearchParams(location.search).get('hab') ?? current ?? 'moon_base';
   root.innerHTML = `
     <section class="card"><h2>Ranking: which NASA tests match each habitat's air?</h2>

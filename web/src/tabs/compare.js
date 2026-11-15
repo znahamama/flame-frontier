@@ -1,5 +1,6 @@
 import { loadJSON } from '../data.js';
 import { rangeBarsSVG } from '../viz/explore.js';
+import { loadNames, nm } from '../names.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const short = (f) => (f ? f.split('/').slice(-1)[0] : '');
@@ -25,7 +26,7 @@ function cellHTML(cell, rowKey) {
 }
 
 export async function render(root, arg) {
-  const [d, rank] = await Promise.all([loadJSON('compare.json'), loadJSON('ranking.json')]);
+  const [d, rank] = await Promise.all([loadJSON('compare.json'), loadJSON('ranking.json'), loadNames()]);
   const moonH = rank.habitats.find((h) => h.habitat.id === 'moon_base') ?? rank.habitats[0];
   const win = { name: moonH.habitat.name, text: `≥${moonH.habitat.o2_pct[0]}% O2 at ≤${moonH.habitat.p_kpa[1]} kPa`, o2: moonH.habitat.o2_pct, p: moonH.habitat.p_kpa };
   const rowOf = Object.fromEntries(moonH.rows.map((r) => [r.psi_id, r]));
@@ -33,7 +34,7 @@ export async function render(root, arg) {
   const fromHash = (arg ?? '').split(',').filter((x) => by[x]);
   let sel = fromHash.length >= 2 ? fromHash.slice(0, 3) : [...d.default];
   const opts = (cur, allowNone) => `${allowNone ? `<option value="">(none)</option>` : ''}${d.investigations.map((i) =>
-    `<option value="${esc(i.psi_id)}" ${i.psi_id === cur ? 'selected' : ''}>${esc(i.psi_id)}: ${esc(i.title.length > 60 ? `${i.title.slice(0, 58)}…` : i.title)}</option>`).join('')}`;
+    `<option value="${esc(i.psi_id)}" ${i.psi_id === cur ? 'selected' : ''}>${esc(nm(i.psi_id))} (${esc(i.psi_id)})</option>`).join('')}`;
 
   root.innerHTML = `<section class="card"><h2>Compare investigations</h2>
     <p class="note">Pick two or three of the ${d.investigations.length} PSI combustion investigations. Rows marked <span class="diffkey">differs</span> have different values across your picks. Hover a grey tag for its exact source. ${esc(d.note)}</p>
@@ -46,11 +47,11 @@ export async function render(root, arg) {
       const keys = picks.map((i) => i.cells[r.key].key);
       const differs = keys.every((k) => k != null) && new Set(keys).size > 1;
       return `<tr class="${differs ? 'diff' : ''}"><th scope="row">${esc(r.label)}${differs ? ' <span class="diffkey">differs</span>' : ''}</th>
-        ${picks.map((i) => `<td data-label="${esc(i.psi_id)}">${cellHTML(i.cells[r.key], r.key)}</td>`).join('')}</tr>`;
+        ${picks.map((i) => `<td data-label="${esc(nm(i.psi_id))} · ${esc(i.psi_id)}">${cellHTML(i.cells[r.key], r.key)}</td>`).join('')}</tr>`;
     }).join('');
     const rr = picks.map((i) => rowOf[i.psi_id]).filter(Boolean);
     root.querySelector('#cmp').innerHTML = `<figure class="rangefig">${rangeBarsSVG(rr, win, { narrow: root.clientWidth < 560 })}<figcaption class="note">Tested ranges (min–max of each table's O2 and pressure columns, from ranking.json) against ${esc(win.name)} air (shaded: ${esc(win.text)}). Hover a bar for the columns it comes from.</figcaption></figure><div class="scroll"><table class="compare"><thead><tr><th></th>${picks.map((i) =>
-      `<th scope="col">${esc(i.psi_id)}<br><span class="coltitle">${esc(i.title)}</span></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>`;
+      `<th scope="col"><span class="in-s">${esc(nm(i.psi_id))}</span> <small class="in-id">${esc(i.psi_id)}</small><br><span class="coltitle">${esc(i.title)}</span></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>`;
     history.replaceState(null, '', `#compare/${sel.filter(Boolean).join(',')}`);
   };
   root.querySelectorAll('select').forEach((s) => s.addEventListener('change', () => {

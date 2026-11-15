@@ -5,18 +5,19 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const srcText = (s) => (s ? [s.doc, s.locator, s.printed_page && `p.${s.printed_page}`, s.file, s.line != null && `line ${s.line}`].filter(Boolean).join(', ') : '');
 
 // Habitat gap report: every sentence is a template filled from gaps.json (scripts/05_build_gaps.py). No AI text.
-export async function render(root) {
+export async function render(root, arg) {
   const [g, rank] = await Promise.all([loadJSON('gaps.json'), loadJSON('ranking.json')]);
   const S = rank.sources;
   const tgt = (t) => `"${esc(t.quote)}" <span class="src">${esc(S[t.source]?.short ?? t.source)}${t.page ? `, p.${t.page}` : ''}</span>`;
   // Habitats with the same window and the same gaps (Moon base, pressurized rover) share one card; both anchors stay.
   root.innerHTML = `<section class="card"><h2>Habitat gap report</h2>
     <p class="note">For each crew environment: the target atmosphere, what was tested there, and where the data runs out. ${esc(g.note)}
-    "Show on map" opens the Evidence Map with that region highlighted.</p>
+    The table is the summary; open a crew home below for its sources, gaps and "Show on map" links (each opens the Evidence Map with that region highlighted).</p>
     ${coverageHTML(g)}
     <p class="note">✕ = a gap under that rule (click it to see it on the map); ✓ = no gap under that rule. Hover any cell for its sentence.</p></section>
     ${mergedHabitats(g).map(({ h, also, name }) => `<section class="card habitat" id="gap-${esc(h.habitat.id)}">${also.map((a) => `<span id="gap-${esc(a.habitat.id)}" class="anchor"></span>`).join('')}
-      <h2>${esc(name)}: ${esc(h.window)}, ${h.habitat.gravity === 'micro' ? 'microgravity' : 'partial gravity'}</h2>
+      <details class="habcard"><summary><h2>${esc(name)}: ${esc(h.window)}, ${h.habitat.gravity === 'micro' ? 'microgravity' : 'partial gravity'}</h2>
+        <span class="habsum">${h.tested.solids_inside} solid-material test${h.tested.solids_inside === 1 ? '' : 's'} in this air · ${h.gaps.length ? `${h.gaps.length} gap${h.gaps.length === 1 ? '' : 's'}` : 'no gap by these rules'}</span></summary>
       ${also.length ? `<p class="note">${esc(also.map((a) => a.habitat.name).join(', '))} ${also.length === 1 ? 'has' : 'have'} the same target air and the same gaps as ${esc(h.habitat.name)}, so they share this card.</p>` : ''}
       <details class="targets"><summary>Where the target comes from</summary><ul class="note">
         ${[h, ...also].map((x) => `${also.length ? `<li><b>${esc(x.habitat.name)}</b></li>` : ''}<li>O2: ${tgt(x.target_sources.o2)}</li><li>Pressure${x.target_sources.p.as_stated ? ` (${esc(x.target_sources.p.as_stated)})` : ''}: ${tgt(x.target_sources.p)}</li>
@@ -29,5 +30,16 @@ export async function render(root) {
         <a class="maplink" href="#evidence/gap=${esc(h.habitat.id)}.${esc(x.id)}">Show on map →</a>${also.map((a) => ` <a class="maplink" href="#evidence/gap=${esc(a.habitat.id)}.${esc(x.id)}">(${esc(a.habitat.name)}) →</a>`).join('')}</li>`).join('')}</ol>`
         : '<p class="ok">No gap found by these rules.</p>'}
       ${h.covered.length ? `<details><summary>What is covered (${h.covered.length})</summary><ul class="note">${h.covered.map((x) => `<li>${esc(x.text)}</li>`).join('')}</ul></details>` : ''}
-    </section>`).join('')}`;
+    </details></section>`).join('')}`;
+  // #gaps/<habitat> (and the old #gap-<habitat> anchors): open that crew home's card and land on it.
+  const want = (arg ?? '').replace(/^gap-/, '');
+  const card = want && (root.querySelector(`#gap-${CSS.escape(want)}`)?.closest('section.habitat'));
+  if (card) { const d = card.querySelector('details.habcard'); d.open = true; card.dataset.goto = ''; card.tabIndex = -1; }
+  root.querySelectorAll('a[href^="#gaps/"]').forEach((a) => a.addEventListener('click', (e) => {
+    const c = root.querySelector(`#gap-${CSS.escape(a.getAttribute('href').slice(6))}`)?.closest('section.habitat');
+    if (!c) return;
+    e.preventDefault();
+    c.querySelector('details.habcard').open = true;
+    c.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }));
 }

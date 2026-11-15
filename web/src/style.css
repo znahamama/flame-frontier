@@ -781,3 +781,63 @@ details.howask > summary { cursor: pointer; font-size: 14px; color: var(--text-s
 }
 /* Header aligns with the widened story column on large screens. */
 @media (min-width: 761px) { .topin { max-width: min(1648px, calc(100vw - 16px)); } }
+
+/* ===== Polish batch: hero, plain-language terms, names first, collapsed detail, story->view band ===== */
+/* Hero: a real BASS-II loop behind a big count. The video is decorative; the caption says what it shows. */
+.shero { margin: 6px 0 14px; }
+.hero-box { position: relative; aspect-ratio: 654 / 480; border-radius: 14px; overflow: hidden; background: #000; }
+.hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-box::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.82) 100%); pointer-events: none; }
+.hero-h1 { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; margin: 0; padding: 0 16px 12px; display: flex; align-items: flex-end; gap: 12px; color: #fff; line-height: 1.1; }
+.hero-n { font-size: clamp(4.4rem, 3rem + 4vw, 6.6rem); font-weight: 800; line-height: 0.82; letter-spacing: -0.04em; font-variant-numeric: lining-nums; }
+.hero-line { font-size: clamp(1.05rem, 0.9rem + 0.5vw, 1.35rem); font-weight: 700; padding-bottom: 4px; max-width: 15em; }
+.hero-h1 .gl { color: inherit; text-decoration-color: rgba(255, 255, 255, 0.7); }
+.hero-cap { margin: 8px 0 0; font-size: 12.5px; line-height: 1.4; color: var(--text-secondary); }
+.story-why { margin: 0 0 10px; font-size: 1.04rem; line-height: 1.45; }
+.story-headline { margin: 0 0 8px; font-size: 0.98rem; line-height: 1.4; font-weight: 600; color: var(--text-secondary); }
+/* Glossary terms and altitude companions: dotted underline; hover, tap or focus opens the shared popover. */
+.gl { font-style: normal; text-decoration: underline dotted; text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--text-secondary) 80%, transparent); cursor: help; }
+.gl:focus-visible, .alt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.alt { text-decoration: underline dotted; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--text-secondary) 60%, transparent); cursor: help; }
+/* Dot legend (Start story step 1); same colours as the dots. */
+.dotlegend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 0 0; font-size: 13px; color: var(--text-secondary); }
+.dotlegend span { display: inline-flex; align-items: center; gap: 6px; }
+.lgdot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.lgdot.bass { background: var(--series-3); } .lgdot.saf { background: var(--series-1); }
+/* Names first, PSI number small and secondary. */
+.iname .in-s, .in-s { font-weight: 650; }
+.iname .in-id, .in-id { font: 500 0.78em/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text-secondary); }
+.t2n { font-size: 15px; line-height: 1.2; font-weight: 700; overflow-wrap: anywhere; }
+.tile2 .t2id { font-size: 11px; }
+.rankbars li { grid-template-columns: minmax(150px, max-content) 1fr 40px; }
+.rangebars .rgpid { font-size: 10px; fill: var(--text-secondary); }
+.stagecard .t2n { font-size: 13px; }
+.scene-x .t2n { font-size: 1em; } .scene-x .t2id { font-size: 0.72em; }
+@media (max-width: 760px) {
+  .stagecard .tiles2 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stagecard .t2n { font-size: 10.5px; line-height: 1.15; } .stagecard .t2id { display: none; }
+  .stagecard .rankbars li { grid-template-columns: minmax(96px, max-content) 1fr 30px; }
+  .rankbars .in-id { display: none; }
+  .hero-n { font-size: 4.6rem; }
+}
+/* Collapsed detail (Habitat Gaps cards, Prevent · Detect · Suppress, catalog notes): one click away. */
+details.more { margin: 10px 0 0; border-top: 1px solid var(--hair); padding-top: 8px; }
+details.more > summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--text-secondary); }
+details.more > summary:hover { color: var(--text-primary); }
+details.habcard > summary { cursor: pointer; list-style: none; }
+details.habcard > summary::-webkit-details-marker { display: none; }
+details.habcard > summary h2 { display: inline; margin: 0; }
+details.habcard > summary::after { content: 'Show details ▾'; display: block; margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--accent); }
+details.habcard[open] > summary::after { content: 'Hide details ▴'; }
+details.habcard > summary .habsum { display: block; margin-top: 4px; font-size: 14px; color: var(--text-secondary); font-weight: 400; }
+/* Story -> view: no empty band after the last step. The last step only needs to reach the activation line. */
+.story-steps { padding-bottom: 0; }
+.story:not(.story--static) .step:last-child { min-height: 58vh; min-height: 58svh; }
+@media (max-width: 760px) {
+  .story-steps { padding-bottom: 0; }
+  .story:not(.story--static) .step:last-child { min-height: 34svh; align-items: flex-start; padding-top: 8svh; }
+}
+.in-id, .t2id, .rgpid { white-space: nowrap; }
+.t2n { overflow-wrap: normal; hyphens: auto; }
+@media (max-width: 760px) { .stagecard .t2n { font-size: 10px; hyphens: auto; overflow-wrap: break-word; } }
+.hero-src { display: block; font-size: 0.62em; font-weight: 600; opacity: 0.85; margin-top: 2px; }

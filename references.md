@@ -40,6 +40,7 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 - BASS-II Summary Report, NASA/TM-20210011385, Oct 2021. NTRS 20210011385: <https://ntrs.nasa.gov/citations/20210011385>. Pages cited: p.1, p.2, p.3, p.4, p.5, p.6, p.7, p.8, p.9, p.10, p.11, p.66, p.67, p.74, p.75, p.76, p.94.
 - Harper, S. A., Juarez, A., Perez, H. III, Hirsch, D. B., "Oxygen Partial Pressure and Oxygen Concentration Flammability: Can They Be Correlated?", Journal of ASTM International / ASTM Symposium on Flammability and Sensitivity of Materials in Oxygen-Enriched Atmospheres. NTRS 20160001047. <https://ntrs.nasa.gov/api/citations/20160001047/downloads/20160001047.pdf>. Pages cited: p.1, p.2, p.3.
 - Schaezler, R. N., Cook, A. J., "Report on ISS O2 Production, Gas Supply and Partial Pressure Management", International Conference on Environmental Systems (AIAA). NTRS 20150010425. <https://ntrs.nasa.gov/api/citations/20150010425/downloads/20150010425.pdf>. Pages cited: p.1.
+- U.S. Standard Atmosphere, 1976. NOAA, NASA and U.S. Air Force, NOAA-S/T 76-1562 / NASA-TM-X-74335 (NTRS 19770009539). NTRS 19770009539: <https://ntrs.nasa.gov/citations/19770009539>.
 
 ## Challenge
 
@@ -56,6 +57,7 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 - BASS-II flight video, test O4 (trimmed): PSI-25 raw data file BASS_GMT189_SAMPLE_216_TEST_O4.mp4. Credit: NASA PSI-25 (BASS-II). Served as `web/public/clips/bass2_O4_extinction.mp4`.
 - BASS-II flight video, test O7 (trimmed): PSI-25 raw data file Flame-Blowoff-BASS-GMT177-Test-O7.mp4. Credit: NASA PSI-25 (BASS-II). Served as `web/public/clips/bass2_O7_blowoff.mp4`.
 - BASS-II flight video, test O1 (trimmed): PSI-25 raw data file BASS_GMT49_SAMPLE_207_TEST_O1_Still_Sequence.mp4. Credit: NASA PSI-25 (BASS-II). Served as `web/public/clips/bass2_O1_stills.mp4`.
+- BASS-II flight video, test O1 (trimmed): PSI-25 raw data file BASS_GMT49_SAMPLE_207_TEST_O1.mp4 (Story hero loop). Credit: NASA PSI-25 (BASS-II). Served as `web/public/clips/bass2_O1_hero.mp4`.
 
 ## Software
 
@@ -71,7 +73,7 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 | [python-dotenv](https://github.com/theskumar/python-dotenv) | 1.2.4 | BSD-3-Clause | build-time pipeline (scripts/) |
 | [openpyxl](https://foss.heptapod.net/openpyxl/openpyxl) | 3.1.5 | MIT License | build-time pipeline (scripts/) |
 
-- macOS avconvert: trimming the 3 BASS-II clips (scripts/make_clips.sh).
+- macOS avconvert: trimming the BASS-II clips and the Story hero loop (scripts/make_clips.sh).
 - Google Chrome (headless, via playwright-core): screenshots and visual QA only.
 
 ## Services

@@ -3,6 +3,8 @@
 // Every number is computed here from data/processed; sentences are templates.
 import { loadJSON } from '../data.js';
 import { mountStory } from '../story.js';
+import { loadGlossary, g } from '../plain.js';
+import { loadNames, nm } from '../names.js';
 import { tilesHTML, rankBarsHTML, rangeBarsSVG, coverageHTML, suppSVG, rolesByPsi, mergedHabitats } from '../viz/explore.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -44,7 +46,7 @@ function createVisual(parts) {
 }
 
 export async function render(host) {
-  const [cat, controls, rank, gaps, flex, compare] = await Promise.all(['catalog.json', 'controls.json', 'ranking.json', 'gaps.json', 'flex_tests.json', 'compare.json'].map(loadJSON));
+  const [cat, controls, rank, gaps, flex, compare] = await Promise.all([...['catalog.json', 'controls.json', 'ranking.json', 'gaps.json', 'flex_tests.json', 'compare.json'].map(loadJSON), loadGlossary(), loadNames()]);
   const inv = cat.investigations;
   const perTest = inv.filter((c) => c.test_level === 'yes');
   const roles = rolesByPsi(controls);
@@ -71,30 +73,30 @@ export async function render(host) {
   };
   const steps = [
     { id: 'tiles', title: 'The investigations', state: { scene: 'tiles' },
-      html: `NASA's PSI database lists <b>${inv.length}</b> combustion investigations. Each tile is one; open it for the full PSI record.`,
+      html: `${g('psi', "NASA's public archive, PSI,")} lists <b>${inv.length}</b> fire (combustion) investigations. Each tile is one; open it for NASA's full record.`,
       chips: [[`${cat.coverage.index_source.file}; count matches the challenge video (${cat.coverage.combustion_total_source.locator}: "${cat.coverage.combustion_total_source.quote}")`, 'PSI index']] },
     { id: 'data', title: 'Per-test tables', state: { scene: 'tiles', hl: 'tests' },
-      html: `Only <b>${perTest.length}</b> left per-test tables, the rows that let a test be placed by its oxygen and pressure.`,
+      html: `Only <b>${perTest.length}</b> left a table with one row per test. Those rows are what let us place a test by its oxygen and air pressure.`,
       chips: [['catalog.json: test_level per investigation, from the experimental tables in data/raw (data/manual/psi_tables.csv)', 'our check of data/raw']] },
     { id: 'roles', title: 'Fire-safety roles', state: { scene: 'tiles', hl: 'roles' },
-      html: `<b>${Object.keys(roles).length}</b> are tied to preventing, detecting or suppressing fire, each by a quote from the challenge page or its PSI record.`,
+      html: `<b>${Object.keys(roles).length}</b> are linked to preventing, detecting or putting out (suppressing) fires, each by a quote from the challenge page or NASA's record.`,
       chips: [['controls.json (scripts/06_build_controls.py): every link needs an exact quote from the challenge page sec. 1 or a named PSI metadata field (data/manual/safety_roles.csv)', 'quoted links']] },
     { id: 'rank', title: 'Ranked for Moon-base air', state: { scene: 'rank' },
-      html: `Ranked against ${esc(H.habitat.name)} air by six fixed rules. Each bar shows where the ${rank.max_score} possible points come from.`,
+      html: `Each is scored against ${g('moonair', `${esc(H.habitat.name)} air`)} with six fixed rules, no AI. Each bar shows where its points, out of ${rank.max_score}, come from.`,
       chips: [[Object.values(rank.rules).map((r) => `${r.label} (${r.weight}): ${r.rule}`).join(' | '), 'rule table']] },
     { id: 'top', title: 'First vs best solid', state: { scene: 'rank', hl: 'mark', mark: [top.psi_id, bestSolid?.psi_id].filter(Boolean) },
-      html: top.material_class === 'solid' ? `${esc(top.psi_id)} ranks first, with ${esc(MAT.solid)}.`
-        : `${esc(top.psi_id)} ranks first on oxygen and pressure, but it burned ${esc(MAT[top.material_class] ?? top.material_class)}. The best solid-material study is ${esc(bestSolid.psi_id)} (#${bestSolid.rank}).`,
-      chips: [[`${top.psi_id}: ${top.parts.map((p) => `${p.label} ${p.points}/${p.weight}`).join(', ')}`, `${top.psi_id} parts`]] },
+      html: top.material_class === 'solid' ? `${esc(nm(top.psi_id))} ranks first, with ${esc(MAT.solid)}.`
+        : `${esc(nm(top.psi_id))} ranks first on oxygen and pressure, but it burned ${esc(MAT[top.material_class] ?? top.material_class)}, not solids. The best study of ${g('solids', 'solid materials')} is ${esc(nm(bestSolid.psi_id))} (#${bestSolid.rank}).`,
+      chips: [[`${nm(top.psi_id)} (${top.psi_id}): ${top.parts.map((p) => `${p.label} ${p.points}/${p.weight}`).join(', ')}`, `${nm(top.psi_id)} points`]] },
     { id: 'ranges', title: 'Tested ranges', state: { scene: 'ranges' },
-      html: touch ? `Ranges can touch the box with no test inside: ${esc(touch.psi_id)} reached ${touch.o2_range_pct[1]}% O2 and ${touch.p_range_kpa[0]} kPa, but no test had both.`
-        : `Tested ranges of ${esc(rangeRows.map((r) => r.psi_id).join(', '))} against ${esc(win.name)} air.`,
-      chips: touch ? [[`ranking.json: ${touch.psi_id} O2 ${touch.o2_range_pct.join('–')}%, pressure ${touch.p_range_kpa.join('–')} kPa, ${touch.joint_tests} tests with both inside the window (per-test table)`, `${touch.psi_id} ranges`]] : [] },
+      html: touch ? `A study can reach the box's oxygen and its pressure with no single test doing both: ${esc(nm(touch.psi_id))} reached ${touch.o2_range_pct[1]}% oxygen and ${touch.p_range_kpa[0]} kPa, but no single test had both Moon-base oxygen and Moon-base pressure.`
+        : `Tested ranges of ${esc(rangeRows.map((r) => nm(r.psi_id)).join(', '))} against ${esc(win.name)} air.`,
+      chips: touch ? [[`ranking.json: ${nm(touch.psi_id)} (${touch.psi_id}) O2 ${touch.o2_range_pct.join('–')}%, pressure ${touch.p_range_kpa.join('–')} kPa, ${touch.joint_tests} tests with both inside the window (per-test table)`, `${nm(touch.psi_id)} ranges`]] : [] },
     { id: 'cover', title: 'Habitat coverage', state: { scene: 'cover' },
-      html: `Habitat by habitat: ${esc(clean.join(', ') || 'none')} ${clean.length === 1 ? 'passes' : 'pass'} every gap rule. Gaps remain for ${esc(gappy.join(', '))}.`,
+      html: `Crew home by crew home: ${esc(clean.join(', ') || 'none')} ${clean.length === 1 ? 'passes' : 'pass'} every gap check. Gaps remain for ${esc(gappy.join(', '))}.`,
       chips: [['gaps.json (scripts/05_build_gaps.py): no solid in window; <= 2 flows; <= 2 materials; boundary pressure outside window; partial gravity', 'gap rules']] },
     { id: 'supp', title: 'Suppressant tests', state: { scene: 'supp' },
-      html: `Suppression: <b>${supp.length}</b> FLEX droplet tests had CO2 or helium. ${inZone} ran in ${esc(win.name)} air; the closest reached ${hi.o2_pct}% O2 at ${hi.pressure_kpa} kPa.`,
+      html: `Putting fires out: <b>${supp.length}</b> FLEX tests burned fuel droplets in an atmosphere that also held carbon dioxide (CO2) or helium. ${inZone} ran in ${esc(win.name)} air; the closest had ${hi.o2_pct}% oxygen at ${hi.pressure_kpa} kPa.`,
       chips: [[`${hi.source.file}, line ${hi.source.line} (FLEX test ${hi.id})`, `FLEX test ${hi.id}`]] },
     { id: 'next', title: 'Open a view', state: { scene: 'cover' },
       html: 'Open any view below: the full catalog, the rule table, side-by-side comparison, every gap, and the fire-safety roles.',

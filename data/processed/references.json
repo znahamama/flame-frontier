@@ -106,6 +106,11 @@
       "credit": "NASA PSI-25 (BASS-II)",
       "file": "web/public/clips/bass2_O1_stills.mp4",
       "what": "BASS-II flight video, test O1 (trimmed): PSI-25 raw data file BASS_GMT49_SAMPLE_207_TEST_O1_Still_Sequence.mp4"
+    },
+    {
+      "credit": "NASA PSI-25 (BASS-II)",
+      "file": "web/public/clips/bass2_O1_hero.mp4",
+      "what": "BASS-II flight video, test O1 (trimmed): PSI-25 raw data file BASS_GMT49_SAMPLE_207_TEST_O1.mp4 (Story hero loop)"
     }
   ],
   "papers": [
@@ -185,6 +190,17 @@
       "sha256": "23281e159632dd3f67b53aa797938ad26e4f75def94758ee39e30c3aa90008e1",
       "short": "NTRS 20150010425 (ISS O2 and pressure management)",
       "url": "https://ntrs.nasa.gov/api/citations/20150010425/downloads/20150010425.pdf"
+    },
+    {
+      "citation": "U.S. Standard Atmosphere, 1976. NOAA, NASA and U.S. Air Force, NOAA-S/T 76-1562 / NASA-TM-X-74335 (NTRS 19770009539).",
+      "cited_pages": [],
+      "id": "us_std_atm_1976",
+      "ntrs_id": "19770009539",
+      "pdf_url": null,
+      "sha256": null,
+      "short": "U.S. Standard Atmosphere 1976",
+      "url": "https://ntrs.nasa.gov/citations/19770009539",
+      "use": "Altitude companions for pressures in the story: lower atmosphere (0-11 km) P = 101.325 kPa x (1 + L h / T0)^(-g0 M0 / (R* L)), with T0 = 288.15 K, L = -0.0065 K/m, g0 = 9.80665 m/s2, M0 = 0.0289644 kg/mol, R* = 8.31432 J/(mol K); 11-20 km isothermal at 216.65 K from 22.632 kPa. Height is geopotential (differs from geometric height by < 0.2% below 11 km); shown rounded to 100 m."
     }
   ],
   "psi": {
@@ -648,7 +664,7 @@
     "tools": [
       {
         "name": "macOS avconvert",
-        "use": "trimming the 3 BASS-II clips (scripts/make_clips.sh)"
+        "use": "trimming the BASS-II clips and the Story hero loop (scripts/make_clips.sh)"
       },
       {
         "name": "Google Chrome (headless, via playwright-core)",
