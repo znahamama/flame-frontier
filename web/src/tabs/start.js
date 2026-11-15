@@ -39,7 +39,7 @@ export async function render(root) {
       <li class="card entry"><span class="entrynum" aria-hidden="true">2</span><div>
         <h3><a href="#catalog">Investigations</a></h3>
         <p>All ${cat.investigations.length} combustion investigations in NASA's PSI repository: what each tested, ranked against a habitat with a visible rule table, and compared side by side.</p>
-        <p class="more"><a href="#catalog">Catalog →</a> · <a href="#ranking">Ranking</a> · <a href="#compare">Compare</a> · <a href="#earth">On Earth</a></p></div></li>
+        <p class="more"><a href="#catalog">Catalog →</a> · <a href="#ranking">Ranking</a> · <a href="#compare">Compare</a> · <a href="#controls">Prevent · Detect · Suppress</a> · <a href="#earth">On Earth</a></p></div></li>
       <li class="card entry"><span class="entrynum" aria-hidden="true">3</span><div>
         <h3><a href="#ask">Ask</a></h3>
         <p>Ask in plain English. Answers quote NASA text and cite every sentence; if the sources don't say, the answer is "Not in the data."</p>

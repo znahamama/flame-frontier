@@ -1,0 +1,678 @@
+{
+  "intro": {
+    "quote": "NASA’s spacecraft fire safety work is focused on prevention, detection, and suppression.",
+    "source": "Space Apps 2026 challenge page (docs/ref/challenge_brief.md sec. 1)"
+  },
+  "roles": [
+    {
+      "brief_quote": "Prevention is achieved by controlling ignition sources and through material selection, which depends on understanding flammability limits.",
+      "compare": [
+        "PSI-26",
+        "PSI-25",
+        "PSI-98"
+      ],
+      "earth": null,
+      "facts": [
+        {
+          "detail": "BASS-II 129, Saffire 5",
+          "label": "Solid-material tests placed by O2 and pressure",
+          "src": "Saffire: data/manual/external_tests.csv (ICES-2024-365 Table 1, p.3); BASS-II: data/raw/PSI-25 experimental table",
+          "value": "134"
+        },
+        {
+          "detail": "Cotton Jersey; Japan wax candle; Nomex III fabric; One-Sided PMMA; PMMA rod, downstream ignition (opposed flow); PMMA rod, upstream ignition (stagnation / concurrent); PMMA spherical section (4 cm); SIBAL Cloth; SIBAL fabric (75/25 cotton/fiberglass); Thick PMMA slab, 1-sided; Thick PMMA slab, 2-sided; Thick PMMA slab, sides not stated; Thin PMMA film; Two-Sided PMMA",
+          "label": "Material and sample types",
+          "src": "same rows, material column",
+          "value": "14"
+        },
+        {
+          "detail": "BASS-II eq. 6.1, PMMA rods, measured at 101.3 kPa",
+          "label": "Published flammability boundary",
+          "src": "BASS-II Summary Report, sec. 6.1.4.4, p.75",
+          "value": "1"
+        }
+      ],
+      "id": "prevention",
+      "investigations": [
+        {
+          "doi": "10.60555/58h4-dy80",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-26",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Flammability studies focus on solid materials such as fabrics and plastics, as studied in the Burning and Suppression of Solids (BASS and BASS-II) and Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III) investigations.",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            }
+          ],
+          "short": "BASS",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per test (Test #, sample, material). No O2, pressure or flow columns."
+          },
+          "title": "Burning and Suppression of Solids"
+        },
+        {
+          "doi": "10.60555/4qc4-de67",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-25",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Flammability studies focus on solid materials such as fabrics and plastics, as studied in the Burning and Suppression of Solids (BASS and BASS-II) and Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III) investigations.",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "BASS-II helps engineers select the safest materials and improve firefighting methods on future space missions.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 77
+              }
+            }
+          ],
+          "short": "BASS-II",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per ISS test (Test #), with O2, CO2, CO and flow text."
+          },
+          "title": "Burning and Suppression of Solids - II"
+        },
+        {
+          "doi": "10.60555/0t15-1z43",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-98",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Flammability studies focus on solid materials such as fabrics and plastics, as studied in the Burning and Suppression of Solids (BASS and BASS-II) and Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III) investigations.",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria, and how microgravity and limited oxygen affect flame size.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-98/PSI-98_metadata_PSI-166_SAFFIRE-I/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 67
+              }
+            }
+          ],
+          "short": "Saffire-I",
+          "table": {
+            "kind": "per_test",
+            "what": "2 sample rows (S1, S2) plus 2 flow-visualisation rows (F1, F2) that are not burns."
+          },
+          "title": "Spacecraft Fire Safety Experiment-I"
+        },
+        {
+          "doi": "10.60555/2chp-m469",
+          "platform": "Cygnus Spacecraft",
+          "psi_id": "PSI-99",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Flammability studies focus on solid materials such as fabrics and plastics, as studied in the Burning and Suppression of Solids (BASS and BASS-II) and Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III) investigations.",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            }
+          ],
+          "short": "Saffire-II",
+          "table": {
+            "kind": "none",
+            "what": "No experimental table in the PSI download."
+          },
+          "title": "Spacecraft Fire Experiment-II"
+        },
+        {
+          "doi": "10.60555/040q-4h36",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-100",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Flammability studies focus on solid materials such as fabrics and plastics, as studied in the Burning and Suppression of Solids (BASS and BASS-II) and Spacecraft Fire Safety Demonstration (Saffire-I, -II, and -III) investigations.",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            }
+          ],
+          "short": "Saffire-III",
+          "table": {
+            "kind": "per_test",
+            "what": "2 sample rows (S1, S2); no O2 or pressure column."
+          },
+          "title": "Spacecraft Fire Experiment-III"
+        },
+        {
+          "doi": "10.60555/vb93-3y72",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-20",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "While BRE’s results are still preliminary, they suggest that NASA may want to increase use of its alternative flammability Test 2, with the cone calorimeter",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-20/PSI-20_metadata_PSI-96_ACME BRE/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 79
+              }
+            }
+          ],
+          "short": "ACME BRE",
+          "table": {
+            "kind": "summary",
+            "what": "One row per test DAY (flames ignited that day, O2 levels used); chamber pressure 'not identified in this summary table'."
+          },
+          "title": "Advanced Combustion via Microgravity Experiments - Burning Rate Emulator"
+        },
+        {
+          "doi": "10.60555/e9xp-ex83",
+          "platform": null,
+          "psi_id": "PSI-62",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "This research provides predictive tools for screening new materials’ flammability limits, which can lead to the design of safer spacecrafts.",
+              "relation": "its PSI record says (ground modelling study)",
+              "src": {
+                "file": "data/raw/PSI-62/PSI-62_metadata_NEWID-7_Concurrent Flame Spr/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 67
+              }
+            }
+          ],
+          "short": null,
+          "table": {
+            "kind": "none",
+            "what": "No experimental table in the PSI download."
+          },
+          "title": "Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography"
+        }
+      ],
+      "moon": {
+        "gaps": [
+          {
+            "href": "#evidence/gap=moon_base.flow",
+            "id": "flow",
+            "text": "Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow."
+          },
+          {
+            "href": "#evidence/gap=moon_base.materials",
+            "id": "materials",
+            "text": "Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA."
+          },
+          {
+            "href": "#evidence/gap=moon_base.boundary",
+            "id": "boundary",
+            "text": "No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+          },
+          {
+            "href": "#evidence/gap=moon_base.gravity",
+            "id": "gravity",
+            "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+          }
+        ],
+        "links": [
+          {
+            "href": "#gaps",
+            "label": "All habitat gaps"
+          }
+        ],
+        "text": "2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3."
+      },
+      "name": "Prevention"
+    },
+    {
+      "brief_quote": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R).",
+      "compare": [
+        "PSI-102",
+        "PSI-101",
+        "PSI-47"
+      ],
+      "earth": {
+        "id": "fire_detector",
+        "title": "Smoke detector that tells smoke from dust"
+      },
+      "facts": [
+        {
+          "detail": "materials: Kapton 29, Silicone 22, Lampwick 20, Pyrell 20, Teflon 18",
+          "label": "SAME-R smoke tests",
+          "src": "data/raw/PSI-101/PSI-101_Experimental table_SAME-R.csv: 'Sample Type'",
+          "value": "109"
+        },
+        {
+          "detail": "0 cm/s (22), 1 cm/s (6), 2 cm/s (5), 8 cm/s (2), 8.1 cm/s (74)",
+          "label": "SAME-R inlet velocities",
+          "src": "data/raw/PSI-101/PSI-101_Experimental table_SAME-R.csv: 'Inlet velocity (cm/s)'",
+          "value": "5"
+        },
+        {
+          "detail": "materials: Teflon 4, Kapton 1, Silicone Rubber 1, Lampwick 1, Dibutyl Phthalate 1; air flow given for some rows: 5, 10 cm/s",
+          "label": "SAME samples",
+          "src": "data/raw/PSI-102/PSI-102_Experimental table_SAME.csv: 'Sample Material', 'Air Flow (cm/s)'",
+          "value": "8"
+        },
+        {
+          "detail": "Neither SAME table has an oxygen or pressure column",
+          "label": "O2 or pressure columns",
+          "src": "data/raw/PSI-101/PSI-101_Experimental table_SAME-R.csv and data/raw/PSI-102/PSI-102_Experimental table_SAME.csv headers",
+          "value": "0"
+        }
+      ],
+      "id": "detection",
+      "investigations": [
+        {
+          "doi": "10.60555/gd4k-8h62",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-102",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R).",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-102/PSI-102_metadata_PSI-170_SAME/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 66
+              }
+            }
+          ],
+          "short": "SAME",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per sample: material, air flow, weight-loss rate, aging. No O2 or pressure."
+          },
+          "title": "Smoke and Aerosol Measurement Experiment"
+        },
+        {
+          "doi": "10.60555/2np7-jv14",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-101",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R).",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "the results from SAME-R can lead to technology for an advanced fire detector for future spacecraft that will be used for long duration missions.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 67
+              }
+            }
+          ],
+          "short": "SAME-R",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per smoke test (SAME Test #): sample type, inlet velocity, aging times. No O2 or pressure."
+          },
+          "title": "Smoke Aerosol Measurement Experiment-Reflight"
+        },
+        {
+          "doi": "10.60555/ztgj-d202",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-47",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies.",
+              "relation": "named by the challenge page (dust; no combustion)",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "This research will impact the development of novel fire and smoke detection systems for the International Space Station and future spacecrafts.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-47/PSI-47_metadata_PSI-126_DAFT_DAFT-2/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 80
+              }
+            }
+          ],
+          "short": "DAFT / DAFT-2",
+          "table": {
+            "kind": "summary",
+            "what": "2 sessions (dust sampling, no combustion)."
+          },
+          "title": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2"
+        },
+        {
+          "doi": "10.60555/q0v5-1v28",
+          "platform": "Not Applicable",
+          "psi_id": "PSI-115",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "This would directly lead to better smoke detection devices and prevent fires that can lead to loss of materiel and loss of life.",
+              "relation": "its PSI record says (ground modelling study)",
+              "src": {
+                "file": "data/raw/PSI-115/PSI-115_metadata_PSI-185_Utilization of the S/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 65
+              }
+            }
+          ],
+          "short": null,
+          "table": {
+            "kind": "none",
+            "what": "No experimental table in the PSI download."
+          },
+          "title": "Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity"
+        },
+        {
+          "doi": "10.60555/4qc4-de67",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-25",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "objective",
+              "quote": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+                "key": "Comment[Objective]",
+                "line": 60
+              }
+            }
+          ],
+          "short": "BASS-II",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per ISS test (Test #), with O2, CO2, CO and flow text."
+          },
+          "title": "Burning and Suppression of Solids - II"
+        }
+      ],
+      "moon": {
+        "links": [],
+        "text": "Neither SAME table records O2 or pressure, so none of the 117 smoke tests can be placed against ≥30% O2 at ≤70.3 kPa. Whether smoke from these materials behaves the same in Moon-base air is not in the data."
+      },
+      "name": "Detection"
+    },
+    {
+      "brief_quote": "Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire.",
+      "compare": [
+        "PSI-69",
+        "PSI-26",
+        "PSI-25"
+      ],
+      "earth": {
+        "id": "water_mist",
+        "title": "Fine-water-mist fire extinguishers"
+      },
+      "extremes": [
+        {
+          "co2": 0.15,
+          "end": "Disruption",
+          "fuel": "Heptane",
+          "he": 0.0,
+          "id": "92",
+          "o2": 25.0,
+          "p_kpa": 71.5,
+          "src": {
+            "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+            "line": 93
+          },
+          "what": "highest O2 with a suppressant"
+        },
+        {
+          "co2": 0.4,
+          "end": "Extinction",
+          "fuel": "Methanol",
+          "he": 0.0,
+          "id": "121",
+          "o2": 18.0,
+          "p_kpa": 70.17,
+          "src": {
+            "file": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+            "line": 122
+          },
+          "what": "lowest pressure with a suppressant"
+        }
+      ],
+      "facts": [
+        {
+          "detail": "CO2 122, helium 50; the other 101 had neither",
+          "label": "FLEX tests with a suppressant gas in the chamber",
+          "note": "The PSI column header reads \"CO\" (as \"O\" and \"N\" stand for O2 and N2); we read it as CO2: the O, N, CO and He fractions sum to 1 (±0.02) in 268 of 274 rows, and FLEX's PSI publication list includes \"Methanol Droplet Extinction in Oxygen/Carbon-dioxide/Nitrogen Mixtures in Microgravity\".",
+          "src": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv: 'CO initial ambient composition; mole fraction' (CO2) and 'He initial ambient composition; mole fraction'",
+          "value": "172 of 273"
+        },
+        {
+          "detail": "CO2 5–70% of the chamber gas; O2 14–25%; 70.2–309.3 kPa; ended: Extinction 87, Disruption 27, Completion 8",
+          "label": "CO2 tests",
+          "src": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "value": "122"
+        },
+        {
+          "detail": "He 5–45% of the chamber gas; O2 13–24%; 70.3–102.2 kPa; ended: Extinction 40, Completion 6, Disruption 4",
+          "label": "Helium tests",
+          "src": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "value": "50"
+        },
+        {
+          "detail": "Heptane, Methanol droplets (liquid, not solid materials)",
+          "label": "Fuels",
+          "src": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv",
+          "value": "2"
+        },
+        {
+          "detail": "FLEX's PSI objective names SF6, but its experimental table has no SF6 column",
+          "label": "SF6",
+          "src": "data/raw/PSI-69/PSI-69_Experimental table_FLEX.csv header",
+          "value": "no column"
+        },
+        {
+          "detail": "BASS (PSI-26) set out to test an inert extinguishing agent on solids; its PSI table: One row per test (Test #, sample, material). No O2, pressure or flow columns.",
+          "label": "Solid materials",
+          "src": "data/manual/psi_tables.csv",
+          "value": "no per-test data"
+        }
+      ],
+      "id": "suppression",
+      "investigations": [
+        {
+          "doi": "10.60555/mbq8-0451",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-69",
+          "quotes": [
+            {
+              "basis": "brief",
+              "field": null,
+              "quote": "Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire.",
+              "relation": "named by the challenge page",
+              "src": {
+                "doc": "Space Apps 2026 challenge page",
+                "file": "docs/ref/challenge_brief.md",
+                "section": "1"
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "objective",
+              "quote": "measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
+                "key": "Comment[Objective]",
+                "line": 71
+              }
+            }
+          ],
+          "short": "FLEX",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per FLEX test (FLEX Test #) with pressure, ambient composition, droplet sizes, burn time, test end."
+          },
+          "title": "Flame Extinguishment Experiment"
+        },
+        {
+          "doi": "10.60555/58h4-dy80",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-26",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "objective",
+              "quote": "Assess the effectiveness of an inert, gaseous extinguishing agent (similar to that used on ISS) in putting out flames over different materials, geometries, preheating, and flow.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-26/PSI-26_metadata_PSI-102_BASS/i_Investigation.txt",
+                "key": "Comment[Objective]",
+                "line": 60
+              }
+            },
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-26/PSI-26_metadata_PSI-102_BASS/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 69
+              }
+            }
+          ],
+          "short": "BASS",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per test (Test #, sample, material). No O2, pressure or flow columns."
+          },
+          "title": "Burning and Suppression of Solids"
+        },
+        {
+          "doi": "10.60555/4qc4-de67",
+          "platform": "International Space Station (ISS)",
+          "psi_id": "PSI-25",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "objective",
+              "quote": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.",
+              "relation": "its PSI record says",
+              "src": {
+                "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+                "key": "Comment[Objective]",
+                "line": 60
+              }
+            }
+          ],
+          "short": "BASS-II",
+          "table": {
+            "kind": "per_test",
+            "what": "One row per ISS test (Test #), with O2, CO2, CO and flow text."
+          },
+          "title": "Burning and Suppression of Solids - II"
+        },
+        {
+          "doi": "10.60555/mzjm-yv57",
+          "platform": null,
+          "psi_id": "PSI-60",
+          "quotes": [
+            {
+              "basis": "metadata",
+              "field": "impacts",
+              "quote": "For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.",
+              "relation": "its PSI record says (ground modelling study)",
+              "src": {
+                "file": "data/raw/PSI-60/PSI-60_metadata_NEWID-5_Computational and Ex/i_Investigation.txt",
+                "key": "Comment[Research Impacts]",
+                "line": 65
+              }
+            }
+          ],
+          "short": null,
+          "table": {
+            "kind": "none",
+            "what": "No experimental table in the PSI download."
+          },
+          "title": "Computational and Experimental Analysis of SPICE Data Sets"
+        }
+      ],
+      "moon": {
+        "links": [
+          {
+            "href": "#evidence",
+            "label": "FLEX layer on the Evidence Map"
+          }
+        ],
+        "text": "0 of 172 FLEX suppressant tests ran in ≥30% O2 at ≤70.3 kPa. The highest O2 with CO2 or helium present was 25% at 71.5 kPa (FLEX test 92). All are heptane and methanol droplets. BASS (PSI-26), whose PSI objective is to test an inert extinguishing agent on solid materials, has no O2, pressure or flow columns in its table."
+      },
+      "name": "Suppression"
+    }
+  ],
+  "schema": "roles[]: brief_quote (challenge page), investigations[] (each linked by exact quotes with src), facts[] (counted from PSI tables, src), moon {text, links} (template).",
+  "window": {
+    "name": "Moon base",
+    "text": "≥30% O2 at ≤70.3 kPa"
+  }
+}

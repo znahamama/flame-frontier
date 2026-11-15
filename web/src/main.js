@@ -7,6 +7,7 @@ const TABS = [
   ['ranking', 'Ranking', () => import('./tabs/ranking.js')],
   ['compare', 'Compare', () => import('./tabs/compare.js')],
   ['gaps', 'Habitat Gaps', () => import('./tabs/gaps.js')],
+  ['controls', 'Prevent · Detect · Suppress', () => import('./tabs/controls.js')],
   ['ask', 'Ask', () => import('./tabs/ask.js')],
   ['earth', 'On Earth', () => import('./tabs/earth.js')],
   ['clips', 'Clips', () => import('./tabs/clips.js')],

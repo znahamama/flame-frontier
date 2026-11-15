@@ -294,3 +294,24 @@ ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }
 .sbx-sum .note { margin: 4px 0 0; }
 @media (max-width: 420px) { .sbx-mini { grid-template-columns: minmax(0, 1fr); } }
 .dl { margin-top: 10px; overflow-wrap: anywhere; }
+
+/* Fire safety controls (objective 3) */
+.ctl-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ctl-jump button { font: inherit; font-size: 0.9rem; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--grid); background: var(--surface-0); color: var(--text-primary); cursor: pointer; }
+.ctl-jump button:hover, .ctl-jump button:focus-visible { border-color: var(--accent); }
+.ctl { scroll-margin-top: 12px; }
+.ctl-moon { border-left: 3px solid var(--accent); padding: 8px 12px; margin: 12px 0; background: color-mix(in srgb, var(--accent) 7%, transparent); border-radius: 0 6px 6px 0; }
+.ctl-moon h3 { margin: 0 0 4px; font-size: 1rem; }
+.ctl-moon p { margin: 4px 0; }
+.ctl-moon .gaps { margin: 6px 0; padding-left: 20px; }
+.ctl-facts { list-style: none; padding: 0; margin: 8px 0 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ctl-facts li { display: flex; flex-direction: column; gap: 2px; border: 1px solid var(--grid); border-radius: 8px; padding: 10px 12px; background: var(--surface-0); min-width: 0; }
+.ctl-val { font-size: 1.5rem; font-weight: 700; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.ctl-label { font-weight: 600; font-size: 0.9rem; }
+.ctl-detail { font-size: 0.85rem; color: var(--text-secondary); }
+.ctl-facts .src { margin-left: 0; overflow-wrap: anywhere; }
+.ctl-inv > li { margin-bottom: 10px; }
+.ctl-quotes { margin: 4px 0 0; padding-left: 18px; font-size: 0.88rem; }
+.ctl-quotes .src { overflow-wrap: anywhere; }
+@media (max-width: 700px) { .ctl-facts { grid-template-columns: minmax(0, 1fr); } }
+.ctl .maplink { white-space: normal; display: inline-block; margin: 2px 8px 2px 0; }
