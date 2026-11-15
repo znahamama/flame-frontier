@@ -153,6 +153,8 @@ def brief_links():
 
 
 def main():
+    m = re.search(r"Official challenge video .*?: (https://\S+)", BRIEF.read_text(encoding="utf-8"))
+    video_url = m.group(1) if m else None
     cat = load(P / "catalog.json")
     sources = load(MAN / "sources.json")
     ref = load(P / "reference.json")
@@ -185,8 +187,8 @@ def main():
                 "note": "Public NASA Physical Sciences Informatics (PSI) data, downloaded by hand from psi.nasa.gov; each investigation's DOI is its PSI dataset DOI (ISA-Tab Comment[DOI])."},
         "papers": papers,
         "challenge": {"page": {"title": "NASA Space Apps Challenge 2026: Flame in Freefall", "url": page_url, "saved_copy": str(BRIEF.relative_to(ROOT))},
-                      "video": {"title": "Official challenge video (embedded on the challenge page)", "url": None,
-                                "note": "Transcript saved verbatim in docs/ref/challenge_brief.md sec. 3; the video URL itself was not recorded."},
+                      "video": {"title": "Official challenge video (embedded on the challenge page)", "url": video_url,
+                                "note": "Transcript saved verbatim in docs/ref/challenge_brief.md sec. 3."},
                       "resources_used": [r for r in resources if r["url"] in used_res],
                       "resources_all": resources},
         "media": [{"what": f"NASA Figure 6.10 (image, not digitized): {ref['panel2']['nasa_figure']['source']['doc']}, printed p.{ref['panel2']['nasa_figure']['source']['printed_page']}",
@@ -224,7 +226,7 @@ def to_md(r):
         L.append(f"- {p['citation'].rstrip('.')}. {ntrs}<{p['url']}>.{pg}")
     c = r["challenge"]
     L += ["", "## Challenge", "", f"- {c['page']['title']}: <{c['page']['url']}> (text saved in `{c['page']['saved_copy']}`).",
-          f"- {c['video']['title']}. {c['video']['note']}"]
+          f"- {c['video']['title']}" + (f": <{c['video']['url']}>" if c['video']['url'] else "") + f". {c['video']['note']}"]
     for x in c["resources_used"]:
         L.append(f"- {x['title']}: <{x['url']}>" + (f" ({x['note']})" if x.get("note") else ""))
     L += ["", "## Images and video", ""] + [f"- {m['what']}. Credit: {m['credit']}. Served as `{m['file']}`." for m in r["media"]]

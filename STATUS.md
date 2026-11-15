@@ -20,5 +20,4 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 - 7. Landing / story first screen
 
 ## Needs me (the user)
-- The official challenge video URL (it is embedded on the challenge page; we only saved the transcript). Paste it and References will show it.
 - Git commit signing (Secretive / ssh-agent) needs your Touch ID: commits since item 4 are waiting on it.

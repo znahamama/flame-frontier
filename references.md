@@ -44,7 +44,7 @@ Repository: [PSI Data Repository: Combustion Science](https://psi.nasa.gov/physc
 ## Challenge
 
 - NASA Space Apps Challenge 2026: Flame in Freefall: <https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/> (text saved in `docs/ref/challenge_brief.md`).
-- Official challenge video (embedded on the challenge page). Transcript saved verbatim in docs/ref/challenge_brief.md sec. 3; the video URL itself was not recorded.
+- Official challenge video (embedded on the challenge page): <https://www.youtube.com/watch?v=AVuEiKxOpc0>. Transcript saved verbatim in docs/ref/challenge_brief.md sec. 3.
 - PSI Data Repository: Combustion Science: <https://psi.nasa.gov/physci/repo/search?q=combustion> (Physical Sciences Informatics (PSI) source of the data upon which the NASA Space App is to be based.)
 - Fireman's Air Tanks: <https://spinoff.nasa.gov/node/9582> (1970s adaptation of spacesuit technology to improve firefighters' air tanks and breathing gear.)
 - Fire Detector: <https://spinoff.nasa.gov/node/9407> (1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).)

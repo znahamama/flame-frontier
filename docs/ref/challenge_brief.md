@@ -6,6 +6,7 @@ are OUR summaries and interpretations: never cite them as NASA's words.
 
 Captured 2026-11-14 by Ziad from https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/
 (the page blocks automated access, so it was copied by hand).
+Official challenge video (embedded on the challenge page; URL supplied by the author 2026-11-15): https://www.youtube.com/watch?v=AVuEiKxOpc0
 
 ## Contents
 1. Challenge page text (verbatim)
