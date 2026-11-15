@@ -5,12 +5,14 @@ import { render as clips } from './tabs/clips.js';
 import { render as ranking } from './tabs/ranking.js';
 import { render as references } from './tabs/references.js';
 import { render as compare } from './tabs/compare.js';
+import { render as gaps } from './tabs/gaps.js';
 
 const TABS = [
   ['evidence', 'Evidence Map', { render: evidence }],
   ['catalog', 'Catalog', { render: catalog }],
   ['ranking', 'Ranking', { render: ranking }],
   ['compare', 'Compare', { render: compare }],
+  ['gaps', 'Habitat Gaps', { render: gaps }],
   ['clips', 'Clips', { render: clips }],
   ['limits', 'Known Limits', { render: limits }],
   ['references', 'References', { render: references }],

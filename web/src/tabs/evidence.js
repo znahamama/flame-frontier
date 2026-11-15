@@ -80,7 +80,7 @@ function ssceBars(tests) {
   });
 }
 
-function panel1(el, ref, ext, bass2, flex, cfig, c) {
+function panel1(el, ref, ext, bass2, flex, cfig, c, hl) {
   const p = ref.panel1;
   const zone = p.moon_base_zone;
   const saffire = ext.tests.filter((t) => t.program === 'Saffire');
@@ -175,6 +175,16 @@ function panel1(el, ref, ext, bass2, flex, cfig, c) {
       },
     },
   });
+
+  // Gap highlight (#evidence/gap=<habitat>.<gap>): the habitat window as a dashed accent box.
+  if (hl?.region?.panel === 1) {
+    const r = hl.region.all ? { o2: [0, 100], p_kpa: [0, p.x_max] } : hl.region;
+    series.push({
+      name: 'gap', type: 'scatter', data: [], silent: true, z: 6,
+      markArea: { silent: true, data: [[{ xAxis: r.p_kpa[0], yAxis: r.o2[0], itemStyle: { color: 'transparent', borderColor: c.accent, borderWidth: 2.5, borderType: 'dashed' },
+        label: { show: true, position: hl.region.all ? 'insideBottomRight' : (r.o2[1] >= 100 && r.p_kpa[1] - r.p_kpa[0] < 20 ? 'bottom' : 'top'), color: c.accent, fontWeight: 600, formatter: hl.label } }, { xAxis: r.p_kpa[1], yAxis: r.o2[1] }]] },
+    });
+  }
 
   const chart = echarts.init(el);
   chart.setOption({
@@ -289,8 +299,19 @@ function headline(inZone) {
     + `(${esc(names)}), ${all} at ${flow}, none in partial gravity.`;
 }
 
-export async function render(root) {
+// "#evidence/gap=moon_base.flow" -> {habitat, gap, region, label}
+async function gapFromArg(arg) {
+  const m = /^gap=([\w-]+)\.([\w-]+)$/.exec(arg ?? '');
+  if (!m) return null;
+  const g = await loadJSON('gaps.json');
+  const h = g.habitats.find((x) => x.habitat.id === m[1]);
+  const gap = h?.gaps.find((x) => x.id === m[2]);
+  return gap ? { h, gap, region: gap.region, label: gap.region.all ? 'All points: microgravity' : `${h.habitat.name} window` } : null;
+}
+
+export async function render(root, arg) {
   const [ref, ext, bass2, flex, cfig] = await Promise.all(['reference.json', 'external_tests.json', 'bass2_tests.json', 'flex_tests.json', 'cfig_tests.json'].map(loadJSON));
+  const hl = await gapFromArg(arg);
   const c = tokens();
   const inZone = ext.tests.filter((t) => t.in_moon_zone && t.kind === 'point');
   root.innerHTML = `
@@ -299,6 +320,7 @@ export async function render(root) {
       <p class="note">BASS-II: all ${bass2.count} PSI-25 tests, plotted at the report's stated 1 atm (pressure was not logged per test).</p>
       <p class="note">${flexLine(flex)}</p>
       <p class="note">${cfigLine(cfig)}</p>
+      ${hl ? `<p class="gapbanner" id="gapbanner"><b>Gap (${esc(hl.h.habitat.name)}):</b> ${esc(hl.gap.text)} ${hl.region.panel === 2 ? 'See Panel 2 below: it is the only boundary, at 1 atm.' : 'Highlighted with a dashed box.'} <a href="#gaps">Back to the gap report</a></p>` : ''}
       <div class="layers" id="p1-layers"></div>
       <div class="chart tall" id="p1"></div>${table1(ref, ext)}</section>
     <section class="card"><h2>BASS-II published flammability boundary (PMMA rods)</h2>
@@ -313,7 +335,8 @@ export async function render(root) {
           <figcaption>NASA's own plot, for comparison (image only; points not digitized). ${esc(cite(ref.panel2.nasa_figure.source))}</figcaption></figure>
       </div>
       <div class="chart" id="p2"></div></section>`;
-  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  const charts = [panel1(root.querySelector('#p1'), ref, ext, bass2, flex, cfig, c, hl), panel2(root.querySelector('#p2'), ref, bass2, c)];
+  if (hl) requestAnimationFrame(() => root.querySelector(hl.region.panel === 2 ? '#p2' : '#gapbanner')?.scrollIntoView({ block: 'start' }));
   layerToggles(charts[0], root.querySelector('#p1-layers'));
   const ro = new ResizeObserver(() => charts.forEach((ch) => ch.resize()));
   ro.observe(root);

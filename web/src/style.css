@@ -147,3 +147,13 @@ table.compare details summary { cursor: pointer; }
   table.compare td { border: 0; padding: 3px 0 3px 10px; }
   table.compare td::before { content: attr(data-label) ": "; font-weight: 600; }
 }
+
+/* Habitat gaps */
+.habitat h2 { font-size: 1.05rem; }
+ol.gaps { padding-left: 20px; }
+ol.gaps li { margin-bottom: 10px; }
+.maplink { font-size: 0.85rem; margin-left: 6px; white-space: nowrap; }
+.tested { margin: 8px 0; }
+.ok { color: var(--series-3); font-weight: 600; }
+.targets summary, .habitat details summary { cursor: pointer; color: var(--text-secondary); }
+.gapbanner { border-left: 3px solid var(--accent); padding: 6px 10px; background: color-mix(in srgb, var(--accent) 8%, transparent); margin: 6px 0; }

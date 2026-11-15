@@ -1,0 +1,623 @@
+{
+  "habitats": [
+    {
+      "context": [
+        "Non-solid tests in 21–24.1% O2 at 96.5–102.7 kPa: 23 CFI-G gas flames, 42 FLEX liquid droplets. They do not close a solid-material gap."
+      ],
+      "covered": [
+        {
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 2
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 3
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 4
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 5
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 6
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 7
+            },
+            {
+              "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+              "line": 8
+            }
+          ],
+          "id": "solid_window",
+          "text": "28 solid-material tests had O2 and pressure in 21–24.1% O2 at 96.5–102.7 kPa: Saffire IV-1, BASS-II B1, BASS-II B2, BASS-II B3, BASS-II B4, BASS-II B5, BASS-II B6, BASS-II B7 and 20 more."
+        },
+        {
+          "evidence": [],
+          "id": "flow",
+          "text": "Recorded airflows in 21–24.1% O2 at 96.5–102.7 kPa: 0–20 cm/s (16 distinct values)."
+        },
+        {
+          "evidence": [
+            {
+              "doc": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021)",
+              "equation_no": "6.1",
+              "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+              "pdf_page": 83,
+              "pdf_page_offset": 8,
+              "printed_page": 75,
+              "section": "6.1.4.4"
+            }
+          ],
+          "id": "boundary",
+          "text": "A flammability boundary exists at this pressure: BASS-II eq. 6.1 (PMMA rods, 101.3 kPa), post-burn O2 minimum 13.61%."
+        },
+        {
+          "evidence": [],
+          "id": "gravity",
+          "text": "Microgravity, as in every flight investigation on the map."
+        }
+      ],
+      "gaps": [],
+      "habitat": {
+        "gravity": "micro",
+        "id": "iss",
+        "name": "ISS cabin",
+        "o2_pct": [
+          21.0,
+          24.1
+        ],
+        "p_kpa": [
+          96.53,
+          102.72
+        ]
+      },
+      "region": {
+        "o2": [
+          21.0,
+          24.1
+        ],
+        "p_kpa": [
+          96.53,
+          102.72
+        ],
+        "panel": 1
+      },
+      "target_sources": {
+        "gravity": {
+          "note": null,
+          "quote": "Results from low-gravity combustion experiments, conducted for example on the International Space Station (ISS)",
+          "source": "challenge_brief"
+        },
+        "o2": {
+          "page": 3,
+          "quote": "The ISS aims to operate at the 21% O2, 101.4 kPa (14.7 psia) point of the curve. Nonetheless, it has obtained much of its data at 24.1% O2, 101.4 kPa (14.7 psia) conditions due to sinusoidal fluctuations of oxygen with a mean of 21% O2",
+          "source": "ntrs_20160001047"
+        },
+        "p": {
+          "as_stated": "724 – 770.5 mmHg (14.0 – 14.9 psia)",
+          "page": 1,
+          "quote": "the total pressure is maintained between 724 – 770.5 mmHg (14.0 – 14.9 psia)",
+          "source": "ntrs_20150010425"
+        }
+      },
+      "tested": {
+        "flows_cm_s": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          7.0,
+          8.0,
+          9.5,
+          10.0,
+          13.0,
+          14.0,
+          15.0,
+          16.0,
+          18.0,
+          20.0
+        ],
+        "gas_inside": 23,
+        "liquid_inside": 42,
+        "materials": [
+          "Nomex III fabric",
+          "PMMA rod, upstream ignition (stagnation / concurrent)",
+          "SIBAL Cloth",
+          "Thick PMMA slab, 1-sided",
+          "Thick PMMA slab, 2-sided",
+          "Thick PMMA slab, sides not stated",
+          "Thin PMMA film"
+        ],
+        "solids_inside": 28
+      },
+      "window": "21–24.1% O2 at 96.5–102.7 kPa"
+    },
+    {
+      "context": [
+        "Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+      ],
+      "covered": [
+        {
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "solid_window",
+          "text": "2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3."
+        }
+      ],
+      "gaps": [
+        {
+          "detail": "Flow is not an axis on Panel 1: every point in the highlighted box shares that flow.",
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "flow",
+          "region": {
+            "o2": [
+              30.0,
+              100.0
+            ],
+            "p_kpa": [
+              0.0,
+              70.33
+            ],
+            "panel": 1
+          },
+          "text": "Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow."
+        },
+        {
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "materials",
+          "region": {
+            "o2": [
+              30.0,
+              100.0
+            ],
+            "p_kpa": [
+              0.0,
+              70.33
+            ],
+            "panel": 1
+          },
+          "text": "Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA."
+        },
+        {
+          "evidence": [
+            {
+              "doc": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021)",
+              "equation_no": "6.1",
+              "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+              "pdf_page": 83,
+              "pdf_page_offset": 8,
+              "printed_page": 75,
+              "section": "6.1.4.4"
+            }
+          ],
+          "id": "boundary",
+          "region": {
+            "panel": 2
+          },
+          "text": "No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+        },
+        {
+          "detail": "Challenge page: \"there is currently no partial-gravity combustion data available in PSI\".",
+          "evidence": [
+            {
+              "doc": "Space Apps 2026 challenge page",
+              "file": "docs/ref/challenge_brief.md"
+            }
+          ],
+          "id": "gravity",
+          "region": {
+            "all": true,
+            "panel": 1
+          },
+          "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+        }
+      ],
+      "habitat": {
+        "gravity": "partial",
+        "id": "moon_base",
+        "name": "Moon base",
+        "o2_pct": [
+          30.0,
+          100.0
+        ],
+        "p_kpa": [
+          0.0,
+          70.33
+        ]
+      },
+      "region": {
+        "o2": [
+          30.0,
+          100.0
+        ],
+        "p_kpa": [
+          0.0,
+          70.33
+        ],
+        "panel": 1
+      },
+      "target_sources": {
+        "gravity": {
+          "note": null,
+          "quote": "there is currently no partial-gravity combustion data available in PSI",
+          "source": "challenge_brief"
+        },
+        "o2": {
+          "page": null,
+          "quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.",
+          "source": "challenge_brief"
+        },
+        "p": {
+          "as_stated": "10.2 psi or less",
+          "page": null,
+          "quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.",
+          "source": "challenge_brief"
+        }
+      },
+      "tested": {
+        "flows_cm_s": [
+          20.0
+        ],
+        "gas_inside": 20,
+        "liquid_inside": 0,
+        "materials": [
+          "SIBAL Cloth",
+          "Two-Sided PMMA"
+        ],
+        "solids_inside": 2
+      },
+      "window": "≥30% O2 at ≤70.3 kPa"
+    },
+    {
+      "context": [
+        "Non-solid tests in ≥30% O2 at ≤70.3 kPa: 20 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+      ],
+      "covered": [
+        {
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "solid_window",
+          "text": "2 solid-material tests had O2 and pressure in ≥30% O2 at ≤70.3 kPa: Saffire VI-2, Saffire VI-3."
+        }
+      ],
+      "gaps": [
+        {
+          "detail": "Flow is not an axis on Panel 1: every point in the highlighted box shares that flow.",
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "flow",
+          "region": {
+            "o2": [
+              30.0,
+              100.0
+            ],
+            "p_kpa": [
+              0.0,
+              70.33
+            ],
+            "panel": 1
+          },
+          "text": "Inside ≥30% O2 at ≤70.3 kPa, solids were burned at 20 cm/s airflow only; no solid test in this window at any other flow."
+        },
+        {
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "materials",
+          "region": {
+            "o2": [
+              30.0,
+              100.0
+            ],
+            "p_kpa": [
+              0.0,
+              70.33
+            ],
+            "panel": 1
+          },
+          "text": "Only 2 solid materials burned in ≥30% O2 at ≤70.3 kPa: SIBAL Cloth; Two-Sided PMMA."
+        },
+        {
+          "evidence": [
+            {
+              "doc": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021)",
+              "equation_no": "6.1",
+              "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+              "pdf_page": 83,
+              "pdf_page_offset": 8,
+              "printed_page": 75,
+              "section": "6.1.4.4"
+            }
+          ],
+          "id": "boundary",
+          "region": {
+            "panel": 2
+          },
+          "text": "No flammability boundary (where a solid stops burning) was measured in ≥30% O2 at ≤70.3 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+        },
+        {
+          "detail": "Challenge page: \"there is currently no partial-gravity combustion data available in PSI\".",
+          "evidence": [
+            {
+              "doc": "Space Apps 2026 challenge page",
+              "file": "docs/ref/challenge_brief.md"
+            }
+          ],
+          "id": "gravity",
+          "region": {
+            "all": true,
+            "panel": 1
+          },
+          "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+        }
+      ],
+      "habitat": {
+        "gravity": "partial",
+        "id": "rover",
+        "name": "Pressurized rover",
+        "o2_pct": [
+          30.0,
+          100.0
+        ],
+        "p_kpa": [
+          0.0,
+          70.33
+        ]
+      },
+      "region": {
+        "o2": [
+          30.0,
+          100.0
+        ],
+        "p_kpa": [
+          0.0,
+          70.33
+        ],
+        "panel": 1
+      },
+      "target_sources": {
+        "gravity": {
+          "note": null,
+          "quote": "there is currently no partial-gravity combustion data available in PSI",
+          "source": "challenge_brief"
+        },
+        "o2": {
+          "page": null,
+          "quote": "it is expected that the Moon Base and pressurized rover(s) will be at a pressure and oxygen concentration between those in a spacesuit and the Earth’s atmosphere.",
+          "source": "challenge_brief"
+        },
+        "p": {
+          "as_stated": "10.2 psi or less (Moon-base value)",
+          "page": null,
+          "quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less.",
+          "source": "challenge_brief"
+        }
+      },
+      "tested": {
+        "flows_cm_s": [
+          20.0
+        ],
+        "gas_inside": 20,
+        "liquid_inside": 0,
+        "materials": [
+          "SIBAL Cloth",
+          "Two-Sided PMMA"
+        ],
+        "solids_inside": 2
+      },
+      "window": "≥30% O2 at ≤70.3 kPa"
+    },
+    {
+      "context": [
+        "Non-solid tests in 100% O2 at 29.6 kPa: 0 CFI-G gas flames, 0 FLEX liquid droplets. They do not close a solid-material gap."
+      ],
+      "covered": [],
+      "gaps": [
+        {
+          "detail": "Closest solids: highest O2 31% (Saffire VI-2, 54.1 kPa); lowest pressure 54.1 kPa (Saffire VI-2, 31% O2). SSCE lists up to 70% O2, but every SSCE pressure is ≥101.3 kPa (range markers; pairing not given).",
+          "evidence": [
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            },
+            {
+              "doc": "Saffire ICES-2024-365",
+              "file": "data/manual/external_tests.csv",
+              "locator": "Table 1",
+              "printed_page": 3
+            }
+          ],
+          "id": "solid_window",
+          "region": {
+            "o2": [
+              88.0,
+              100
+            ],
+            "p_kpa": [
+              24.65,
+              34.65
+            ],
+            "panel": 1
+          },
+          "text": "No solid-material test in our sources had O2 and pressure in 100% O2 at 29.6 kPa together."
+        },
+        {
+          "evidence": [
+            {
+              "doc": "BASS-II Summary Report, NASA/TM-20210011385 (Oct 2021)",
+              "equation_no": "6.1",
+              "file": "docs/ref/BASS-II_Summary_Report_NASA-TM-20210011385.pdf",
+              "pdf_page": 83,
+              "pdf_page_offset": 8,
+              "printed_page": 75,
+              "section": "6.1.4.4"
+            }
+          ],
+          "id": "boundary",
+          "region": {
+            "panel": 2
+          },
+          "text": "No flammability boundary (where a solid stops burning) was measured in 100% O2 at 29.6 kPa. The only one in our data, BASS-II eq. 6.1 for PMMA rods, was measured at 101.3 kPa."
+        },
+        {
+          "detail": "Challenge page: \"there is currently no partial-gravity combustion data available in PSI\".",
+          "evidence": [
+            {
+              "doc": "Space Apps 2026 challenge page",
+              "file": "docs/ref/challenge_brief.md"
+            }
+          ],
+          "id": "gravity",
+          "region": {
+            "all": true,
+            "panel": 1
+          },
+          "text": "No combustion test at partial gravity: every point on both panels is from microgravity."
+        }
+      ],
+      "habitat": {
+        "gravity": "partial",
+        "id": "spacesuit",
+        "name": "Spacesuit",
+        "o2_pct": [
+          100.0,
+          100.0
+        ],
+        "p_kpa": [
+          29.65,
+          29.65
+        ]
+      },
+      "region": {
+        "o2": [
+          88.0,
+          100
+        ],
+        "p_kpa": [
+          24.65,
+          34.65
+        ],
+        "panel": 1
+      },
+      "target_sources": {
+        "gravity": {
+          "note": "Suits are also used in orbit (microgravity); scored here for lunar excursions, as the brief frames them.",
+          "quote": "To reduce the pre-breathing duration and thus facilitate lunar excursions",
+          "source": "challenge_brief"
+        },
+        "o2": {
+          "page": null,
+          "quote": "spacesuits are filled with 100% oxygen to only 4.3 psi",
+          "source": "challenge_brief"
+        },
+        "p": {
+          "as_stated": "4.3 psi",
+          "page": null,
+          "quote": "spacesuits are filled with 100% oxygen to only 4.3 psi",
+          "source": "challenge_brief"
+        }
+      },
+      "tested": {
+        "flows_cm_s": [],
+        "gas_inside": 0,
+        "liquid_inside": 0,
+        "materials": [],
+        "solids_inside": 0
+      },
+      "window": "100% O2 at 29.6 kPa"
+    }
+  ],
+  "note": "Gaps in the data we have, phrased as facts about the tests, not as recommendations. Generated from sentence templates; no AI text.",
+  "schema": 1
+}

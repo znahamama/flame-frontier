@@ -10,8 +10,10 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 3. Compare view: `#compare/PSI-25,PSI-69,PSI-98` (default), any 2-3 of 24; 12 attributes, every cell with a source tag, "differs" rows highlighted. Fixed on the way: CFI-G inverse table has 154 tests, not 1015 (the file pads ~860 blank rows). Favicon added.
 
+- 4. Habitat Gaps tab: ISS / Moon base / rover / spacesuit, target vs tested, template-only gap sentences, each with "Show on map" (dashed box on Panel 1, or Panel 2).
+
 ## In progress
-- 4. Habitat gap report
+- 5. Cited Q&A
 
 ## Needs me (the user)
 - The official challenge video URL (it is embedded on the challenge page; we only saved the transcript). Paste it and References will show it.
