@@ -2,12 +2,13 @@ import { render as evidence } from './tabs/evidence.js';
 import { placeholder } from './tabs/placeholder.js';
 import { render as limits } from './tabs/limits.js';
 import { render as catalog } from './tabs/catalog.js';
+import { render as clips } from './tabs/clips.js';
 
 const TABS = [
   ['evidence', 'Evidence Map', { render: evidence }],
   ['catalog', 'Catalog', { render: catalog }],
   ['ranking', 'Ranking', placeholder('Ranking', 'Visible rule table with per-component contributions. Coming next.')],
-  ['clips', 'Clips', placeholder('Clips', 'Real BASS-II flame clips. Coming next.')],
+  ['clips', 'Clips', { render: clips }],
   ['limits', 'Known Limits', { render: limits }],
 ];
 

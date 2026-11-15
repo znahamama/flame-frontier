@@ -1,0 +1,137 @@
+{
+  "clips": [
+    {
+      "bytes": 2894855,
+      "clip": "clips/bass2_O4_extinction.mp4",
+      "duration_s": 30.0,
+      "panel2": {
+        "a_per_s": 19.399,
+        "air_cm_s": 5.0,
+        "evidence": "5, down to ext",
+        "kind": "stable_observed",
+        "method": "Flame burning at this Air display reading (cm/s). The flow was then lowered with pot settings below the fan calibration until extinction, so this is NOT the extinction flow",
+        "o2_final_pct": 13.6,
+        "r_cm": 0.47625,
+        "source": {
+          "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+          "line": 52
+        },
+        "source_xlsx": {
+          "file": "data/raw/PSI-25/BASS-II Test Matrix by PI Final.xlsx",
+          "row": 6,
+          "tab": "Olson"
+        },
+        "test": "O4",
+        "u_cm_s": 5.033
+      },
+      "preset": "PresetMediumQuality",
+      "source_file": "data/raw/PSI-25/clips/BASS_GMT189_SAMPLE_216_TEST_O4.mp4",
+      "source_name": "BASS_GMT189_SAMPLE_216_TEST_O4.mp4",
+      "source_sha256": "f0db1a5c2332d4c8426ae4246b3065f59026c6252da61d922a79bed4508fbd37",
+      "start_s": 70.0,
+      "test": "O4",
+      "test_info": {
+        "air_raw": "5, down to ext",
+        "date_actual": "2014-07-08",
+        "fan_raw": "5, 0.7, 0.5, 0.4, 0.36 ext",
+        "geometry": "PMMA rod, upstream ignition (stagnation / concurrent)",
+        "o2_final_pct": 13.6,
+        "o2_initial_pct": 14.8,
+        "outcome": "extinguished",
+        "pi": "Olson",
+        "rod_diameter_in": 0.375,
+        "source": {
+          "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+          "line": 52
+        }
+      },
+      "title": "O4: flame goes out as the flow is turned down",
+      "what_to_watch": "A 3/8-inch clear PMMA rod burning at its upstream tip. The crew lowered the fan step by step; the flame shrinks and goes out about 21 s into this clip. On-screen AIR is the duct flow display in cm/s; it responds in about 1 min (report p.66)."
+    },
+    {
+      "bytes": 1788904,
+      "clip": "clips/bass2_O7_blowoff.mp4",
+      "duration_s": 22.0,
+      "panel2": {
+        "a_per_s": 175.818,
+        "air_cm_s": 37.0,
+        "evidence": "5, .36,.32,..305, blowoff fan max 10",
+        "kind": "blowoff_upper_bound",
+        "method": "Blowoff after the fan was stepped up to pot 10.0. Same-day fan calibration gives steady Air 37.0 cm/s at that pot (restrictor 2); the probe takes ~1 min to settle (report p.66), so the flow at blowoff was at most this: an upper bound",
+        "o2_final_pct": 15.5,
+        "pot": 10.0,
+        "r_cm": 0.3175,
+        "source": {
+          "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+          "line": 56
+        },
+        "source_calibration": {
+          "date": "2014-06-26",
+          "file": "data/raw/PSI-25/Fan calibration data.xlsx",
+          "restrictor": 2
+        },
+        "source_xlsx": {
+          "file": "data/raw/PSI-25/BASS-II Test Matrix by PI Final.xlsx",
+          "row": 10,
+          "tab": "Olson"
+        },
+        "test": "O7",
+        "u_cm_s": 37.244
+      },
+      "preset": "PresetMediumQuality",
+      "source_file": "data/raw/PSI-25/clips/Flame-Blowoff-BASS-GMT177-Test-O7.mp4",
+      "source_name": "Flame-Blowoff-BASS-GMT177-Test-O7.mp4",
+      "source_sha256": "e0282925ad4b4d0306bb8d2409f49e9236ab2c3e8502fe83b7e5e1eb73e545ed",
+      "start_s": 20.0,
+      "test": "O7",
+      "test_info": {
+        "air_raw": "",
+        "date_actual": "2014-06-26",
+        "fan_raw": "5, .36,.32,..305, blowoff fan max 10",
+        "geometry": "PMMA rod, upstream ignition (stagnation / concurrent)",
+        "o2_final_pct": 15.5,
+        "o2_initial_pct": 16.0,
+        "outcome": "blowoff",
+        "pi": "Olson",
+        "rod_diameter_in": 0.25,
+        "source": {
+          "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+          "line": 56
+        }
+      },
+      "title": "O7: blowoff when the fan is stepped to maximum",
+      "what_to_watch": "The on-screen FAN readout jumps to 122 (fan voltage x10, its maximum). The flame is pushed back and blows off about 15 s into this clip, while the AIR readout is still climbing. That lag is why Panel 2 treats blowoff flows as upper bounds."
+    },
+    {
+      "bytes": 4213602,
+      "clip": "clips/bass2_O1_stills.mp4",
+      "duration_s": 42.0,
+      "panel2": null,
+      "preset": "PresetMediumQuality",
+      "source_file": "data/raw/PSI-25/clips/BASS_GMT49_SAMPLE_207_TEST_O1_Still_Sequence.mp4",
+      "source_name": "BASS_GMT49_SAMPLE_207_TEST_O1_Still_Sequence.mp4",
+      "source_sha256": "c586499b5ad8b78024b0d8d51ca0f380e3c2c2f1cafd64d5860841f9cb318453",
+      "start_s": 9.0,
+      "test": "O1",
+      "test_info": {
+        "air_raw": "20,10,5,2,1",
+        "date_actual": "2014-02-18",
+        "fan_raw": "89,62,50,41",
+        "geometry": "PMMA rod, upstream ignition (stagnation / concurrent)",
+        "o2_final_pct": 21.7,
+        "o2_initial_pct": 22.2,
+        "outcome": "not_stated",
+        "pi": "Olson",
+        "rod_diameter_in": 0.25,
+        "source": {
+          "file": "data/raw/PSI-25/PSI-25_Experimental table_BASS-II.csv",
+          "line": 48
+        }
+      },
+      "title": "O1: Nikon still sequence of a burning rod",
+      "what_to_watch": "Still images from the Nikon camera (Total Frames Shot in the PSI table), shown as a slideshow, not real time. Camera settings are printed on each frame."
+    }
+  ],
+  "provenance": "PSI-25 (BASS-II) raw video, CC0-1.0, DOI 10.60555/4qc4-de67; trimmed and re-encoded with macOS avconvert (scripts/make_clips.sh).",
+  "schema": 1
+}
