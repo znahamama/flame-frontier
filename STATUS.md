@@ -77,6 +77,16 @@ Live: https://flame-frontier.vercel.app (production = latest finished phase). Da
 - Words where each link lands (desktop / phone): `#ask` 207 / 163 -> 68 / 41 (story top); `#ask/view` view 207 -> 130; `#about` 103 / 75 (story top; was Known Limits, 489 / 158); `#limits` 489 / 158 -> 205 / 154, Known Limits visible words 2,387 -> 209 (rest in closed groups); `#references` 356 / 160 -> 267 / 110; `#earth` 253 / 115 -> 251 / 91. Ask story 164 words in 5 steps, About story 225 in 6 (<= 25 per step).
 - Screenshots: `docs/ui/shots/phase4/`; audit folds `docs/ui/audit/after-phase4/`.
 
+### Story stage composition (all five stories). Done, live 2026-11-15 13:53 NST (commit e17472a)
+- Problem (user review): at 1280x760 / 1440x900 / 1920x1080 the pinned stage left the top ~40% empty with a small visual at the bottom; the Moon-base card looked broken; Evidence labels collided.
+- Fix: the story widens to 1600 px on desktop; the stage is a framed panel with a persistent header ("Story · Moon-base air", section · step title) and the visual centred and scaled to fill (dot bins crop to what is drawn and adapt dots-per-row / dot size to the stage shape; HTML stage cards size with container units; range bars stack). Every step has a short title. The caption card lines up with the visual's centre.
+- Moon-base bin: card sized to its content, with "2 of 134. This is all the evidence in our sources for Moon base & rover air." built from sandbox.json; hidden while the dots fall.
+- Depth: faint radial glow + masked dot grid behind the visual (static, no motion; text contrast unchanged: Lighthouse a11y 100 on all five).
+- Evidence map: the "Missing" card moved to the top right above the SSCE bars (it hid the sea-level label and the 70% SSCE bar); sea-level label near the axis; "Spacesuit" above its marker (was on the 100% gridline); label halos so the pO2 lines no longer strike through their labels. The earlier fixes (pO2 labels at their own lines, Panel 2 minimum in a chip) are kept.
+- `.viewhead` (0 px on Story and Ask, which have one view) is no longer rendered there.
+- Verified: new `scripts/shots/stagecheck.mjs` on every step of every story at 1280x760, 1440x900, 1920x1080, 375x812, light and dark: 320 step views, 0 with a stage side > 25% empty, 0 overlapping labels, 0 cut-off cards (local); live re-run in dark at all four sizes: 160 step views, 0 problems; links.mjs ALL PASS live at 1440 and 375; demo stills render; Lighthouse 100/100/100/100 desktop on all five story pages; mobile live Start 100, Evidence 96.
+- Screenshots before/after: `docs/ui/shots/stage/` (each section at 1440x900 dark, 1920x1080 light, 375x812 dark).
+
 ### Feature checklist (old link -> new link; "OK" = links.mjs PASS after the phase)
 | Feature | New location | Old link -> new link | P1 | P2 | P3 | P4 |
 |---|---|---|---|---|---|---|
