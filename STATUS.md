@@ -1,4 +1,4 @@
-# STATUS (Sat 2026-11-14, NST)
+# STATUS (Sun 2026-11-15, NST)
 
 Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px and 390 px, committed, deployed, verified live.
 
@@ -14,10 +14,11 @@ Backlog from the Saturday-evening brief. Each item: built, checked at 1440 px an
 
 - 5. Cited Q&A ("Ask" tab): 262 cited passages, BM25, claude-haiku-5-5 answers checked by code (citations + numbers), 8 precomputed demo answers committed (all pass checks), offline mode `?offline` and automatic fallback. Live AI answers switch on when the key is in Vercel env vars. API spend so far ~$0.02.
 
+- 6. On Earth tab: water mist, smoke-vs-dust detector, firefighter air tanks and clothing; each with the challenge page's words, its NASA Spinoff link, and related PSI investigations quoted from their metadata (or "no PSI link" where there is none). Live AI answers switched on (key in Vercel, Production).
+
 ## In progress
-- 6. Earth applications
+- 7. Landing / story first screen
 
 ## Needs me (the user)
 - The official challenge video URL (it is embedded on the challenge page; we only saved the transcript). Paste it and References will show it.
-- Add ANTHROPIC_API_KEY to Vercel (project flame-frontier, Production) to switch on live answers; without it the site serves the 8 precomputed answers and passages.
 - Git commit signing (Secretive / ssh-agent) needs your Touch ID: commits since item 4 are waiting on it.

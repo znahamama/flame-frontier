@@ -131,6 +131,15 @@ def main():
                    "text": f"Of the solid-material space fire tests in our sources, only {len(zone)} burned in Moon-base air ("
                            + "; ".join(f"Saffire {t['sample']}, {t['material']}, {t['o2_as_stated'][0]} {t['o2_basis']} at {t['pressure_conversion'][0]}, {t['flow_cm_s']} cm/s" for t in zone)
                            + "), none in partial gravity. Moon-base air means at least 30% O2 at 10.2 psi (70.33 kPa) or less, from the challenge page."})
+    earth = load("earth_apps.json")
+    for a in earth["applications"]:
+        parts = [f"Earth application named on the challenge page: {a['title']}. Challenge page: \"{a['brief_quote']}\"."]
+        if a["source"]["description"]:
+            parts.append(f"{a['source']['title']} (NASA Spinoff): \"{a['source']['description']}\"")
+        parts += [x for x in (a["origin"], a.get("link_quote"), a["note"]) if x]
+        parts += [f"Related: {x['psi_id']} {x['title']}: \"{x['quote']}\"." for x in a["related"]]
+        chunks.append({"id": f"limits:earth:{a['id']}", "file": "data/processed/earth_apps.json", "source": f"Flame Frontier On Earth: {a['title']}", "text": ws(" ".join(parts))})
+
     # PDF tables flatten into one long row-major line; restate verified table rows one sentence per test.
     pts = [t for t in ext["tests"] if t["kind"] == "point"]
     src = pts[0]["source"]

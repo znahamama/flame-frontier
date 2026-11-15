@@ -1,0 +1,188 @@
+{
+  "applications": [
+    {
+      "brief_quote": "Fine-water-mist extinguishers developed for use on the ISS have practical applications here on Earth",
+      "context": null,
+      "id": "water_mist",
+      "link_quote": null,
+      "note": "0 of 24 PSI combustion investigations mention water mist in their metadata. The investigations listed studied suppression in other ways (gases, models).",
+      "origin": null,
+      "related": [
+        {
+          "doi": "10.60555/mbq8-0451",
+          "field": "objective",
+          "psi_id": "PSI-69",
+          "quote": "measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6",
+          "relation": "Suppression agents tested in microgravity (gases, not water mist)",
+          "src": {
+            "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
+            "key": "Comment[Objective]",
+            "line": 71
+          },
+          "title": "Flame Extinguishment Experiment"
+        },
+        {
+          "doi": "10.60555/mbq8-0451",
+          "field": "impacts",
+          "psi_id": "PSI-69",
+          "quote": "can lead to the development of more efficient and less harmful fire suppression systems",
+          "relation": "FLEX's own statement of Earth benefit",
+          "src": {
+            "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
+            "key": "Comment[Research Impacts]",
+            "line": 78
+          },
+          "title": "Flame Extinguishment Experiment"
+        },
+        {
+          "doi": "10.60555/58h4-dy80",
+          "field": "impacts",
+          "psi_id": "PSI-26",
+          "quote": "Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.",
+          "relation": "Suppression of burning solids by nitrogen dilution",
+          "src": {
+            "file": "data/raw/PSI-26/PSI-26_metadata_PSI-102_BASS/i_Investigation.txt",
+            "key": "Comment[Research Impacts]",
+            "line": 69
+          },
+          "title": "Burning and Suppression of Solids"
+        },
+        {
+          "doi": "10.60555/4qc4-de67",
+          "field": "objective",
+          "psi_id": "PSI-25",
+          "quote": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.",
+          "relation": "Models used to design suppression systems, including on Earth",
+          "src": {
+            "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+            "key": "Comment[Objective]",
+            "line": 60
+          },
+          "title": "Burning and Suppression of Solids - II"
+        }
+      ],
+      "source": {
+        "description": null,
+        "title": "Space Apps 2026 challenge page",
+        "url": "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/",
+        "where": "challenge page text (no resource link given for this one)"
+      },
+      "theme": "Suppression",
+      "title": "Fine-water-mist fire extinguishers"
+    },
+    {
+      "brief_quote": "NASA technology has similarly led to improvements in terrestrial smoke detection",
+      "context": null,
+      "id": "fire_detector",
+      "link_quote": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies.",
+      "note": null,
+      "origin": "The challenge page's resource note dates this to the 1970s. The investigations below share its topic; we do not claim they led to it.",
+      "related": [
+        {
+          "doi": "10.60555/gd4k-8h62",
+          "field": "hypothesis",
+          "psi_id": "PSI-102",
+          "quote": "affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke",
+          "relation": "How smoke detectors respond to smoke made in microgravity",
+          "src": {
+            "file": "data/raw/PSI-102/PSI-102_metadata_PSI-170_SAME/i_Investigation.txt",
+            "key": "Comment[Hypothesis]",
+            "line": 48
+          },
+          "title": "Smoke and Aerosol Measurement Experiment"
+        },
+        {
+          "doi": "10.60555/2np7-jv14",
+          "field": "impacts",
+          "psi_id": "PSI-101",
+          "quote": "can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories",
+          "relation": "SAME-R's own statement of Earth benefit",
+          "src": {
+            "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+            "key": "Comment[Research Impacts]",
+            "line": 67
+          },
+          "title": "Smoke Aerosol Measurement Experiment-Reflight"
+        },
+        {
+          "doi": "10.60555/ztgj-d202",
+          "field": "approach",
+          "psi_id": "PSI-47",
+          "quote": "Arizona Red Dust (ARD) was chosen as an aerosol standard",
+          "relation": "Dust measured with a smoke-detection instrument: the smoke-versus-dust problem",
+          "src": {
+            "file": "data/raw/PSI-47/PSI-47_metadata_PSI-126_DAFT_DAFT-2/i_Investigation.txt",
+            "key": "Comment[Approach]",
+            "line": 40
+          },
+          "title": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2"
+        },
+        {
+          "doi": "10.60555/q0v5-1v28",
+          "field": "impacts",
+          "psi_id": "PSI-115",
+          "quote": "This would directly lead to better smoke detection devices",
+          "relation": "Ground analysis of SAME data",
+          "src": {
+            "file": "data/raw/PSI-115/PSI-115_metadata_PSI-185_Utilization of the S/i_Investigation.txt",
+            "key": "Comment[Research Impacts]",
+            "line": 65
+          },
+          "title": "Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity"
+        }
+      ],
+      "source": {
+        "description": "1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).",
+        "title": "Fire Detector",
+        "url": "https://spinoff.nasa.gov/node/9407",
+        "where": "challenge page Resources tab"
+      },
+      "theme": "Detection",
+      "title": "Smoke detector that tells smoke from dust"
+    },
+    {
+      "brief_quote": "firefighter gear, including protective clothing and air tanks",
+      "context": {
+        "link": "#gaps",
+        "quote": "To enable flexibility, spacesuits are filled with 100% oxygen to only 4.3 psi"
+      },
+      "id": "air_tanks",
+      "link_quote": null,
+      "note": "No PSI combustion investigation is linked to this in our sources. The resource note describes it as an adaptation of spacesuit technology.",
+      "origin": "The challenge page's resource note dates this to the 1970s.",
+      "related": [],
+      "source": {
+        "description": "1970s adaptation of spacesuit technology to improve firefighters' air tanks and breathing gear.",
+        "title": "Fireman's Air Tanks",
+        "url": "https://spinoff.nasa.gov/node/9582",
+        "where": "challenge page Resources tab"
+      },
+      "theme": "Firefighter gear",
+      "title": "Firefighters' air tanks and breathing gear"
+    },
+    {
+      "brief_quote": "firefighter gear, including protective clothing and air tanks",
+      "context": {
+        "link": "#gaps",
+        "quote": "To enable flexibility, spacesuits are filled with 100% oxygen to only 4.3 psi"
+      },
+      "id": "fire_attire",
+      "link_quote": null,
+      "note": "No PSI combustion investigation is linked to this in our sources. The resource note describes it as an adaptation of spacesuit technology.",
+      "origin": "The challenge page's resource note dates this to the 1980s.",
+      "related": [],
+      "source": {
+        "description": "1980s application of NASA spacesuit technology to improve firefighter clothing.",
+        "title": "New Technology for the Fire Attire",
+        "url": "https://spinoff.nasa.gov/node/9918",
+        "where": "challenge page Resources tab"
+      },
+      "theme": "Firefighter gear",
+      "title": "Firefighter protective clothing"
+    }
+  ],
+  "challenge_page": "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/",
+  "note": "Earth applications named on the challenge page. Every quote is checked by scripts/05_build_earth.py: brief quotes against docs/ref/challenge_brief.md, resource descriptions against its Resources list, investigation quotes against the PSI metadata field named. 'relation' is our wording of how the topics connect; it never claims the spinoff came from a PSI investigation.",
+  "schema": 1,
+  "water_mist_mentions": []
+}

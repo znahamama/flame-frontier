@@ -7,6 +7,7 @@ import { render as references } from './tabs/references.js';
 import { render as compare } from './tabs/compare.js';
 import { render as gaps } from './tabs/gaps.js';
 import { render as ask } from './tabs/ask.js';
+import { render as earth } from './tabs/earth.js';
 
 const TABS = [
   ['evidence', 'Evidence Map', { render: evidence }],
@@ -15,6 +16,7 @@ const TABS = [
   ['compare', 'Compare', { render: compare }],
   ['gaps', 'Habitat Gaps', { render: gaps }],
   ['ask', 'Ask', { render: ask }],
+  ['earth', 'On Earth', { render: earth }],
   ['clips', 'Clips', { render: clips }],
   ['limits', 'Known Limits', { render: limits }],
   ['references', 'References', { render: references }],

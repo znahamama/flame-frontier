@@ -1,0 +1,52 @@
+{
+  "note": "Earth applications named on the challenge page. Every quote is checked by scripts/05_build_earth.py: brief quotes against docs/ref/challenge_brief.md, resource descriptions against its Resources list, investigation quotes against the PSI metadata field named. 'relation' is our wording of how the topics connect; it never claims the spinoff came from a PSI investigation.",
+  "applications": [
+    {
+      "id": "water_mist",
+      "title": "Fine-water-mist fire extinguishers",
+      "brief_quote": "Fine-water-mist extinguishers developed for use on the ISS have practical applications here on Earth",
+      "resource_title": null,
+      "theme": "Suppression",
+      "related": [
+        {"psi_id": "PSI-69", "field": "objective", "quote": "measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6", "relation": "Suppression agents tested in microgravity (gases, not water mist)"},
+        {"psi_id": "PSI-69", "field": "impacts", "quote": "can lead to the development of more efficient and less harmful fire suppression systems", "relation": "FLEX's own statement of Earth benefit"},
+        {"psi_id": "PSI-26", "field": "impacts", "quote": "Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.", "relation": "Suppression of burning solids by nitrogen dilution"},
+        {"psi_id": "PSI-25", "field": "objective", "quote": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.", "relation": "Models used to design suppression systems, including on Earth"}
+      ]
+    },
+    {
+      "id": "fire_detector",
+      "title": "Smoke detector that tells smoke from dust",
+      "brief_quote": "NASA technology has similarly led to improvements in terrestrial smoke detection",
+      "resource_title": "Fire Detector",
+      "theme": "Detection",
+      "link_quote": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies.",
+      "related": [
+        {"psi_id": "PSI-102", "field": "hypothesis", "quote": "affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke", "relation": "How smoke detectors respond to smoke made in microgravity"},
+        {"psi_id": "PSI-101", "field": "impacts", "quote": "can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories", "relation": "SAME-R's own statement of Earth benefit"},
+        {"psi_id": "PSI-47", "field": "approach", "quote": "Arizona Red Dust (ARD) was chosen as an aerosol standard", "relation": "Dust measured with a smoke-detection instrument: the smoke-versus-dust problem"},
+        {"psi_id": "PSI-115", "field": "impacts", "quote": "This would directly lead to better smoke detection devices", "relation": "Ground analysis of SAME data"}
+      ]
+    },
+    {
+      "id": "air_tanks",
+      "title": "Firefighters' air tanks and breathing gear",
+      "brief_quote": "firefighter gear, including protective clothing and air tanks",
+      "resource_title": "Fireman's Air Tanks",
+      "theme": "Firefighter gear",
+      "related": [],
+      "context_quote": "To enable flexibility, spacesuits are filled with 100% oxygen to only 4.3 psi",
+      "context_link": "#gaps"
+    },
+    {
+      "id": "fire_attire",
+      "title": "Firefighter protective clothing",
+      "brief_quote": "firefighter gear, including protective clothing and air tanks",
+      "resource_title": "New Technology for the Fire Attire",
+      "theme": "Firefighter gear",
+      "related": [],
+      "context_quote": "To enable flexibility, spacesuits are filled with 100% oxygen to only 4.3 psi",
+      "context_link": "#gaps"
+    }
+  ]
+}

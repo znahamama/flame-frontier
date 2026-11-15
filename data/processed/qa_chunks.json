@@ -1746,6 +1746,30 @@
       "text": "Of the solid-material space fire tests in our sources, only 2 burned in Moon-base air (Saffire VI-2, SIBAL Cloth, 31.0 mol % at 54.1 kPa, 20.0 cm/s; Saffire VI-3, Two-Sided PMMA, 30.3 mol % at 54.6 kPa, 20.0 cm/s), none in partial gravity. Moon-base air means at least 30% O2 at 10.2 psi (70.33 kPa) or less, from the challenge page."
     },
     {
+      "file": "data/processed/earth_apps.json",
+      "id": "limits:earth:water_mist",
+      "source": "Flame Frontier On Earth: Fine-water-mist fire extinguishers",
+      "text": "Earth application named on the challenge page: Fine-water-mist fire extinguishers. Challenge page: \"Fine-water-mist extinguishers developed for use on the ISS have practical applications here on Earth\". 0 of 24 PSI combustion investigations mention water mist in their metadata. The investigations listed studied suppression in other ways (gases, models). Related: PSI-69 Flame Extinguishment Experiment: \"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\". Related: PSI-69 Flame Extinguishment Experiment: \"can lead to the development of more efficient and less harmful fire suppression systems\". Related: PSI-26 Burning and Suppression of Solids: \"Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.\". Related: PSI-25 Burning and Suppression of Solids - II: \"BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.\"."
+    },
+    {
+      "file": "data/processed/earth_apps.json",
+      "id": "limits:earth:fire_detector",
+      "source": "Flame Frontier On Earth: Smoke detector that tells smoke from dust",
+      "text": "Earth application named on the challenge page: Smoke detector that tells smoke from dust. Challenge page: \"NASA technology has similarly led to improvements in terrestrial smoke detection\". Fire Detector (NASA Spinoff): \"1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).\" The challenge page's resource note dates this to the 1970s. The investigations below share its topic; we do not claim they led to it. One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies. Related: PSI-102 Smoke and Aerosol Measurement Experiment: \"affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke\". Related: PSI-101 Smoke Aerosol Measurement Experiment-Reflight: \"can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories\". Related: PSI-47 Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2: \"Arizona Red Dust (ARD) was chosen as an aerosol standard\". Related: PSI-115 Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity: \"This would directly lead to better smoke detection devices\"."
+    },
+    {
+      "file": "data/processed/earth_apps.json",
+      "id": "limits:earth:air_tanks",
+      "source": "Flame Frontier On Earth: Firefighters' air tanks and breathing gear",
+      "text": "Earth application named on the challenge page: Firefighters' air tanks and breathing gear. Challenge page: \"firefighter gear, including protective clothing and air tanks\". Fireman's Air Tanks (NASA Spinoff): \"1970s adaptation of spacesuit technology to improve firefighters' air tanks and breathing gear.\" The challenge page's resource note dates this to the 1970s. No PSI combustion investigation is linked to this in our sources. The resource note describes it as an adaptation of spacesuit technology."
+    },
+    {
+      "file": "data/processed/earth_apps.json",
+      "id": "limits:earth:fire_attire",
+      "source": "Flame Frontier On Earth: Firefighter protective clothing",
+      "text": "Earth application named on the challenge page: Firefighter protective clothing. Challenge page: \"firefighter gear, including protective clothing and air tanks\". New Technology for the Fire Attire (NASA Spinoff): \"1980s application of NASA spacesuit technology to improve firefighter clothing.\" The challenge page's resource note dates this to the 1980s. No PSI combustion investigation is linked to this in our sources. The resource note describes it as an adaptation of spacesuit technology."
+    },
+    {
       "file": "data/processed/external_tests.json",
       "id": "data:saffire:table1",
       "page": 3,
@@ -1771,7 +1795,7 @@
       "text": "Sources disagree on BASS-II number of tests. The report says 126 tests; the PSI experimental table has 129 rows (a/b re-runs of the same sample are separate rows). Flame Frontier plots the table rows."
     }
   ],
-  "count": 262,
+  "count": 266,
   "kept_from_previous_build": [],
   "retrieval": {
     "b": 0.75,
@@ -1833,9 +1857,19 @@
         "detection",
         "smoke"
       ],
+      "detectors": [
+        "detector"
+      ],
+      "extinguishers": [
+        "extinguisher",
+        "suppression"
+      ],
       "fabric": [
         "sibal",
         "cotton"
+      ],
+      "firefighters": [
+        "firefighter"
       ],
       "flammability": [
         "flammable",
@@ -1847,6 +1881,9 @@
       ],
       "lunar": [
         "moon"
+      ],
+      "mist": [
+        "water-mist"
       ],
       "moon": [
         "lunar"
@@ -1866,6 +1903,17 @@
       "speed": [
         "velocity",
         "flow"
+      ],
+      "spin-offs": [
+        "spinoff",
+        "earth"
+      ],
+      "spinoff": [
+        "earth"
+      ],
+      "spinoffs": [
+        "spinoff",
+        "earth"
       ],
       "suppress": [
         "suppression",

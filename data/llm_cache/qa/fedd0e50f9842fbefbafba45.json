@@ -1,0 +1,80 @@
+{
+  "answer": "FLEX studied suppression by diluting the chamber atmosphere with carbon dioxide and helium, both of which suppress fire [brief:s1.6]. The mission measured the effectiveness of gaseous suppressants such as CO2, He, and SF6 [limits:earth:water_mist]. Its primary hypothesis was that microgravity alters the flammability limits and suppression efficacy of fire suppressant agents compared with normal gravity [meta:PSI-69:hypothesis].",
+  "attempts": 1,
+  "checks": {
+    "cited": [
+      "brief:s1.6",
+      "limits:earth:water_mist",
+      "meta:PSI-69:hypothesis"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.6",
+      "line": null,
+      "page": null,
+      "score": 13.629,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
+    },
+    {
+      "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
+      "id": "meta:PSI-69:hypothesis",
+      "line": 61,
+      "page": null,
+      "score": 12.235,
+      "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Hypothesis]",
+      "text": "The primary hypothesis of the FLEX mission is that microgravity conditions fundamentally alter the combustion and extinction characteristics of liquid fuel droplets due to changes in species and energy transport dynamics, radiative heat loss, and chemical kinetics. Specifically, the hypothesis posits that the lack of buoyant convection in microgravity will lead to significant differences in the flammability limits and suppression efficacy of various fire suppressant agents compared to normal gravity conditions. This hypothesis underpins the design of the FLEX experiments, which aim to map flammability boundaries, quantify suppressant efficacy, and develop predictive models to improve fire safety in space environments."
+    },
+    {
+      "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
+      "id": "meta:PSI-69:impacts.1",
+      "line": 78,
+      "page": null,
+      "score": 11.137,
+      "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Research Impacts]",
+      "text": "The research impacts and Earth benefits of the FLEX mission are significant and multifaceted. By enhancing our understanding of microgravity combustion, the mission directly contributes to improved fire safety protocols for future space missions, ensuring the safety of crew members in environments where traditional fire suppression methods may be ineffective. On Earth, the insights gained from these experiments have the potential to advance fire safety in confined and reduced-gravity environments, such as submarines or high-altitude aircraft. The mission's findings on the effectiveness of various fire suppressants, including CO2, He, and SF6, in microgravity can lead to the development of more efficient and less harmful fire suppression systems, reducing the risk of toxic byproducts during fire events. Additionally, the study of ''cool flames'' and low-temperature combustion processes observed in microgravity can inform the design of advanced combustion engines, leading to improved fuel efficiency and reduced emissions in automotive and industrial applications."
+    },
+    {
+      "file": "data/processed/earth_apps.json",
+      "id": "limits:earth:water_mist",
+      "line": null,
+      "page": null,
+      "score": 9.332,
+      "source": "Flame Frontier On Earth: Fine-water-mist fire extinguishers",
+      "text": "Earth application named on the challenge page: Fine-water-mist fire extinguishers. Challenge page: \"Fine-water-mist extinguishers developed for use on the ISS have practical applications here on Earth\". 0 of 24 PSI combustion investigations mention water mist in their metadata. The investigations listed studied suppression in other ways (gases, models). Related: PSI-69 Flame Extinguishment Experiment: \"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\". Related: PSI-69 Flame Extinguishment Experiment: \"can lead to the development of more efficient and less harmful fire suppression systems\". Related: PSI-26 Burning and Suppression of Solids: \"Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.\". Related: PSI-25 Burning and Suppression of Solids - II: \"BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.\"."
+    },
+    {
+      "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
+      "id": "meta:PSI-25:objective",
+      "line": 60,
+      "page": null,
+      "score": 7.631,
+      "source": "PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Objective]",
+      "text": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth. Objectives Include: 1) Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity. 2) Begin to bridge the gap between the normal gravity NASA-STD-6001 Test #1 method, ground-based microgravity tests, and actual material flammability in microgravity. 3) Provide SoFIE PIs with preliminary data to refine Science Requirements. 4) Practical, realistic (thicker) fuels in typical geometries will be examined, including slabs, cylinders, and spherical sections. The primary variables include: • Forced flow velocity (speed and direction) • Ambient oxygen concentration (via working volume nitrogen vitiation) • Sample geometry (rods, spherical section, slabs, films, and fabric sheets"
+    },
+    {
+      "file": "data/raw/PSI-60/PSI-60_metadata_NEWID-5_Computational and Ex/i_Investigation.txt",
+      "id": "meta:PSI-60:impacts",
+      "line": 65,
+      "page": null,
+      "score": 7.628,
+      "source": "PSI-60 Computational and Experimental Analysis of SPICE Data Sets: PSI metadata Comment[Research Impacts]",
+      "text": "This study sought to enhance understanding of soot formation, flame structure, and radiative transport under microgravity and normal gravity, improving predictive models for combustion in both spacecraft and terrestrial systems. For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions. On Earth, the insights help reduce pollutant emissions, optimize combustion efficiency, and inform the design of cleaner energy and industrial systems."
+    }
+  ],
+  "flagged": false,
+  "key": "fedd0e50f9842fbefbafba45",
+  "model": "claude-haiku-5-5",
+  "question": "How did FLEX study fire suppression in microgravity?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 2108,
+      "output_tokens": 164
+    }
+  ]
+}

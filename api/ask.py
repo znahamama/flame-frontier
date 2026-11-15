@@ -54,7 +54,8 @@ SYNONYMS = {
     "airflow": ["flow", "velocity"], "flow": ["velocity", "airflow"], "speed": ["velocity", "flow"], "velocity": ["flow", "speed"],
     "oxygen": ["o2"], "o2": ["oxygen"], "suppression": ["suppressant", "suppress", "extinguish"], "suppress": ["suppression", "suppressant"],
     "detection": ["detector", "detect", "smoke"], "detector": ["detection", "smoke"], "moon": ["lunar"], "lunar": ["moon"],
-    "pressure": ["kpa", "psi", "psia", "atm"], "flammability": ["flammable", "extinction"], "fabric": ["sibal", "cotton"],
+    "pressure": ["kpa", "psi", "psia", "atm"], "spinoffs": ["spinoff", "earth"], "spinoff": ["earth"], "spin-offs": ["spinoff", "earth"],
+    "firefighters": ["firefighter"], "detectors": ["detector"], "extinguishers": ["extinguisher", "suppression"], "mist": ["water-mist"], "flammability": ["flammable", "extinction"], "fabric": ["sibal", "cotton"],
 }
 
 

@@ -1,0 +1,79 @@
+{
+  "answer": "SAME-R utilized the SAME hardware used on-orbit, with modifications including a new test material, Pyrell®, replacing DBP samples, broadened test conditions, and a new M-pass instrument replacing one of the two Commercial Diagnostic Enclosures [meta:PSI-101:approach]. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points [meta:PSI-101:approach]. Fire detection in microgravity was tested through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R) [brief:s1.6].",
+  "attempts": 1,
+  "checks": {
+    "cited": [
+      "meta:PSI-101:approach",
+      "brief:s1.6"
+    ],
+    "ok": true,
+    "problems": []
+  },
+  "chunks": [
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.20",
+      "line": null,
+      "page": null,
+      "score": 20.825,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies."
+    },
+    {
+      "file": "data/processed/earth_apps.json",
+      "id": "limits:earth:fire_detector",
+      "line": null,
+      "page": null,
+      "score": 18.469,
+      "source": "Flame Frontier On Earth: Smoke detector that tells smoke from dust",
+      "text": "Earth application named on the challenge page: Smoke detector that tells smoke from dust. Challenge page: \"NASA technology has similarly led to improvements in terrestrial smoke detection\". Fire Detector (NASA Spinoff): \"1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).\" The challenge page's resource note dates this to the 1970s. The investigations below share its topic; we do not claim they led to it. One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies. Related: PSI-102 Smoke and Aerosol Measurement Experiment: \"affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke\". Related: PSI-101 Smoke Aerosol Measurement Experiment-Reflight: \"can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories\". Related: PSI-47 Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2: \"Arizona Red Dust (ARD) was chosen as an aerosol standard\". Related: PSI-115 Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity: \"This would directly lead to better smoke detection devices\"."
+    },
+    {
+      "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+      "id": "meta:PSI-101:impacts",
+      "line": 67,
+      "page": null,
+      "score": 16.37,
+      "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Research Impacts]",
+      "text": "Along with the results from the original SAME investigation, the results from SAME-R can lead to technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated. The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
+    },
+    {
+      "file": "docs/ref/challenge_brief.md",
+      "id": "brief:s1.6",
+      "line": null,
+      "page": null,
+      "score": 15.803,
+      "source": "Space Apps 2026 challenge page (verbatim)",
+      "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
+    },
+    {
+      "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
+      "id": "meta:PSI-101:approach",
+      "line": 40,
+      "page": null,
+      "score": 15.795,
+      "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Approach]",
+      "text": "SAME-R utilized the SAME hardware used on-orbit. Based on the experience gained from SAME, SAME-R included the following modifications: 1) a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples, 2) test conditions were broadened including higher heating temperatures and no-flow during sample heating time, and 3) a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points. After SAME-R flight tests, three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R."
+    },
+    {
+      "file": "data/raw/PSI-102/PSI-102_metadata_PSI-170_SAME/i_Investigation.txt",
+      "id": "meta:PSI-102:impacts",
+      "line": 66,
+      "page": null,
+      "score": 13.435,
+      "source": "PSI-102 Smoke and Aerosol Measurement Experiment: PSI metadata Comment[Research Impacts]",
+      "text": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
+    }
+  ],
+  "flagged": false,
+  "key": "e24751c80d29213d66fdd143",
+  "model": "claude-haiku-5-5",
+  "question": "How did SAME and SAME-R test smoke detection in microgravity?",
+  "round": 1,
+  "usage": [
+    {
+      "input_tokens": 2198,
+      "output_tokens": 210
+    }
+  ]
+}

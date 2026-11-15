@@ -182,3 +182,8 @@ a.cite { font-size: 0.75em; vertical-align: super; text-decoration: none; paddin
 .psrc { margin: 0; font-size: 0.85rem; overflow-wrap: anywhere; }
 .ptext { margin: 2px 0 0; font-size: 0.85rem; color: var(--text-secondary); overflow-wrap: anywhere; }
 @media (max-width: 600px) { .askform { flex-direction: column; } }
+
+/* Fire safety on Earth */
+.earthapp blockquote { margin: 6px 0 8px; padding: 4px 12px; border-left: 3px solid var(--grid); }
+ul.related { padding-left: 1.2em; margin: 4px 0 8px; }
+ul.related li { margin: 0 0 8px; overflow-wrap: anywhere; }

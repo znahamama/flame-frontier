@@ -63,6 +63,21 @@
         "note": "Physical Sciences Informatics (PSI) source of the data upon which the NASA Space App is to be based.",
         "title": "PSI Data Repository: Combustion Science",
         "url": "https://psi.nasa.gov/physci/repo/search?q=combustion"
+      },
+      {
+        "note": "1970s adaptation of spacesuit technology to improve firefighters' air tanks and breathing gear.",
+        "title": "Fireman's Air Tanks",
+        "url": "https://spinoff.nasa.gov/node/9582"
+      },
+      {
+        "note": "1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).",
+        "title": "Fire Detector",
+        "url": "https://spinoff.nasa.gov/node/9407"
+      },
+      {
+        "note": "1980s application of NASA spacesuit technology to improve firefighter clothing.",
+        "title": "New Technology for the Fire Attire",
+        "url": "https://spinoff.nasa.gov/node/9918"
       }
     ],
     "video": {

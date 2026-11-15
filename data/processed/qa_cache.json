@@ -238,12 +238,13 @@
       ]
     },
     {
-      "answer": "FLEX studied suppression through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire [brief:s1.6]. The mission also measured the effectiveness of gaseous suppressants such as CO2, He, and SF6 in microgravity [meta:PSI-69:objective].",
+      "answer": "FLEX studied suppression by diluting the chamber atmosphere with carbon dioxide and helium, both of which suppress fire [brief:s1.6]. The mission measured the effectiveness of gaseous suppressants such as CO2, He, and SF6 [limits:earth:water_mist]. Its primary hypothesis was that microgravity alters the flammability limits and suppression efficacy of fire suppressant agents compared with normal gravity [meta:PSI-69:hypothesis].",
       "attempts": 1,
       "checks": {
         "cited": [
           "brief:s1.6",
-          "meta:PSI-69:objective"
+          "limits:earth:water_mist",
+          "meta:PSI-69:hypothesis"
         ],
         "ok": true,
         "problems": []
@@ -254,7 +255,7 @@
           "id": "brief:s1.6",
           "line": null,
           "page": null,
-          "score": 13.667,
+          "score": 13.629,
           "source": "Space Apps 2026 challenge page (verbatim)",
           "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
         },
@@ -263,7 +264,7 @@
           "id": "meta:PSI-69:hypothesis",
           "line": 61,
           "page": null,
-          "score": 12.397,
+          "score": 12.235,
           "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Hypothesis]",
           "text": "The primary hypothesis of the FLEX mission is that microgravity conditions fundamentally alter the combustion and extinction characteristics of liquid fuel droplets due to changes in species and energy transport dynamics, radiative heat loss, and chemical kinetics. Specifically, the hypothesis posits that the lack of buoyant convection in microgravity will lead to significant differences in the flammability limits and suppression efficacy of various fire suppressant agents compared to normal gravity conditions. This hypothesis underpins the design of the FLEX experiments, which aim to map flammability boundaries, quantify suppressant efficacy, and develop predictive models to improve fire safety in space environments."
         },
@@ -272,57 +273,57 @@
           "id": "meta:PSI-69:impacts.1",
           "line": 78,
           "page": null,
-          "score": 11.179,
+          "score": 11.137,
           "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Research Impacts]",
           "text": "The research impacts and Earth benefits of the FLEX mission are significant and multifaceted. By enhancing our understanding of microgravity combustion, the mission directly contributes to improved fire safety protocols for future space missions, ensuring the safety of crew members in environments where traditional fire suppression methods may be ineffective. On Earth, the insights gained from these experiments have the potential to advance fire safety in confined and reduced-gravity environments, such as submarines or high-altitude aircraft. The mission's findings on the effectiveness of various fire suppressants, including CO2, He, and SF6, in microgravity can lead to the development of more efficient and less harmful fire suppression systems, reducing the risk of toxic byproducts during fire events. Additionally, the study of ''cool flames'' and low-temperature combustion processes observed in microgravity can inform the design of advanced combustion engines, leading to improved fuel efficiency and reduced emissions in automotive and industrial applications."
         },
         {
-          "file": "data/raw/PSI-60/PSI-60_metadata_NEWID-5_Computational and Ex/i_Investigation.txt",
-          "id": "meta:PSI-60:impacts",
-          "line": 65,
+          "file": "data/processed/earth_apps.json",
+          "id": "limits:earth:water_mist",
+          "line": null,
           "page": null,
-          "score": 7.654,
-          "source": "PSI-60 Computational and Experimental Analysis of SPICE Data Sets: PSI metadata Comment[Research Impacts]",
-          "text": "This study sought to enhance understanding of soot formation, flame structure, and radiative transport under microgravity and normal gravity, improving predictive models for combustion in both spacecraft and terrestrial systems. For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions. On Earth, the insights help reduce pollutant emissions, optimize combustion efficiency, and inform the design of cleaner energy and industrial systems."
+          "score": 9.332,
+          "source": "Flame Frontier On Earth: Fine-water-mist fire extinguishers",
+          "text": "Earth application named on the challenge page: Fine-water-mist fire extinguishers. Challenge page: \"Fine-water-mist extinguishers developed for use on the ISS have practical applications here on Earth\". 0 of 24 PSI combustion investigations mention water mist in their metadata. The investigations listed studied suppression in other ways (gases, models). Related: PSI-69 Flame Extinguishment Experiment: \"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\". Related: PSI-69 Flame Extinguishment Experiment: \"can lead to the development of more efficient and less harmful fire suppression systems\". Related: PSI-26 Burning and Suppression of Solids: \"Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.\". Related: PSI-25 Burning and Suppression of Solids - II: \"BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.\"."
         },
         {
           "file": "data/raw/PSI-25/PSI-25_metadata_PSI_metadata_PSI-101_BASS-II/i_Investigation.txt",
           "id": "meta:PSI-25:objective",
           "line": 60,
           "page": null,
-          "score": 7.65,
+          "score": 7.631,
           "source": "PSI-25 Burning and Suppression of Solids - II: PSI metadata Comment[Objective]",
           "text": "BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth. Objectives Include: 1) Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity. 2) Begin to bridge the gap between the normal gravity NASA-STD-6001 Test #1 method, ground-based microgravity tests, and actual material flammability in microgravity. 3) Provide SoFIE PIs with preliminary data to refine Science Requirements. 4) Practical, realistic (thicker) fuels in typical geometries will be examined, including slabs, cylinders, and spherical sections. The primary variables include: • Forced flow velocity (speed and direction) • Ambient oxygen concentration (via working volume nitrogen vitiation) • Sample geometry (rods, spherical section, slabs, films, and fabric sheets"
         },
         {
-          "file": "data/raw/PSI-69/PSI-69_metadata_PSI-133_FLEX/i_Investigation.txt",
-          "id": "meta:PSI-69:objective",
-          "line": 71,
+          "file": "data/raw/PSI-60/PSI-60_metadata_NEWID-5_Computational and Ex/i_Investigation.txt",
+          "id": "meta:PSI-60:impacts",
+          "line": 65,
           "page": null,
-          "score": 7.16,
-          "source": "PSI-69 Flame Extinguishment Experiment: PSI metadata Comment[Objective]",
-          "text": "The FLEX (Flame Extinguishment Experiment) investigation aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6, and develop reliable predictive models for combustion limits under reduced gravity conditions. The mission seeks to validate and improve simplified models by incorporating detailed chemical reactions, heat transfer, and material movement, using both space-based data and extensive ground-based tests. Key flight experiment goals include obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles, while systematically analyzing the effects of different ambient conditions and suppressant concentrations. These investigations are essential for advancing the fundamental understanding of combustion processes in microgravity and enhancing fire safety protocols for future space missions."
+          "score": 7.628,
+          "source": "PSI-60 Computational and Experimental Analysis of SPICE Data Sets: PSI metadata Comment[Research Impacts]",
+          "text": "This study sought to enhance understanding of soot formation, flame structure, and radiative transport under microgravity and normal gravity, improving predictive models for combustion in both spacecraft and terrestrial systems. For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions. On Earth, the insights help reduce pollutant emissions, optimize combustion efficiency, and inform the design of cleaner energy and industrial systems."
         }
       ],
       "flagged": false,
-      "key": "7247a26a18cf46305215ea23",
+      "key": "fedd0e50f9842fbefbafba45",
       "model": "claude-haiku-5-5",
       "question": "How did FLEX study fire suppression in microgravity?",
+      "round": 1,
       "usage": [
         {
-          "input_tokens": 2064,
-          "output_tokens": 107
+          "input_tokens": 2108,
+          "output_tokens": 164
         }
       ]
     },
     {
-      "answer": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R) [brief:s1.6]. SAME-R used the SAME hardware flown on orbit, replaced the DBP samples with Pyrell foam, broadened test conditions, and substituted an M-pass instrument for one of the two Commercial Diagnostic Enclosures [meta:PSI-101:approach]. Its primary objective was to quantify the sizes liquid smoke particulate reaches in low gravity and relate droplet size distribution to smoke generation and transport conditions [meta:PSI-101:objective].",
+      "answer": "SAME-R utilized the SAME hardware used on-orbit, with modifications including a new test material, Pyrell®, replacing DBP samples, broadened test conditions, and a new M-pass instrument replacing one of the two Commercial Diagnostic Enclosures [meta:PSI-101:approach]. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points [meta:PSI-101:approach]. Fire detection in microgravity was tested through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R) [brief:s1.6].",
       "attempts": 1,
       "checks": {
         "cited": [
-          "brief:s1.6",
           "meta:PSI-101:approach",
-          "meta:PSI-101:objective"
+          "brief:s1.6"
         ],
         "ok": true,
         "problems": []
@@ -333,16 +334,25 @@
           "id": "brief:s1.20",
           "line": null,
           "page": null,
-          "score": 21.606,
+          "score": 20.825,
           "source": "Space Apps 2026 challenge page (verbatim)",
           "text": "One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies."
+        },
+        {
+          "file": "data/processed/earth_apps.json",
+          "id": "limits:earth:fire_detector",
+          "line": null,
+          "page": null,
+          "score": 18.469,
+          "source": "Flame Frontier On Earth: Smoke detector that tells smoke from dust",
+          "text": "Earth application named on the challenge page: Smoke detector that tells smoke from dust. Challenge page: \"NASA technology has similarly led to improvements in terrestrial smoke detection\". Fire Detector (NASA Spinoff): \"1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms. As such, it has industrial applications (e.g., in mining operations).\" The challenge page's resource note dates this to the 1970s. The investigations below share its topic; we do not claim they led to it. One of the instruments used for smoke detection in the SAME and SAME-R studies was instead used to detect dust in the Dust and Aerosol Measurement Feasibility Test (DAFT and DAFT-2) studies. Related: PSI-102 Smoke and Aerosol Measurement Experiment: \"affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke\". Related: PSI-101 Smoke Aerosol Measurement Experiment-Reflight: \"can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories\". Related: PSI-47 Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2: \"Arizona Red Dust (ARD) was chosen as an aerosol standard\". Related: PSI-115 Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity: \"This would directly lead to better smoke detection devices\"."
         },
         {
           "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
           "id": "meta:PSI-101:impacts",
           "line": 67,
           "page": null,
-          "score": 16.803,
+          "score": 16.37,
           "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Research Impacts]",
           "text": "Along with the results from the original SAME investigation, the results from SAME-R can lead to technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated. The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
         },
@@ -351,7 +361,7 @@
           "id": "brief:s1.6",
           "line": null,
           "page": null,
-          "score": 16.199,
+          "score": 15.803,
           "source": "Space Apps 2026 challenge page (verbatim)",
           "text": "Fire detection was tested in microgravity through the Smoke and Aerosol Measurement Experiment studies (SAME and SAME-R). Suppression was studied in the Flame Extinguishment Experiment (FLEX) through dilution of the chamber atmosphere with carbon dioxide and helium, both of which suppress fire."
         },
@@ -360,7 +370,7 @@
           "id": "meta:PSI-101:approach",
           "line": 40,
           "page": null,
-          "score": 16.117,
+          "score": 15.795,
           "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Approach]",
           "text": "SAME-R utilized the SAME hardware used on-orbit. Based on the experience gained from SAME, SAME-R included the following modifications: 1) a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples, 2) test conditions were broadened including higher heating temperatures and no-flow during sample heating time, and 3) a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME. SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points. After SAME-R flight tests, three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R."
         },
@@ -369,28 +379,20 @@
           "id": "meta:PSI-102:impacts",
           "line": 66,
           "page": null,
-          "score": 13.767,
+          "score": 13.435,
           "source": "PSI-102 Smoke and Aerosol Measurement Experiment: PSI metadata Comment[Research Impacts]",
           "text": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions. SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data. The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized. The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives."
-        },
-        {
-          "file": "data/raw/PSI-101/PSI-101_metadata_PSI-169_SAME-R/i_Investigation.txt",
-          "id": "meta:PSI-101:objective",
-          "line": 60,
-          "page": null,
-          "score": 12.471,
-          "source": "PSI-101 Smoke Aerosol Measurement Experiment-Reflight: PSI metadata Comment[Objective]",
-          "text": "Similar to the original SAME investigation, the primary objective of the SAME-R investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions in the experiment. One of the problems encountered during the SAME investigation was that after the thermal precipitators were returned to the ground, it was found that all the TEM grids were severely contaminated with some unidentified foreign particles, making these grids unusable although some of them showed shapes of certain types of smoke particles. Based on that experience the SAME-R investigation employed several modification covering new materials, extended operating conditions, and diagnostic equipments."
         }
       ],
       "flagged": false,
-      "key": "2684b56642e43b4f70db8c66",
+      "key": "e24751c80d29213d66fdd143",
       "model": "claude-haiku-5-5",
       "question": "How did SAME and SAME-R test smoke detection in microgravity?",
+      "round": 1,
       "usage": [
         {
-          "input_tokens": 1890,
-          "output_tokens": 217
+          "input_tokens": 2198,
+          "output_tokens": 210
         }
       ]
     },
