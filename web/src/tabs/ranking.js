@@ -1,4 +1,5 @@
 import { loadJSON } from '../data.js';
+import { stackHTML, stackLegend } from '../viz/explore.js';
 
 // Ranking: a visible rule table, no AI. Every score = sum of per-component points; each component has a template explanation.
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -60,13 +61,13 @@ function table(H, d) {
     return `<tr class="rk" data-id="${esc(r.psi_id)}">
       <td class="num">${r.rank}</td>
       <td><button class="linkish" aria-expanded="false" title="${esc(r.title)}">${esc(r.psi_id)}</button> <span class="t">${esc(r.title)}</span></td>
-      <td class="bar"><span style="width:${(100 * r.score) / max}%"></span><b>${n(r.score)}</b></td>
+      <td class="bar2">${stackHTML(r, d)}<b>${n(r.score)}</b></td>
       ${cells}
       <td class="num">${r.joint_tests || '<span class="muted">0</span>'}</td></tr>
       <tr class="why" hidden><td></td><td colspan="${keys.length + 3}"><p class="t-full">${esc(r.title)}</p><ul>${why}</ul>${cols.length ? `<p class="src">${cols.map(esc).join('<br>')}</p>` : ''}${joint}
         ${r.notes.length ? `<p class="src">${r.notes.map(esc).join(' ')}</p>` : ''}</td></tr>`;
   }).join('');
-  return `${topNote(shown, d)}<p class="note">${shown.length} of ${H.rows.length} investigations shown${fuel === 'solid' ? ' (solid materials only; # is the rank among all)' : ''}.</p><div class="table-wrap"><table class="rank">
+  return `${topNote(shown, d)}${stackLegend(d)}<p class="note">${shown.length} of ${H.rows.length} investigations shown${fuel === 'solid' ? ' (solid materials only; # is the rank among all)' : ''}.</p><div class="table-wrap"><table class="rank">
     <thead><tr><th>#</th><th>Investigation</th><th>Score / ${max}</th>${keys.map((k) => `<th class="num" title="${esc(d.rules[k].rule)}">${esc(d.rules[k].label)}<br><small>max ${d.rules[k].weight}</small></th>`).join('')}<th class="num" title="Tests whose O2 and pressure were both inside the habitat's windows (per-test tables only).">Tests in both windows</th></tr></thead>
     <tbody>${rows}</tbody></table></div>`;
 }
@@ -78,6 +79,8 @@ function rules(d) {
 }
 
 function draw(root, d, id) {
+  // FLIP: remember where each row was, redraw, then slide rows from their old place to the new one.
+  const before = new Map([...root.querySelectorAll('tr.rk')].map((tr) => [tr.dataset.id, tr.getBoundingClientRect().top]));
   current = id;
   const H = d.habitats.find((h) => h.habitat.id === id) ?? d.habitats[0];
   root.querySelectorAll('.seg.hab button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.h === H.habitat.id)));
@@ -87,6 +90,13 @@ function draw(root, d, id) {
     ${habitatCard(H.habitat, d)}
     ${table(H, d)}
     <p class="note">Click an investigation for the explanation behind each number. Hover a number for its rule. "Tests in both windows" is counted from per-test tables only.</p>`;
+  if (before.size && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    root.querySelectorAll('tr.rk').forEach((tr) => {
+      const was = before.get(tr.dataset.id); if (was == null) return;
+      const dy = was - tr.getBoundingClientRect().top; if (!dy) return;
+      tr.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 450, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    });
+  }
   root.querySelectorAll('tr.rk button').forEach((b) => b.addEventListener('click', () => {
     const tr = b.closest('tr').nextElementSibling;
     tr.hidden = !tr.hidden;

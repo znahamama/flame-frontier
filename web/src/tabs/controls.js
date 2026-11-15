@@ -1,8 +1,10 @@
 import { loadJSON } from '../data.js';
+import { suppSVG } from '../viz/explore.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const short = (f) => String(f ?? '').split('/').slice(-1)[0];
 const pct = (x) => `${+(x * 100).toFixed(1)}%`;
+const GAPNAME = { solid_window: 'no solid test', flow: 'airflow gap', materials: 'materials gap', boundary: 'boundary gap', gravity: 'partial-gravity gap' };
 const KIND = { per_test: 'per-test table', summary: 'summary table only', none: 'no table' };
 
 // Challenge objective 3 (prevention, detection, suppression). Every quote is checked and every count computed by
@@ -30,7 +32,7 @@ function extreme(x) {
     <span class="src" title="${esc(`${x.src.file}, line ${x.src.line}`)}">${esc(short(x.src.file))} L${esc(x.src.line)}</span></li>`;
 }
 
-function role(r, win) {
+function role(r, win, flex) {
   const m = r.moon;
   return `<section class="card ctl" id="ctl-${esc(r.id)}" aria-labelledby="ctl-h-${esc(r.id)}">
     <h2 id="ctl-h-${esc(r.id)}">${esc(r.name)}</h2>
@@ -40,7 +42,8 @@ function role(r, win) {
     <div class="ctl-moon">
       <h3>For a Moon base <span class="muted">(${esc(win.text)})</span></h3>
       <p>${esc(m.text)}</p>
-      ${m.gaps?.length ? `<ol class="gaps">${m.gaps.map((g) => `<li>${esc(g.text)} <a class="maplink" href="${esc(g.href)}">Show on map →</a></li>`).join('')}</ol>` : ''}
+      ${m.gaps?.length ? `<p class="gapchips">${m.gaps.map((g) => `<a class="gapchip" href="${esc(g.href)}" data-tip="${esc(g.text)}" data-src="gaps.json (Habitat Gaps rules)">✕ ${esc(GAPNAME[g.id] ?? g.id)}</a>`).join('')}</p>` : ''}
+      ${r.id === 'suppression' && flex ? `<figure class="suppfig">${suppSVG(flex, win)}</figure>` : ''}
       ${r.extremes?.length ? `<p class="note">Closest suppressant tests to that air:</p><ul class="note">${r.extremes.map(extreme).join('')}</ul>` : ''}
       ${m.links.length ? `<p>${m.links.map((l) => `<a class="maplink" href="${esc(l.href)}">${esc(l.label)} →</a>`).join(' ')}</p>` : ''}
     </div>
@@ -50,15 +53,17 @@ function role(r, win) {
       <span class="ctl-detail">${esc(f.detail)}</span>
       ${f.note ? `<span class="ctl-detail"><i>${esc(f.note)}</i></span>` : ''}
       <span class="src" title="${esc(f.src)}">${esc(f.src)}</span></li>`).join('')}</ul>
-    <h3>Investigations that inform it (${r.investigations.length})</h3>
-    <ul class="related ctl-inv">${r.investigations.map(investigation).join('')}</ul>
+    <details class="ctl-invs"><summary><h3>Investigations that inform it (${r.investigations.length})</h3> <span class="muted">${r.investigations.map((i) => esc(i.short ?? i.psi_id)).join(', ')}</span></summary>
+    <ul class="related ctl-inv">${r.investigations.map(investigation).join('')}</ul></details>
     <p>${r.compare.length >= 2 ? `<a class="maplink" href="#compare/${r.compare.map(esc).join(',')}">Compare ${r.compare.map(esc).join(', ')} →</a>` : ''}
       ${r.earth ? `<a class="maplink" href="#earth">On Earth: ${esc(r.earth.title)} →</a>` : ''}</p>
   </section>`;
 }
 
 export async function render(root) {
-  const d = await loadJSON('controls.json');
+  const [d, flex, ref] = await Promise.all([loadJSON('controls.json'), loadJSON('flex_tests.json'), loadJSON('reference.json')]);
+  const z = ref.panel1.moon_base_zone;
+  const win = { ...d.window, o2: [z.o2_min_pct, 100], p: [0, z.p_max_kpa] };
   root.innerHTML = `<section class="card"><h2>Fire safety controls: prevent, detect, suppress</h2>
     <blockquote>"${esc(d.intro.quote)}" <span class="src">challenge page</span></blockquote>
     <p class="note">For each of the three, the PSI investigations that inform it (linked only where the challenge page or the investigation's own
@@ -66,7 +71,7 @@ export async function render(root) {
       Counts are computed from the PSI files; the sentences are fixed templates, not AI text.</p>
     <nav class="ctl-jump" aria-label="Jump to a role">${d.roles.map((r) => `<button type="button" data-to="ctl-${esc(r.id)}">${esc(r.name)}</button>`).join('')}</nav>
   </section>
-  ${d.roles.map((r) => role(r, d.window)).join('')}`;
+  ${d.roles.map((r) => role(r, win, flex)).join('')}`;
   // In-page jumps without touching the hash (the hash names the tab).
   root.querySelector('.ctl-jump').addEventListener('click', (e) => {
     const id = e.target.closest('button')?.dataset.to;

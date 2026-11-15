@@ -36,7 +36,15 @@ const LINKS = [
   ['Known Limits', 'limits', '#view .limits, #view h2'],
   ['References', 'references', '#view ul.refs, #view table'],
   ['On Earth', 'earth', '#view .earthapp'],
+  ['Explore story', 'explore', '.story .step'],
+  ['Explore story step', 'explore/s=ranges', '#explore-s-ranges.on'],
   ['Explore section', 'explore', '#view table.cat'],
+  ['Catalog tiles + record link', 'catalog/PSI-25', '#view details#PSI-25[open]'],
+  ['Ranking stacked bars', 'ranking', '#view .stack .sg'],
+  ['Compare range bars', 'compare/PSI-25,PSI-69', '#view .rangebars'],
+  ['Gaps coverage strip', 'gaps', '#view table.cover'],
+  ['Gaps rover anchor', 'gaps', '#view #gap-rover'],
+  ['Controls suppressant map', 'controls', '#view .suppfig svg'],
   ['About section', 'about', '#view h2'],
 ];
 const FILES = ['/data/export/tests.csv', '/data/export/bass2_boundary_points.csv', '/data/export/ssce_ranges.csv', '/data/export/README.md'];
@@ -54,7 +62,7 @@ for (const [feature, hash, sel] of LINKS) {
   try { await page.waitForSelector(sel, { timeout: 8000, state: 'attached' }); } catch { ok = false; why = `missing ${sel}`; }
   if (await page.$('#panel .error')) { ok = false; why += ' error card'; }
   // A view link (not a story top or step) must land with the interactive view at the top of the screen.
-  const story = /^(start|evidence)$/.test(hash) || /\/s=/.test(hash);   // sections with a story open at the top
+  const story = /^(start|evidence|explore)$/.test(hash) || /\/s=/.test(hash);   // sections with a story open at the top
   if (!story) {
     await page.waitForTimeout(400);
     const [top, vh] = await page.evaluate(() => [document.querySelector('#viewtop')?.getBoundingClientRect().top, innerHeight]);

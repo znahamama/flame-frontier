@@ -25,7 +25,7 @@ const VIEWS = {
 const SECTIONS = [
   { id: 'start', label: 'Story', views: ['start'], story: () => import('./stories/start.js') },
   { id: 'evidence', label: 'Evidence', views: ['evidence', 'sandbox', 'clips'], story: () => import('./stories/evidence.js') },
-  { id: 'explore', label: 'Explore', views: ['catalog', 'ranking', 'compare', 'gaps', 'controls'] },
+  { id: 'explore', label: 'Explore', views: ['catalog', 'ranking', 'compare', 'gaps', 'controls'], story: () => import('./stories/explore.js') },
   { id: 'ask', label: 'Ask', views: ['ask'] },
   { id: 'about', label: 'About', views: ['limits', 'references', 'earth'] },
 ];
